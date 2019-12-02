@@ -60,6 +60,7 @@ public class IATS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("iats1 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3509"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -112,6 +113,7 @@ public class IATS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("iats2 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3510"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -166,6 +168,7 @@ public class IATS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("iats3 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("4542"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -230,6 +233,7 @@ public class IATS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("iats4 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("4543"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$5.00"));

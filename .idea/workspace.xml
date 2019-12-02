@@ -1,37 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a28002a2-a20a-4094-b65e-bb3782f4f1c3" name="Default Changelist" comment="" />
+    <list default="true" id="cda15a54-600d-466e-9708-2b2eb847b396" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="jdkForImporter" value="1.8" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="1QQIZmtYXYGTiUVjO5R6Iijgxj1" />
+  <component name="ProjectId" id="1URQSS9sg8Je9vNeCVzXLpH8Wzb" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.fnoor.FundraisingTest" />
-      <recent name="FundraisingTest" />
-      <recent name="com.fnoor" />
-    </key>
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -45,57 +34,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestBase.SimpleSearchTermClinton">
-    <configuration name="Page.SimpleSearchTermClinton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fnautomation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fnoor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fnoor" />
-      <option name="MAIN_CLASS_NAME" value="com.fnoor.Page" />
-      <option name="METHOD_NAME" value="SimpleSearchTermClinton" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestBase.SimpleSearchTermClinton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fnautomation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fnoor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fnoor" />
-      <option name="MAIN_CLASS_NAME" value="com.fnoor.TestBase" />
-      <option name="METHOD_NAME" value="SimpleSearchTermClinton" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.TestBase.SimpleSearchTermClinton" />
-        <item itemvalue="JUnit.Page.SimpleSearchTermClinton" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a28002a2-a20a-4094-b65e-bb3782f4f1c3" name="Default Changelist" comment="" />
-      <created>1567696450745</created>
+      <changelist id="cda15a54-600d-466e-9708-2b2eb847b396" name="Default Changelist" comment="" />
+      <created>1575316927129</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1567696450745</updated>
+      <updated>1575316927129</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
