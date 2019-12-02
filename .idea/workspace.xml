@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cda15a54-600d-466e-9708-2b2eb847b396" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/IATS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/IATS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/fnautomation-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/fnautomation-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="cda15a54-600d-466e-9708-2b2eb847b396" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
