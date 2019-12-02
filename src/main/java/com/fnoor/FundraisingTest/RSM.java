@@ -4,6 +4,7 @@ import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -51,6 +52,7 @@ public class RSM {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("rsm1 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3523"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("RSM Credit Car"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("£15.00"));
@@ -104,6 +106,7 @@ public class RSM {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("rsm2 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3524"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("RSM Credit Car"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("£15.00"));
@@ -156,6 +159,7 @@ public class RSM {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("rsm3 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3525"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("RSM PDD"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("£15.00"));
@@ -204,7 +208,8 @@ public class RSM {
         WebElement myCompleteDynamicElement = driver.findElement(By.id("field_password"));
         myCompleteDynamicElement.sendKeys("password");
         WebElement submitButton = driver.findElement(By.id("submit-button"));
-        submitButton.click();
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();", submitButton);
         fields.waitForPageLoad();
 
         //		Assert that the payment was successful and the third page was reached
@@ -213,6 +218,7 @@ public class RSM {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("rsm4 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8490"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("RSM Credit Car"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("£15.00"));
@@ -270,7 +276,8 @@ public class RSM {
         WebElement myCompleteDynamicElement = driver.findElement(By.id("field_password"));
         myCompleteDynamicElement.sendKeys("password");
         WebElement submitButton = driver.findElement(By.id("submit-button"));
-        submitButton.click();
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();", submitButton);
         fields.waitForPageLoad();
 
         //		Assert that the payment was successful and the third page was reached
@@ -278,7 +285,7 @@ public class RSM {
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12785/donate/3"));
 
         String bodytext = driver.findElement(By.tagName("body")).getText();
-
+        System.out.println("rsm5 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8491"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("RSM Credit Car"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("£15.00"));

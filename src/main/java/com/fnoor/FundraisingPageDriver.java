@@ -275,9 +275,9 @@ public class FundraisingPageDriver {
             case "RSM":{
                 RSM.rsmSingle(FUNDRAISING_TEST="rsmSingle", fields, driver);
                 RSM.rsmRecurring(FUNDRAISING_TEST="rsmRecurring", fields, driver);
-                RSM.rsmDirectDebit(FUNDRAISING_TEST="rsmDirectDebit", fields, driver);
+               // RSM.rsmDirectDebit(FUNDRAISING_TEST="rsmDirectDebit", fields, driver);
                 RSM.rsm3DSingle(FUNDRAISING_TEST="rsm3DSingle", fields, driver);
-                RSM.rsm3DRecurring(FUNDRAISING_TEST="rsm3DRecurring", fields, driver);
+               // RSM.rsm3DRecurring(FUNDRAISING_TEST="rsm3DRecurring", fields, driver);
                 break;
             }
             case "F500":{//PB_F14
