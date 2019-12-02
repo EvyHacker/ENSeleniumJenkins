@@ -338,7 +338,8 @@ public class PAYPAL {
         WebElement mySubmitDynamicElement = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.name("UsernamePasswordEntry")));
-        mySubmitDynamicElement.click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", mySubmitDynamicElement);
 
         fields.waitForPageLoad();
 
