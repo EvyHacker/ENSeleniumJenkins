@@ -182,6 +182,7 @@ public class PAYPAL {
         driver.switchTo().defaultContent();
         fields.waitForPageLoad();
         String paypalAmount = driver.findElement(By.id("transactionCart")).getText();
+        System.out.println("PPL amount " + paypalAmount);
         Assert.assertTrue("Donation amount displayed is incorrect", paypalAmount.contains("$15"));
         WebElement paypalContinue = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
