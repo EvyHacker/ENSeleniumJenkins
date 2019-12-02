@@ -843,7 +843,8 @@ public class PageFields {
         field_RecurPaychkbox.click();
     }
     public void clickRecurringSinglePaymentchkbox() {
-        field_RecurSinglePaychkbox.click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", field_RecurSinglePaychkbox);
     }
 
     public void clickNoReccuringPaymentcheckbox(){
