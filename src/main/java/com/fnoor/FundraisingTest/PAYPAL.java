@@ -187,9 +187,10 @@ public class PAYPAL {
         WebElement paypalContinue = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.id("confirmButtonTop")));
-        fields.waitForPageLoad();
-        paypalContinue.submit();
-        paypalContinue.click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", paypalContinue);
+//        paypalContinue.submit();
+//        paypalContinue.click();
         fields.waitForPageLoad();
 
         //		Assert that the payment was successful and the third page was reached
