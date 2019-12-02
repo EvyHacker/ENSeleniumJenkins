@@ -80,7 +80,8 @@ public class MonerisVal {
         fields.waitForPageLoad();
 
         WebElement orderIdSearch = driver.findElement(By.name("other_orderno"));
-        orderIdSearch.click();
+        //JavascriptExecutor executor0 = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", orderIdSearch);
         WebElement submitSearch = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.name("do_query")));
