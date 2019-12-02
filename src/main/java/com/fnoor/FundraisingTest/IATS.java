@@ -219,7 +219,7 @@ public class IATS {
         fields.setBankRoutingNumber("000000000");
 
 
-        fields.clickRecurringSinglePaymentchkbox();
+       // fields.clickRecurringSinglePaymentchkbox();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate startDate = LocalDate.now().plusDays(1);
         fields.setRecurStartDate(dtf.format(startDate).toString());
