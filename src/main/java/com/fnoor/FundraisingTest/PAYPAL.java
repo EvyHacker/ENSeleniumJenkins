@@ -166,7 +166,12 @@ public class PAYPAL {
         fields.waitForPageLoad();
         fields.setPaypalPassword();
         try{
-            fields.submitPaypal();
+            WebElement paypalLogin = (new WebDriverWait(driver, 20))
+                    .until(ExpectedConditions.presenceOfElementLocated
+                            (By.id("btnLogin")));
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", paypalLogin);
+            //fields.submitPaypal();
         } catch (StaleElementReferenceException e) {
         }
 
