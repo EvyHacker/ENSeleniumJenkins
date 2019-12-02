@@ -94,7 +94,7 @@ public class PageFields {
     @FindBy(id = "en__field_transaction_paycurrency") WebElement field_PaymentCurrency;
     @FindBys(value = @FindBy(name = "transaction.ccexpire")) List<WebElement> field_CCExpirySplit;
     @FindBy(id = "en__field_transaction_ccvv") WebElement field_CCV;
-    @FindBy(css = "#en__field_transaction_recurrpay") WebElement field_RecurSinglePaychkbox;
+    @FindBy(id = "en__field_transaction_recurrpay") WebElement field_RecurSinglePaychkbox;
     @FindBy(id = "en__field_transaction_recurrpay0") WebElement field_RecurPaychkbox;
     @FindBy(id = "en__field_transaction_recurrpay1") WebElement field_No_RecurPaychebox;
     @FindBy(id = "en__field_transaction_recurrday") WebElement field_RecurDay;
@@ -847,7 +847,8 @@ public class PageFields {
     }
 
     public void clickNoReccuringPaymentcheckbox(){
-        field_No_RecurPaychebox.click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", field_No_RecurPaychebox);
     }
 
     public void setRecurCount(String text) {
