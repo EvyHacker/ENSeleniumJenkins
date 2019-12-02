@@ -176,12 +176,11 @@ public class MonerisVal {
         fields.waitForPageLoad();
 
         WebElement orderIdSearch = driver.findElement(By.name("other_orderno"));
-        orderIdSearch.click();
+        executor.executeScript("arguments[0].click();", orderIdSearch);
         WebElement submitSearch = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.name("do_query")));
-        JavascriptExecutor executor1 = (JavascriptExecutor) driver;
-        executor1.executeScript("arguments[0].click();", submitSearch);
+        executor.executeScript("arguments[0].click();", submitSearch);
 
         fields.waitForPageLoad();
         Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().
@@ -242,7 +241,8 @@ public class MonerisVal {
         WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[4]/td/input[1]")));
-        myCompleteDynamicElement.click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", myCompleteDynamicElement);
         fields.waitForPageLoad();
 
         //		Assert that the payment was successful and the third page was reached
@@ -273,17 +273,15 @@ public class MonerisVal {
         WebElement transaction = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.xpath("//li[2]//ul[1]//li[1]//a[1]")));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", transaction);
         fields.waitForPageLoad();
 
         WebElement orderIdSearch = driver.findElement(By.name("other_orderno"));
-        orderIdSearch.click();
+        executor.executeScript("arguments[0].click();", orderIdSearch);
         WebElement submitSearch = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.name("do_query")));
-        JavascriptExecutor executor1 = (JavascriptExecutor) driver;
-        executor1.executeScript("arguments[0].click();", submitSearch);
+        executor.executeScript("arguments[0].click();", submitSearch);
 
         fields.waitForPageLoad();
         Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().
@@ -343,7 +341,8 @@ public class MonerisVal {
         WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[4]/td/input[1]")));
-        myCompleteDynamicElement.click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", myCompleteDynamicElement);
         fields.waitForPageLoad();
 
         //		Assert that the payment was successful and the third page was reached
@@ -374,17 +373,15 @@ public class MonerisVal {
         WebElement transaction = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.xpath("//li[2]//ul[1]//li[1]//a[1]")));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", transaction);
         fields.waitForPageLoad();
 
         WebElement orderIdSearch = driver.findElement(By.name("other_orderno"));
-        orderIdSearch.click();
+        executor.executeScript("arguments[0].click();", orderIdSearch);
         WebElement submitSearch = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.name("do_query")));
-        JavascriptExecutor executor1 = (JavascriptExecutor) driver;
-        executor1.executeScript("arguments[0].click();", submitSearch);
+        executor.executeScript("arguments[0].click();", submitSearch);
 
         fields.waitForPageLoad();
         Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().
