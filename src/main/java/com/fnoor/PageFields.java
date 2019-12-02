@@ -444,7 +444,8 @@ public class PageFields {
                 field_Username_Moneris.sendKeys(USERNAMEMONERIS);
                 field_Store_Moneris.sendKeys(STOREIDMONERIS);
                 field_Password_Moneris.sendKeys(PASSWORDMONERIS);
-                field_Moneris_Submit.click();
+                JavascriptExecutor js = (JavascriptExecutor)driver;
+                js.executeScript("arguments[0].click();", field_Moneris_Submit);
             }
         } catch (NoSuchElementException e) {
     }
