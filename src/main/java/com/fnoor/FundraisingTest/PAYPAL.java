@@ -165,7 +165,13 @@ public class PAYPAL {
         fields.submitPaypal();
         fields.waitForPageLoad();
         fields.setPaypalPassword();
-        fields.submitPaypal();
+        try{
+            fields.submitPaypal();
+        } catch (StaleElementReferenceException e) {
+        }
+
+//        JavascriptExecutor executor = (JavascriptExecutor) driver;
+//        executor.executeScript("arguments[0].click();", fields.submitPaypal());
 
         //Submit Paypal payment
         driver.switchTo().defaultContent();
