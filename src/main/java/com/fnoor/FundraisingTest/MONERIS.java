@@ -4,6 +4,7 @@ import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -51,6 +52,7 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("mon1 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3519"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -104,6 +106,7 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("mon2 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3520"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -159,6 +162,7 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("mon3 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3522"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -199,7 +203,7 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-
+        System.out.println("mon4 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("6378"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -245,7 +249,7 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-
+        System.out.println("mon5 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("6379"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -289,12 +293,12 @@ public class MONERIS {
         //Assert user got redirected to payment page
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Didn't redirect to Submit payment page", myurl.contains("https://pit.3dsecure.net/"));
-        fields.waitForPageLoad();
 
         WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[4]/td/input[1]")));
-        myCompleteDynamicElement.click();
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();", myCompleteDynamicElement);
         fields.waitForPageLoad();
 
         String myurl1 = driver.getCurrentUrl();
@@ -302,7 +306,7 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-
+        System.out.println("mon6 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8481"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -350,20 +354,19 @@ public class MONERIS {
         //Assert user got redirected to payment page
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Didn't redirect to Submit payment page", myurl.contains("https://pit.3dsecure.net/"));
-        fields.waitForPageLoad();
 
         WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[4]/td/input[1]")));
-        myCompleteDynamicElement.click();
-        fields.waitForPageLoad();
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();", myCompleteDynamicElement);
 
         String myurl1 = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12783/donate/3"));
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-
+        System.out.println("mon7 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8489"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
