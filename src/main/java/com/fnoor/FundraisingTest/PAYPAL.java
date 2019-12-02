@@ -181,9 +181,9 @@ public class PAYPAL {
         //Submit Paypal payment
         //driver.switchTo().defaultContent();
         fields.waitForPageLoad();
-        String paypalAmount = driver.findElement(By.className("ltrOverride")).getText();
+        String paypalAmount = driver.findElement(By.className(".ltrOverride")).getText();
         System.out.println("PPL amount " + paypalAmount);
-        Assert.assertTrue("Donation amount displayed is incorrect", paypalAmount.contains("$15"));
+        Assert.assertTrue("Donation amount displayed is incorrect", paypalAmount.contains("$15.00"));
         WebElement paypalContinue = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.id("confirmButtonTop")));
