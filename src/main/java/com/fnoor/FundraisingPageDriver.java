@@ -343,6 +343,7 @@ public class FundraisingPageDriver {
             }
             case "F702":{//PB_F52
                 PAYSAFE.paysafe3DSingle(FUNDRAISING_TEST="paysafe3DSingle", fields, driver);
+                break;
             }
             case "F703":{//PB_F53
                 PAYSAFE.paysafe3DRecurring(FUNDRAISING_TEST="paysafe3DRecurring", fields, driver);

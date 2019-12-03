@@ -56,6 +56,7 @@ public class PaySafeVal {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("paysafeval1 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8609"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$1.00"));
@@ -161,6 +162,7 @@ public class PaySafeVal {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("paysafeval2 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8609"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$10.00"));
@@ -263,7 +265,8 @@ public class PaySafeVal {
         driver.switchTo().frame("Cardinal-CCA-IFrame");
         WebElement resendCode = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.name("resendChallengeData")));
-        resendCode.click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", resendCode);
         WebElement alertMessage = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert")));
         Assert.assertTrue("Donation amount is incorrect or not present" ,
@@ -275,7 +278,6 @@ public class PaySafeVal {
         WebElement otp = driver.findElement(By.name("challengeDataEntry"));
         otp.sendKeys("1234");
         WebElement submit = driver.findElement(By.cssSelector(".button.primary"));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", submit);
         fields.waitForPageLoad();
 
@@ -290,6 +292,7 @@ public class PaySafeVal {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("paysafeval3 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8615"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$20.00"));
@@ -401,7 +404,8 @@ public class PaySafeVal {
         driver.switchTo().frame("Cardinal-CCA-IFrame");
         WebElement resendCode = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.name("resendChallengeData")));
-        resendCode.click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", resendCode);
         WebElement alertMessage = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert")));
         Assert.assertTrue("Donation amount is incorrect or not present" ,
@@ -413,7 +417,6 @@ public class PaySafeVal {
         WebElement otp = driver.findElement(By.name("challengeDataEntry"));
         otp.sendKeys("1234");
         WebElement submit = driver.findElement(By.cssSelector(".button.primary"));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", submit);
         fields.waitForPageLoad();
 
@@ -427,6 +430,7 @@ public class PaySafeVal {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("paysafeval4 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8615"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));

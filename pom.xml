@@ -57,5 +57,10 @@
             <version>7.0.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.crossbrowsertesting</groupId>
+            <artifactId>CBT_Helper</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 </project>

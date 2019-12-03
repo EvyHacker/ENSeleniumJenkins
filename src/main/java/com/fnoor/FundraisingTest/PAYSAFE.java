@@ -54,6 +54,7 @@ public class PAYSAFE {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("paysafe1 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3529"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -119,6 +120,7 @@ public class PAYSAFE {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("paysafe2 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3530"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -160,11 +162,18 @@ public class PAYSAFE {
 
         //      Validate 3D authentication
         fields.waitForPageLoad();
+        //driver.switchTo().frame("Cardinal-collector");
         driver.switchTo().frame("Cardinal-CCA-IFrame");
+//        WebElement otp1 = driver.findElement(By.name("challengeDataEntry"));
+//        otp1.sendKeys("1234");
+
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("window.scrollBy(0,1000)");
         WebElement cancelTransaction = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
-                        (By.name("challengeCancel")));
-        cancelTransaction.submit();
+                        (By.name("cancel")));
+        //cancelTransaction.click();
+        executor.executeScript("arguments[0].click();", cancelTransaction);
         fields.waitForPageLoad();
         WebElement alertNote = driver.findElement(By.xpath("//li[@class='en__error']"));
         Assert.assertTrue("Your transaction didn't go through" ,
@@ -176,7 +185,7 @@ public class PAYSAFE {
         driver.switchTo().frame("Cardinal-CCA-IFrame");
         WebElement resendCode = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.name("resendChallengeData")));
-        resendCode.click();
+        executor.executeScript("arguments[0].click();", resendCode);
         WebElement alertMessage = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert")));
         Assert.assertTrue("The code hasn't been resent" ,
@@ -188,7 +197,6 @@ public class PAYSAFE {
         WebElement otp = driver.findElement(By.name("challengeDataEntry"));
         otp.sendKeys("1234");
         WebElement submit = driver.findElement(By.cssSelector(".button.primary"));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", submit);
         fields.waitForPageLoad();
 
@@ -199,6 +207,7 @@ public class PAYSAFE {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("paysafe3 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8611"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$1.00"));
@@ -263,7 +272,8 @@ public class PAYSAFE {
         driver.switchTo().frame("Cardinal-CCA-IFrame");
         WebElement resendCode = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.name("resendChallengeData")));
-        resendCode.click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", resendCode);
         WebElement alertMessage = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert")));
         Assert.assertTrue("The code hasn't been resent" ,
@@ -275,7 +285,6 @@ public class PAYSAFE {
         WebElement otp = driver.findElement(By.name("challengeDataEntry"));
         otp.sendKeys("1234");
         WebElement submit = driver.findElement(By.cssSelector(".button.primary"));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", submit);
         fields.waitForPageLoad();
 
@@ -285,6 +294,7 @@ public class PAYSAFE {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
+        System.out.println("paysafe4 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8612"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$10.00"));
