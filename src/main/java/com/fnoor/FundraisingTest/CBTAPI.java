@@ -10,7 +10,7 @@ public class CBTAPI {
     private String username, authkey;
 
     public CBTAPI(String username, String authkey) {
-        this.username = "username"; // Your username
+        this.username = username; // Your username
         this.authkey = "Psalm25:11"; // Your authkey
     }
 
