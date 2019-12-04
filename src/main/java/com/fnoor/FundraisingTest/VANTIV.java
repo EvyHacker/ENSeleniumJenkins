@@ -1,6 +1,6 @@
 package com.fnoor.FundraisingTest;
 
-import com.fnoor.FundraisingPageDriver2;
+import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 
 public class VANTIV {
 
-    static FundraisingPageDriver2 page = new FundraisingPageDriver2();
+    static FundraisingPageDriver page = new FundraisingPageDriver();
     private static  String FUNDRAISING_TEST;
 
     public static void vantivSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {

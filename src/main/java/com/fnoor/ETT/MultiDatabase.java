@@ -1,6 +1,6 @@
 package com.fnoor.ETT;
 
-import com.fnoor.FundraisingPageHelper2;
+import com.fnoor.FundraisingPageHelper;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,7 +11,7 @@ import java.io.IOException;
 public class MultiDatabase {
 
 
-    static FundraisingPageHelper2 helper = new FundraisingPageHelper2();
+    static FundraisingPageHelper helper = new FundraisingPageHelper();
     private static String FUNDRAISING_TEST;
 
     public static void multiDatabase13(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {

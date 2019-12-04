@@ -1,7 +1,7 @@
 package com.fnoor.FundraisingTest;
 
-import com.fnoor.FundraisingPageDriver2;
-import com.fnoor.FundraisingPageHelper2;
+import com.fnoor.FundraisingPageDriver;
+import com.fnoor.FundraisingPageHelper;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -13,8 +13,8 @@ import java.time.format.DateTimeFormatter;
 
 public class WORLDPAY {
 
-    static FundraisingPageDriver2 page = new FundraisingPageDriver2();
-    static FundraisingPageHelper2 helper = new FundraisingPageHelper2();
+    static FundraisingPageDriver page = new FundraisingPageDriver();
+    static FundraisingPageHelper helper = new FundraisingPageHelper();
     private static  String FUNDRAISING_TEST;
 
     public static void worldpayCCSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {

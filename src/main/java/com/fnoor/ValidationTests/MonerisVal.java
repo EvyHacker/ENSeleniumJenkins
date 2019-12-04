@@ -1,6 +1,6 @@
 package com.fnoor.ValidationTests;
 
-import com.fnoor.FundraisingPageDriver2;
+import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -19,7 +19,7 @@ import static com.fnoor.PageFields.MONERISDASHBOARD;
 
 public class MonerisVal {
 
-    static FundraisingPageDriver2 page = new FundraisingPageDriver2();
+    static FundraisingPageDriver page = new FundraisingPageDriver();
     private static  String FUNDRAISING_TEST;
 
     public static void moneriseSelectSingleVal(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {

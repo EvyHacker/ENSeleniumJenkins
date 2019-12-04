@@ -1,6 +1,6 @@
 package com.fnoor.FundraisingTest;
 
-import com.fnoor.FundraisingPageHelper2;
+import com.fnoor.FundraisingPageHelper;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter;
 
 public class PAYFLOW {
 
-    static FundraisingPageHelper2 helper = new FundraisingPageHelper2();
+    static FundraisingPageHelper helper = new FundraisingPageHelper();
     private static  String FUNDRAISING_TEST;
 
     public static void payflowProSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
