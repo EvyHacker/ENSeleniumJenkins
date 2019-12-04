@@ -1,6 +1,6 @@
 package com.fnoor.FundraisingTest;
 
-import com.fnoor.FundraisingPageDriver;
+import com.fnoor.FundraisingPageDriver2;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -14,11 +14,11 @@ import java.time.format.DateTimeFormatter;
 
 public class RSM {
 
-    static FundraisingPageDriver page = new FundraisingPageDriver();
+    static FundraisingPageDriver2 page = new FundraisingPageDriver2();
     private static  String FUNDRAISING_TEST;
 
     public static void rsmSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        page.ensAuthTest();
+       // page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/846/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
@@ -60,11 +60,11 @@ public class RSM {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST="rsmSingle", fields);
+       // page.getSupporterByEmail(FUNDRAISING_TEST="rsmSingle", fields);
     }
 
     public static void rsmRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        page.ensAuthTest();
+      //  page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/870/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
@@ -114,11 +114,11 @@ public class RSM {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST="rsmRecurring", fields);
+        //page.getSupporterByEmail(FUNDRAISING_TEST="rsmRecurring", fields);
     }
 
     public static void rsmDirectDebit(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        page.ensAuthTest();
+       // page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/847/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
@@ -167,11 +167,11 @@ public class RSM {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("RECUR_UNMANAGED"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST:Direct Debit"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST="rsmDirectDebit", fields);
+       // page.getSupporterByEmail(FUNDRAISING_TEST="rsmDirectDebit", fields);
     }
 
     public static void rsm3DSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        page.ensAuthTest();
+       // page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12784/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
@@ -226,11 +226,11 @@ public class RSM {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST = "rsm3DSingle", fields);
+       // page.getSupporterByEmail(FUNDRAISING_TEST = "rsm3DSingle", fields);
     }
 
     public static void rsm3DRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        page.ensAuthTest();
+       // page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12785/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
@@ -293,6 +293,6 @@ public class RSM {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST = "rsm3DRecurring", fields);
+       //page.getSupporterByEmail(FUNDRAISING_TEST = "rsm3DRecurring", fields);
     }
 }

@@ -1,6 +1,6 @@
 package com.fnoor.ETT;
 
-import com.fnoor.FundraisingPageHelper;
+import com.fnoor.FundraisingPageHelper2;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class CustomTarget {
 
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
+    static FundraisingPageHelper2 helper = new FundraisingPageHelper2();
     private static String FUNDRAISING_TEST;
 
     public static void customTarget1(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {

@@ -1,6 +1,6 @@
 package com.fnoor.FundraisingTest;
 
-import com.fnoor.FundraisingPageDriver;
+import com.fnoor.FundraisingPageDriver2;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -16,7 +16,7 @@ import java.time.format.DateTimeFormatter;
 
 public class PAYSAFE {
 
-    static FundraisingPageDriver page = new FundraisingPageDriver();
+    static FundraisingPageDriver2 page = new FundraisingPageDriver2();
     private static  String FUNDRAISING_TEST;
 
     public static void paysafeSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {

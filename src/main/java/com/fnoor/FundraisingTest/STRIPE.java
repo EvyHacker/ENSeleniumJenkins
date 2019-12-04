@@ -1,6 +1,6 @@
 package com.fnoor.FundraisingTest;
 
-import com.fnoor.FundraisingPageHelper;
+import com.fnoor.FundraisingPageHelper2;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -16,7 +16,7 @@ import java.time.format.DateTimeFormatter;
 
 public class STRIPE {
 
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
+    static FundraisingPageHelper2 helper = new FundraisingPageHelper2();
     private static  String FUNDRAISING_TEST;
 
     public static void stripeSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {

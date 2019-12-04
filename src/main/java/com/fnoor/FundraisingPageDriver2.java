@@ -26,7 +26,7 @@ import java.io.InputStream;
 
 import static com.fnoor.PageFields.*;
 
-public class FundraisingPageDriver {
+public class FundraisingPageDriver2 {
 
     private static  String FUNDRAISING_TEST;
     protected IATS iats;
@@ -143,7 +143,7 @@ public class FundraisingPageDriver {
         System.setProperty("webdriver.chrome.driver", webDriverProperty);
         WebDriver driver = new ChromeDriver();
         PageFields fields = PageFactory.initElements(driver, PageFields.class);
-        FundraisingPageHelper helper = new FundraisingPageHelper();
+        FundraisingPageHelper2 helper = new FundraisingPageHelper2();
 
         switch (testCase) {
             case "IATS": {

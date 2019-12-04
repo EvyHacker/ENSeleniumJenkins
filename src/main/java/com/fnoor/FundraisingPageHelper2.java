@@ -24,7 +24,7 @@ import java.io.InputStream;
 
 import static com.fnoor.PageFields.*;
 
-public class FundraisingPageHelper extends FundraisingPageDriver {
+public class FundraisingPageHelper2 extends FundraisingPageDriver2 {
 
 
     private static  String FUNDRAISING_TEST;

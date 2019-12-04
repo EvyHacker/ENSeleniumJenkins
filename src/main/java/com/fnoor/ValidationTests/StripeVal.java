@@ -1,6 +1,6 @@
 package com.fnoor.ValidationTests;
 
-import com.fnoor.FundraisingPageHelper;
+import com.fnoor.FundraisingPageHelper2;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -19,7 +19,7 @@ import static com.fnoor.PageFields.STRIPEDASHBOARD;
 
 public class StripeVal {
 
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
+    static FundraisingPageHelper2 helper = new FundraisingPageHelper2();
     private static String FUNDRAISING_TEST;
 
     public static void stripeSingleVal(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
