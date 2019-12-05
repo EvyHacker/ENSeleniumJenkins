@@ -171,10 +171,13 @@ public class PAYSAFE {
             System.out.println("Frame1 " + iframe.getAttribute("id"));
             System.out.println("Frame2 " + iframe.getAttribute("outerHTML"));
         }
-        try{
-            driver.switchTo().frame("Cardinal-CCA-IFrame");
-        } catch (NoSuchFrameException e) {
-        }
+//        actions = ActionChains(self.browser)
+//        actions.move_to_element(open_login_modal_btn).click().perform()
+//        try{
+//            driver.switchTo().frame("Cardinal-CCA-IFrame");
+//        } catch (NoSuchFrameException e) {
+//        }
+        driver.switchTo().frame( driver.findElement( By.id( "Cardinal-CCA-IFrame" ) ) );
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("window.scrollBy(0,1000)");
 //        WebElement cancelTransaction = (new WebDriverWait(driver, 20))
