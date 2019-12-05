@@ -167,6 +167,7 @@ public class PAYSAFE {
         List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
         for (WebElement iframe : iframes)
         {
+            System.out.println("Frame " + iframe);
             System.out.println("Frame1 " + iframe.getAttribute("id"));
             System.out.println("Frame2 " + iframe.getAttribute("outerHTML"));
         }
