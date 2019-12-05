@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class PAYSAFE {
 
@@ -163,6 +164,11 @@ public class PAYSAFE {
        // driver.switchTo().frame(0);
 //        WebElement otp1 = driver.findElement(By.name("challengeDataEntry"));
 //        otp1.sendKeys("1234");
+        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
+        for (WebElement iframe : iframes)
+        {
+            System.out.println(iframe.getAttribute("outerHTML"));
+        }
         try{
             driver.switchTo().frame("Cardinal-CCA-IFrame");
         } catch (NoSuchFrameException e) {
