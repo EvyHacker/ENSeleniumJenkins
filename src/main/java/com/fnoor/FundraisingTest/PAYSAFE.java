@@ -164,8 +164,8 @@ public class PAYSAFE {
        // driver.switchTo().frame(0);
 //        WebElement otp1 = driver.findElement(By.name("challengeDataEntry"));
 //        otp1.sendKeys("1234");
-        Thread.sleep(4000);
-        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
+        Thread.sleep(5000);
+        List<WebElement> iframes = driver.findElements(By.tagName("iframe id"));
         for (WebElement iframe : iframes)
         {
             System.out.println("Frame " + iframe);
@@ -179,7 +179,7 @@ public class PAYSAFE {
 //        } catch (NoSuchFrameException e) {
 //        }
 
-        driver.switchTo().frame( driver.findElement( By.id("Cardinal-CCA-IFrame") ) );
+        driver.switchTo().frame( driver.findElement( By.id("Cardinal-collector") ) );
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("window.scrollBy(0,1000)");
 //        WebElement cancelTransaction = (new WebDriverWait(driver, 20))
