@@ -3,10 +3,7 @@ package com.fnoor.FundraisingTest;
 import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -166,7 +163,10 @@ public class PAYSAFE {
        // driver.switchTo().frame(0);
 //        WebElement otp1 = driver.findElement(By.name("challengeDataEntry"));
 //        otp1.sendKeys("1234");
-
+        try{
+            driver.switchTo().frame("Cardinal-CCA-IFrame");
+        } catch (StaleElementReferenceException e) {
+        }
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("window.scrollBy(0,1000)");
 //        WebElement cancelTransaction = (new WebDriverWait(driver, 20))
