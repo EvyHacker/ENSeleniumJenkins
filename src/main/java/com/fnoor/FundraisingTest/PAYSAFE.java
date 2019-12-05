@@ -177,7 +177,7 @@ public class PAYSAFE {
 //            driver.switchTo().frame("Cardinal-CCA-IFrame");
 //        } catch (NoSuchFrameException e) {
 //        }
-        driver.switchTo().frame( driver.findElement( By.id( "Cardinal-CCA-IFrame" ) ) );
+        driver.switchTo().frame( driver.findElement( By.tagName("iframe") ) );
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("window.scrollBy(0,1000)");
 //        WebElement cancelTransaction = (new WebDriverWait(driver, 20))
