@@ -163,7 +163,7 @@ public class PAYSAFE {
         //      Validate 3D authentication
         fields.waitForPageLoad();
         //driver.switchTo().frame("Cardinal-collector");
-        driver.switchTo().frame("Cardinal-Modal");
+        driver.switchTo().frame("Cardinal-ElementContainer");
 //        WebElement otp1 = driver.findElement(By.name("challengeDataEntry"));
 //        otp1.sendKeys("1234");
 
