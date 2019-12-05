@@ -165,7 +165,7 @@ public class PAYSAFE {
 //        otp1.sendKeys("1234");
         try{
             driver.switchTo().frame("Cardinal-CCA-IFrame");
-        } catch (StaleElementReferenceException e) {
+        } catch (NoSuchFrameException e) {
         }
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("window.scrollBy(0,1000)");
