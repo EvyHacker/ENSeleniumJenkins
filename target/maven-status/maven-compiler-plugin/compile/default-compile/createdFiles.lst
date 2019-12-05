@@ -1,3 +1,4 @@
+com/fnoor/FundraisingTest/CBTAPI.class
 com/fnoor/FundraisingTest/STRIPE.class
 com/fnoor/PageFields$1.class
 com/fnoor/FundraisingPageDriver.class
@@ -18,4 +19,5 @@ com/fnoor/ETT/HouseCommittees.class
 com/fnoor/FundraisingTest/PAYFLOW.class
 com/fnoor/ETT/CustomTarget.class
 com/fnoor/PageFields.class
+com/fnoor/FundraisingTest/CBTtest.class
 com/fnoor/FundraisingTest/VANTIV.class

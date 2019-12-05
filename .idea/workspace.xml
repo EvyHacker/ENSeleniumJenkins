@@ -3,11 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="cda15a54-600d-466e-9708-2b2eb847b396" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/MONERIS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/MONERIS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/RSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/RSM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/WORLDPAY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/WORLDPAY.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYSAFE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYSAFE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/IATS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/IATS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/MONERIS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/MONERIS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYPAL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYPAL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYSAFE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYSAFE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/RSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/RSM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/WORLDPAY.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/WORLDPAY.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/ValidationTests/MonerisVal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/ValidationTests/MonerisVal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/fnautomation-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/fnautomation-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -169,11 +169,14 @@ public class PAYSAFE {
 
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("window.scrollBy(0,1000)");
-        WebElement cancelTransaction = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.name("cancel")));
+//        WebElement cancelTransaction = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated
+//                        (By.className("button")));
         //cancelTransaction.click();
-        executor.executeScript("arguments[0].click();", cancelTransaction);
+        WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
+       // if(cancelTransaction.getAttribute("value").equals("CANCEL")){
+        cancelTransaction.submit();
+        //executor.executeScript("arguments[0].submit();", cancelTransaction);
         fields.waitForPageLoad();
         WebElement alertNote = driver.findElement(By.xpath("//li[@class='en__error']"));
         Assert.assertTrue("Your transaction didn't go through" ,
@@ -185,7 +188,8 @@ public class PAYSAFE {
         driver.switchTo().frame("Cardinal-CCA-IFrame");
         WebElement resendCode = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.name("resendChallengeData")));
-        executor.executeScript("arguments[0].click();", resendCode);
+       // executor.executeScript("arguments[0].click();", resendCode);
+        resendCode.submit();
         WebElement alertMessage = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert")));
         Assert.assertTrue("The code hasn't been resent" ,
