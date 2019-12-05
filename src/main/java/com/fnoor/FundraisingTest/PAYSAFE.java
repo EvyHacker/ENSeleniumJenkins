@@ -165,7 +165,7 @@ public class PAYSAFE {
 //        WebElement otp1 = driver.findElement(By.name("challengeDataEntry"));
 //        otp1.sendKeys("1234");
         Thread.sleep(5000);
-        List<WebElement> iframes = driver.findElements(By.tagName("iframe id"));
+        List<WebElement> iframes = driver.findElements(By.id("Cardinal-"));
         for (WebElement iframe : iframes)
         {
             System.out.println("Frame " + iframe);
