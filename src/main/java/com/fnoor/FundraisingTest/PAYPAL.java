@@ -53,7 +53,6 @@ public class PAYPAL {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("pp1 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3515"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -106,7 +105,6 @@ public class PAYPAL {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("pp2 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3516"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -199,7 +197,6 @@ public class PAYPAL {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("pp3 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3517"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -276,7 +273,6 @@ public class PAYPAL {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("pp4 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3518"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -348,7 +344,6 @@ public class PAYPAL {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("pp5 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8066"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -422,7 +417,6 @@ public class PAYPAL {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("pp6 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8066"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -494,7 +488,6 @@ public class PAYPAL {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("pp7 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8066"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -573,7 +566,6 @@ public class PAYPAL {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("pp8 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8204"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));

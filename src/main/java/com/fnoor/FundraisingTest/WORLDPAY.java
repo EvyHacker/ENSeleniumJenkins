@@ -51,7 +51,6 @@ public class WORLDPAY {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("wd1 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3511"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("RBS Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -116,7 +115,6 @@ public class WORLDPAY {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("wd2 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3512"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("RBS Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -165,7 +163,6 @@ public class WORLDPAY {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("wd3 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3513"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("RBS Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -213,7 +210,6 @@ public class WORLDPAY {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("wd4 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("6306"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("RBS Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));

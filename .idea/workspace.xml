@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cda15a54-600d-466e-9708-2b2eb847b396" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/MONERIS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/MONERIS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/RSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/RSM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/WORLDPAY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/WORLDPAY.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

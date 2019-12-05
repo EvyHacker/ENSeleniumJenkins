@@ -52,7 +52,6 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("mon1 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3519"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -106,7 +105,6 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("mon2 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3520"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -162,7 +160,6 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("mon3 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3522"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -203,7 +200,6 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("mon4 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("6378"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -249,7 +245,6 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("mon5 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("6379"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -306,7 +301,6 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("mon6 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8481"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
@@ -366,7 +360,6 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("mon7 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8489"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
