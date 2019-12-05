@@ -163,7 +163,7 @@ public class PAYSAFE {
         //      Validate 3D authentication
         fields.waitForPageLoad();
         //driver.switchTo().frame("Cardinal-collector");
-        driver.switchTo().frame("Cardinal-CCA-IFrame");
+        driver.switchTo().frame(1);
 //        WebElement otp1 = driver.findElement(By.name("challengeDataEntry"));
 //        otp1.sendKeys("1234");
 
@@ -185,7 +185,7 @@ public class PAYSAFE {
                 driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12868/donate/2?val"));
         fields.submit();
         fields.waitForPageLoad();
-        driver.switchTo().frame("Cardinal-CCA-IFrame");
+        driver.switchTo().frame(1);
         WebElement resendCode = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.name("resendChallengeData")));
        // executor.executeScript("arguments[0].click();", resendCode);
@@ -211,7 +211,6 @@ public class PAYSAFE {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("paysafe3 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8611"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$1.00"));
@@ -298,7 +297,6 @@ public class PAYSAFE {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        System.out.println("paysafe4 " + bodytext);
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8612"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$10.00"));
