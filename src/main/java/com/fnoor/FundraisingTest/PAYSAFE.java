@@ -167,7 +167,8 @@ public class PAYSAFE {
         List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
         for (WebElement iframe : iframes)
         {
-            System.out.println(iframe.getAttribute("outerHTML"));
+            System.out.println("Frame1 " + iframe.getAttribute("id"));
+            System.out.println("Frame2 " + iframe.getAttribute("outerHTML"));
         }
         try{
             driver.switchTo().frame("Cardinal-CCA-IFrame");
