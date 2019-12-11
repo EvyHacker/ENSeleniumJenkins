@@ -19,7 +19,7 @@ public class IATS {
     private static  String FUNDRAISING_TEST;
 
     public static void iatsSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        helper.ensAuthTest();
+        //helper.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/841/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
@@ -67,12 +67,12 @@ public class IATS {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("VISA"));
 
-        helper.getSupporterByEmail(FUNDRAISING_TEST="iatsSingle", fields);
+      //  helper.getSupporterByEmail(FUNDRAISING_TEST="iatsSingle", fields);
     }
 
 
     public static void IATSRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        page.ensAuthTest();
+      //  page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/861/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
@@ -119,11 +119,11 @@ public class IATS {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("VISA"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST="IATSRecurring", fields);
+       // page.getSupporterByEmail(FUNDRAISING_TEST="IATSRecurring", fields);
     }
 
     public static void IATSACHRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        page.ensAuthTest();
+      //  page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/5724/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
@@ -173,11 +173,11 @@ public class IATS {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("BANK_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("ACHEFT"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST="IATSACHRecurring", fields);
+       // page.getSupporterByEmail(FUNDRAISING_TEST="IATSACHRecurring", fields);
     }
 
     public static void IATSACHRecurPaymenttypelogic(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        page.ensAuthTest();
+      //  page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/5725/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
@@ -236,6 +236,6 @@ public class IATS {
         Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("BANK_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("ACHEFT"));
-        page.getSupporterByEmail(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields);
+      //  page.getSupporterByEmail(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields);
     }
 }
