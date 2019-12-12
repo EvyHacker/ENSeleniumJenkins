@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression" duration-ms="12064" started-at="2019-12-12T16:18:31 EST" finished-at="2019-12-12T16:18:43 EST">
+  <suite name="Regression" duration-ms="9849" started-at="2019-12-12T16:41:01 EST" finished-at="2019-12-12T16:41:11 EST">
     <groups>
     </groups>
-    <test name="Donations" duration-ms="12064" started-at="2019-12-12T16:18:31 EST" finished-at="2019-12-12T16:18:43 EST">
+    <test name="Donations" duration-ms="9849" started-at="2019-12-12T16:41:01 EST" finished-at="2019-12-12T16:41:11 EST">
       <class name="com.fnoor.FundraisingTest.IATS">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.fnoor.FundraisingTest.IATS@5891e32e]" name="setUp" is-config="true" duration-ms="2893" started-at="2019-12-12T16:18:31 EST" finished-at="2019-12-12T16:18:34 EST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.fnoor.FundraisingTest.IATS@32eebfca]" name="setUp" is-config="true" duration-ms="1807" started-at="2019-12-12T16:41:01 EST" finished-at="2019-12-12T16:41:03 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="iatsSingle()[pri:0, instance:com.fnoor.FundraisingTest.IATS@5891e32e]" name="iatsSingle" duration-ms="6546" started-at="2019-12-12T16:18:34 EST" finished-at="2019-12-12T16:18:40 EST">
+        <test-method status="PASS" signature="iatsSingle()[pri:0, instance:com.fnoor.FundraisingTest.IATS@32eebfca]" name="iatsSingle" duration-ms="7922" started-at="2019-12-12T16:41:03 EST" finished-at="2019-12-12T16:41:11 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iatsSingle -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.IATS@5891e32e]" name="tearDown" is-config="true" duration-ms="2601" started-at="2019-12-12T16:18:40 EST" finished-at="2019-12-12T16:18:43 EST">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.IATS@32eebfca]" name="tearDown" is-config="true" duration-ms="81" started-at="2019-12-12T16:41:11 EST" finished-at="2019-12-12T16:41:11 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

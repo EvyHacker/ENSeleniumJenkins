@@ -30,9 +30,9 @@ public class IATS {
 
     @BeforeClass(alwaysRun=true)
     public void setUp()  {
-        System.setProperty("webdriver.gecko.driver",
-                "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/win/geckodriver");
-        driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver",
+                "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/linux/chromedriver");
+        driver = new ChromeDriver();
         fields= PageFactory.initElements(driver, PageFields.class);
     }
         @AfterClass(alwaysRun=true)
