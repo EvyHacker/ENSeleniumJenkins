@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="cda15a54-600d-466e-9708-2b2eb847b396" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" afterDir="false" />
@@ -30,6 +31,9 @@
 =======
     <list default="true" id="cda15a54-600d-466e-9708-2b2eb847b396" name="Default Changelist" comment="" />
 >>>>>>> parent of e5bc161... added switch browsers statement
+=======
+    <list default="true" id="cda15a54-600d-466e-9708-2b2eb847b396" name="Default Changelist" comment="" />
+>>>>>>> parent of 8104a7a... changed geckodriver
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +66,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.IATS.iatsSingle">
+  <component name="RunManager" selected="TestNG.IATS.IATSSingle">
     <configuration name="IATS.IATSSingle" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="fnautomation" />
       <extension name="coverage">
@@ -101,8 +105,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.IATS.iatsSingle" />
         <item itemvalue="TestNG.IATS.IATSSingle" />
+        <item itemvalue="TestNG.IATS.iatsSingle" />
       </list>
     </recent_temporary>
   </component>

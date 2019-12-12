@@ -16,6 +16,7 @@ import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -30,6 +31,7 @@ public class FundraisingPageDriver {
 
     private static  String FUNDRAISING_TEST;
     protected IATS iats;
+    static WebDriver driver;
 
 @BeforeClass(alwaysRun = true)
     public static void ensAuthTest() {
@@ -137,17 +139,13 @@ public class FundraisingPageDriver {
         String testCase = args[2];
         String webDriverProperty = String.format("webdrivers/%s/%s", env, webdrive);
         if (env.equals("win")) {
-<<<<<<< HEAD
             System.setProperty("webdriver.gecko.driver", webDriverProperty);
             //System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
             driver = new FirefoxDriver();
-=======
-            webDriverProperty = webDriverProperty + ".exe";
->>>>>>> parent of e5bc161... added switch browsers statement
-        }
-
+        }else{
         System.setProperty("webdriver.chrome.driver", webDriverProperty);
-        WebDriver driver = new ChromeDriver();
+            driver = new ChromeDriver();}
+
         PageFields fields = PageFactory.initElements(driver, PageFields.class);
         FundraisingPageHelper helper = new FundraisingPageHelper();
 
