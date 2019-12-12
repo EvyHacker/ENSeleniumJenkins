@@ -31,7 +31,7 @@ public class IATS {
     @BeforeClass(alwaysRun=true)
     public void setUp()  {
         System.setProperty("webdriver.gecko.driver",
-                "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/linux/geckodriver");
+                "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/win/geckodriver");
         driver = new FirefoxDriver();
         fields= PageFactory.initElements(driver, PageFields.class);
     }
