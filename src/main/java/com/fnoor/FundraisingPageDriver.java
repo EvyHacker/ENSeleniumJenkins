@@ -139,12 +139,12 @@ public class FundraisingPageDriver {
         String testCase = args[2];
         String webDriverProperty = String.format("webdrivers/%s/%s", env, webdrive);
         if (env.equals("win")) {
-            System.setProperty("webdriver.gecko.driver", webDriverProperty);
+            System.setProperty("webdriver.gecko.driver", "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/win");
             driver = new FirefoxDriver();
         }
         else{
-            System.setProperty("webdriver.gecko.driver", webDriverProperty);
-            driver = new FirefoxDriver();}
+        System.setProperty("webdriver.chrome.driver", webDriverProperty);
+        driver = new ChromeDriver();}
         PageFields fields = PageFactory.initElements(driver, PageFields.class);
         FundraisingPageHelper helper = new FundraisingPageHelper();
 
