@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -29,9 +30,9 @@ public class IATS {
 
     @BeforeClass(alwaysRun=true)
     public void setUp()  {
-        System.setProperty("webdriver.chrome.driver",
-                "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/linux/chromedriver");
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.gecko.driver",
+                "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/linux/geckodriver");
+        driver = new FirefoxDriver();
         fields= PageFactory.initElements(driver, PageFields.class);
     }
         @AfterClass(alwaysRun=true)
