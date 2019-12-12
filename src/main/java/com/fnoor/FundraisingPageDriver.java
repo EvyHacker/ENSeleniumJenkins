@@ -143,8 +143,8 @@ public class FundraisingPageDriver {
             driver = new FirefoxDriver();
         }
         else{
-        System.setProperty("webdriver.chrome.driver", webDriverProperty);
-        driver = new ChromeDriver();}
+            System.setProperty("webdriver.gecko.driver", webDriverProperty);
+            driver = new FirefoxDriver();}
         PageFields fields = PageFactory.initElements(driver, PageFields.class);
         FundraisingPageHelper helper = new FundraisingPageHelper();
 
