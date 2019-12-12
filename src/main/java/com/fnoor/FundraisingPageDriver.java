@@ -139,7 +139,7 @@ public class FundraisingPageDriver {
         String testCase = args[2];
         String webDriverProperty = String.format("webdrivers/%s/%s", env, webdrive);
         if (env.equals("win")) {
-            System.setProperty("webdriver.gecko.driver", "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/win");
+            System.setProperty("webdriver.gecko.driver", "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/win/geckodriver");
             driver = new FirefoxDriver();
         }
         else{
