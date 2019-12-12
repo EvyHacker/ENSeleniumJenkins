@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cda15a54-600d-466e-9708-2b2eb847b396" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +36,50 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="TestNG.IATS.IATSSingle">
+    <configuration name="IATS.IATSSingle" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="fnautomation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fnoor.FundraisingTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fnoor.FundraisingTest" />
+      <option name="MAIN_CLASS_NAME" value="com.fnoor.FundraisingTest.IATS" />
+      <option name="METHOD_NAME" value="IATSSingle" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IATS.iatsSingle" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="fnautomation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fnoor.FundraisingTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fnoor.FundraisingTest" />
+      <option name="MAIN_CLASS_NAME" value="com.fnoor.FundraisingTest.IATS" />
+      <option name="METHOD_NAME" value="iatsSingle" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.IATS.IATSSingle" />
+        <item itemvalue="TestNG.IATS.iatsSingle" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />

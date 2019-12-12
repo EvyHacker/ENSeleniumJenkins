@@ -163,9 +163,9 @@ public class FundraisingPageHelper extends FundraisingPageDriver {
         PageFields fields = PageFactory.initElements(driver, PageFields.class);
 
         switch (testCase) {
-            case "F100": {//PB_F1
-                IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
-            }
+//            case "F100": {//PB_F1
+//                IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
+//            }
             case "F101":{//PB_F2
                 IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring", fields, driver);
             }

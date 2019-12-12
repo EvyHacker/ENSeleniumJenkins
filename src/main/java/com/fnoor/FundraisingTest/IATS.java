@@ -6,8 +6,14 @@ import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -17,8 +23,25 @@ public class IATS {
     static FundraisingPageDriver page = new FundraisingPageDriver();
     static FundraisingPageHelper helper = new FundraisingPageHelper();
     private static  String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    PageFields fields;
+    String testId;
 
-    public static void iatsSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @BeforeClass(alwaysRun=true)
+    public void setUp()  {
+        System.setProperty("webdriver.chrome.driver",
+                "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/linux/chromedriver");
+        driver = new ChromeDriver();
+        fields= PageFactory.initElements(driver, PageFields.class);
+    }
+        @AfterClass(alwaysRun=true)
+        public void tearDown() {
+            driver.quit();
+    }
+
+    @Test
+    public void iatsSingle() throws InterruptedException{
+   // public static void iatsSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
         //helper.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/841/donate/1?mode=DEMO");
 
