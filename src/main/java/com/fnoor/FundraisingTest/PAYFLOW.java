@@ -4,6 +4,7 @@ import com.fnoor.FundraisingPageHelper;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -150,7 +151,6 @@ public class PAYFLOW {
         fields.submit();
 
         fields.waitForPageLoad();
-        Thread.sleep(5000);
         String myurl = driver.getCurrentUrl();
         if (myurl.contains("#/checkout")){
             fields.waitForPageLoad();

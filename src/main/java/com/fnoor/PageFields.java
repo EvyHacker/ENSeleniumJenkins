@@ -489,7 +489,8 @@ public class PageFields {
             if (field_Paypal_Next.isDisplayed()) {
                 field_Paypal_Next.click();
             } else {
-                field_Paypal_Login.click();
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", field_Paypal_Login);
             }
         }catch (NoSuchElementException e) {
             }
