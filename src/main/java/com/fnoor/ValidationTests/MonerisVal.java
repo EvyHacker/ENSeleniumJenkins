@@ -68,7 +68,7 @@ public class MonerisVal {
         fields.waitForPageLoad();
         fields.monerisLogin();
         fields.waitForPageLoad();
-        WebElement reportsOver = driver.findElement(By.id("mrc_reports"));
+        WebElement reportsOver = driver.findElement(By.xpath("//a[@id='mrc_reports']"));
         Actions action = new Actions(driver);
         action.moveToElement(reportsOver).build().perform();
         WebElement transaction = (new WebDriverWait(driver, 20))
