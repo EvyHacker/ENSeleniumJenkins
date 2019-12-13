@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
@@ -67,31 +68,14 @@ public class MonerisVal {
         driver.navigate().to(MONERISDASHBOARD);
         fields.waitForPageLoad();
         fields.monerisLogin();
-        fields.waitForPageLoad();
-        WebElement reportsOver = driver.findElement(By.xpath("//a[@id='mrc_reports']"));
-        Actions action = new Actions(driver);
-        action.moveToElement(reportsOver).build().perform();
-        WebElement transaction = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.xpath("//li[2]//ul[1]//li[1]//a[1]")));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", transaction);
-        fields.waitForPageLoad();
-
-        WebElement orderIdSearch = driver.findElement(By.name("other_orderno"));
-        //JavascriptExecutor executor0 = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", orderIdSearch);
-        WebElement submitSearch = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.name("do_query")));
-        JavascriptExecutor executor1 = (JavascriptExecutor) driver;
-        executor1.executeScript("arguments[0].click();", submitSearch);
 
         fields.waitForPageLoad();
-        Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().
-                equals("https://esqa.moneris.com/mpg/reports/transaction/index.php"));
-
         fields.searchMonerisOrder(newTxnId);
+        fields.waitForPageLoad();
+//        Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().
+//                equals("https://esqa.moneris.com/mpg/reports/transaction/index.php"));
+
+
         Assert.assertTrue("Didn't redirect to transactions page3", driver.getCurrentUrl().
                 contains("order_history/index.php?order_no="));
         fields.waitForPageLoad();

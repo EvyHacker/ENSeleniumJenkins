@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression" duration-ms="10803" started-at="2019-12-12T17:57:30 EST" finished-at="2019-12-12T17:57:41 EST">
+  <suite name="Regression" duration-ms="6" started-at="2019-12-13T17:35:45 EST" finished-at="2019-12-13T17:35:45 EST">
     <groups>
     </groups>
-    <test name="Donations" duration-ms="10803" started-at="2019-12-12T17:57:30 EST" finished-at="2019-12-12T17:57:41 EST">
-      <class name="com.fnoor.FundraisingTest.IATS">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.fnoor.FundraisingTest.IATS@4e718207]" name="setUp" is-config="true" duration-ms="1991" started-at="2019-12-12T17:57:30 EST" finished-at="2019-12-12T17:57:32 EST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="iatsSingle()[pri:0, instance:com.fnoor.FundraisingTest.IATS@4e718207]" name="iatsSingle" duration-ms="8690" started-at="2019-12-12T17:57:32 EST" finished-at="2019-12-12T17:57:41 EST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- iatsSingle -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.IATS@4e718207]" name="tearDown" is-config="true" duration-ms="88" started-at="2019-12-12T17:57:41 EST" finished-at="2019-12-12T17:57:41 EST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.FundraisingTest.IATS -->
+    <test name="Donations" duration-ms="6" started-at="2019-12-13T17:35:45 EST" finished-at="2019-12-13T17:35:45 EST">
     </test> <!-- Donations -->
   </suite> <!-- Regression -->
 </testng-results>

@@ -3,6 +3,7 @@ package com.fnoor;
 import org.joda.time.LocalDate;
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -137,11 +138,11 @@ public class PageFields {
     @FindBy(css = ".txnID") WebElement txn_id;
 
     //  Moneris login and dashboard details
-    @FindBy(xpath = "/html/body/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td/form/table/tbody/tr[4]/td[2]/input")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/form[1]/table[1]/tbody[1]/tr[4]/td[2]/input[1]")
     WebElement field_Username_Moneris;
-    @FindBy(xpath = "/html/body/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td/form/table/tbody/tr[5]/td[2]/input")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/form[1]/table[1]/tbody[1]/tr[5]/td[2]/input[1]")
     WebElement field_Store_Moneris;
-    @FindBy(xpath = "/html/body/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td/form/table/tbody/tr[6]/td[2]/input")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/form[1]/table[1]/tbody[1]/tr[6]/td[2]/input[1]")
     WebElement field_Password_Moneris;
     @FindBy(name = "do_login") WebElement field_Moneris_Submit;
     @FindBy(name = "forgot_pass") WebElement field_Moneris_ForgotPass;
@@ -452,6 +453,10 @@ public class PageFields {
 
 }
 
+    public void monerisNavigateToTransaction(){
+
+    }
+
     public void paySafeLogin() {
 
         try {
@@ -552,13 +557,43 @@ public class PageFields {
     /////////////////////////    MONERIS DASHBOARD REPORT SEARCH    /////////////////////////////////
 
     public void searchMonerisOrder (String text){
+        WebElement dropDown = driver.findElement(By.id("nav_drop"));
+        Actions action = new Actions(driver);
+        action.moveToElement(dropDown).build().perform();
+        WebElement reports = driver.findElement(By.id("mrc_reports"));
+        action.moveToElement(reports).build().perform();
+        WebElement transactions =driver.findElement(By.linkText("Transactions"));
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", transactions);
+
+//        Select transactions = new Select (driver.findElement(By.linkText("Transactions")));
+//        reportsOver.selectByVisibleText("Reports");
+//
+////        if(reportsOver.getText().equals("Reports")){
+////
+////        }
+//        JavascriptExecutor executor = (JavascriptExecutor) driver;
+//        executor.executeScript("arguments[0].click();", reportsOver);
+//        Actions action = new Actions(driver);
+//        action.moveToElement(reportsOver).build().perform();
+//        WebElement transaction = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated
+//                        (By.linkText("Transactions")));
+//        executor.executeScript("arguments[0].click();", transaction);
+
+        WebElement customerIdSearch = driver.findElement(By.name("other_custid"));
+        customerIdSearch.click();
+        //JavascriptExecutor executor0 = (JavascriptExecutor) driver;
+        //executor.executeScript("arguments[0].click();", customerIdSearch);
+        WebElement submitSearch =driver.findElement(By.name("do_query"));
+        submitSearch.click();
+        //executor.executeScript("arguments[0].click();", submitSearch);
         WebElement Table = driver.findElement(By.id("maintable"));
 
         List<WebElement> Rows = Table.findElements(By.tagName("a"));
 
         for (WebElement orderId : Rows) {
             if (text.contains(orderId.getText())) {
-                JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", orderId);
             }
         }
