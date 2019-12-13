@@ -582,11 +582,11 @@ public class PageFields {
 //        executor.executeScript("arguments[0].click();", transaction);
 
         WebElement customerIdSearch = driver.findElement(By.name("other_custid"));
-        customerIdSearch.click();
+        executor.executeScript("arguments[0].click();", customerIdSearch);
         //JavascriptExecutor executor0 = (JavascriptExecutor) driver;
         //executor.executeScript("arguments[0].click();", customerIdSearch);
         WebElement submitSearch =driver.findElement(By.name("do_query"));
-        submitSearch.click();
+        executor.executeScript("arguments[0].click();", submitSearch);
         //executor.executeScript("arguments[0].click();", submitSearch);
         WebElement Table = driver.findElement(By.id("maintable"));
 
