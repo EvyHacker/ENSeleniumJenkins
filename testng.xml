@@ -5,6 +5,7 @@
     <test name="Donations">
         <classes>
             <class name="com.fnoor.FundraisingTest.IATS" />
+            <class name="com.fnoor.FundraisingTest.PAYSAFE" />
         </classes>
 <!--        <classes>-->
 <!--            <class name="api.http.calls.ApiTest" />-->
