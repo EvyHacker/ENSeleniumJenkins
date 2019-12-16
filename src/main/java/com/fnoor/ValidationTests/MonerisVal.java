@@ -360,7 +360,7 @@ public class MonerisVal {
         Assert.assertTrue("Didn't redirect to transactions page3", driver.getCurrentUrl().
                 contains("order_history/index.php?order_no="));
         fields.waitForPageLoad();
-        String tableID = driver.findElement(By.xpath("//body//table[2]")).getText();
+        String tableID = driver.findElement(By.xpath("maintable")).getText();
         Assert.assertTrue("Card Type is incorrect or not present", tableID.contains("Visa"));
         Assert.assertTrue("Donation Amount is incorrect or not present", tableID.contains("$20.00"));
 
