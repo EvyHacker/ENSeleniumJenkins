@@ -143,31 +143,35 @@ public class MonerisVal {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
 
+//        driver.navigate().to(MONERISDASHBOARD);
+//        fields.waitForPageLoad();
+//        fields.monerisLogin();
+//        fields.waitForPageLoad();
+//        WebElement reportsOver = driver.findElement(By.id("mrc_reports"));
+//        Actions action = new Actions(driver);
+//        action.moveToElement(reportsOver).build().perform();
+//        WebElement transaction = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated
+//                        (By.xpath("//li[2]//ul[1]//li[1]//a[1]")));
+//        JavascriptExecutor executor = (JavascriptExecutor) driver;
+//        executor.executeScript("arguments[0].click();", transaction);
+//        fields.waitForPageLoad();
+//
+//        WebElement orderIdSearch = driver.findElement(By.name("other_orderno"));
+//        executor.executeScript("arguments[0].click();", orderIdSearch);
+//        WebElement submitSearch = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated
+//                        (By.name("do_query")));
+//        executor.executeScript("arguments[0].click();", submitSearch);
+//
+//        fields.waitForPageLoad();
+//        Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().
+//                equals("https://esqa.moneris.com/mpg/reports/transaction/index.php"));
         driver.navigate().to(MONERISDASHBOARD);
         fields.waitForPageLoad();
         fields.monerisLogin();
-        fields.waitForPageLoad();
-        WebElement reportsOver = driver.findElement(By.id("mrc_reports"));
-        Actions action = new Actions(driver);
-        action.moveToElement(reportsOver).build().perform();
-        WebElement transaction = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.xpath("//li[2]//ul[1]//li[1]//a[1]")));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", transaction);
-        fields.waitForPageLoad();
-
-        WebElement orderIdSearch = driver.findElement(By.name("other_orderno"));
-        executor.executeScript("arguments[0].click();", orderIdSearch);
-        WebElement submitSearch = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.name("do_query")));
-        executor.executeScript("arguments[0].click();", submitSearch);
 
         fields.waitForPageLoad();
-        Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().
-                equals("https://esqa.moneris.com/mpg/reports/transaction/index.php"));
-
         fields.searchMonerisOrder(newTxnId);
         Assert.assertTrue("Didn't redirect to transactions page3", driver.getCurrentUrl().
                 contains("order_history/index.php?order_no="));
@@ -244,30 +248,34 @@ public class MonerisVal {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
 
+//        driver.navigate().to(MONERISDASHBOARD);
+//        fields.waitForPageLoad();
+//        fields.monerisLogin();
+//        fields.waitForPageLoad();
+//        WebElement reportsOver = driver.findElement(By.id("mrc_reports"));
+//        Actions action = new Actions(driver);
+//        action.moveToElement(reportsOver).build().perform();
+//        WebElement transaction = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated
+//                        (By.xpath("//li[2]//ul[1]//li[1]//a[1]")));
+//        executor.executeScript("arguments[0].click();", transaction);
+//        fields.waitForPageLoad();
+//
+//        WebElement orderIdSearch = driver.findElement(By.name("other_orderno"));
+//        executor.executeScript("arguments[0].click();", orderIdSearch);
+//        WebElement submitSearch = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated
+//                        (By.name("do_query")));
+//        executor.executeScript("arguments[0].click();", submitSearch);
+//
+//        fields.waitForPageLoad();
+//        Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().
+//                equals("https://esqa.moneris.com/mpg/reports/transaction/index.php"));
         driver.navigate().to(MONERISDASHBOARD);
         fields.waitForPageLoad();
         fields.monerisLogin();
-        fields.waitForPageLoad();
-        WebElement reportsOver = driver.findElement(By.id("mrc_reports"));
-        Actions action = new Actions(driver);
-        action.moveToElement(reportsOver).build().perform();
-        WebElement transaction = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.xpath("//li[2]//ul[1]//li[1]//a[1]")));
-        executor.executeScript("arguments[0].click();", transaction);
-        fields.waitForPageLoad();
-
-        WebElement orderIdSearch = driver.findElement(By.name("other_orderno"));
-        executor.executeScript("arguments[0].click();", orderIdSearch);
-        WebElement submitSearch = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.name("do_query")));
-        executor.executeScript("arguments[0].click();", submitSearch);
 
         fields.waitForPageLoad();
-        Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().
-                equals("https://esqa.moneris.com/mpg/reports/transaction/index.php"));
-
         fields.searchMonerisOrder(newTxnId);
         Assert.assertTrue("Didn't redirect to transactions page3", driver.getCurrentUrl().
                 contains("order_history/index.php?order_no="));
@@ -346,27 +354,8 @@ public class MonerisVal {
         driver.navigate().to(MONERISDASHBOARD);
         fields.waitForPageLoad();
         fields.monerisLogin();
-        fields.waitForPageLoad();
-        WebElement reportsOver = driver.findElement(By.id("mrc_reports"));
-        Actions action = new Actions(driver);
-        action.moveToElement(reportsOver).build().perform();
-        WebElement transaction = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.xpath("//li[2]//ul[1]//li[1]//a[1]")));
-        executor.executeScript("arguments[0].click();", transaction);
-        fields.waitForPageLoad();
-
-        WebElement orderIdSearch = driver.findElement(By.name("other_orderno"));
-        executor.executeScript("arguments[0].click();", orderIdSearch);
-        WebElement submitSearch = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.name("do_query")));
-        executor.executeScript("arguments[0].click();", submitSearch);
 
         fields.waitForPageLoad();
-        Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().
-                equals("https://esqa.moneris.com/mpg/reports/transaction/index.php"));
-
         fields.searchMonerisOrder(newTxnId);
         Assert.assertTrue("Didn't redirect to transactions page3", driver.getCurrentUrl().
                 contains("order_history/index.php?order_no="));

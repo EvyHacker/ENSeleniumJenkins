@@ -557,6 +557,7 @@ public class PageFields {
     /////////////////////////    MONERIS DASHBOARD REPORT SEARCH    /////////////////////////////////
 
     public void searchMonerisOrder (String text){
+
         WebElement dropDown = driver.findElement(By.id("nav_drop"));
         Actions action = new Actions(driver);
         action.moveToElement(dropDown).build().perform();
@@ -587,6 +588,8 @@ public class PageFields {
         //executor.executeScript("arguments[0].click();", customerIdSearch);
         WebElement submitSearch =driver.findElement(By.name("do_query"));
         executor.executeScript("arguments[0].click();", submitSearch);
+        Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().
+                equals("https://esqa.moneris.com/mpg/reports/transaction/index.php"));
         //executor.executeScript("arguments[0].click();", submitSearch);
         WebElement Table = driver.findElement(By.id("maintable"));
 
