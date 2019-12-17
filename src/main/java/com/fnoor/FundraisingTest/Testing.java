@@ -72,26 +72,26 @@ public class Testing {
     public void tearDown() {
         driver.quit();
     }
-    @AfterMethod
-    public static void takeSnapShot(ITestResult result) throws Exception{
-
-        if(ITestResult.FAILURE==result.getStatus()){
-
-            //Convert web driver object to TakeScreenshot
-            TakesScreenshot scrShot =((TakesScreenshot)driver);
-
-            //Call getScreenshotAs method to create image file
-            File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-
-            //Move image file to new destination
-            File DestFile=new File("./ScreenShots/"+result.getName()+".png");
-            //Copy file at destination
-            FileUtils.copyFile(SrcFile, DestFile);
-            System.out.println("Screenshot taken");
-        }
-
-
-    }
+//    @AfterMethod
+//    public static void takeSnapShot(ITestResult result) throws Exception{
+//
+//        if(ITestResult.FAILURE==result.getStatus()){
+//
+//            //Convert web driver object to TakeScreenshot
+//            TakesScreenshot scrShot =((TakesScreenshot)driver);
+//
+//            //Call getScreenshotAs method to create image file
+//            File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+//
+//            //Move image file to new destination
+//            File DestFile=new File("./ScreenShots/"+result.getName()+".png");
+//            //Copy file at destination
+//            FileUtils.copyFile(SrcFile, DestFile);
+//            System.out.println("Screenshot taken");
+//        }
+//
+//
+//    }
 
     @Test
 
@@ -136,7 +136,7 @@ public class Testing {
         try {
             WebElement iframe = (new WebDriverWait(driver, 20))
                     .until(ExpectedConditions.presenceOfElementLocated
-                            (By.id("Cardinal-CCA-IFrame")));
+                            (By.id("Cardinal-collector")));
             driver.switchTo().frame(iframe);
         }catch (NoSuchElementException e) {
         }
