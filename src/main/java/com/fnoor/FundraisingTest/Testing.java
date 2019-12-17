@@ -18,6 +18,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Testing {
 
@@ -73,10 +74,14 @@ public class Testing {
 
         //      Validate 3D authentication
         fields.waitForPageLoad();
-                WebElement iframe = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.id("Cardinal-collector")));
-        driver.switchTo().frame(iframe);
+        try {
+            WebElement iframe = (new WebDriverWait(driver, 20))
+                    .until(ExpectedConditions.presenceOfElementLocated
+                            (By.xpath("//iframe[@id='Cardinal-collector']")));
+            driver.switchTo().frame(iframe);
+        }catch (NoSuchElementException e) {
+        }
+
        // driver.switchTo().frame(driver.findElement(By.id("Cardinal-collector")));
 //        driver.switchTo().frame("Cardinal-CCA-IFrame");
 //        // driver.switchTo().frame(0);
