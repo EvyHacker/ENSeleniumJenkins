@@ -135,8 +135,7 @@ public class Testing {
         }
         try {
             WebElement iframe = (new WebDriverWait(driver, 20))
-                    .until(ExpectedConditions.presenceOfElementLocated
-                            (By.id("Cardinal-collector")));
+                    .until(ExpectedConditions.visibilityOfElementLocated(By.id("Cardinal-collector")));
             driver.switchTo().frame(iframe);
         }catch (NoSuchElementException e) {
         }
