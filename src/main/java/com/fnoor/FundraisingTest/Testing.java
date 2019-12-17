@@ -74,10 +74,17 @@ public class Testing {
 
         //      Validate 3D authentication
         fields.waitForPageLoad();
+        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
+        for (WebElement iframeT : iframes)
+        {
+            System.out.println("Frame " + iframeT);
+            System.out.println("Frame1 " + iframeT.getAttribute("id"));
+            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));
+        }
         try {
             WebElement iframe = (new WebDriverWait(driver, 20))
                     .until(ExpectedConditions.presenceOfElementLocated
-                            (By.xpath("//iframe[@id='Cardinal-collector']")));
+                            (By.id("Cardinal-CCA-IFrame")));
             driver.switchTo().frame(iframe);
         }catch (NoSuchElementException e) {
         }
@@ -90,13 +97,7 @@ public class Testing {
                         (By.name("challengeDataEntry")));
         //WebElement otp1 = driver.findElement(By.name("challengeDataEntry"));
         otp1.sendKeys("1234");
-        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
-        for (WebElement iframeT : iframes)
-        {
-            System.out.println("Frame " + iframeT);
-            System.out.println("Frame1 " + iframeT.getAttribute("id"));
-            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));
-        }
+
 //        actions = ActionChains(self.browser)
 //        actions.move_to_element(open_login_modal_btn).click().perform()
 //        try{
