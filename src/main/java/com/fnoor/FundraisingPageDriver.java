@@ -236,12 +236,14 @@ public class FundraisingPageDriver {
                 MONERIS.monerisRecurringNoCvv(FUNDRAISING_TEST = "monerisRecurringNoCvv", fields, driver);
                 MONERIS.monerisVault3DSingle(FUNDRAISING_TEST = "monerisVault3DSingle", fields, driver);
                 MONERIS.monerisVault3DRecurring(FUNDRAISING_TEST = "monerisVault3DRecurring", fields, driver);
+                break;
             }
             case "MonerisVal": {
                 MonerisVal.moneriseSelectSingleVal(FUNDRAISING_TEST="moneriseSelectSingleVal", fields, driver);
                 MonerisVal.moneriseSelectRecurringVal(FUNDRAISING_TEST="moneriseSelectRecurringVal", fields, driver);
                 MonerisVal.moneriseSelectSingleVal3D(FUNDRAISING_TEST="moneriseSelectSingleVal3D", fields, driver);
                 MonerisVal.moneriseSelectRecurring3DVal(FUNDRAISING_TEST="moneriseSelectRecurring3DVal", fields, driver);
+                break;
             }
             case "F400":{//PB_F10
                 MONERIS.moneriseSelectSingle(FUNDRAISING_TEST="moneriseSelectSingle", fields, driver);
