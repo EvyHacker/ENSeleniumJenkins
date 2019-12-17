@@ -3,10 +3,10 @@
 
 <suite name="Regression">
     <test name="Donations">
-<!--        <classes>-->
-<!--            <class name="com.fnoor.FundraisingTest.IATS" />-->
+        <classes>
+            <class name="com.fnoor.FundraisingTest.Testing" />
 
-<!--        </classes>-->
+        </classes>
 <!--        <classes>-->
 <!--            <class name="api.http.calls.ApiTest" />-->
 <!--        </classes>-->
