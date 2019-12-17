@@ -206,6 +206,7 @@ public class Testing {
 
 //		Get the details from the third page and Verify the fields
             String bodytext = driver.findElement(By.tagName("body")).getText();
+            System.out.println("Final page " + bodytext);
             Assert.assertTrue("Campaign ID not present", bodytext.contains("8611"));
             Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
             Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$1.00"));
