@@ -132,7 +132,7 @@ public class Testing {
             System.out.println("Frame " + iframeT);
             System.out.println("Frame1 " + iframeT.getAttribute("id"));
             System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));
-            driver.switchTo().frame(0);
+            driver.switchTo().frame("Cardinal-collector");
 //        }
 //        try {
 //            WebElement iframe = (new WebDriverWait(driver, 20))
