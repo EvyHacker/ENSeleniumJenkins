@@ -160,11 +160,10 @@ public class PAYSAFE {
 
         //      Validate 3D authentication
         fields.waitForPageLoad();
-        //driver.switchTo().frame("Cardinal-collector");
+        driver.switchTo().frame("Cardinal-CCA-IFrame");
        // driver.switchTo().frame(0);
-//        WebElement otp1 = driver.findElement(By.name("challengeDataEntry"));
-//        otp1.sendKeys("1234");
-        Thread.sleep(5000);
+        WebElement otp1 = driver.findElement(By.name("challengeDataEntry"));
+        otp1.sendKeys("1234");
         List<WebElement> iframes = driver.findElements(By.id("Cardinal-"));
         for (WebElement iframe : iframes)
         {
