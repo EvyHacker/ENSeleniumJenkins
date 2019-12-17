@@ -179,7 +179,10 @@ public class PAYSAFE {
 //        } catch (NoSuchFrameException e) {
 //        }
 
-        driver.switchTo().frame( driver.findElement( By.id("Cardinal-collector") ) );
+        WebElement iframe = (new WebDriverWait(driver, 20))
+                .until(ExpectedConditions.presenceOfElementLocated
+                        (By.id("Cardinal-collector")));
+        driver.switchTo().frame(iframe);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("window.scrollBy(0,1000)");
 //        WebElement cancelTransaction = (new WebDriverWait(driver, 20))
