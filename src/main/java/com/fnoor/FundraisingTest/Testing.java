@@ -3,20 +3,24 @@ package com.fnoor.FundraisingTest;
 import com.fnoor.FundraisingPageDriver;
 import com.fnoor.FundraisingPageHelper;
 import com.fnoor.PageFields;
+import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.junit.AssumptionViolatedException;
+import org.junit.Rule;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -29,6 +33,34 @@ public class Testing {
     PageFields fields;
     String testId;
 
+    @Rule
+
+
+//    public TestWatcher watcher = new TestWatcher() {     @Override
+//    protected void failed(Throwable e, Description description) {
+//        status= "falha";
+//    }
+//        @Override
+//        protected void skipped(AssumptionViolatedException e, Description description) {
+//            status= "skiped";
+//        }
+//        @Override
+//        protected void succeeded(Description description) {
+//            status= "sucesso";
+//        }
+//        @Override
+//        protected void finished(Description d) {
+//            try {
+//                PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("target/teststream.txt", true)));
+//                out.println("{\"metodo\":\""+actualTestMethod+"\", \"status\":\""+status+"\", "
+//                        + "\"classe\":\""+actualTestClass+"\", \"descricao\":\""+actualTestMethod+"\"}");
+//                out.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    };
+
     @BeforeClass(alwaysRun=true)
     public void setUp()  {
         System.setProperty("webdriver.chrome.driver",
@@ -39,6 +71,26 @@ public class Testing {
     @AfterClass(alwaysRun=true)
     public void tearDown() {
         driver.quit();
+    }
+    @AfterMethod
+    public static void takeSnapShot(ITestResult result) throws Exception{
+
+        if(ITestResult.FAILURE==result.getStatus()){
+
+            //Convert web driver object to TakeScreenshot
+            TakesScreenshot scrShot =((TakesScreenshot)driver);
+
+            //Call getScreenshotAs method to create image file
+            File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+
+            //Move image file to new destination
+            File DestFile=new File("./ScreenShots/"+result.getName()+".png");
+            //Copy file at destination
+            FileUtils.copyFile(SrcFile, DestFile);
+            System.out.println("Screenshot taken");
+        }
+
+
     }
 
     @Test

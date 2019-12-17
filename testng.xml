@@ -2,6 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Regression">
+<!--    <listeners>-->
+<!--        <listener class-name="com.fnoor.FundraisingTest.TestListener"/>-->
+<!--    </listeners>-->
     <test name="Donations">
         <classes>
             <class name="com.fnoor.FundraisingTest.Testing" />
