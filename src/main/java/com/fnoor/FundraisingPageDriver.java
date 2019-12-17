@@ -228,14 +228,16 @@ public class FundraisingPageDriver {
                 PAYPAL.stripeViaPaypalSingle(FUNDRAISING_TEST="stripeViaPaypalSingle", fields, driver);
                 break;
             }
-            case "MONERIS":{
-                MONERIS.moneriseSelectSingle(FUNDRAISING_TEST="moneriseSelectSingle", fields, driver);
+            case "MONERIS": {
+                MONERIS.moneriseSelectSingle(FUNDRAISING_TEST = "moneriseSelectSingle", fields, driver);
                 //MONERIS.moneriseSelectRecurring(FUNDRAISING_TEST="moneriseSelectRecurring", fields, driver);
-                MONERIS.monerisVaultRecurring(FUNDRAISING_TEST="monerisVaultRecurring", fields, driver);
-                MONERIS.monerisSingleNoCvv(FUNDRAISING_TEST="monerisSingleNoCvv", fields, driver);
-                MONERIS.monerisRecurringNoCvv(FUNDRAISING_TEST="monerisRecurringNoCvv", fields, driver);
-                MONERIS.monerisVault3DSingle(FUNDRAISING_TEST="monerisVault3DSingle", fields, driver);
-                MONERIS.monerisVault3DRecurring(FUNDRAISING_TEST="monerisVault3DRecurring", fields, driver);
+                MONERIS.monerisVaultRecurring(FUNDRAISING_TEST = "monerisVaultRecurring", fields, driver);
+                MONERIS.monerisSingleNoCvv(FUNDRAISING_TEST = "monerisSingleNoCvv", fields, driver);
+                MONERIS.monerisRecurringNoCvv(FUNDRAISING_TEST = "monerisRecurringNoCvv", fields, driver);
+                MONERIS.monerisVault3DSingle(FUNDRAISING_TEST = "monerisVault3DSingle", fields, driver);
+                MONERIS.monerisVault3DRecurring(FUNDRAISING_TEST = "monerisVault3DRecurring", fields, driver);
+            }
+            case "MonerisVal": {
                 MonerisVal.moneriseSelectSingleVal(FUNDRAISING_TEST="moneriseSelectSingleVal", fields, driver);
                 MonerisVal.moneriseSelectRecurringVal(FUNDRAISING_TEST="moneriseSelectRecurringVal", fields, driver);
                 MonerisVal.moneriseSelectSingleVal3D(FUNDRAISING_TEST="moneriseSelectSingleVal3D", fields, driver);

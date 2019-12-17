@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import static com.fnoor.PageFields.MONERISDASHBOARD;
 
@@ -360,7 +361,22 @@ public class MonerisVal {
         Assert.assertTrue("Didn't redirect to transactions page3", driver.getCurrentUrl().
                 contains("order_history/index.php?order_no="));
         fields.waitForPageLoad();
-        String tableID = driver.findElement(By.xpath("maintable")).getText();
+//        String cardType = driver.findElement(By.xpath("//table[2]//tbody[1]//tr[3]//td[1]")).getText();
+//        String transAmoount = driver.findElement(By.xpath("//table[2]//tbody[1]//tr[6]//td[1]")).getText();
+//        Assert.assertTrue("Card Type is incorrect or not present", cardType.contains("Visa"));
+//        Assert.assertTrue("Donation Amount is incorrect or not present", transAmoount.contains("$20.00"));
+//        List<WebElement> table = driver.findElements(By.id("maintable"));
+//
+//            List<WebElement> field = driver.findElements(By.tagName("td"));
+//            for (WebElement verifyTransaction : field) {
+//                System.out.println("Table: " + verifyTransaction);
+//                Assert.assertTrue("Card Type is incorrect or not present", verifyTransaction.getText().contains("Visa"));
+//                Assert.assertTrue("Donation Amount is incorrect or not present", verifyTransaction.getText().contains("$20.00"));
+//            }
+
+
+        String tableID = driver.findElement(By.tagName("td")).getText();
+        System.out.println("Table: " + tableID);
         Assert.assertTrue("Card Type is incorrect or not present", tableID.contains("Visa"));
         Assert.assertTrue("Donation Amount is incorrect or not present", tableID.contains("$20.00"));
 
