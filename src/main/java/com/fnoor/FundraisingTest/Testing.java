@@ -152,6 +152,17 @@ public class Testing {
 //        }
 //            driver.switchTo().frame("Cardinal-CCA-IFrame");
 //            System.out.println("Frame I am here");
+        List<WebElement> elements = driver.findElements(By.tagName("div"));
+        System.out.println("Frame is here " + elements);
+        for(WebElement element:elements) {
+            // driver.switchTo().defaultContent();
+            System.out.println("Frame " + element);
+            driver.switchTo().frame(element);
+            if (driver instanceof JavascriptExecutor) {
+                ((JavascriptExecutor) driver).executeScript("alert('hello world');");
+            }
+            System.out.println("Iframe " + element.getAttribute("id"));
+        }
         WebElement frame = driver.findElement(By.xpath("//iframe[@id='Cardinal-CCA-IFrame']"));
         driver.switchTo().frame(frame);
             WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
