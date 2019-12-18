@@ -137,22 +137,22 @@ public class Testing {
            // driver.switchTo().defaultContent();
 //        WebElement zaebal = driver.findElement(By.tagName("iframe"));
 //        System.out.println("Frame is here " + zaebal);
-        JavascriptExecutor jsExecutor1 = (JavascriptExecutor)driver;
-        jsExecutor1.executeScript("return self.name");
-       // String currentFrame = jsExecutor1.executeScript("return self.name");
-        List<WebElement> elements = driver.findElements(By.tagName("iframe"));
-        System.out.println("Frame is here " + elements);
-        for(WebElement element:elements) {
-            // driver.switchTo().defaultContent();
-            System.out.println("Frame " + element);
-            driver.switchTo().frame(element);
-            if (driver instanceof JavascriptExecutor) {
-                ((JavascriptExecutor) driver).executeScript("alert('hello world');");
-            }
-            System.out.println("Iframe " + element.getAttribute("id"));
-        }
-            driver.switchTo().frame("Cardinal-CCA-IFrame");
-            System.out.println("Frame I am here");
+//        JavascriptExecutor jsExecutor1 = (JavascriptExecutor)driver;
+//        jsExecutor1.executeScript("return self.name");
+//       // String currentFrame = jsExecutor1.executeScript("return self.name");
+//        List<WebElement> elements = driver.findElements(By.tagName("iframe"));
+//        System.out.println("Frame is here " + elements);
+//        for(WebElement element:elements) {
+//            // driver.switchTo().defaultContent();
+//            System.out.println("Frame " + element);
+//            driver.switchTo().frame(element);
+//            if (driver instanceof JavascriptExecutor) {
+//                ((JavascriptExecutor) driver).executeScript("alert('hello world');");
+//            }
+//            System.out.println("Iframe " + element.getAttribute("id"));
+//        }
+//            driver.switchTo().frame("Cardinal-CCA-IFrame");
+//            System.out.println("Frame I am here");
             WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
             // if(cancelTransaction.getAttribute("value").equals("CANCEL")){
             cancelTransaction.submit();
