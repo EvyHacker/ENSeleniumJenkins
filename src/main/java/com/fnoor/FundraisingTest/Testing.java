@@ -154,7 +154,7 @@ public class Testing {
 //            driver.switchTo().frame("Cardinal-CCA-IFrame");
 //            System.out.println("Frame I am here");
        // driver.switchTo().activeElement();
-        int total = driver.findElements(By.tagName("iframe")).size();
+        int total = driver.findElements(By.tagName("div")).size();
         for (int i = 0; i < total; i++) {
             driver.switchTo().frame(i);
             try {
