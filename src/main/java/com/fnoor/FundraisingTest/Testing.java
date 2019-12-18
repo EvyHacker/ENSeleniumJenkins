@@ -147,7 +147,17 @@ public class Testing {
                     driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12868/donate/2?val"));
             fields.submit();
             fields.waitForPageLoad();
-            driver.switchTo().frame(0);
+        List<WebElement> elements = driver.findElements(By.tagName("iframe"));
+        for(WebElement element:elements) {
+           // driver.switchTo().defaultContent();
+            System.out.println("Frame " + element);
+            driver.switchTo().frame(element);
+            if (driver instanceof JavascriptExecutor) {
+                ((JavascriptExecutor) driver).executeScript("alert('hello world');");
+            }
+            System.out.println("Iframe " + element.getAttribute("id"));
+        }
+            //driver.switchTo().frame(0);
             WebElement resendCode = (new WebDriverWait(driver, 20))
                     .until(ExpectedConditions.presenceOfElementLocated(By.name("resendChallengeData")));
             // executor.executeScript("arguments[0].click();", resendCode);
