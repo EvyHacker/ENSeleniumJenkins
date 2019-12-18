@@ -131,7 +131,7 @@ public class Testing {
 //            System.out.println("Frame1 " + iframeT.getAttribute("id"));
 //            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));
            // driver.switchTo().frame("Cardinal-collector");
-            driver.switchTo().frame(0);
+            driver.switchTo().parentFrame();
             System.out.println("Frame I am here");
             WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
             // if(cancelTransaction.getAttribute("value").equals("CANCEL")){
