@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Iframe {
     static FundraisingPageDriver page = new FundraisingPageDriver();
@@ -40,6 +41,11 @@ public class Iframe {
 
         driver.get("https://politicalnetworks.com/page/12979/action/1?mode=DEMO");
 
+        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
+        for (WebElement iframeT : iframes) {
+            System.out.println("Frame " + iframeT);
+            System.out.println("Frame1 " + iframeT.getAttribute("id"));
+            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));}
         driver.switchTo().frame(driver.findElement(By.id("Cardinal-collector")));
         System.out.println("Inside the frame");
         driver.switchTo().frame(driver.findElement(By.id("Cardinal-CCA-IFrame")));
