@@ -153,10 +153,10 @@ public class Testing {
 //            driver.switchTo().frame("Cardinal-CCA-IFrame");
 //            System.out.println("Frame I am here");
         List<WebElement> elements = driver.findElements(By.tagName("div"));
-        System.out.println("Frame is here " + elements);
+        System.out.println("Frame is here " + elements.getClass());
         for(WebElement element:elements) {
             // driver.switchTo().defaultContent();
-            System.out.println("Frame " + element);
+            System.out.println("Frame " + element.getAttribute("value"));
             driver.switchTo().frame(element);
             if (driver instanceof JavascriptExecutor) {
                 ((JavascriptExecutor) driver).executeScript("alert('hello world');");
