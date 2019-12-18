@@ -155,13 +155,13 @@ public class Testing {
 //            System.out.println("Frame I am here");
        // driver.switchTo().activeElement();
         Actions action = new Actions(driver);
-        action.moveToElement(driver.findElement(By.id("Cardinal-CCA-IFrame"))).build().perform();
+        action.moveToElement(driver.findElement(By.id("content"))).build().perform();
         List<WebElement> elements = driver.findElements(By.tagName("iframe"));
         System.out.println("Frame is here " + elements.getClass());
         for(WebElement element:elements) {
             // driver.switchTo().defaultContent();
             System.out.println("Frame " + element.getAttribute("value"));
-            driver.switchTo().frame(element);
+            //driver.switchTo().frame(element);
             if (driver instanceof JavascriptExecutor) {
                 ((JavascriptExecutor) driver).executeScript("alert('hello world');");
             }
