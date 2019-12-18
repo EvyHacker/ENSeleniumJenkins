@@ -12,6 +12,7 @@ import org.junit.runner.Description;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,6 +27,7 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 import javax.imageio.ImageIO;
 import java.io.*;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -97,7 +99,38 @@ public class Testing {
 //
 //
 //    }
+//private void takeScreenshot(String className, String method, LocalTime timestamp) {
+//    if (driver instanceof TakesScreenshot) {
+//        TakesScreenshot screenshotTakingDriver = (TakesScreenshot) this.driver;
+//        try {
+//            File localScreenshots = new File(new File("target"), "screenshots");
+//            if (!localScreenshots.exists() || !localScreenshots.isDirectory()) {
+//                localScreenshots.mkdirs();
+//            }
+//            File screenshot = new File(localScreenshots, className + "_" + method + "_" + timestamp.getHour() + "." + timestamp.getMinute() + ".png");
+//            FileUtils.moveFile(screenshotTakingDriver.getScreenshotAs(OutputType.FILE), screenshot);
+//            logger.info("Screenshot for class={} method={} saved in: {}", className, method, screenshot.getAbsolutePath());
+//        } catch (Exception e1) {
+//            logger.error("Unable to take screenshot", e1);
+//        }
+//    } else {
+//        logger.info("Driver '{}' can't take screenshots so skipping it.", driver.getClass());
+//    }
+//}
 
+    public String captureScreen() {
+        String path;
+        try {
+            WebDriver augmentedDriver = new Augmenter().augment(driver);
+            File source = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+            path = "./target/screenshots/" + source.getName();
+            FileUtils.copyFile(source, new File(path));
+        }
+        catch(IOException e) {
+            path = "Failed to capture screenshot: " + e.getMessage();
+        }
+        return path;
+    }
     @Test
 
     public void paysafe3DSingle() throws InterruptedException, IOException {
@@ -133,8 +166,11 @@ public class Testing {
         //fields.waitForPageLoad();
         Thread.sleep(3000);
         //String actualTest = this.getClass().getName()+"."+testname.getMethodName();
-        File scrFile = ((TakesScreenshot)FabricaWebDriver.getDriver()).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("target/screenshots/test11.png"));
+//        File scrFile = ((TakesScreenshot)FabricaWebDriver.getDriver()).getScreenshotAs(OutputType.FILE);
+//        FileUtils.copyFile(scrFile, new File("target/screenshots/test11.png"));
+
+        WebDriver augmentedDriver = new Augmenter().augment(driver);
+        ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 
         Actions action = new Actions(driver);
         action.moveToElement(driver.findElement(By.id("Cardinal-Modal"))).build().perform();
