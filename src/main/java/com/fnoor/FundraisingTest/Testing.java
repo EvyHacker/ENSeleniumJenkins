@@ -11,6 +11,7 @@ import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -153,8 +154,9 @@ public class Testing {
 //            driver.switchTo().frame("Cardinal-CCA-IFrame");
 //            System.out.println("Frame I am here");
        // driver.switchTo().activeElement();
-        driver.switchTo().alert().accept();
-        List<WebElement> elements = driver.findElements(By.tagName("name"));
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.id("Cardinal-CCA-IFrame"))).build().perform();
+        List<WebElement> elements = driver.findElements(By.tagName("iframe"));
         System.out.println("Frame is here " + elements.getClass());
         for(WebElement element:elements) {
             // driver.switchTo().defaultContent();

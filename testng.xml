@@ -6,10 +6,10 @@
 <!--        <listener class-name="com.fnoor.FundraisingTest.TestListener"/>-->
 <!--    </listeners>-->
     <test name="Donations">
-<!--        <classes>-->
-<!--            <class name="com.fnoor.FundraisingTest.Testing" />-->
+        <classes>
+            <class name="com.fnoor.FundraisingTest.Testing" />
 
-<!--        </classes>-->
+        </classes>
 <!--        <classes>-->
 <!--            <class name="api.http.calls.ApiTest" />-->
 <!--        </classes>-->
