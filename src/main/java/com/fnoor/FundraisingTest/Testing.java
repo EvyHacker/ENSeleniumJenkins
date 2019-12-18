@@ -154,6 +154,18 @@ public class Testing {
 //            driver.switchTo().frame("Cardinal-CCA-IFrame");
 //            System.out.println("Frame I am here");
        // driver.switchTo().activeElement();
+        int total = driver.findElements(By.tagName("iframe")).size();
+        for (int i = 0; i < total; i++) {
+            driver.switchTo().frame(i);
+            try {
+                driver.findElement(By.id(("challengeCancel"))).click();
+                break;
+            } catch (Exception e) {
+                System.out.println("not present in frame " + i);
+            } finally {
+                driver.switchTo().defaultContent();
+            }
+        }
 
         List<WebElement> elements = driver.findElements(By.tagName("iframe"));
         System.out.println("Frame is here " + elements.getClass());
