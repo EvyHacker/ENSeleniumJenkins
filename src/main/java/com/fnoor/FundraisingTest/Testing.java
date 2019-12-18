@@ -158,14 +158,14 @@ public class Testing {
 //            driver.switchTo().frame("Cardinal-CCA-IFrame");
 //            System.out.println("Frame I am here");
        // driver.switchTo().activeElement();
-        Thread.sleep(3000);
-        Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
-        try {
-            ImageIO.write(screenshot.getImage(),"PNG",new File
-                    ("/Users/ievgeniiagaidarenko/EngagingNetworks/ElementScreenshot.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        Thread.sleep(3000);
+//        Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+//        try {
+//            ImageIO.write(screenshot.getImage(),"PNG",new File
+//                    ("/Users/ievgeniiagaidarenko/EngagingNetworks/ElementScreenshot.png"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 //        ImageIO.write(screenshot.getImage(), "jpg", new File
 //                ("/Users/ievgeniiagaidarenko/EngagingNetworks/ElementScreenshot.jpg"));
         int total = driver.findElements(By.tagName("div")).size();
