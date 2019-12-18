@@ -138,7 +138,7 @@ public class Testing {
             System.out.println("Frame1 " + iframeT.getAttribute("id"));
             System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));}
            // driver.switchTo().frame("Cardinal-collector");
-            WebElement iframe2 = driver.findElement(By.id("Cardinal-collector"));
+            WebElement iframe2 = driver.findElement(By.id("Cardinal-CCA-IFrame"));
             driver.switchTo().frame(iframe2);
             // driver.switchTo().defaultContent();
 //        WebElement zaebal = driver.findElement(By.tagName("iframe"));
