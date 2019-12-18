@@ -130,7 +130,7 @@ public class Testing {
         fields.submit();
 
         //      Validate 3D authentication
-        fields.waitForPageLoad();
+        //fields.waitForPageLoad();
         Thread.sleep(3000);
         List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
         for (WebElement iframeT : iframes) {
