@@ -169,9 +169,10 @@ public class Testing {
 //        File scrFile = ((TakesScreenshot)FabricaWebDriver.getDriver()).getScreenshotAs(OutputType.FILE);
 //        FileUtils.copyFile(scrFile, new File("target/screenshots/test11.png"));
 
-        WebDriver augmentedDriver = new Augmenter().augment(driver);
-        ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+//        WebDriver augmentedDriver = new Augmenter().augment(driver);
+//        ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 
+        captureScreen();
         Actions action = new Actions(driver);
         action.moveToElement(driver.findElement(By.id("Cardinal-Modal"))).build().perform();
         List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
