@@ -133,7 +133,7 @@ public class Testing {
         //fields.waitForPageLoad();
         Thread.sleep(3000);
         Actions action = new Actions(driver);
-        action.moveToElement(driver.findElement(By.id("Cardinal-ElementContainer"))).build().perform();
+        action.moveToElement(driver.findElement(By.id("Cardinal-Modal"))).build().perform();
         List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
         for (WebElement iframeT : iframes) {
             System.out.println("Frame " + iframeT);
