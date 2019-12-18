@@ -132,6 +132,10 @@ public class Testing {
         //      Validate 3D authentication
         //fields.waitForPageLoad();
         Thread.sleep(3000);
+        //String actualTest = this.getClass().getName()+"."+testname.getMethodName();
+        File scrFile = ((TakesScreenshot)FabricaWebDriver.getDriver()).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(scrFile, new File("target/screenshots/test11.png"));
+
         Actions action = new Actions(driver);
         action.moveToElement(driver.findElement(By.id("Cardinal-Modal"))).build().perform();
         List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
