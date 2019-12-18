@@ -160,9 +160,14 @@ public class Testing {
        // driver.switchTo().activeElement();
         Thread.sleep(3000);
         Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
-
-        ImageIO.write(screenshot.getImage(), "jpg", new File
-                ("/Users/ievgeniiagaidarenko/EngagingNetworks/ElementScreenshot.jpg"));
+        try {
+            ImageIO.write(screenshot.getImage(),"PNG",new File
+                    ("/Users/ievgeniiagaidarenko/EngagingNetworks/ElementScreenshot.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        ImageIO.write(screenshot.getImage(), "jpg", new File
+//                ("/Users/ievgeniiagaidarenko/EngagingNetworks/ElementScreenshot.jpg"));
         int total = driver.findElements(By.tagName("div")).size();
         for (int i = 0; i < total; i++) {
             System.out.println("not present div " + i);
