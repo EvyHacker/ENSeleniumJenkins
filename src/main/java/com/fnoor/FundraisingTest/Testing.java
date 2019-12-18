@@ -158,6 +158,7 @@ public class Testing {
 //            driver.switchTo().frame("Cardinal-CCA-IFrame");
 //            System.out.println("Frame I am here");
        // driver.switchTo().activeElement();
+        Thread.sleep(3000);
         Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
 
         ImageIO.write(screenshot.getImage(), "jpg", new File
