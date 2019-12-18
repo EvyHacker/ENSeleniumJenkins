@@ -42,6 +42,8 @@ public class Iframe {
 
         driver.switchTo().frame(driver.findElement(By.id("Cardinal-collector")));
         System.out.println("Inside the frame");
+        driver.switchTo().frame(driver.findElement(By.id("Cardinal-CCA-IFrame")));
+        System.out.println("Inside the 2nd frame");
         WebElement zoomInMap = driver.findElement(By.className("leaflet-control-zoom-in"));
         zoomInMap.click();
         fields.waitForPageLoad();
