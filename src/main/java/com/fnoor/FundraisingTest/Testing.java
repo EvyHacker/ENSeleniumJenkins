@@ -154,8 +154,7 @@ public class Testing {
 //            driver.switchTo().frame("Cardinal-CCA-IFrame");
 //            System.out.println("Frame I am here");
        // driver.switchTo().activeElement();
-        Actions action = new Actions(driver);
-        action.moveToElement(driver.findElement(By.id("content"))).build().perform();
+
         List<WebElement> elements = driver.findElements(By.tagName("iframe"));
         System.out.println("Frame is here " + elements.getClass());
         for(WebElement element:elements) {
@@ -167,6 +166,8 @@ public class Testing {
             }
             System.out.println("Iframe " + element.getAttribute("id"));
         }
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.id("Cardinal-ModalContent"))).build().perform();
 //        WebElement frame = driver.findElement(By.xpath("//iframe[@id='Cardinal-CCA-IFrame']"));
 //        driver.switchTo().frame(frame);
             WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
