@@ -134,9 +134,10 @@ public class Testing {
            // driver.switchTo().frame("Cardinal-collector");
         //String iframe = driver.findElement(By.id("Cardinal-CCA-IFrame");
            // driver.switchTo().defaultContent();
-        WebElement zaebal = driver.findElement(By.tagName("iframe"));
-        System.out.println("Frame is here " + zaebal);
+//        WebElement zaebal = driver.findElement(By.tagName("iframe"));
+//        System.out.println("Frame is here " + zaebal);
         List<WebElement> elements = driver.findElements(By.tagName("iframe"));
+        System.out.println("Frame is here " + elements);
         for(WebElement element:elements) {
             // driver.switchTo().defaultContent();
             System.out.println("Frame " + element);
