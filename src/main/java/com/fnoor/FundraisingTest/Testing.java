@@ -132,14 +132,18 @@ public class Testing {
         //      Validate 3D authentication
         //fields.waitForPageLoad();
         Thread.sleep(3000);
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.id("Cardinal-ElementContainer"))).build().perform();
         List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
         for (WebElement iframeT : iframes) {
             System.out.println("Frame " + iframeT);
             System.out.println("Frame1 " + iframeT.getAttribute("id"));
             System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));}
+        WebElement iframe2 = driver.findElement(By.id("Cardinal-CCA-IFrame"));
+        driver.switchTo().frame(iframe2);
+
            // driver.switchTo().frame("Cardinal-collector");
-            WebElement iframe2 = driver.findElement(By.id("Cardinal-CCA-IFrame"));
-            driver.switchTo().frame(iframe2);
+
             // driver.switchTo().defaultContent();
 //        WebElement zaebal = driver.findElement(By.tagName("iframe"));
 //        System.out.println("Frame is here " + zaebal);
@@ -194,8 +198,8 @@ public class Testing {
                 }
                 System.out.println("Iframe " + element.getAttribute("id"));
             }
-            Actions action = new Actions(driver);
-            action.moveToElement(driver.findElement(By.name("cardholderInput"))).build().perform();
+//            Actions action = new Actions(driver);
+//            action.moveToElement(driver.findElement(By.name("cardholderInput"))).build().perform();
             System.out.println("Action is here ");
 //        WebElement frame = driver.findElement(By.xpath("//iframe[@id='Cardinal-CCA-IFrame']"));
 //        driver.switchTo().frame(frame);
