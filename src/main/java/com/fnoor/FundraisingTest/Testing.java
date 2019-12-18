@@ -121,8 +121,9 @@ public class Testing {
     public String captureScreen() {
         String path;
         try {
-            WebDriver augmentedDriver = new Augmenter().augment(driver);
-            File source = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+            //WebDriver augmentedDriver = new Augmenter().augment(driver);
+           // File source = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+            File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             path = "./target/screenshots/" + source.getName();
             FileUtils.copyFile(source, new File(path));
         }
