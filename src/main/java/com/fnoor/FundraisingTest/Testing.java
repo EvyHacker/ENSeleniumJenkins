@@ -33,6 +33,7 @@ public class Testing {
     public static WebDriver driver;
     PageFields fields;
     String testId;
+    String currentFrame = null;
 
 
 //    public TestWatcher watcher = new TestWatcher() {     @Override
@@ -136,6 +137,9 @@ public class Testing {
            // driver.switchTo().defaultContent();
 //        WebElement zaebal = driver.findElement(By.tagName("iframe"));
 //        System.out.println("Frame is here " + zaebal);
+        JavascriptExecutor jsExecutor1 = (JavascriptExecutor)driver;
+        jsExecutor1.executeScript("return self.name");
+       // String currentFrame = jsExecutor1.executeScript("return self.name");
         List<WebElement> elements = driver.findElements(By.tagName("iframe"));
         System.out.println("Frame is here " + elements);
         for(WebElement element:elements) {
