@@ -36,7 +36,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.Iframe.piframeTest">
+    <configuration name="Iframe.piframeTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="fnautomation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fnoor.FundraisingTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fnoor.FundraisingTest" />
+      <option name="MAIN_CLASS_NAME" value="com.fnoor.FundraisingTest.Iframe" />
+      <option name="METHOD_NAME" value="piframeTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Testing.paysafe3DSingle" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="fnautomation" />
       <extension name="coverage">
@@ -57,6 +75,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Iframe.piframeTest" />
         <item itemvalue="TestNG.Testing.paysafe3DSingle" />
       </list>
     </recent_temporary>
