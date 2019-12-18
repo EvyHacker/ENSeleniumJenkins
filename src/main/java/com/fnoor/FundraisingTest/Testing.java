@@ -133,6 +133,16 @@ public class Testing {
            // driver.switchTo().frame("Cardinal-collector");
         //String iframe = driver.findElement(By.id("Cardinal-CCA-IFrame");
            // driver.switchTo().defaultContent();
+        List<WebElement> elements = driver.findElements(By.tagName("iframe"));
+        for(WebElement element:elements) {
+            // driver.switchTo().defaultContent();
+            System.out.println("Frame " + element);
+            driver.switchTo().frame(element);
+            if (driver instanceof JavascriptExecutor) {
+                ((JavascriptExecutor) driver).executeScript("alert('hello world');");
+            }
+            System.out.println("Iframe " + element.getAttribute("id"));
+        }
             driver.switchTo().frame("Cardinal-CCA-IFrame");
             System.out.println("Frame I am here");
             WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
@@ -147,16 +157,7 @@ public class Testing {
                     driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12868/donate/2?val"));
             fields.submit();
             fields.waitForPageLoad();
-        List<WebElement> elements = driver.findElements(By.tagName("iframe"));
-        for(WebElement element:elements) {
-           // driver.switchTo().defaultContent();
-            System.out.println("Frame " + element);
-            driver.switchTo().frame(element);
-            if (driver instanceof JavascriptExecutor) {
-                ((JavascriptExecutor) driver).executeScript("alert('hello world');");
-            }
-            System.out.println("Iframe " + element.getAttribute("id"));
-        }
+
             //driver.switchTo().frame(0);
             WebElement resendCode = (new WebDriverWait(driver, 20))
                     .until(ExpectedConditions.presenceOfElementLocated(By.name("resendChallengeData")));
