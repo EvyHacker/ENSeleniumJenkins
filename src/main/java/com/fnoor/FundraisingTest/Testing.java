@@ -3,6 +3,7 @@ package com.fnoor.FundraisingTest;
 import com.fnoor.FundraisingPageDriver;
 import com.fnoor.FundraisingPageHelper;
 import com.fnoor.PageFields;
+import com.sun.xml.internal.ws.api.server.WSWebServiceContext;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.junit.AssumptionViolatedException;
@@ -133,6 +134,8 @@ public class Testing {
            // driver.switchTo().frame("Cardinal-collector");
         //String iframe = driver.findElement(By.id("Cardinal-CCA-IFrame");
            // driver.switchTo().defaultContent();
+        WebElement zaebal = driver.findElement(By.tagName("iframe"));
+        System.out.println("Frame is here " + zaebal);
         List<WebElement> elements = driver.findElements(By.tagName("iframe"));
         for(WebElement element:elements) {
             // driver.switchTo().defaultContent();
