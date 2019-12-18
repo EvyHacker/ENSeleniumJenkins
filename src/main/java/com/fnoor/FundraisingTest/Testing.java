@@ -131,7 +131,7 @@ public class Testing {
 //            System.out.println("Frame1 " + iframeT.getAttribute("id"));
 //            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));
            // driver.switchTo().frame("Cardinal-collector");
-            driver.switchTo().frame(1);
+            driver.switchTo().frame(0);
             System.out.println("Frame I am here");
             WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
             // if(cancelTransaction.getAttribute("value").equals("CANCEL")){
@@ -145,7 +145,7 @@ public class Testing {
                     driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12868/donate/2?val"));
             fields.submit();
             fields.waitForPageLoad();
-            driver.switchTo().frame(1);
+            driver.switchTo().frame(0);
             WebElement resendCode = (new WebDriverWait(driver, 20))
                     .until(ExpectedConditions.presenceOfElementLocated(By.name("resendChallengeData")));
             // executor.executeScript("arguments[0].click();", resendCode);
