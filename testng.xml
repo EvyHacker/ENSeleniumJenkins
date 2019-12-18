@@ -7,7 +7,7 @@
 <!--    </listeners>-->
     <test name="Donations">
         <classes>
-            <class name="com.fnoor.FundraisingTest.Iframe" />
+            <class name="com.fnoor.FundraisingTest.Testing" />
 
         </classes>
 <!--        <classes>-->

@@ -286,23 +286,28 @@ public class PAYSAFE {
         fields.submit();
 
         //      Validate 3D authentication
-        fields.waitForPageLoad();
+       // fields.waitForPageLoad();
+        Thread.sleep(5000);
+//        driver.switchTo().frame("Cardinal-collector");
+//        System.out.println("1st");
         driver.switchTo().frame("Cardinal-CCA-IFrame");
-        WebElement resendCode = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated(By.name("resendChallengeData")));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", resendCode);
-        WebElement alertMessage = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert")));
-        Assert.assertTrue("The code hasn't been resent" ,
-                alertMessage.getText().contains("Your code has been resent."));
-        fields.waitForPageLoad();
-        WebElement donationAmount = driver.findElement(By.cssSelector(".challengeinfotext"));
-        Assert.assertTrue("Donation amount is incorrect or not present" ,
-                donationAmount.getText().contains("$10.00"));
+        System.out.println("2snd");
+//        WebElement resendCode = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated(By.name("resendChallengeData")));
+//        JavascriptExecutor executor = (JavascriptExecutor) driver;
+//        executor.executeScript("arguments[0].click();", resendCode);
+//        WebElement alertMessage = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert")));
+//        Assert.assertTrue("The code hasn't been resent" ,
+//                alertMessage.getText().contains("Your code has been resent."));
+//        fields.waitForPageLoad();
+//        WebElement donationAmount = driver.findElement(By.cssSelector(".challengeinfotext"));
+//        Assert.assertTrue("Donation amount is incorrect or not present" ,
+//                donationAmount.getText().contains("$10.00"));
         WebElement otp = driver.findElement(By.name("challengeDataEntry"));
         otp.sendKeys("1234");
         WebElement submit = driver.findElement(By.cssSelector(".button.primary"));
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", submit);
         fields.waitForPageLoad();
 

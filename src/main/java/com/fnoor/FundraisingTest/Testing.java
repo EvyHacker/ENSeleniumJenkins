@@ -131,14 +131,16 @@ public class Testing {
 
         //      Validate 3D authentication
         fields.waitForPageLoad();
-//        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
-//        for (WebElement iframeT : iframes) {
-//            System.out.println("Frame " + iframeT);
-//            System.out.println("Frame1 " + iframeT.getAttribute("id"));
-//            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));
+        Thread.sleep(3000);
+        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
+        for (WebElement iframeT : iframes) {
+            System.out.println("Frame " + iframeT);
+            System.out.println("Frame1 " + iframeT.getAttribute("id"));
+            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));
            // driver.switchTo().frame("Cardinal-collector");
-        //String iframe = driver.findElement(By.id("Cardinal-CCA-IFrame");
-           // driver.switchTo().defaultContent();
+            WebElement iframe2 = driver.findElement(By.id("Cardinal-collector"));
+            driver.switchTo().frame(iframe2);
+            // driver.switchTo().defaultContent();
 //        WebElement zaebal = driver.findElement(By.tagName("iframe"));
 //        System.out.println("Frame is here " + zaebal);
 //        JavascriptExecutor jsExecutor1 = (JavascriptExecutor)driver;
@@ -157,7 +159,7 @@ public class Testing {
 //        }
 //            driver.switchTo().frame("Cardinal-CCA-IFrame");
 //            System.out.println("Frame I am here");
-       // driver.switchTo().activeElement();
+            // driver.switchTo().activeElement();
 //        Thread.sleep(3000);
 //        Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
 //        try {
@@ -168,33 +170,33 @@ public class Testing {
 //        }
 //        ImageIO.write(screenshot.getImage(), "jpg", new File
 //                ("/Users/ievgeniiagaidarenko/EngagingNetworks/ElementScreenshot.jpg"));
-        int total = driver.findElements(By.tagName("div")).size();
-        for (int i = 0; i < total; i++) {
-            System.out.println("not present div " + i);
-            try {
-                driver.findElement(By.id(("challengeCancel"))).click();
-                break;
-            } catch (Exception e) {
-                System.out.println("not present in frame " + i);
-            } finally {
-                driver.switchTo().defaultContent();
+            int total = driver.findElements(By.tagName("iframe")).size();
+            for (int i = 0; i < total; i++) {
+                System.out.println("not present frame " + i);
+                try {
+                    driver.findElement(By.id(("challengeCancel"))).click();
+                    break;
+                } catch (Exception e) {
+                    System.out.println("not present in frame " + i);
+                } finally {
+                    driver.switchTo().defaultContent();
+                }
             }
-        }
 
-        List<WebElement> elements = driver.findElements(By.tagName("iframe"));
-        System.out.println("Frame is here " + elements.getClass());
-        for(WebElement element:elements) {
-            // driver.switchTo().defaultContent();
-            System.out.println("Frame " + element.getAttribute("value"));
-            //driver.switchTo().frame(element);
-            if (driver instanceof JavascriptExecutor) {
-                ((JavascriptExecutor) driver).executeScript("alert('hello world');");
+            List<WebElement> elements = driver.findElements(By.tagName("iframe"));
+            System.out.println("Frame is here " + elements.getClass());
+            for (WebElement element : elements) {
+                // driver.switchTo().defaultContent();
+                System.out.println("Frame " + element.getAttribute("value"));
+                //driver.switchTo().frame(element);
+                if (driver instanceof JavascriptExecutor) {
+                    ((JavascriptExecutor) driver).executeScript("alert('hello world');");
+                }
+                System.out.println("Iframe " + element.getAttribute("id"));
             }
-            System.out.println("Iframe " + element.getAttribute("id"));
-        }
-        Actions action = new Actions(driver);
-        action.moveToElement(driver.findElement(By.name("cardholderInput"))).build().perform();
-        System.out.println("Action is here " );
+            Actions action = new Actions(driver);
+            action.moveToElement(driver.findElement(By.name("cardholderInput"))).build().perform();
+            System.out.println("Action is here ");
 //        WebElement frame = driver.findElement(By.xpath("//iframe[@id='Cardinal-CCA-IFrame']"));
 //        driver.switchTo().frame(frame);
             WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
@@ -203,9 +205,9 @@ public class Testing {
             //executor.executeScript("arguments[0].submit();", cancelTransaction);
             fields.waitForPageLoad();
             WebElement alertNote = driver.findElement(By.xpath("//li[@class='en__error']"));
-            Assert.assertTrue("Your transaction didn't go through" ,
+            Assert.assertTrue("Your transaction didn't go through",
                     alertNote.getText().contains("This transaction has failed as there has been an error in processing your payment."));
-            Assert.assertTrue("Donation amount is incorrect or not present" ,
+            Assert.assertTrue("Donation amount is incorrect or not present",
                     driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12868/donate/2?val"));
             fields.submit();
             fields.waitForPageLoad();
@@ -217,11 +219,11 @@ public class Testing {
             resendCode.submit();
             WebElement alertMessage = (new WebDriverWait(driver, 20))
                     .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert")));
-            Assert.assertTrue("The code hasn't been resent" ,
+            Assert.assertTrue("The code hasn't been resent",
                     alertMessage.getText().contains("Your code has been resent."));
             fields.waitForPageLoad();
             WebElement donationAmount = driver.findElement(By.cssSelector(".challengeinfotext"));
-            Assert.assertTrue("Donation amount is incorrect or not present" ,
+            Assert.assertTrue("Donation amount is incorrect or not present",
                     donationAmount.getText().contains("$1.00"));
             WebElement otp = driver.findElement(By.name("challengeDataEntry"));
             otp.sendKeys("1234");
@@ -247,5 +249,5 @@ public class Testing {
 
             page.getSupporterByEmail(FUNDRAISING_TEST = "paysafe3DSingle", fields);
         }
-
+    }
 }
