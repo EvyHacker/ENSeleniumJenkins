@@ -136,7 +136,7 @@ public class Testing {
         for (WebElement iframeT : iframes) {
             System.out.println("Frame " + iframeT);
             System.out.println("Frame1 " + iframeT.getAttribute("id"));
-            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));
+            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));}
            // driver.switchTo().frame("Cardinal-collector");
             WebElement iframe2 = driver.findElement(By.id("Cardinal-collector"));
             driver.switchTo().frame(iframe2);
@@ -249,5 +249,4 @@ public class Testing {
 
             page.getSupporterByEmail(FUNDRAISING_TEST = "paysafe3DSingle", fields);
         }
-    }
 }
