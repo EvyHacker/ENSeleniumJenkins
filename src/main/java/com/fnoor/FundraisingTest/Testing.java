@@ -152,7 +152,7 @@ public class Testing {
 //        }
 //            driver.switchTo().frame("Cardinal-CCA-IFrame");
 //            System.out.println("Frame I am here");
-        WebElement frame = driver.findElement(By.cssSelector("div#Cardinal-ModalContent"));
+        WebElement frame = driver.findElement(By.xpath("//iframe[@id='Cardinal-CCA-IFrame']t"));
         driver.switchTo().frame(frame);
             WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
             // if(cancelTransaction.getAttribute("value").equals("CANCEL")){
