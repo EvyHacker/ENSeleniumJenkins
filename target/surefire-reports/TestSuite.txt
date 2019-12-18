@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.311 s - in TestSuite
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 27.023 s <<< FAILURE! - in TestSuite
+paysafe3DSingle(com.fnoor.FundraisingTest.Testing)  Time elapsed: 25.102 s  <<< FAILURE!
+org.openqa.selenium.StaleElementReferenceException: 
+stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'Ievgeniias-MBP.fios-router.home', ip: 'fe80:0:0:0:ce0:271e:ed66:a84c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=78.0.3904.105 (60e2d8774a8151efa6a00b1f358371b1e0e07ee2-refs/branch-heads/3904@{#877}), userDataDir=/var/folders/wf/01j5zpjj45dgk1n5rbf0njrm0000gn/T/.com.google.Chrome.UM5wBd}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:65348}, acceptInsecureCerts=false, browserVersion=79.0.3945.88, browserName=chrome, javascriptEnabled=true, platformName=mac os x, setWindowRect=true}]
+Session ID: 3fe4f44dbbdca90ca4ee32b3f251372b
+	at com.fnoor.FundraisingTest.Testing.paysafe3DSingle(Testing.java:131)
+

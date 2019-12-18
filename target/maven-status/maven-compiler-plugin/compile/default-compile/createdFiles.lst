@@ -6,6 +6,7 @@ com/fnoor/FundraisingPageHelper.class
 com/fnoor/ETT/SenateCommittees.class
 com/fnoor/ValidationTests/StripeVal.class
 com/fnoor/FundraisingTest/PAYPAL.class
+com/fnoor/FundraisingTest/Testing.class
 com/fnoor/FundraisingTest/RSM.class
 com/fnoor/FundraisingTest/PAYSAFE.class
 com/fnoor/ValidationTests/PaySafeVal.class

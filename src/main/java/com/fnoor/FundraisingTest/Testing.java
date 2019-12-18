@@ -33,8 +33,6 @@ public class Testing {
     PageFields fields;
     String testId;
 
-    @Rule
-
 
 //    public TestWatcher watcher = new TestWatcher() {     @Override
 //    protected void failed(Throwable e, Description description) {
@@ -127,56 +125,23 @@ public class Testing {
 
         //      Validate 3D authentication
         fields.waitForPageLoad();
-        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
-        for (WebElement iframeT : iframes) {
-            System.out.println("Frame " + iframeT);
-            System.out.println("Frame1 " + iframeT.getAttribute("id"));
-            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));
-            driver.switchTo().frame("Cardinal-collector");
+//        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
+//        for (WebElement iframeT : iframes) {
+//            System.out.println("Frame " + iframeT);
+//            System.out.println("Frame1 " + iframeT.getAttribute("id"));
+//            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));
+           // driver.switchTo().frame("Cardinal-collector");
+            driver.switchTo().frame("Cardinal-CCA-IFrame");
             System.out.println("Frame I am here");
-//        }
-//        try {
-//            WebElement iframe = (new WebDriverWait(driver, 20))
-//                    .until(ExpectedConditions.visibilityOfElementLocated(By.id("Cardinal-collector")));
-//            driver.switchTo().frame(iframe);
-//        }catch (NoSuchElementException e) {
-//        }
-
-            // driver.switchTo().frame(driver.findElement(By.id("Cardinal-collector")));
-//        driver.switchTo().frame("Cardinal-CCA-IFrame");
-//        // driver.switchTo().frame(0);
-            WebElement otp1 = (new WebDriverWait(driver, 20))
-                    .until(ExpectedConditions.presenceOfElementLocated
-                            (By.name("challengeDataEntry")));
-            //WebElement otp1 = driver.findElement(By.name("challengeDataEntry"));
-            otp1.sendKeys("1234");
-
-//        actions = ActionChains(self.browser)
-//        actions.move_to_element(open_login_modal_btn).click().perform()
-//        try{
-//            driver.switchTo().frame("Cardinal-CCA-IFrame");
-//        } catch (NoSuchFrameException e) {
-//        }
-
-//        WebElement iframe = (new WebDriverWait(driver, 20))
-//                .until(ExpectedConditions.presenceOfElementLocated
-//                        (By.id("Cardinal-collector")));
-//        driver.switchTo().frame(iframe);
-//        JavascriptExecutor executor = (JavascriptExecutor) driver;
-//        executor.executeScript("window.scrollBy(0,1000)");
-//        WebElement cancelTransaction = (new WebDriverWait(driver, 20))
-//                .until(ExpectedConditions.presenceOfElementLocated
-//                        (By.className("button")));
-            //cancelTransaction.click();
             WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
             // if(cancelTransaction.getAttribute("value").equals("CANCEL")){
             cancelTransaction.submit();
             //executor.executeScript("arguments[0].submit();", cancelTransaction);
             fields.waitForPageLoad();
             WebElement alertNote = driver.findElement(By.xpath("//li[@class='en__error']"));
-            Assert.assertTrue("Your transaction didn't go through",
+            Assert.assertTrue("Your transaction didn't go through" ,
                     alertNote.getText().contains("This transaction has failed as there has been an error in processing your payment."));
-            Assert.assertTrue("Donation amount is incorrect or not present",
+            Assert.assertTrue("Donation amount is incorrect or not present" ,
                     driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12868/donate/2?val"));
             fields.submit();
             fields.waitForPageLoad();
@@ -187,11 +152,11 @@ public class Testing {
             resendCode.submit();
             WebElement alertMessage = (new WebDriverWait(driver, 20))
                     .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert")));
-            Assert.assertTrue("The code hasn't been resent",
+            Assert.assertTrue("The code hasn't been resent" ,
                     alertMessage.getText().contains("Your code has been resent."));
             fields.waitForPageLoad();
             WebElement donationAmount = driver.findElement(By.cssSelector(".challengeinfotext"));
-            Assert.assertTrue("Donation amount is incorrect or not present",
+            Assert.assertTrue("Donation amount is incorrect or not present" ,
                     donationAmount.getText().contains("$1.00"));
             WebElement otp = driver.findElement(By.name("challengeDataEntry"));
             otp.sendKeys("1234");
@@ -217,5 +182,5 @@ public class Testing {
 
             page.getSupporterByEmail(FUNDRAISING_TEST = "paysafe3DSingle", fields);
         }
-    }
+    
 }

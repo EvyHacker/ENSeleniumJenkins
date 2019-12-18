@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Regression">
-              <span class="suite-name border-passed">Regression</span>
+              <span class="suite-name border-failed">Regression</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">0 methods,   </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Regression" class="hide-methods failed suite-Regression"> (hide)</a> <!-- hide-methods failed suite-Regression -->
+                      <a href="#" panel-name="suite-Regression" class="show-methods failed suite-Regression"> (show)</a> <!-- show-methods failed suite-Regression -->
+                    </span>
+                    <div class="method-list-content failed suite-Regression">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="com.fnoor.FundraisingTest.Testing" hash-for-method="paysafe3DSingle">paysafe3DSingle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Regression -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -103,6 +117,41 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Regression" class="panel Regression">
+          <div class="suite-Regression-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.fnoor.FundraisingTest.Testing</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="paysafe3DSingle">
+                  </a> <!-- paysafe3DSingle -->
+                  <span class="method-name">paysafe3DSingle</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;Ievgeniias-MBP.fios-router.home&apos;, ip: &apos;fe80:0:0:0:ce0:271e:ed66:a84c%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=78.0.3904.105 (60e2d8774a8151efa6a00b1f358371b1e0e07ee2-refs/branch-heads/3904@{#877}), userDataDir=/var/folders/wf/01j5zpjj45dgk1n5rbf0njrm0000gn/T/.com.google.Chrome.UM5wBd}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:65348}, acceptInsecureCerts=false, browserVersion=79.0.3945.88, browserName=chrome, javascriptEnabled=true, platformName=mac os x, setWindowRect=true}]
+Session ID: 3fe4f44dbbdca90ca4ee32b3f251372b
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
+	at org.openqa.selenium.remote.RemoteWebElement.getAttribute(RemoteWebElement.java:124)
+	at com.fnoor.FundraisingTest.Testing.paysafe3DSingle(Testing.java:131)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Regression-class-failed -->
         </div> <!-- panel Regression -->
         <div panel-name="test-xml-Regression" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -114,6 +163,9 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Regression&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Donations&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.fnoor.FundraisingTest.Testing&quot;/&gt;
+    &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Donations --&gt;
 &lt;/suite&gt; &lt;!-- Regression --&gt;
             </pre>
@@ -126,7 +178,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Donations (0 classes)</span>
+                <span class="test-name">Donations (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -152,12 +204,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(0);
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'paysafe3DSingle')
+data.setCell(0, 2, 'com.fnoor.FundraisingTest.Testing')
+data.setCell(0, 3, 25083);
 window.suiteTableData['Regression']= { tableData: data, tableDiv: 'times-div-Regression'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
+              <span class="suite-total-time">Total running time: 25 seconds</span>
               <div id="times-div-Regression">
               </div> <!-- times-div-Regression -->
             </div> <!-- times-div -->
@@ -182,6 +238,22 @@ return data;
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.fnoor.FundraisingTest.Testing</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">paysafe3DSingle</span>
+                <span class="method-start">1558 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">26648 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

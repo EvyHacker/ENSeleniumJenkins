@@ -150,6 +150,7 @@ public class FundraisingPageDriver {
         FundraisingPageHelper helper = new FundraisingPageHelper();
 
         switch (testCase) {
+
             case "IATS": {
               //  IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
                 IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring", fields, driver);
