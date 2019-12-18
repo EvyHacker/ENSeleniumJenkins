@@ -133,6 +133,7 @@ public class Testing {
            // driver.switchTo().frame("Cardinal-collector");
         //String iframe = driver.findElement(By.id("Cardinal-CCA-IFrame");
             driver.switchTo().defaultContent();
+            driver.switchTo().frame("Cardinal-collector");
             System.out.println("Frame I am here");
             WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
             // if(cancelTransaction.getAttribute("value").equals("CANCEL")){
