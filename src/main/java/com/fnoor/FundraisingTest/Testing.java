@@ -156,7 +156,7 @@ public class Testing {
        // driver.switchTo().activeElement();
         int total = driver.findElements(By.tagName("div")).size();
         for (int i = 0; i < total; i++) {
-            driver.switchTo().frame(i);
+            System.out.println("not present div " + i);
             try {
                 driver.findElement(By.id(("challengeCancel"))).click();
                 break;
