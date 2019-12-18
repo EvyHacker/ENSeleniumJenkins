@@ -40,7 +40,7 @@ public class Iframe {
 
         driver.get("https://politicalnetworks.com/page/12979/action/1?mode=DEMO");
 
-        driver.switchTo().frame(driver.findElement(By.id("inlineFrameExample")));
+        driver.switchTo().frame(driver.findElement(By.id("Cardinal-collector")));
         System.out.println("Inside the frame");
         WebElement zoomInMap = driver.findElement(By.className("leaflet-control-zoom-in"));
         zoomInMap.click();
