@@ -124,7 +124,7 @@ public class Testing {
             //WebDriver augmentedDriver = new Augmenter().augment(driver);
            // File source = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
             File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            path = "./target/screenshots/" + source.getName();
+            path = "/target/screenshots/" + source.getName();
             FileUtils.copyFile(source, new File(path));
         }
         catch(IOException e) {
@@ -175,7 +175,7 @@ public class Testing {
 
         captureScreen();
         Actions action = new Actions(driver);
-        action.moveToElement(driver.findElement(By.id("Cardinal-Modal"))).build().perform();
+        action.moveToElement(driver.findElement(By.id("Cardinal-collector"))).build().perform();
         List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
         for (WebElement iframeT : iframes) {
             System.out.println("Frame " + iframeT);
