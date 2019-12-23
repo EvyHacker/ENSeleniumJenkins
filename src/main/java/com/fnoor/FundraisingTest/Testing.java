@@ -178,7 +178,7 @@ public class Testing {
 //        WebDriver augmentedDriver = new Augmenter().augment(driver);
 //        ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 
-        captureScreen();
+       // captureScreen();
         Actions action = new Actions(driver);
         action.moveToElement(driver.findElement(By.id("Cardinal-collector"))).build().perform();
         List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
