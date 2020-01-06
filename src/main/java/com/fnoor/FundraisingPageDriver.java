@@ -436,7 +436,6 @@ public class FundraisingPageDriver {
                 ACI.aciRecurringVisa(FUNDRAISING_TEST = "aciRecurringVisa", fields, driver);
                 ACI.aciRecurringMasterCard(FUNDRAISING_TEST = "aciRecurringMasterCard", fields, driver);
                 ACI.aciRecurringDiscover(FUNDRAISING_TEST = "aciRecurringDiscover", fields, driver);
-                ACI.aciRecurringDiscover(FUNDRAISING_TEST = "aciRecurringDiscover", fields, driver);
                 ACI.aciRecurringAmex(FUNDRAISING_TEST = "aciRecurringAmex", fields, driver);
                 ACI.aciRecurringACH(FUNDRAISING_TEST = "aciRecurringACH", fields, driver);
                 ACI.aciSingleACH(FUNDRAISING_TEST = "aciSingleACH", fields, driver);
