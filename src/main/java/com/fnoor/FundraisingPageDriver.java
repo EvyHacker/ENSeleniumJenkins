@@ -427,7 +427,7 @@ public class FundraisingPageDriver {
                 StripeVal.stripeRecurring3DVal(FUNDRAISING_TEST = "stripeRecurring3DVal", fields, driver);
                 break;
             }
-            case "ACI":{
+            case "ACIGateway":{
                 ACI.aciSingleVisa(FUNDRAISING_TEST = "aciSingleVisa", fields, driver);
                 ACI.aciSingleMasterCard(FUNDRAISING_TEST = "aciSingleMasterCard", fields, driver);
                 ACI.aciSingleDiscover(FUNDRAISING_TEST = "aciSingleDiscover", fields, driver);

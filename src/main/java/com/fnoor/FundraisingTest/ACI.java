@@ -159,6 +159,7 @@ public class ACI {
 
         fields.submit();
 
+        fields.waitForPageLoad();
         fields.setAddress1("1 Hilltop");
         fields.setCity("Baltimore");
         fields.selectRegion("MD");
@@ -862,6 +863,7 @@ public class ACI {
 
         fields.submit();
 
+        fields.waitForPageLoad();
         fields.setAddress1("1 Hilltop");
         fields.setCity("Baltimore");
         fields.selectRegion("MD");
