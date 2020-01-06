@@ -46,7 +46,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12988/donate/3"));
@@ -88,7 +88,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl1 = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12988/donate/3"));
@@ -130,7 +130,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -217,7 +217,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -260,7 +260,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -303,7 +303,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -352,7 +352,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12988/donate/3"));
@@ -394,7 +394,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl1 = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12988/donate/3"));
@@ -436,7 +436,6 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
         fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
@@ -480,7 +479,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -566,7 +565,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -616,7 +615,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12988/donate/3"));
@@ -658,7 +657,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl1 = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12988/donate/3"));
@@ -700,7 +699,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -786,7 +785,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -836,7 +835,7 @@ public class ACI {
         fields.setCCV("1234");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12988/donate/3"));
@@ -863,7 +862,7 @@ public class ACI {
         fields.setEmailAddress(new_email);
 
         fields.submit();
-
+        fields.waitForPageLoad();
         fields.waitForPageLoad();
         fields.setAddress1("1 Hilltop");
         fields.setCity("Baltimore");
@@ -921,7 +920,7 @@ public class ACI {
         fields.setCCV("1234");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -964,7 +963,7 @@ public class ACI {
         fields.setCCV("1234");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -1007,7 +1006,7 @@ public class ACI {
         fields.setCCV("1234");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -1072,6 +1071,7 @@ public class ACI {
         fields.clearCCNumber();
         fields.setCCNUmber("4120300909000060");
         fields.submit();
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12988/donate/3"));
@@ -1128,7 +1128,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12989/donate/3"));
@@ -1177,7 +1177,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl1 = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12989/donate/3"));
@@ -1225,7 +1225,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -1274,7 +1274,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -1323,7 +1323,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -1372,7 +1372,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -1421,7 +1421,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -1480,7 +1480,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12989/donate/3"));
@@ -1529,7 +1529,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl1 = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12989/donate/3"));
@@ -1578,7 +1578,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -1628,7 +1628,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -1678,7 +1678,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -1728,7 +1728,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -1788,7 +1788,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12989/donate/3"));
@@ -1837,7 +1837,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl1 = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12989/donate/3"));
@@ -1886,7 +1886,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -1986,7 +1986,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -2046,7 +2046,7 @@ public class ACI {
         fields.setCCV("1234");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12989/donate/3"));
@@ -2095,7 +2095,7 @@ public class ACI {
         fields.setCCV("1234");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl1 = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12989/donate/3"));
@@ -2144,7 +2144,7 @@ public class ACI {
         fields.setCCV("1234");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -2194,7 +2194,7 @@ public class ACI {
         fields.setCCV("1234");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -2244,7 +2244,7 @@ public class ACI {
         fields.setCCV("1234");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -2300,7 +2300,7 @@ public class ACI {
         fields.setRecurFreq("MONTHLY");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12991/donate/3"));
@@ -2347,7 +2347,7 @@ public class ACI {
         fields.setBankRoutingNumber("222371863");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12993/donate/3"));
