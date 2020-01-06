@@ -429,7 +429,7 @@ public class FundraisingPageDriver {
             }
             case "ACI":{
                 ACI.aciSingleVisa(FUNDRAISING_TEST = "aciSingleVisa", fields, driver);
-                ACI.aciSingleMasterCard(FUNDRAISING_TEST = "aciSingleMD", fields, driver);
+                ACI.aciSingleMasterCard(FUNDRAISING_TEST = "aciSingleMasterCard", fields, driver);
                 ACI.aciSingleDiscover(FUNDRAISING_TEST = "aciSingleDiscover", fields, driver);
                 ACI.aciSingleAmex(FUNDRAISING_TEST = "aciSingleAmex", fields, driver);
                 ACI.aciSingleErrors(FUNDRAISING_TEST = "aciSingleErrors", fields, driver);
