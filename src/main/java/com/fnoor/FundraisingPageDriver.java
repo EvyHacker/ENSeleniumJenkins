@@ -427,6 +427,63 @@ public class FundraisingPageDriver {
                 StripeVal.stripeRecurring3DVal(FUNDRAISING_TEST = "stripeRecurring3DVal", fields, driver);
                 break;
             }
+            case "ACI":{
+                ACI.aciSingleVisa(FUNDRAISING_TEST = "aciSingleVisa", fields, driver);
+                ACI.aciSingleMasterCard(FUNDRAISING_TEST = "aciSingleMD", fields, driver);
+                ACI.aciSingleDiscover(FUNDRAISING_TEST = "aciSingleDiscover", fields, driver);
+                ACI.aciSingleAmex(FUNDRAISING_TEST = "aciSingleAmex", fields, driver);
+                ACI.aciSingleErrors(FUNDRAISING_TEST = "aciSingleErrors", fields, driver);
+                ACI.aciRecurringVisa(FUNDRAISING_TEST = "aciRecurringVisa", fields, driver);
+                ACI.aciRecurringMasterCard(FUNDRAISING_TEST = "aciRecurringMasterCard", fields, driver);
+                ACI.aciRecurringDiscover(FUNDRAISING_TEST = "aciRecurringDiscover", fields, driver);
+                ACI.aciRecurringDiscover(FUNDRAISING_TEST = "aciRecurringDiscover", fields, driver);
+                ACI.aciRecurringAmex(FUNDRAISING_TEST = "aciRecurringAmex", fields, driver);
+                ACI.aciRecurringACH(FUNDRAISING_TEST = "aciRecurringACH", fields, driver);
+                break;
+            }
+            case "F1000": {//PB_F54
+                ACI.aciSingleVisa(FUNDRAISING_TEST = "aciSingleVisa", fields, driver);
+                break;
+            }
+            case "F1001": {//PB_F54
+                ACI.aciSingleMasterCard(FUNDRAISING_TEST = "aciSingleMasterCard", fields, driver);
+                break;
+            }
+            case "F1002": {//PB_F54
+                ACI.aciSingleDiscover(FUNDRAISING_TEST = "aciSingleDiscover", fields, driver);
+                break;
+            }
+            case "F1003": {//PB_F54
+                ACI.aciSingleAmex(FUNDRAISING_TEST = "aciSingleAmex", fields, driver);
+                break;
+            }
+            case "F1004": {//PB_F54
+                ACI.aciSingleErrors(FUNDRAISING_TEST = "aciSingleErrors", fields, driver);
+                break;
+            }
+            case "F1005": {//PB_F55
+                ACI.aciRecurringVisa(FUNDRAISING_TEST = "aciRecurringVisa", fields, driver);
+                break;
+            }
+            case "F1006": {//PB_F55
+                ACI.aciRecurringMasterCard(FUNDRAISING_TEST = "aciRecurringMasterCard", fields, driver);
+                break;
+            }
+            case "F1007": {//PB_F55
+                ACI.aciRecurringDiscover(FUNDRAISING_TEST = "aciRecurringDiscover", fields, driver);
+                break;
+            }
+            case "F1008": {//PB_F55
+                ACI.aciRecurringAmex(FUNDRAISING_TEST = "aciRecurringAmex", fields, driver);
+                break;
+            }
+            case "F1009": {//PB_F56
+                ACI.aciRecurringACH(FUNDRAISING_TEST = "aciRecurringACH", fields, driver);
+            }
+            case "F1010": {//PB_F57
+                ACI.aciSingleACH(FUNDRAISING_TEST = "aciSingleACH", fields, driver);
+                break;
+            }
             case "E1": {
                 CustomTarget.customTarget1(FUNDRAISING_TEST = "customTarget1", fields, driver);
             }

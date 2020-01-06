@@ -771,9 +771,14 @@ public class PageFields {
         field_City.clear();
     }
 
-    public void clearPostCode() {
-        field_Postcode.clear();
-    }
+    public void clearPostCode() { field_Postcode.clear(); }
+
+    public void clearCCV() { for (int i = 0; i< field_CCExpirySplit.size(); i++)
+    {
+        field_CCExpirySplit.get(i).clear();
+    }}
+
+    public void clearCCNumber() {field_CCNumber.clear();}
 
     public void setPaymentType(String text) {
         if (field_PaymentType.getText() != null){

@@ -113,6 +113,9 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Regression&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;org.testng.reporters.JUnitReportReporter&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Donations&quot;&gt;
   &lt;/test&gt; &lt;!-- Donations --&gt;
 &lt;/suite&gt; &lt;!-- Regression --&gt;

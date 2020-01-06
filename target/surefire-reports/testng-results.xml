@@ -2,10 +2,10 @@
 <testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression" duration-ms="8" started-at="2019-12-18T13:52:42 EST" finished-at="2019-12-18T13:52:42 EST">
+  <suite name="Regression" duration-ms="8" started-at="2020-01-03T16:42:21 EST" finished-at="2020-01-03T16:42:21 EST">
     <groups>
     </groups>
-    <test name="Donations" duration-ms="8" started-at="2019-12-18T13:52:42 EST" finished-at="2019-12-18T13:52:42 EST">
+    <test name="Donations" duration-ms="8" started-at="2020-01-03T16:42:21 EST" finished-at="2020-01-03T16:42:21 EST">
     </test> <!-- Donations -->
   </suite> <!-- Regression -->
 </testng-results>

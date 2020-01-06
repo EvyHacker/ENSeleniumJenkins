@@ -3,6 +3,7 @@ com/fnoor/FundraisingPageHelper.class
 com/fnoor/FundraisingTest/PAYPAL.class
 com/fnoor/FundraisingTest/RSM.class
 com/fnoor/FundraisingTest/PAYSAFE.class
+com/fnoor/FundraisingTest/ACI.class
 com/fnoor/FundraisingTest/WORLDPAY.class
 com/fnoor/ETT/MultiDatabase.class
 com/fnoor/ETT/HouseCommittees.class
