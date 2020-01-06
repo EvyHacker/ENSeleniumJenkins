@@ -174,7 +174,7 @@ public class ACI {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
