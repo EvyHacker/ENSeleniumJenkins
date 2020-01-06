@@ -439,6 +439,7 @@ public class FundraisingPageDriver {
                 ACI.aciRecurringDiscover(FUNDRAISING_TEST = "aciRecurringDiscover", fields, driver);
                 ACI.aciRecurringAmex(FUNDRAISING_TEST = "aciRecurringAmex", fields, driver);
                 ACI.aciRecurringACH(FUNDRAISING_TEST = "aciRecurringACH", fields, driver);
+                ACI.aciSingleACH(FUNDRAISING_TEST = "aciSingleACH", fields, driver);
                 break;
             }
             case "F1000": {//PB_F54
