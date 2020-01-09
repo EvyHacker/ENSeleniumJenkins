@@ -2288,7 +2288,7 @@ public class ACI {
         fields.selectPaymentType("ACH");
         fields.selectPayCurrency("USD");
         fields.setCCName("Unit Tester");
-        fields.selectBankAccType("PERSONAL CHECKING");
+        fields.selectBankAccType("PERSONAL SAVINGS");
         fields.setBankAccNumber("031000011");
         fields.setBankRoutingNumber("222371863");
 
@@ -2297,7 +2297,7 @@ public class ACI {
         fields.setRecurStartDate(dtf.format(startDate).toString());
         LocalDate endDate = LocalDate.now().plusYears(1);
         fields.setRecurEndDate(dtf.format(endDate).toString());
-        fields.setRecurFreq("MONTHLY");
+        fields.setRecurFreq("QUARTERLY");
 
         fields.submit();
         fields.waitForPageLoad();
@@ -2342,7 +2342,7 @@ public class ACI {
         fields.selectPaymentType("ACH");
         fields.selectPayCurrency("USD");
         fields.setCCName("Unit Tester");
-        fields.selectBankAccType("PERSONAL SAVINGS");
+        fields.selectBankAccType("PERSONAL CHECKING");
         fields.setBankAccNumber("031000011");
         fields.setBankRoutingNumber("222371863");
 
