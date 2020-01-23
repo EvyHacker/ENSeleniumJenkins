@@ -20,7 +20,7 @@ public class ACI {
         page.ensAuthTest();
 
         //Testing Visa#4120300909000003 test number
-        driver.get("https://politicalnetworks.com/page/12988/donate/1?mode=DEMO");
+        driver.get("https://politicalnetworks.com/page/12988/donate/1");
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
@@ -1116,7 +1116,7 @@ public class ACI {
         fields.setRecurStartDate(dtf.format(startDate).toString());
         LocalDate endDate = LocalDate.now().plusYears(1);
         fields.setRecurEndDate(dtf.format(endDate).toString());
-        fields.setRecurFreq("MONTHLY");
+        fields.setRecurFreq("DAILY");
         fields.setRecurCount("6");
         fields.setRecurPeriod("2");
 
@@ -1165,7 +1165,7 @@ public class ACI {
         fields.setRecurDay("23");
         fields.setRecurStartDate(dtf.format(startDate).toString());
         fields.setRecurEndDate(dtf.format(endDate).toString());
-        fields.setRecurFreq("MONTHLY");
+        fields.setRecurFreq("DAILY");
         fields.setRecurCount("6");
         fields.setRecurPeriod("2");
 
@@ -1468,7 +1468,7 @@ public class ACI {
         fields.setRecurStartDate(dtf.format(startDate).toString());
         LocalDate endDate = LocalDate.now().plusYears(1);
         fields.setRecurEndDate(dtf.format(endDate).toString());
-        fields.setRecurFreq("MONTHLY");
+        fields.setRecurFreq("DAILY");
         fields.setRecurCount("6");
         fields.setRecurPeriod("2");
 
@@ -1566,7 +1566,7 @@ public class ACI {
         fields.setRecurDay("23");
         fields.setRecurStartDate(dtf.format(startDate).toString());
         fields.setRecurEndDate(dtf.format(endDate).toString());
-        fields.setRecurFreq("MONTHLY");
+        fields.setRecurFreq("DAILY");
         fields.setRecurCount("6");
         fields.setRecurPeriod("2");
 
@@ -2267,7 +2267,7 @@ public class ACI {
     public static void aciRecurringACH(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
         page.ensAuthTest();
 
-        driver.get("https://politicalnetworks.com/page/12991/donate/1?mode=DEMO");
+        driver.get("https://politicalnetworks.com/page/12991/donate/1");
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
@@ -2321,7 +2321,7 @@ public class ACI {
 
         page.ensAuthTest();
 
-        driver.get("https://politicalnetworks.com/page/12993/donate/1?mode=DEMO");
+        driver.get("https://politicalnetworks.com/page/12993/donate/1");
 
         fields.selectDonationAmt("10");
         fields.selectTitle("Ms");

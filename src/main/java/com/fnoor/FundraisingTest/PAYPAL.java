@@ -184,7 +184,7 @@ public class PAYPAL {
 //        Assert.assertTrue("Donation amount displayed is incorrect", paypalAmount.contains("$15.00"));
         WebElement paypalContinue = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
-                        (By.id("confirmButtonTop")));
+                        (By.name("payment-submit-btn")));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", paypalContinue);
 //        paypalContinue.submit();

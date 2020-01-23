@@ -152,7 +152,7 @@ public class FundraisingPageDriver {
         switch (testCase) {
 
             case "IATS": {
-              //  IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
+                IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
                 IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring", fields, driver);
                 IATS.IATSACHRecurring(FUNDRAISING_TEST="IATSACHRecurring", fields, driver);
                 IATS.IATSACHRecurPaymenttypelogic(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields, driver);

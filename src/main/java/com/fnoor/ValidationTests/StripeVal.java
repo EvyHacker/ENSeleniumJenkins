@@ -75,7 +75,7 @@ public class StripeVal {
         fields.waitForPageLoad();
         String myStripePaymentsURL = driver.getCurrentUrl();
         Assert.assertTrue("You are not on payments page",
-                myStripePaymentsURL.equals("https://dashboard.stripe.com/test/payments"));
+                myStripePaymentsURL.contains("https://dashboard.stripe.com/test/payments"));
         fields.waitForPageLoad();
         fields.searchStripeOrder(newTxnId);
         fields.waitForPageLoad();
@@ -152,7 +152,7 @@ public class StripeVal {
         fields.waitForPageLoad();
         String myStripePaymentsURL = driver.getCurrentUrl();
         Assert.assertTrue("You are not on payments page",
-                myStripePaymentsURL.equals("https://dashboard.stripe.com/test/payments"));
+                myStripePaymentsURL.contains("https://dashboard.stripe.com/test/payments"));
         fields.waitForPageLoad();
         fields.searchStripeOrder(newTxnId);
         fields.waitForPageLoad();
@@ -257,7 +257,7 @@ public class StripeVal {
         fields.waitForPageLoad();
         String myStripePaymentsURL = driver.getCurrentUrl();
         Assert.assertTrue("You are not on payments page",
-                myStripePaymentsURL.equals("https://dashboard.stripe.com/test/payments"));
+                myStripePaymentsURL.contains("https://dashboard.stripe.com/test/payments"));
         fields.waitForPageLoad();
         fields.searchStripeOrder(newTxnId);
         fields.waitForPageLoad();
@@ -368,7 +368,7 @@ public class StripeVal {
         fields.waitForPageLoad();
         String myStripePaymentsURL = driver.getCurrentUrl();
         Assert.assertTrue("You are not on payments page",
-                myStripePaymentsURL.equals("https://dashboard.stripe.com/test/payments"));
+                myStripePaymentsURL.contains("https://dashboard.stripe.com/test/payments"));
         fields.waitForPageLoad();
         fields.searchStripeOrder(newTxnId);
         fields.waitForPageLoad();
