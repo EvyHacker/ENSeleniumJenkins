@@ -324,6 +324,7 @@ public class MONERIS {
         fields.setEmailAddress(new_email);
 
         fields.submit();
+        fields.waitForPageLoad();
 
         fields.setAddress1("1 Hilltop");
         fields.setCity("Baltimore");

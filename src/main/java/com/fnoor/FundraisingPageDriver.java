@@ -158,10 +158,10 @@ public class FundraisingPageDriver {
                 IATS.IATSACHRecurPaymenttypelogic(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields, driver);
                 break;
             }
-//            case "F100": {//PB_F1
-//                IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
-//                break;
-//            }
+            case "F100": {//PB_F1
+                IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
+                break;
+            }
             case "F101":{//PB_F2
                 IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring", fields, driver);
             }
@@ -187,6 +187,7 @@ public class FundraisingPageDriver {
             }
             case "F202":{//PB_F5
                 WORLDPAY.worldpay3DSecureTest(FUNDRAISING_TEST="worldpay3DSecureTest", fields, driver);
+                break;
             }
             case "F203":{//PB_F31
                 WORLDPAY.worldpay3DRecurring(FUNDRAISING_TEST="worldpay3DRecurring", fields, driver);
@@ -284,7 +285,7 @@ public class FundraisingPageDriver {
             case "RSM":{
                 RSM.rsmSingle(FUNDRAISING_TEST="rsmSingle", fields, driver);
                 RSM.rsmRecurring(FUNDRAISING_TEST="rsmRecurring", fields, driver);
-               // RSM.rsmDirectDebit(FUNDRAISING_TEST="rsmDirectDebit", fields, driver);
+                RSM.rsmDirectDebit(FUNDRAISING_TEST="rsmDirectDebit", fields, driver);
                 RSM.rsm3DSingle(FUNDRAISING_TEST="rsm3DSingle", fields, driver);
                // RSM.rsm3DRecurring(FUNDRAISING_TEST="rsm3DRecurring", fields, driver);
 
@@ -296,16 +297,13 @@ public class FundraisingPageDriver {
             case "F501":{//PB_F15
                 RSM.rsmRecurring(FUNDRAISING_TEST="rsmRecurring", fields, driver);
             }
-           // Transaction has failed; email address throws an error
             case "F502":{//PB_F16
                 RSM.rsmDirectDebit(FUNDRAISING_TEST="rsmDirectDebit", fields, driver);
-                break;
             }
             case "F503":{//PB_F50
                 RSM.rsm3DSingle(FUNDRAISING_TEST="rsm3DSingle", fields, driver);
-                break;
             }
-            // Transaction has failed; email address throws an error
+            // Update email authentication
             case "F504":{//PB_F51
                 RSM.rsm3DRecurring(FUNDRAISING_TEST="rsm3DRecurring", fields, driver);
                 break;
@@ -482,6 +480,29 @@ public class FundraisingPageDriver {
             }
             case "F1010": {//PB_F57
                 ACI.aciSingleACH(FUNDRAISING_TEST = "aciSingleACH", fields, driver);
+                break;
+            }
+            case "ACIGatewayMultiUsers":{
+                ACIMultiUsers.aciSingleVisaMultiUsers(FUNDRAISING_TEST = "aciSingleVisaMultiUsers", fields, driver);
+                ACIMultiUsers.aciSingleMasterCardMultiUsers(FUNDRAISING_TEST = "aciSingleMasterCardMultiUsers", fields, driver);
+                ACIMultiUsers.aciRecurringVisaMultiUsers(FUNDRAISING_TEST = "aciRecurringVisaMultiUsers", fields, driver);
+                ACIMultiUsers.aciRecurringMasterCardMultiUsers(FUNDRAISING_TEST = "aciRecurringMasterCardMultiUsers", fields, driver);
+                break;
+            }
+            case "F1011": {
+                ACIMultiUsers.aciSingleVisaMultiUsers(FUNDRAISING_TEST = "aciSingleVisaMultiUsers", fields, driver);
+                break;
+            }
+            case "F1012": {
+                ACIMultiUsers.aciSingleMasterCardMultiUsers(FUNDRAISING_TEST = "aciSingleMasterCardMultiUsers", fields, driver);
+                break;
+            }
+            case "F1013": {
+                ACIMultiUsers.aciRecurringVisaMultiUsers(FUNDRAISING_TEST = "aciRecurringVisaMultiUsers", fields, driver);
+                break;
+            }
+            case "F1014": {
+                ACIMultiUsers.aciRecurringMasterCardMultiUsers(FUNDRAISING_TEST = "aciRecurringMasterCardMultiUsers", fields, driver);
                 break;
             }
             case "E1": {

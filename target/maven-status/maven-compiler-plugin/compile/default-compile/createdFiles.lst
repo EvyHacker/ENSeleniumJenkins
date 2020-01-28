@@ -9,6 +9,7 @@ com/fnoor/ETT/MultiDatabase.class
 com/fnoor/ETT/HouseCommittees.class
 com/fnoor/FundraisingTest/PAYFLOW.class
 com/fnoor/PageFields.class
+com/fnoor/FundraisingTest/ACIMultiUsers.class
 com/fnoor/FundraisingTest/VANTIV.class
 com/fnoor/FundraisingTest/CBTAPI.class
 com/fnoor/PageFields$1.class

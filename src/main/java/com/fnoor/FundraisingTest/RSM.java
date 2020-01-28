@@ -124,7 +124,7 @@ public class RSM {
         fields.setLastname("Tester");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
-        fields.setEmailAddress(new_email);
+        fields.setEmailAddress("evy@engagingnetworks.net");
         fields.setAddress1("49 Featherstone Street");
         fields.setCity("LONDON");
         fields.setRegion("AYLESBURY");
@@ -135,7 +135,7 @@ public class RSM {
 
         fields.setRecurDay("23");
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate startDate = LocalDate.now().plusDays(1);
+        LocalDate startDate = LocalDate.now().plusDays(14);
         fields.setRecurStartDate(dtf.format(startDate).toString());
         LocalDate endDate = LocalDate.now().plusYears(1);
         fields.setRecurEndDate(dtf.format(endDate).toString());
@@ -234,7 +234,7 @@ public class RSM {
         fields.setLastname("Tester");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
-        fields.setEmailAddress(new_email);
+        fields.setEmailAddress("evy@engagingnetworks.net");
         fields.setAddress1("49 Featherstone Street");
         fields.setCity("LONDON");
         fields.setRegion("AYLESBURY");
@@ -246,7 +246,7 @@ public class RSM {
         fields.selectDonationAmt("15");
         fields.setRecurDay("23");
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate startDate = LocalDate.now().plusDays(1);
+        LocalDate startDate = LocalDate.now().plusDays(14);
         fields.setRecurStartDate(dtf.format(startDate).toString());
         LocalDate endDate = LocalDate.now().plusYears(1);
         fields.setRecurEndDate(dtf.format(endDate).toString());

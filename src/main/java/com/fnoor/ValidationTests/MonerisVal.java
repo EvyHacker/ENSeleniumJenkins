@@ -313,6 +313,8 @@ public class MonerisVal {
         LocalDate endDate = LocalDate.now().plusYears(1);
         fields.setRecurEndDate(dtf.format(endDate).toString());
         fields.setRecurFreq("MONTHLY");
+        fields.setRecurCount("6");
+        fields.setRecurPeriod("23");
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4012001037141112");
         fields.setCCExpiry(new CharSequence[]{"12", "2020"});
@@ -375,10 +377,12 @@ public class MonerisVal {
 //            }
 
 
-        String tableID = driver.findElement(By.tagName("td")).getText();
-        System.out.println("Table: " + tableID);
-        Assert.assertTrue("Card Type is incorrect or not present", tableID.contains("Visa"));
-        Assert.assertTrue("Donation Amount is incorrect or not present", tableID.contains("$20.00"));
+        String cardType = driver.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[3]")).getText();
+        System.out.println("Card: " + cardType);
+        Assert.assertTrue("Card Type is incorrect or not present", cardType.contains("Visa"));
+        String donationAmount = driver.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[6]")).getText();
+        System.out.println("Amount: " + donationAmount);
+        Assert.assertTrue("Donation Amount is incorrect or not present", donationAmount.contains("$20.00"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="moneriseSelectRecurring3DVal", fields);
     }
