@@ -226,7 +226,7 @@ public class FundraisingPageDriver {
             case "F306":{//PB_F43_01
                 PAYPAL.paypalCardinalComRecurring3D(FUNDRAISING_TEST="paypalCardinalComRecurring3D", fields, driver);
             }
-            case "F307":{//PB_F43_01
+            case "F307":{//PB_F44
                 PAYPAL.stripeViaPaypalSingle(FUNDRAISING_TEST="stripeViaPaypalSingle", fields, driver);
                 break;
             }
@@ -287,7 +287,7 @@ public class FundraisingPageDriver {
                 RSM.rsmRecurring(FUNDRAISING_TEST="rsmRecurring", fields, driver);
                 RSM.rsmDirectDebit(FUNDRAISING_TEST="rsmDirectDebit", fields, driver);
                 RSM.rsm3DSingle(FUNDRAISING_TEST="rsm3DSingle", fields, driver);
-               // RSM.rsm3DRecurring(FUNDRAISING_TEST="rsm3DRecurring", fields, driver);
+                RSM.rsm3DRecurring(FUNDRAISING_TEST="rsm3DRecurring", fields, driver);
 
                 break;
             }
@@ -303,7 +303,6 @@ public class FundraisingPageDriver {
             case "F503":{//PB_F50
                 RSM.rsm3DSingle(FUNDRAISING_TEST="rsm3DSingle", fields, driver);
             }
-            // Update email authentication
             case "F504":{//PB_F51
                 RSM.rsm3DRecurring(FUNDRAISING_TEST="rsm3DRecurring", fields, driver);
                 break;
@@ -505,11 +504,21 @@ public class FundraisingPageDriver {
                 ACIMultiUsers.aciRecurringMasterCardMultiUsers(FUNDRAISING_TEST = "aciRecurringMasterCardMultiUsers", fields, driver);
                 break;
             }
+            case "ETT Custom" :{
+                CustomTarget.customTarget1(FUNDRAISING_TEST = "customTarget1", fields, driver);
+                CustomTarget.customTarget2(FUNDRAISING_TEST = "customTarget2", fields, driver);
+                CustomTarget.customTarget3(FUNDRAISING_TEST = "customTarget3", fields, driver);
+                CustomTarget.customTarget4(FUNDRAISING_TEST = "customTarget4", fields, driver);
+                CustomTarget.customTarget5(FUNDRAISING_TEST = "customTarget5", fields, driver);
+                CustomTarget.customTarget6(FUNDRAISING_TEST = "customTarget6", fields, driver);
+                break;
+            }
             case "E1": {
                 CustomTarget.customTarget1(FUNDRAISING_TEST = "customTarget1", fields, driver);
             }
             case "E2": {
                 CustomTarget.customTarget2(FUNDRAISING_TEST = "customTarget2", fields, driver);
+                break;
             }
             case "E3": {
                 CustomTarget.customTarget3(FUNDRAISING_TEST = "customTarget3", fields, driver);
@@ -522,6 +531,18 @@ public class FundraisingPageDriver {
             }
             case "E6": {
                 CustomTarget.customTarget6(FUNDRAISING_TEST = "customTarget6", fields, driver);
+                break;
+            }
+            case "ETT Postal": {
+                PostalDatabase.postalDatabase7(FUNDRAISING_TEST = "postalDatabase7", fields, driver);
+                PostalDatabase.postalDatabase8(FUNDRAISING_TEST = "postalDatabase8", fields, driver);
+                PostalDatabase.postalDatabase9(FUNDRAISING_TEST = "postalDatabase9", fields, driver);
+                PostalDatabase.postalDatabase10(FUNDRAISING_TEST = "postalDatabase10", fields, driver);
+                PostalDatabase.postalDatabase11(FUNDRAISING_TEST = "postalDatabase11", fields, driver);
+                PostalDatabase.postalDatabase12(FUNDRAISING_TEST = "postalDatabase12", fields, driver);
+                PostalDatabase.postalDatabase19(FUNDRAISING_TEST = "postalDatabase19", fields, driver);
+                PostalDatabase.postalDatabase20(FUNDRAISING_TEST = "postalDatabase20", fields, driver);
+                PostalDatabase.postalDatabase21(FUNDRAISING_TEST = "postalDatabase21", fields, driver);
                 break;
             }
             case "E7": {
@@ -541,6 +562,17 @@ public class FundraisingPageDriver {
             }
             case "E12": {
                 PostalDatabase.postalDatabase12(FUNDRAISING_TEST = "postalDatabase12", fields, driver);
+                break;
+            }
+            case "ETT Multi": {
+                MultiDatabase.multiDatabase13(FUNDRAISING_TEST = "multiDatabase13", fields, driver);
+                MultiDatabase.multiDatabase14(FUNDRAISING_TEST = "multiDatabase14", fields, driver);
+                MultiDatabase.multiDatabase15(FUNDRAISING_TEST = "multiDatabase15", fields, driver);
+                MultiDatabase.multiDatabase16(FUNDRAISING_TEST = "multiDatabase16", fields, driver);
+                MultiDatabase.multiDatabase17(FUNDRAISING_TEST = "multiDatabase17", fields, driver);
+                MultiDatabase.multiDatabase18(FUNDRAISING_TEST = "multiDatabase18", fields, driver);
+                MultiDatabase.multiDatabaseCommittees(FUNDRAISING_TEST = "multiDatabaseCommittees", fields, driver);
+                MultiDatabase.multiDatabaseCommitteesEdit(FUNDRAISING_TEST = "multiDatabaseCommitteesEdit", fields, driver);
                 break;
             }
             case "E13": {
@@ -575,6 +607,13 @@ public class FundraisingPageDriver {
             case "E26": {
                 SenateCommittees.senateCommmitteesAK(FUNDRAISING_TEST = "senateCommmitteesAK", fields, driver);
             }
+            case "ETT Senate": {
+                SenateCommittees.senateCommmitteesMD(FUNDRAISING_TEST = "senateCommmitteesMD", fields, driver);
+                SenateCommittees.senateCommmitteesBanking(FUNDRAISING_TEST = "senateCommmitteesBanking", fields, driver);
+                SenateCommittees.senateCommmitteesFL(FUNDRAISING_TEST = "senateCommmitteesFL", fields, driver);
+                SenateCommittees.senateCommmitteesCustTarget(FUNDRAISING_TEST = "senateCommmitteesCustTarget", fields, driver);
+            break;
+            }
             case "E27": {
                 SenateCommittees.senateCommmitteesMD(FUNDRAISING_TEST = "senateCommmitteesMD", fields, driver);
             }
@@ -586,6 +625,14 @@ public class FundraisingPageDriver {
             }
             case "E30": {
                 SenateCommittees.senateCommmitteesCustTarget(FUNDRAISING_TEST = "senateCommmitteesCustTarget", fields, driver);
+            }
+            case "ETT House": {
+                HouseCommittees.houseCommmitteesHI(FUNDRAISING_TEST = "houseCommmitteesHI", fields, driver);
+                HouseCommittees.houseCommmitteesOH(FUNDRAISING_TEST = "houseCommmitteesOH", fields, driver);
+                HouseCommittees.houseCommmitteesCA(FUNDRAISING_TEST = "houseCommmitteesCA", fields, driver);
+                HouseCommittees.houseCommmitteesDefense(FUNDRAISING_TEST = "houseCommmitteesDefense", fields, driver);
+                HouseCommittees.houseCommmitteesCustTarget(FUNDRAISING_TEST = "houseCommmitteesCustTarget", fields, driver);
+                break;
             }
             case "E31": {
                 HouseCommittees.houseCommmitteesHI(FUNDRAISING_TEST = "houseCommmitteesHI", fields, driver);

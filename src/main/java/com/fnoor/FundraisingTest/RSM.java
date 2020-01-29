@@ -288,6 +288,6 @@ public class RSM {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST = "rsm3DRecurring", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST = "evy@engagingnetworks.net", fields);
     }
 }

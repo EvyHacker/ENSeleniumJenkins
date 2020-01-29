@@ -3,16 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e9ec9c8a-8c77-45cd-a867-fdcaf19d3872" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/ETT/CustomTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/ETT/CustomTarget.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/MONERIS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/MONERIS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYFLOW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYFLOW.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/RSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/RSM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/ValidationTests/MonerisVal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/ValidationTests/MonerisVal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/PageFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/PageFields.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/MONERIS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/MONERIS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYFLOW.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYFLOW.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/RSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/RSM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/ValidationTests/MonerisVal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/ValidationTests/MonerisVal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/fnautomation-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/fnautomation-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>

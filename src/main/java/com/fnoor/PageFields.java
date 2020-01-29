@@ -188,6 +188,7 @@ public class PageFields {
     @FindBy(id = "en__field_transaction_honname") WebElement field_honoreeName;
     @FindBy(id = "en__field_transaction_infemail") WebElement field_informEmail;
     @FindBy(id = "en__field_transaction_infname") WebElement field_informName;
+    @FindBy(className = ".en__field__element--checkbox") WebElement field_optIn;
 
     //	Premium gift block fields
     @FindBy(css = ".en__pg__name") WebElement field_premgift_itemname;
@@ -1084,6 +1085,10 @@ public class PageFields {
     public void closeEcardPreview() {
 //		driver.switchTo().frame(0);
         field_preview_ecard_close.click();
+    }
+
+    public void optIn(){
+        field_optIn.click();
     }
 
     ///////////		SET QUESTIONS AND OPT-INS		////////////

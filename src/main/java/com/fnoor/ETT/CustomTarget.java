@@ -24,6 +24,7 @@ public class CustomTarget {
         fields.validateETTContactDetailsLastName("Tester");
         fields.validateETTContactDetailsLastName("Szymczak");
         fields.validateETTContactDetailsOrganization("ENS");
+       // fields.optIn();
 
         fields.validateETTDoubleRotationMessage();
 
