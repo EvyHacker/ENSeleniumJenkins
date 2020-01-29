@@ -504,7 +504,7 @@ public class FundraisingPageDriver {
                 ACIMultiUsers.aciRecurringMasterCardMultiUsers(FUNDRAISING_TEST = "aciRecurringMasterCardMultiUsers", fields, driver);
                 break;
             }
-            case "ETT Custom" :{
+            case "ETTCustom" :{
                 CustomTarget.customTarget1(FUNDRAISING_TEST = "customTarget1", fields, driver);
                 CustomTarget.customTarget2(FUNDRAISING_TEST = "customTarget2", fields, driver);
                 CustomTarget.customTarget3(FUNDRAISING_TEST = "customTarget3", fields, driver);
@@ -533,7 +533,7 @@ public class FundraisingPageDriver {
                 CustomTarget.customTarget6(FUNDRAISING_TEST = "customTarget6", fields, driver);
                 break;
             }
-            case "ETT Postal": {
+            case "ETTPostal": {
                 PostalDatabase.postalDatabase7(FUNDRAISING_TEST = "postalDatabase7", fields, driver);
                 PostalDatabase.postalDatabase8(FUNDRAISING_TEST = "postalDatabase8", fields, driver);
                 PostalDatabase.postalDatabase9(FUNDRAISING_TEST = "postalDatabase9", fields, driver);
@@ -564,7 +564,7 @@ public class FundraisingPageDriver {
                 PostalDatabase.postalDatabase12(FUNDRAISING_TEST = "postalDatabase12", fields, driver);
                 break;
             }
-            case "ETT Multi": {
+            case "ETTMulti": {
                 MultiDatabase.multiDatabase13(FUNDRAISING_TEST = "multiDatabase13", fields, driver);
                 MultiDatabase.multiDatabase14(FUNDRAISING_TEST = "multiDatabase14", fields, driver);
                 MultiDatabase.multiDatabase15(FUNDRAISING_TEST = "multiDatabase15", fields, driver);
@@ -607,7 +607,7 @@ public class FundraisingPageDriver {
             case "E26": {
                 SenateCommittees.senateCommmitteesAK(FUNDRAISING_TEST = "senateCommmitteesAK", fields, driver);
             }
-            case "ETT Senate": {
+            case "ETTSenate": {
                 SenateCommittees.senateCommmitteesMD(FUNDRAISING_TEST = "senateCommmitteesMD", fields, driver);
                 SenateCommittees.senateCommmitteesBanking(FUNDRAISING_TEST = "senateCommmitteesBanking", fields, driver);
                 SenateCommittees.senateCommmitteesFL(FUNDRAISING_TEST = "senateCommmitteesFL", fields, driver);
@@ -626,7 +626,7 @@ public class FundraisingPageDriver {
             case "E30": {
                 SenateCommittees.senateCommmitteesCustTarget(FUNDRAISING_TEST = "senateCommmitteesCustTarget", fields, driver);
             }
-            case "ETT House": {
+            case "ETTHouse": {
                 HouseCommittees.houseCommmitteesHI(FUNDRAISING_TEST = "houseCommmitteesHI", fields, driver);
                 HouseCommittees.houseCommmitteesOH(FUNDRAISING_TEST = "houseCommmitteesOH", fields, driver);
                 HouseCommittees.houseCommmitteesCA(FUNDRAISING_TEST = "houseCommmitteesCA", fields, driver);
