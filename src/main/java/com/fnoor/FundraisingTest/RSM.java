@@ -1,7 +1,14 @@
 package com.fnoor.FundraisingTest;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
+import org.apache.commons.io.IOUtils;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -12,7 +19,39 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import static com.fnoor.PageFields.*;
+import static com.fnoor.PageFields.supporterEmail;
+
 public class RSM {
+
+    public static void getSupporterByEmailRSM(String testId, PageFields fields) throws IOException, InterruptedException {
+        System.out.println("In after class");
+        HttpClient client = HttpClientBuilder.create().build();
+        supporterEmail = fields.createRSMemail(testId);
+
+        HttpGet get = new HttpGet(SERVICE_URL + "/supporter?email=" + supporterEmail);
+        get.setHeader("Content-Type", "application/json");
+        get.setHeader("ens-auth-token", ens_auth_token);
+
+        HttpResponse response = client.execute(get);
+        int status = response.getStatusLine().getStatusCode();
+        if (status != HTTP_STATUS_OK) {
+            throw new IOException("Unable to authenticate. Received invalid http status=" + status);
+        }
+        String jsonResponse = IOUtils.toString(response.getEntity().getContent(), "UTF-8");
+        System.out.println("RESPONSE as String(getSupporterByEmail): " + jsonResponse);
+
+        // use jackson library to pull the string into json objects
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode node = mapper.readTree(jsonResponse);
+        supporterId = node.get("supporterId").asText();
+        supporterEmail = node.get("Email Address").asText();
+        System.out.println("supporterId: " + supporterId);
+
+        System.out.println("status: " + status);
+        System.out.println("SupporterEmail: " + supporterEmail);
+
+    }
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
     private static  String FUNDRAISING_TEST;
@@ -233,8 +272,8 @@ public class RSM {
         fields.setFirstname("Unit");
         fields.setLastname("Tester");
 //		Call the createEmail function
-        String new_email = fields.createEmail(testId);
-        fields.setEmailAddress("evy@engagingnetworks.net");
+        String new_email = fields.createRSMemail(testId);
+        fields.setEmailAddress(new_email);
         fields.setAddress1("49 Featherstone Street");
         fields.setCity("LONDON");
         fields.setRegion("AYLESBURY");
@@ -288,6 +327,6 @@ public class RSM {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST = "evy@engagingnetworks.net", fields);
+        getSupporterByEmailRSM(FUNDRAISING_TEST = "rsm3DRecurring", fields);
     }
 }

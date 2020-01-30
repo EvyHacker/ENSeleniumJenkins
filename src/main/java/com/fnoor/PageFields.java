@@ -710,6 +710,11 @@ public class PageFields {
         return email;
     }
 
+    public String createRSMemail(String testID){
+        String email = testID + "@engagingnetworks.net";
+        return email;
+    }
+
     public String createETTEmail(String testID) {
         LocalDate date = LocalDate.now();
         String email = "ETT_"+ testID + "_" + date.toString() + "@restmail.net";
