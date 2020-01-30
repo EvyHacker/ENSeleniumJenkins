@@ -842,6 +842,27 @@ public class PageFields {
         }
     }
 
+    public String getCity() {
+        if (field_City.getText()!= null) {
+            return field_City.getAttribute("value");
+        }
+        return null;
+    }
+
+    public String getRegion() {
+        if (field_Region.getText()!= null) {
+            return field_Region.getAttribute("value");
+        }
+        return null;
+    }
+
+    public String getPostcode() {
+        if (field_Postcode.getText()!= null) {
+            return field_Postcode.getAttribute("value");
+        }
+        return null;
+    }
+
     public void checkRecurringPaymentchkbox(WebDriver driver) {
         if ( !driver.findElement(By.id("en__field_transaction_recurrpay")).isSelected() )
         {

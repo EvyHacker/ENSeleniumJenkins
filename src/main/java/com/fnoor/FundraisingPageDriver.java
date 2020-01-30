@@ -4,6 +4,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fnoor.ETT.*;
 import com.fnoor.FundraisingTest.*;
+import com.fnoor.Redirects.PB_B1_PETDON_P1;
+import com.fnoor.Redirects.PB_B2_PETDON_P2;
+import com.fnoor.Redirects.PB_B3_INMEMDON;
+import com.fnoor.Standalone.*;
 import com.fnoor.ValidationTests.MonerisVal;
 import com.fnoor.ValidationTests.PaySafeVal;
 import com.fnoor.ValidationTests.StripeVal;
@@ -655,6 +659,78 @@ public class FundraisingPageDriver {
             }
             case "E37": {
                 MultiDatabase.multiDatabaseCommitteesEdit(FUNDRAISING_TEST = "multiDatabaseCommitteesEdit", fields, driver);
+                break;
+            }
+            case "Standalone": {
+                PB_A1_PET.petition(FUNDRAISING_TEST = "petition", fields, driver);
+                PB_A2_DCF.dataCapture(FUNDRAISING_TEST = "dataCapture", fields, driver);
+                PB_A3_DCF2.dataCapture2(FUNDRAISING_TEST = "dataCapture2", fields, driver);
+                PB_A4_ETT1.customTarget(FUNDRAISING_TEST = "customTarget", fields, driver);
+                PB_A5_ETT2.singleDBETT(FUNDRAISING_TEST = "singleDBETT", fields, driver);
+                PB_A8_EMS.signUp(FUNDRAISING_TEST = "signUp", fields, driver);
+                PB_A9_ECF.ecardValidation(FUNDRAISING_TEST = "ecardValidation", fields, driver);
+                PB_A10_TWT1.tweetCustomTarget(FUNDRAISING_TEST = "tweetCustomTarget", fields, driver);
+                PB_A11_TWT2.singleDB(FUNDRAISING_TEST = "sungleDB", fields, driver);
+                PB_A12_TWT3.multiDB(FUNDRAISING_TEST = "multiDB", fields, driver);
+                PB_A13_ECS.event(FUNDRAISING_TEST= "event", fields, driver);
+                PB_A15_PTM.premiumDonationSingle(FUNDRAISING_TEST = "premiumDonationSingle", fields, driver);
+                PB_A16_ETM.ecommerceSymbolicGift(FUNDRAISING_TEST = "ecommerceSymbolicGift", fields, driver);
+                break;
+            }
+            case "A1": {
+                PB_A1_PET.petition(FUNDRAISING_TEST = "petition", fields, driver);
+            }
+            case "A2": {
+                PB_A2_DCF.dataCapture(FUNDRAISING_TEST = "dataCapture", fields, driver);
+            }
+            case "A3": {
+                PB_A3_DCF2.dataCapture2(FUNDRAISING_TEST = "dataCapture2", fields, driver);
+            }
+            case "A4": {
+                PB_A4_ETT1.customTarget(FUNDRAISING_TEST = "customTarget", fields, driver);
+            }
+            case "A5": {
+                PB_A5_ETT2.singleDBETT(FUNDRAISING_TEST = "singleDBETT", fields, driver);
+            }
+            case "A8": {
+                PB_A8_EMS.signUp(FUNDRAISING_TEST = "signUp", fields, driver);
+            }
+            case "A9": {
+                PB_A9_ECF.ecardValidation(FUNDRAISING_TEST = "ecardValidation", fields, driver);
+            }
+            case "A10": {
+                PB_A10_TWT1.tweetCustomTarget(FUNDRAISING_TEST = "tweetCustomTarget", fields, driver);
+            }
+            case "A11": {
+                PB_A11_TWT2.singleDB(FUNDRAISING_TEST = "singleDB", fields, driver);
+            }
+            case "A12": {
+                PB_A12_TWT3.multiDB(FUNDRAISING_TEST = "multiDB", fields, driver);
+            }
+            case "A13": {
+                PB_A13_ECS.event(FUNDRAISING_TEST = "event", fields, driver);
+            }
+            case "A15": {
+                PB_A15_PTM.premiumDonationSingle(FUNDRAISING_TEST = "premiumDonationSingle", fields, driver);
+            }
+            case "A16": {
+                PB_A16_ETM.ecommerceSymbolicGift(FUNDRAISING_TEST = "ecommerceSymbolicGift", fields, driver);
+                break;
+            }
+            case "Redirects": {
+                PB_B1_PETDON_P1.petition2DonationP1(FUNDRAISING_TEST = "petition2DonationP1", fields, driver);
+                PB_B2_PETDON_P2.petition2DonationP2(FUNDRAISING_TEST = "petition2DonationP2", fields, driver);
+                PB_B3_INMEMDON.inMemoriamDonation(FUNDRAISING_TEST = "inMemoriamDonation", fields, driver);
+                break;
+            }
+            case "B1": {
+                PB_B1_PETDON_P1.petition2DonationP1(FUNDRAISING_TEST = "petition2DonationP1", fields, driver);
+            }
+            case "B2": {
+                PB_B2_PETDON_P2.petition2DonationP2(FUNDRAISING_TEST = "petition2DonationP2", fields, driver);
+            }
+            case "B3": {
+                PB_B3_INMEMDON.inMemoriamDonation(FUNDRAISING_TEST = "inMemoriamDonation", fields, driver);
                 break;
             }
             default: {
