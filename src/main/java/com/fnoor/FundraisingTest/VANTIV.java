@@ -44,10 +44,11 @@ public class VANTIV {
 
         fields.submit();
 
-
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/871/donate/3"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -59,6 +60,7 @@ public class VANTIV {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VI"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="vantivSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="vantivSingle", fields);
     }
 
     public static void vantivRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -98,10 +100,11 @@ public class VANTIV {
 
         fields.submit();
 
-
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/848/donate/2"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -113,6 +116,7 @@ public class VANTIV {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VI"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="vantivRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="vantivRecurring", fields);
     }
 
 
@@ -160,6 +164,8 @@ public class VANTIV {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/872/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3528"));
@@ -170,6 +176,7 @@ public class VANTIV {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Checking"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="vantiveCheck", fields);
+        page.getSupporterById(FUNDRAISING_TEST="vantiveCheck", fields);
     }
 
     public static void vantivSingleAcheft(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -201,6 +208,8 @@ public class VANTIV {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12640/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8337"));
@@ -211,6 +220,7 @@ public class VANTIV {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Checking"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="vantivSingleAcheft", fields);
+        page.getSupporterById(FUNDRAISING_TEST="vantivSingleAcheft", fields);
     }
 
     public static void vantivRecurringAcheft(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -246,8 +256,10 @@ public class VANTIV {
         fields.setBankRoutingNumber("011075150");
         fields.submit();
 
-        String myurl1 = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12640/donate/3"));
+        Assert.assertTrue("Urls are not the same",
+                driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12640/donate/3"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -259,5 +271,6 @@ public class VANTIV {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Checking"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="vantivRecurringAcheft", fields);
+        page.getSupporterById(FUNDRAISING_TEST="vantivRecurringAcheft", fields);
     }
 }

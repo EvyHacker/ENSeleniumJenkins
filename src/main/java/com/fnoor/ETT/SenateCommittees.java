@@ -109,7 +109,7 @@ public class SenateCommittees {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "senateCommmitteesAK", fields);
+        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "senateCommmitteesMD", fields);
     }
 
     //Banking, Housing, and Urban Affairs

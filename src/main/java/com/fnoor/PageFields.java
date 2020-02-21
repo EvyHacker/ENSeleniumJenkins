@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class PageFields {
 
@@ -30,6 +31,7 @@ public class PageFields {
     public static String ens_auth_token;
     public static String supporterEmail;
     public static String supporterId;
+    public static String supporterTaxId;
     public static String subjectETT;
 
     public static final String ENHome = "https://politicalnetworks.com/ea-account/index.jsp";
@@ -60,82 +62,139 @@ public class PageFields {
     public static final String PAYSAFEPASSWORD = "Engage18!";
 
     //  Personal Details Fields //
-    @FindBy(id = "en__field_supporter_firstName") WebElement field_Firstname;
-    @FindBy(id = "en__field_supporter_lastName") WebElement field_Lastname;
-    @FindBy(id = "en__field_supporter_title") WebElement field_Title;
-    @FindBy(id = "en__field_supporter_emailAddress") WebElement field_EmailAddress;
+    @FindBy(id = "en__field_supporter_firstName")
+    WebElement field_Firstname;
+    @FindBy(id = "en__field_supporter_lastName")
+    WebElement field_Lastname;
+    @FindBy(id = "en__field_supporter_title")
+    WebElement field_Title;
+    @FindBy(id = "en__field_supporter_emailAddress")
+    WebElement field_EmailAddress;
 
     //	Address Fields //
-    @FindBy(id = "en__field_supporter_address1") WebElement field_Address1;
-    @FindBy(id = "en__field_supporter_address2") WebElement field_Address2;
-    @FindBy(id = "en__field_supporter_city") WebElement field_City;
-    @FindBy(id = "en__field_supporter_region") WebElement field_Region;
-    @FindBy(id = "en__field_supporter_postcode") WebElement field_Postcode;
-    @FindBy(id = "en__field_supporter_country") WebElement field_Country;
+    @FindBy(id = "en__field_supporter_address1")
+    WebElement field_Address1;
+    @FindBy(id = "en__field_supporter_address2")
+    WebElement field_Address2;
+    @FindBy(id = "en__field_supporter_city")
+    WebElement field_City;
+    @FindBy(id = "en__field_supporter_region")
+    WebElement field_Region;
+    @FindBy(id = "en__field_supporter_postcode")
+    WebElement field_Postcode;
+    @FindBy(id = "en__field_supporter_country")
+    WebElement field_Country;
 
     //  Other Fields //
-    @FindBy(id = "en__field_transaction_othamt1") WebElement field_OtherAmt1;
-    @FindBy(id = "en__field_transaction_othamt2") WebElement field_OtherAmt2;
-    @FindBy(id = "en__field_transaction_othamt3") WebElement field_OtherAmt3;
-    @FindBy(id = "en__field_transaction_othamt4") WebElement field_OtherAmt4;
-    @FindBy(id = "en__field_supporter_appealCode") WebElement field_Appealcode;
-    @FindBy(id = "en__field_transaction_dirgift") WebElement field_Directgift;
-    @FindBy(id = "en__field_transaction_comments") WebElement field_Addcomments;
-    @FindBy(id = "en__field_transaction_taxdeductible") WebElement field_Taxdeductible;
-    @FindBy(id = "en__field_supporter_phoneNumber") WebElement field_phonenum;
+    @FindBy(id = "en__field_transaction_othamt1")
+    WebElement field_OtherAmt1;
+    @FindBy(id = "en__field_transaction_othamt2")
+    WebElement field_OtherAmt2;
+    @FindBy(id = "en__field_transaction_othamt3")
+    WebElement field_OtherAmt3;
+    @FindBy(id = "en__field_transaction_othamt4")
+    WebElement field_OtherAmt4;
+    @FindBy(id = "en__field_supporter_appealCode")
+    WebElement field_Appealcode;
+    @FindBy(id = "en__field_transaction_dirgift")
+    WebElement field_Directgift;
+    @FindBy(id = "en__field_transaction_comments")
+    WebElement field_Addcomments;
+    @FindBy(id = "en__field_transaction_taxdeductible")
+    WebElement field_Taxdeductible;
+    @FindBy(id = "en__field_supporter_phoneNumber")
+    WebElement field_phonenum;
 
     //	Payment Fields //
-    @FindBy(id = "en__field_transaction_ccnumber") WebElement field_CCNumber;
-    @FindBy(id = "en__field_supporter_creditCardHolderName") WebElement field_CCName;
-    @FindBy(id = "en__field_supporter_bankAccountType") WebElement field_BankAccType;
-    @FindBy(id = "en__field_supporter_bankAccountNumber") WebElement field_BankAccNumber;
-    @FindBy(id = "en__field_supporter_bankRoutingNumber") WebElement field_BankRoutingNumber;
-    @FindBy(id = "en__field_transaction_donationAmt") WebElement field_DonationAmt;
-    @FindBy(id = "en__field_transaction_paymenttype") WebElement field_PaymentType;
-    @FindBy(id = "en__field_transaction_paycurrency") WebElement field_PaymentCurrency;
-    @FindBys(value = @FindBy(name = "transaction.ccexpire")) List<WebElement> field_CCExpirySplit;
-    @FindBy(id = "en__field_transaction_ccvv") WebElement field_CCV;
-    @FindBy(id = "en__field_transaction_recurrpay") WebElement field_RecurSinglePaychkbox;
-    @FindBy(id = "en__field_transaction_recurrpay0") WebElement field_RecurPaychkbox;
-    @FindBy(id = "en__field_transaction_recurrpay1") WebElement field_No_RecurPaychebox;
-    @FindBy(id = "en__field_transaction_recurrday") WebElement field_RecurDay;
-    @FindBy(id = "en__field_transaction_recurrstart")WebElement field_RecurStart;
-    @FindBy(id = "en__field_transaction_recurrend") WebElement field_RecurEnd;
-    @FindBy(id = "en__field_transaction_recurrfreq") WebElement field_RecurFreq;
-    @FindBy(id = "en__field_transaction_recurrcnt") WebElement field_RecurCount;
-    @FindBy(id = "en__field_transaction_recurprd") WebElement field_RecurPeriod;
-    @FindBy(css = ".en__submit button") WebElement field_Submit;
+    @FindBy(id = "en__field_transaction_ccnumber")
+    WebElement field_CCNumber;
+    @FindBy(id = "en__field_supporter_creditCardHolderName")
+    WebElement field_CCName;
+    @FindBy(id = "en__field_supporter_bankAccountType")
+    WebElement field_BankAccType;
+    @FindBy(id = "en__field_supporter_bankAccountNumber")
+    WebElement field_BankAccNumber;
+    @FindBy(id = "en__field_supporter_bankRoutingNumber")
+    WebElement field_BankRoutingNumber;
+    @FindBy(id = "en__field_transaction_donationAmt")
+    WebElement field_DonationAmt;
+    @FindBy(id = "en__field_transaction_paymenttype")
+    WebElement field_PaymentType;
+    @FindBy(id = "en__field_transaction_paycurrency")
+    WebElement field_PaymentCurrency;
+    @FindBys(value = @FindBy(name = "transaction.ccexpire"))
+    List<WebElement> field_CCExpirySplit;
+    @FindBy(id = "en__field_transaction_ccvv")
+    WebElement field_CCV;
+    @FindBy(id = "en__field_transaction_recurrpay")
+    WebElement field_RecurSinglePaychkbox;
+    @FindBy(id = "en__field_transaction_recurrpay0")
+    WebElement field_RecurPaychkbox;
+    @FindBy(id = "en__field_transaction_recurrpay1")
+    WebElement field_No_RecurPaychebox;
+    @FindBy(id = "en__field_transaction_recurrday")
+    WebElement field_RecurDay;
+    @FindBy(id = "en__field_transaction_recurrstart")
+    WebElement field_RecurStart;
+    @FindBy(id = "en__field_transaction_recurrend")
+    WebElement field_RecurEnd;
+    @FindBy(id = "en__field_transaction_recurrfreq")
+    WebElement field_RecurFreq;
+    @FindBy(id = "en__field_transaction_recurrcnt")
+    WebElement field_RecurCount;
+    @FindBy(id = "en__field_transaction_recurprd")
+    WebElement field_RecurPeriod;
+    @FindBy(css = ".en__submit button")
+    WebElement field_Submit;
 
     //   Supporter Transaction Details //
-    @FindBy(id = "searchForm-q") WebElement field_SearchSupporter;
-    @FindBy(className = "btn-go") WebElement field_SearchSupporterButton;
-    @FindBy(className = "icon--search--color") WebElement field_SelectSupporter;
+    @FindBy(id = "searchForm-q")
+    WebElement field_SearchSupporter;
+    @FindBy(className = "btn-go")
+    WebElement field_SearchSupporterButton;
+    @FindBy(className = "icon--search--color")
+    WebElement field_SelectSupporter;
     @FindBy(css = ".gadget__transactionHistory__transaction__field.gadget__transactionHistory__transaction__field__name")
     List<WebElement> field_TransactionDetails;
     @FindBy(css = "gadget__singleDonations__transaction__row")
     List<WebElement> field_SupporterDetailsList;
     // @FindBy(className = "gadget__transactionHistory__transactionDetail__row__field") List<WebElement> txn_details;
-    @FindBy(css = ".gadget__transactionHistory__transactionDetail") WebElement field_AllTransactionDetails;
-    @FindBy(linkText = "Data & Reports") WebElement field_DataReports;
+    @FindBy(css = ".gadget__transactionHistory__transactionDetail")
+    WebElement field_AllTransactionDetails;
+    @FindBy(linkText = "Data & Reports")
+    WebElement field_DataReports;
 
     //  Paypal login details
-    @FindBy(name = "login_email") WebElement field_Paypal_loginemail;
-    @FindBy(name = "login_password") WebElement field_Paypal_loginpassword;
-    @FindBy(id = "btnNext") WebElement field_Paypal_Next;
-    @FindBy(id = "btnLogin") WebElement field_Paypal_Login;
-    @FindBy(xpath = "//a[@id='createAccount']") WebElement field_Paypal_CreateAcc;
-    @FindBy(id = "confirmButtonTop") WebElement field_Paypal_Confirm;
-    @FindBy(id = "paypalLogo") WebElement field_paypal_Logo;
-    @FindBy(id = "createAccount") WebElement paypalCreateAccount;
+    @FindBy(name = "login_email")
+    WebElement field_Paypal_loginemail;
+    @FindBy(name = "login_password")
+    WebElement field_Paypal_loginpassword;
+    @FindBy(id = "btnNext")
+    WebElement field_Paypal_Next;
+    @FindBy(id = "btnLogin")
+    WebElement field_Paypal_Login;
+    @FindBy(xpath = "//a[@id='createAccount']")
+    WebElement field_Paypal_CreateAcc;
+    @FindBy(id = "confirmButtonTop")
+    WebElement field_Paypal_Confirm;
+    @FindBy(id = "paypalLogo")
+    WebElement field_paypal_Logo;
+    @FindBy(id = "createAccount")
+    WebElement paypalCreateAccount;
 
     // Login Fields //
-    @FindBy(id = "enLoginUsername") WebElement field_Username;
-    @FindBy(id = "enLoginPassword") WebElement field_Password;
-    @FindBy(xpath = "//button[@class='button button--login']") WebElement field_Submit1;
+    @FindBy(id = "enLoginUsername")
+    WebElement field_Username;
+    @FindBy(id = "enLoginPassword")
+    WebElement field_Password;
+    @FindBy(xpath = "//button[@class='button button--login']")
+    WebElement field_Submit1;
 
     //3D login
-    @FindBy(id = "test-source-authorize-3ds") WebElement stripe3D_Complete;
-    @FindBy(css = ".txnID") WebElement txn_id;
+    @FindBy(id = "test-source-authorize-3ds")
+    WebElement stripe3D_Complete;
+    @FindBy(css = ".txnID")
+    WebElement txn_id;
 
     //  Moneris login and dashboard details
     @FindBy(xpath = "/html[1]/body[1]/div[1]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/form[1]/table[1]/tbody[1]/tr[4]/td[2]/input[1]")
@@ -144,127 +203,215 @@ public class PageFields {
     WebElement field_Store_Moneris;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/form[1]/table[1]/tbody[1]/tr[6]/td[2]/input[1]")
     WebElement field_Password_Moneris;
-    @FindBy(name = "do_login") WebElement field_Moneris_Submit;
-    @FindBy(name = "forgot_pass") WebElement field_Moneris_ForgotPass;
+    @FindBy(name = "do_login")
+    WebElement field_Moneris_Submit;
+    @FindBy(name = "forgot_pass")
+    WebElement field_Moneris_ForgotPass;
     @FindBy(xpath = "//td[contains(text(),'ORDER ID')]")
     public List<WebElement> field_Order_ID;
 
     // PaySafe login and dashboard details
-    @FindBy(id = "j_username") WebElement field_Username_Paysafe;
-    @FindBy(id = "j_password") WebElement field_Password_Paysafe;
-    @FindBy(id = "loginBtn") WebElement field_Login_Paysafe;
-    @FindBy(xpath = "//a[contains(text(),'Forgot your password?')]") WebElement field_ForgotPass_Paysafe;
-    @FindBy(id = "_menuReports") WebElement field_Reports_PaySafe;
-    @FindBy(id = "btnSearch") WebElement field_GenerateSummaryPyaSafe;
-    @FindBy(xpath = "//a[contains(text(),'Fully Settled')]") WebElement field_TransactionPaysafe;
-    @FindBy(xpath = " //a[contains(text(),'Engagingnetworks')]") WebElement field_AccountPaysafe;
-    @FindBy(id = "rowsPerPage") WebElement field_selectRowsPerPage;
+    @FindBy(id = "j_username")
+    WebElement field_Username_Paysafe;
+    @FindBy(id = "j_password")
+    WebElement field_Password_Paysafe;
+    @FindBy(id = "loginBtn")
+    WebElement field_Login_Paysafe;
+    @FindBy(xpath = "//a[contains(text(),'Forgot your password?')]")
+    WebElement field_ForgotPass_Paysafe;
+    @FindBy(id = "_menuReports")
+    WebElement field_Reports_PaySafe;
+    @FindBy(id = "btnSearch")
+    WebElement field_GenerateSummaryPyaSafe;
+    @FindBy(xpath = "//a[contains(text(),'Fully Settled')]")
+    WebElement field_TransactionPaysafe;
+    @FindBy(xpath = " //a[contains(text(),'Engagingnetworks')]")
+    WebElement field_AccountPaysafe;
+    @FindBy(id = "rowsPerPage")
+    WebElement field_selectRowsPerPage;
 
     //   Stripe validation details   //
-    @FindBy(id = "email") WebElement field_UsernameStripe;
-    @FindBy(id = "password") WebElement field_PasswordStripe;
-    @FindBy(css = ".button.blue") WebElement field_SubmitStripe;
-    @FindBy(xpath = "//span[contains(text(),'Description')]") List<WebElement> field_StripeTransactions;
-    @FindBy(css = ".Padding-all--8") WebElement field_StripeTransactionId;
-    @FindBy(xpath = "//span[contains(text(),'Forgot your password?')]") WebElement field_ForgotPassword_Stripe;
+    @FindBy(id = "email")
+    WebElement field_UsernameStripe;
+    @FindBy(name = "password")
+    WebElement field_PasswordStripe;
+    @FindBy(xpath = "//button[@type=\"submit\"]")
+    WebElement field_SubmitStripe;
+    @FindBy(xpath = "//span[contains(text(),'Description')]")
+    List<WebElement> field_StripeTransactions;
+    @FindBy(css = ".Padding-all--8")
+    WebElement field_StripeTransactionId;
+    @FindBy(xpath = "//span[contains(text(),'Forgot your password?')]")
+    WebElement field_ForgotPassword_Stripe;
 
     //	Ecommerce Symbolic Gift Fields  //
-    @FindBy(css = ".en__ecfeature__link>a") WebElement field_featuredprod;
-    @FindBy(css = ".en__component.en__component--ecfeature") WebElement field_featureblock;
-    @FindBy(css = ".en__component.en__component--ecfeaturelist") WebElement field_featurelist;
-    @FindBy(css = ".en__ecnav__list.en__ecnav__list--main li:nth-of-type(2)") WebElement field_nav_cart;
-    @FindBy(css = ".en__ecnav__list.en__ecnav__list--main li:nth-of-type(1)") WebElement field_nav_home;
-    @FindBy(css = ".en__ecnav__list.en__ecnav__list--main li:nth-of-type(3)") WebElement field_cart;
-    @FindBy(css = ".en__productList") WebElement field_ecom_prodlist;
-    @FindBy(name = "ec.product.quantity") WebElement field_ecom_prodquantity;
-    @FindBy(css = "button[class='en__button']") WebElement field_ecom_addProd;
-    @FindBy(css = ".en__component--eccheckout__emptyMessage>p") WebElement field_ecom_emptyCartMsg;
-    @FindBy(css = ".en__button.en__component--eccheckout__continue") WebElement field_ecom_continueShopping;
-    @FindBy(css = ".en__ecnav__cartCount>span") WebElement field_ecom_cartCount;
-    @FindBy(css = ".en__component--eccheckout__submit.en__button") WebElement field_ecom_checkout;
-    @FindBy(css = "#en__field__method00") WebElement field_ecom_deliverymethod;
-    @FindBy(css = "#en__field__message00") WebElement fields_econ_personal_message;
-    @FindBy(id = "en__field_transaction_inmem") WebElement field_InMemoriam;
-    @FindBy(id = "en__field_transaction_honname") WebElement field_honoreeName;
-    @FindBy(id = "en__field_transaction_infemail") WebElement field_informEmail;
-    @FindBy(id = "en__field_transaction_infname") WebElement field_informName;
-    @FindBy(className = ".en__field__element--checkbox") WebElement field_optIn;
+    @FindBy(css = ".en__ecfeature__link>a")
+    WebElement field_featuredprod;
+    @FindBy(css = ".en__component.en__component--ecfeature")
+    WebElement field_featureblock;
+    @FindBy(css = ".en__component.en__component--ecfeaturelist")
+    WebElement field_featurelist;
+    @FindBy(css = ".en__ecnav__list.en__ecnav__list--main li:nth-of-type(2)")
+    WebElement field_nav_cart;
+    @FindBy(css = ".en__ecnav__list.en__ecnav__list--main li:nth-of-type(1)")
+    WebElement field_nav_home;
+    @FindBy(css = ".en__ecnav__list.en__ecnav__list--main li:nth-of-type(3)")
+    WebElement field_cart;
+    @FindBy(css = ".en__productList")
+    WebElement field_ecom_prodlist;
+    @FindBy(name = "ec.product.quantity")
+    WebElement field_ecom_prodquantity;
+    @FindBy(css = "button[class='en__button']")
+    WebElement field_ecom_addProd;
+    @FindBy(css = ".en__component--eccheckout__emptyMessage>p")
+    WebElement field_ecom_emptyCartMsg;
+    @FindBy(css = ".en__button.en__component--eccheckout__continue")
+    WebElement field_ecom_continueShopping;
+    @FindBy(css = ".en__ecnav__cartCount>span")
+    WebElement field_ecom_cartCount;
+    @FindBy(css = ".en__component--eccheckout__submit.en__button")
+    WebElement field_ecom_checkout;
+    @FindBy(css = "#en__field__method00")
+    WebElement field_ecom_deliverymethod;
+    @FindBy(css = "#en__field__message00")
+    WebElement fields_econ_personal_message;
+    @FindBy(id = "en__field_transaction_inmem")
+    WebElement field_InMemoriam;
+    @FindBy(id = "en__field_transaction_honname")
+    WebElement field_honoreeName;
+    @FindBy(id = "en__field_transaction_infemail")
+    WebElement field_informEmail;
+    @FindBy(id = "en__field_transaction_infname")
+    WebElement field_informName;
+    @FindBy(className = ".en__field__element--checkbox")
+    WebElement field_optIn;
 
     //	Premium gift block fields
-    @FindBy(css = ".en__pg__name") WebElement field_premgift_itemname;
-    @FindBy(css = ".en__pgList") WebElement field_premgift_itemlist;
+    @FindBy(css = ".en__pg__name")
+    WebElement field_premgift_itemname;
+    @FindBy(css = ".en__pgList")
+    WebElement field_premgift_itemlist;
 
     //  Event Fields   //
-    @FindBy(css = ".en__ticketBlock") WebElement field_event_block;
-    @FindBy(css = ".en__ticket__field.en__ticket__field--info") WebElement field_event_tktinfo;
-    @FindBy(css = ".en__ticket__field.en__ticket__field--cost") WebElement field_event_tktcost;
+    @FindBy(css = ".en__ticketBlock")
+    WebElement field_event_block;
+    @FindBy(css = ".en__ticket__field.en__ticket__field--info")
+    WebElement field_event_tktinfo;
+    @FindBy(css = ".en__ticket__field.en__ticket__field--cost")
+    WebElement field_event_tktcost;
     //	@FindBy(css = ".en__ticket__field.en__ticket__field--quantity") WebElement field_event_tktquantity;
-    @FindBy(css = ".en__ticket__quantity") WebElement field_event_tktquantity;
-    @FindBy(css = ".en__ticket__minus") WebElement field_event_tktminus;
-    @FindBy(css = ".en__ticket__plus") WebElement field_event_tktplus;
-    @FindBy(css = ".en__additional__input") WebElement field_event_additionalamt;
-    @FindBy(css = ".en__additional__promo") WebElement field_event_promo;
-    @FindBy(css = ".en__ticketSummary__checkout") WebElement field_event_checkout;
+    @FindBy(css = ".en__ticket__quantity")
+    WebElement field_event_tktquantity;
+    @FindBy(css = ".en__ticket__minus")
+    WebElement field_event_tktminus;
+    @FindBy(css = ".en__ticket__plus")
+    WebElement field_event_tktplus;
+    @FindBy(css = ".en__additional__input")
+    WebElement field_event_additionalamt;
+    @FindBy(css = ".en__additional__promo")
+    WebElement field_event_promo;
+    @FindBy(css = ".en__ticketSummary__checkout")
+    WebElement field_event_checkout;
 
     // Order summary details //
-    @FindBy(css = ".en__orderSummary__data.en__orderSummary__data--cost") WebElement field_event_tktamt;
-    @FindBy(css = ".en__orderSummary__data.en__orderSummary__data--totalAmount") WebElement field_event_additionaldonatn;
-    @FindBy(css = ".en__orderSummary__data.en__orderSummary__data--totalAmount") WebElement field_event_totalamt;
+    @FindBy(css = ".en__orderSummary__data.en__orderSummary__data--cost")
+    WebElement field_event_tktamt;
+    @FindBy(css = ".en__orderSummary__data.en__orderSummary__data--totalAmount")
+    WebElement field_event_additionaldonatn;
+    @FindBy(css = ".en__orderSummary__data.en__orderSummary__data--totalAmount")
+    WebElement field_event_totalamt;
 
     //  ETT and TWT Fields //
-    @FindBy(css = ".en__contact__detail") WebElement field_Targetblock;
-    @FindBy(css = ".en__contactMessage--typePlainText") WebElement field_Targetmessageblock;
-    @FindBy(css = ".en__tweetContact") WebElement field_Tweetblock;
-    @FindBy(css = ".en__tweetButton__send>a[href]") WebElement field_Tweetbutton;
+    @FindBy(css = ".en__contact__detail")
+    WebElement field_Targetblock;
+    @FindBy(css = ".en__contactMessage--typePlainText")
+    WebElement field_Targetmessageblock;
+    @FindBy(css = ".en__tweetContact")
+    WebElement field_Tweetblock;
+    @FindBy(css = ".en__tweetButton__send>a[href]")
+    WebElement field_Tweetbutton;
 
     //  Ecard fields //
-    @FindBy(css = ".en__ecarditems__thumb.thumb--active") WebElement field_ecard_thumbnail;
-    @FindBy(css = ".en__ecardmessage__default") WebElement field_ecard_personal_msg;
-    @FindBy(css = ".en__ecardrecipients__name>input") WebElement field_ecard_friendname;
-    @FindBy(css = ".en__ecardrecipients__email>input") WebElement field_ecard_friendemail;
-    @FindBy(css = ".en__ecarditems__button.en__ecarditems__addrecipient") WebElement field_ecard_addrecipient;
-    @FindBy(css = "en__ecardrecipients__list") WebElement field_ecard_recipientlist;
-    @FindBy(css = ".en__ecarditems__button.en__ecarditems__showprev") WebElement field_preview_ecard;
-    @FindBy(css = ".en__ecarditems__prevclose") WebElement field_preview_ecard_close;
+    @FindBy(css = ".en__ecarditems__thumb.thumb--active")
+    WebElement field_ecard_thumbnail;
+    @FindBy(css = ".en__ecardmessage__default")
+    WebElement field_ecard_personal_msg;
+    @FindBy(css = ".en__ecardrecipients__name>input")
+    WebElement field_ecard_friendname;
+    @FindBy(css = ".en__ecardrecipients__email>input")
+    WebElement field_ecard_friendemail;
+    @FindBy(css = ".en__ecarditems__button.en__ecarditems__addrecipient")
+    WebElement field_ecard_addrecipient;
+    @FindBy(css = "en__ecardrecipients__list")
+    WebElement field_ecard_recipientlist;
+    @FindBy(css = ".en__ecarditems__button.en__ecarditems__showprev")
+    WebElement field_preview_ecard;
+    @FindBy(css = ".en__ecarditems__prevclose")
+    WebElement field_preview_ecard_close;
 
     //	Questions	//
-    @FindBy(id = "en__field_supporter_questions_21190") WebElement field_question_1;
-    @FindBy(css = ".en__field--21191") WebElement field_catsordogs;
-    @FindBy(id = "en__field_supporter_questions_21192") WebElement field_dietarypref;
+    @FindBy(id = "en__field_supporter_questions_21190")
+    WebElement field_question_1;
+    @FindBy(css = ".en__field--21191")
+    WebElement field_catsordogs;
+    @FindBy(id = "en__field_supporter_questions_21192")
+    WebElement field_dietarypref;
 
     //	Opt-ins	//
-    @FindBy(id = "en__field_supporter_questions_1555") WebElement field_optin;
-    @FindBy(name = "supporter.questions.29292") WebElement field_optin_radio;
+    @FindBy(id = "en__field_supporter_questions_1555")
+    WebElement field_optin;
+    @FindBy(name = "supporter.questions.29292")
+    WebElement field_optin_radio;
 
     //   ETT   //
-    @FindBy(css = ".en__contactDetail--title") List<WebElement>  field_ETT_Title;
-    @FindBy(css = ".en__contactDetail--firstName") List<WebElement>  field_ETT_FirstName;
-    @FindBy(css = ".en__contactDetail--lastName") List<WebElement>  field_ETT_LastName;
-    @FindBy(css = ".en__contactDetail--organization") List<WebElement>  field_ETT_Organization;
-    @FindBy(name = "contact.533.subject") WebElement field_ETT_MessageTitle;
-    @FindBy(name = "contact.533.message") WebElement field_ETT_MessageBodySinglePage;
-    @FindBy(name = "contact.534.message") WebElement field_ETT_MessageBody;
-    @FindBy(name = "contact.11743.message") WebElement field_ETT_PostalMessageBody;
-    @FindBy(name = "contact.7382.message") WebElement field_ETT_CongressMessageBody;
-    @FindBy(css = ".en__contactMessage__plainText") WebElement field_ETT_MultiMessageBody;
-    @FindBy(className = "en__contactMessage__plainTextOriginal") List<WebElement> field_ETT_MultiMessage;
-    @FindBy(css = ".en__contact--closed:nth-child(2) > div.en__contact__toggle") WebElement field_ETT_Toggle;
-    @FindBy(css = ".en__contact--open:nth-child(1) > div.en__contact__toggle") WebElement field_ETT_ToggleClose;
-    @FindBy(css = ".en__contact--closed:nth-child(3) > div.en__contact__toggle") WebElement field_ETT_ToggleOpen;
-    @FindBy(className = "en__contact.en__contact--14149.en__contact--open") WebElement field_ETT_Target1;
-    @FindBy(css = ".en__contactSubject__field") WebElement field_ETT_MessageData;
-    @FindBy(xpath = "//input[@name='contact.subject']") WebElement field_ETT_TargetSubject;
-    @FindBy(className = "en__contactSections") WebElement field_ETT_TargetBlock;
-    @FindBy(name = "supporter.questions.1555") WebElement field_ETT_OptIn;
+    @FindBy(css = ".en__contactDetail--title")
+    List<WebElement> field_ETT_Title;
+    @FindBy(css = ".en__contactDetail--firstName")
+    List<WebElement> field_ETT_FirstName;
+    @FindBy(css = ".en__contactDetail--lastName")
+    List<WebElement> field_ETT_LastName;
+    @FindBy(css = ".en__contactDetail--organization")
+    List<WebElement> field_ETT_Organization;
+    @FindBy(name = "contact.533.subject")
+    WebElement field_ETT_MessageTitle;
+    @FindBy(name = "contact.533.message")
+    WebElement field_ETT_MessageBodySinglePage;
+    @FindBy(name = "contact.534.message")
+    WebElement field_ETT_MessageBody;
+    @FindBy(name = "contact.11743.message")
+    WebElement field_ETT_PostalMessageBody;
+    @FindBy(name = "contact.7382.message")
+    WebElement field_ETT_CongressMessageBody;
+    @FindBy(css = ".en__contactMessage__plainText")
+    WebElement field_ETT_MultiMessageBody;
+    @FindBy(className = "en__contactMessage__plainTextOriginal")
+    List<WebElement> field_ETT_MultiMessage;
+    @FindBy(css = ".en__contact--closed:nth-child(2) > div.en__contact__toggle")
+    WebElement field_ETT_Toggle;
+    @FindBy(css = ".en__contact--open:nth-child(1) > div.en__contact__toggle")
+    WebElement field_ETT_ToggleClose;
+    @FindBy(css = ".en__contact--closed:nth-child(3) > div.en__contact__toggle")
+    WebElement field_ETT_ToggleOpen;
+    @FindBy(className = "en__contact.en__contact--14149.en__contact--open")
+    WebElement field_ETT_Target1;
+    @FindBy(css = ".en__contactSubject__field")
+    WebElement field_ETT_MessageData;
+    @FindBy(xpath = "//input[@name='contact.subject']")
+    WebElement field_ETT_TargetSubject;
+    @FindBy(className = "en__contactSections")
+    WebElement field_ETT_TargetBlock;
+    @FindBy(name = "supporter.questions.1555")
+    WebElement field_ETT_OptIn;
 
     /////////////////////////    ETT FORMS AND FIELDS     /////////////////////////////////
 
+
     public void validateETTContactDetailsTitle(String text) {
-            for (WebElement title : field_ETT_Title) {
-                if (title.getText().equals(text)) {
-                    Assert.assertTrue("Title is incorrect/not present", title.getText().contains(text));
-                }
+        for (WebElement title : field_ETT_Title) {
+            if (title.getText().equals(text)) {
+                Assert.assertTrue("Title is incorrect/not present", title.getText().contains(text));
             }
+        }
     }
 
     public void validateETTContactDetailsFirstName(String text) {
@@ -294,12 +441,12 @@ public class PageFields {
     public void validateETTTargetMessage(String text) {
         for (WebElement message : field_ETT_MultiMessage) {
             if (message.getAttribute("value").equals(text)) {
-                Assert.assertTrue("Title is incorrect/not present", message.getAttribute("value").contains(text));
+                Assert.assertTrue("Message is incorrect/not present", message.getAttribute("value").contains(text));
             }
         }
     }
 
-    public void validateETTTargetHTMLSingleMessage(String text){
+    public void validateETTTargetHTMLSingleMessage(String text) {
         driver.switchTo().frame(0);
         String targettext = driver.findElement(By.tagName("body")).getText();
         System.out.println(targettext);
@@ -309,7 +456,7 @@ public class PageFields {
         driver.switchTo().defaultContent();
     }
 
-    public void validateETTTargetHTMLDoubleMessage(String text){
+    public void validateETTTargetHTMLDoubleMessage(String text) {
         driver.switchTo().frame(1);
         String targettext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("First Name incorrect/not present", targettext.contains(text));
@@ -318,7 +465,7 @@ public class PageFields {
         driver.switchTo().defaultContent();
     }
 
-    public void validateETTTargetHTMLTripleMessage(String text){
+    public void validateETTTargetHTMLTripleMessage(String text) {
         driver.switchTo().frame(2);
         String targettext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("First Name incorrect/not present", targettext.contains(text));
@@ -327,51 +474,53 @@ public class PageFields {
         driver.switchTo().defaultContent();
     }
 
-    public void setETTToggle(){
+    public void setETTToggle() {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", field_ETT_Toggle);
     }
 
-    public void closeETTToggle(){
+    public void closeETTToggle() {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", field_ETT_ToggleClose);
     }
 
-    public void openETTToggle(){
+    public void openETTToggle() {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", field_ETT_ToggleOpen);
     }
 
     public void validateETTDoubleRotationMessage() {
         System.out.println("Subject: " + field_ETT_MessageData.getAttribute("value"));
-        if (field_ETT_MessageData.getAttribute("value").contains("Subject  (Message No.1)")){
+        if (field_ETT_MessageData.getAttribute("value").contains("Subject  (Message No.1)")) {
             //((JavascriptExecutor)driver).executeScript("location.reload()");
             Assert.assertTrue("Subject#1 incorrect/not present", field_ETT_MessageData.getAttribute("value")
                     .contains("Subject  (Message No.1): ETT_1  Custom target (single page) - 2 targets - plain text"));
             field_ETT_MessageData.sendKeys("(Test Message#1)");
-        }else{
+        } else {
             Assert.assertTrue("Subject#2 incorrect/not present", field_ETT_MessageData.getAttribute("value")
                     .contains("Subject (Message No.2): ETT_1  Custom target (single page) - 2 targets - plain text"));
             field_ETT_MessageData.sendKeys("(Test Message#2)");
         }
     }
 
-    public void validateETTTripleRotationMessage(){
-        if(field_ETT_TargetSubject.getAttribute("value").contains("Subject (default): ")){
+    public void validateETTTripleRotationMessage() {
+        if (field_ETT_TargetSubject.getAttribute("value").contains("Subject (default): ")) {
             WebElement editText = driver.findElement(By.xpath("//textarea[contains(text(),'Message (default - editable)')]"));
             editText.clear();
             editText.sendKeys("This is default page");
             WebElement uneditText = driver.findElement(By.xpath("//textarea[contains(text(),'Message (default - uneditable)')]"));
             Assert.assertTrue("You are on different page",
                     uneditText.getText().equals("Message (default - uneditable): ETT_8 Postal Database (single page)"));
-        }if(field_ETT_TargetSubject.getAttribute("value").contains("Subject No.2: ")){
+        }
+        if (field_ETT_TargetSubject.getAttribute("value").contains("Subject No.2: ")) {
             WebElement editText = driver.findElement(By.xpath("//textarea[contains(text(),'Message (No.2 - editable)')]"));
             editText.clear();
             editText.sendKeys("This is page #2");
             WebElement uneditText = driver.findElement(By.xpath("//textarea[contains(text(),'Message (No.2 - uneditable)')]"));
             Assert.assertTrue("You are on different page",
                     uneditText.getText().equals("Message (No.2 - uneditable): ETT_8 Postal Database (single page)"));
-        }if(field_ETT_TargetSubject.getAttribute("value").contains("Subject No.3: ")) {
+        }
+        if (field_ETT_TargetSubject.getAttribute("value").contains("Subject No.3: ")) {
             WebElement editText = driver.findElement(By.xpath("//textarea[contains(text(),'Message (No.3 - editable)')]"));
             editText.clear();
             editText.sendKeys("This is page #3");
@@ -398,16 +547,16 @@ public class PageFields {
         }
     }
 
-    public void validateTargetMessage(String text){
+    public void validateTargetMessage(String text) {
         System.out.println("Message: " + field_ETT_MessageBody.getText());
         Assert.assertTrue("Your target message is incorrect/not present", field_ETT_MessageBody.getText().contains(text));
     }
 
-    public void validateTargetMultiMessage(String text){
+    public void validateTargetMultiMessage(String text) {
         Assert.assertTrue("Your target message is incorrect/not present", field_ETT_MultiMessageBody.getText().contains(text));
     }
 
-    public void validateTargetTitle(String text){
+    public void validateTargetTitle(String text) {
         Assert.assertTrue("Your target title is incorrect/not present", field_ETT_TargetSubject.getAttribute("value").contains(text));
     }
 
@@ -434,11 +583,12 @@ public class PageFields {
             if (field_ForgotPassword_Stripe.isDisplayed()) {
                 field_UsernameStripe.sendKeys(USERNAMESTRIPE);
                 field_PasswordStripe.sendKeys(PASSWORDSTRIPE);
-                field_SubmitStripe.submit();
+                field_SubmitStripe.click();
             }
         } catch (NoSuchElementException e) {
         }
     }
+
     public void monerisLogin() {
 
         try {
@@ -446,15 +596,15 @@ public class PageFields {
                 field_Username_Moneris.sendKeys(USERNAMEMONERIS);
                 field_Store_Moneris.sendKeys(STOREIDMONERIS);
                 field_Password_Moneris.sendKeys(PASSWORDMONERIS);
-                JavascriptExecutor js = (JavascriptExecutor)driver;
+                JavascriptExecutor js = (JavascriptExecutor) driver;
                 js.executeScript("arguments[0].click();", field_Moneris_Submit);
             }
         } catch (NoSuchElementException e) {
+        }
+
     }
 
-}
-
-    public void monerisNavigateToTransaction(){
+    public void monerisNavigateToTransaction() {
 
     }
 
@@ -474,18 +624,19 @@ public class PageFields {
     ///////////////////////// SET PAYPAL LOGIN   /////////////////////////////////
 
     public void setPaypalEmail() {
-        try{
-            if(field_Paypal_CreateAcc.isDisplayed()){
+        try {
+            if (field_Paypal_CreateAcc.isDisplayed()) {
                 field_Paypal_loginemail.sendKeys(PAYPALUSERNAME);
             }
         } catch (NoSuchElementException e) {
-    }
+        }
     }
 
     public void setPaypalPassword() {
-        try{
-            if(field_Paypal_CreateAcc.isDisplayed()){
-        field_Paypal_loginpassword.sendKeys(PAYPALPASSWORD); }
+        try {
+            if (field_Paypal_CreateAcc.isDisplayed()) {
+                field_Paypal_loginpassword.sendKeys(PAYPALPASSWORD);
+            }
         } catch (NoSuchElementException e) {
         }
     }
@@ -498,13 +649,13 @@ public class PageFields {
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", field_Paypal_Login);
             }
-        }catch (NoSuchElementException e) {
-            }
+        } catch (NoSuchElementException e) {
+        }
     }
 
-    public String getStripeTransactionDetails(){
+    public String getStripeTransactionDetails() {
         String transactionID = null;
-        for (int i=0; i<1; i++){
+        for (int i = 0; i < 1; i++) {
             WebElement transID = field_StripeTransactions.get(i);
             transactionID = field_StripeTransactionId.getText();
         }
@@ -526,7 +677,7 @@ public class PageFields {
         field_SearchSupporterButton.submit();
     }
 
-    public void selectSupporter(){
+    public void selectSupporter() {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", field_SelectSupporter);
     }
@@ -554,17 +705,36 @@ public class PageFields {
         return full_txn_text;
     }
 
+    public String getSupporterTaxID() {
+
+        String txId = driver.findElement(By.xpath("//div[@class='txnID']")).getText();
+        supporterTaxId = txId.replace("TXN ID:- ", "");
+        return supporterTaxId;
+    }
+
+    public String getSupporterTaxIDVal() {
+
+        String txId = driver.findElement(By.xpath("//div[@class='txnID']")).getText();
+        String[] supporterTaxId = txId.split("__", 3);
+        String newTxnId1 = supporterTaxId[0];
+        String newTxnId2 = supporterTaxId[1];
+        String newTxnId3 = supporterTaxId[2];
+        System.out.println("tx id1:" + newTxnId1);
+        System.out.println("tx id2:" + newTxnId2);
+        System.out.println("tx id3:" + newTxnId3);
+        return newTxnId3;
+    }
 
     /////////////////////////    MONERIS DASHBOARD REPORT SEARCH    /////////////////////////////////
 
-    public void searchMonerisOrder (String text){
+    public void searchMonerisOrder(String text) {
 
         WebElement dropDown = driver.findElement(By.id("nav_drop"));
         Actions action = new Actions(driver);
         action.moveToElement(dropDown).build().perform();
         WebElement reports = driver.findElement(By.id("mrc_reports"));
         action.moveToElement(reports).build().perform();
-        WebElement transactions =driver.findElement(By.linkText("Transactions"));
+        WebElement transactions = driver.findElement(By.linkText("Transactions"));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", transactions);
 
@@ -587,7 +757,7 @@ public class PageFields {
         executor.executeScript("arguments[0].click();", customerIdSearch);
         //JavascriptExecutor executor0 = (JavascriptExecutor) driver;
         //executor.executeScript("arguments[0].click();", customerIdSearch);
-        WebElement submitSearch =driver.findElement(By.name("do_query"));
+        WebElement submitSearch = driver.findElement(By.name("do_query"));
         executor.executeScript("arguments[0].click();", submitSearch);
         Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().
                 equals("https://esqa.moneris.com/mpg/reports/transaction/index.php"));
@@ -608,23 +778,23 @@ public class PageFields {
 
     /////////////////////////    PAYSAFE DASHBOARD REPORT SEARCH    /////////////////////////////////
 
-    public void reportSearchPaySafe(){
+    public void reportSearchPaySafe() {
         field_Reports_PaySafe.click();
     }
 
-    public void generateReportPaySafe(){
+    public void generateReportPaySafe() {
         field_GenerateSummaryPyaSafe.click();
     }
 
-    public void authReportPaySafe(){
+    public void authReportPaySafe() {
         field_TransactionPaysafe.click();
     }
 
-    public void enReportSafe(){
+    public void enReportSafe() {
         field_AccountPaysafe.click();
     }
 
-    public void searchPaySafeOrder (String text) {
+    public void searchPaySafeOrder(String text) {
         Select rowsPerPage = new Select(field_selectRowsPerPage);
         rowsPerPage.selectByValue("50");
         WebElement Table = driver.findElement(By.xpath("//table[@class='rptTable']"));
@@ -635,14 +805,14 @@ public class PageFields {
 
         for (WebElement orderId : Rows) {
             if (text.contains(orderId.getText())) {
-                try{
+                try {
                     WebElement link = (new WebDriverWait(driver, 20))
                             .until(ExpectedConditions.presenceOfElementLocated
                                     (By.xpath("/html/body/div[7]/div/table[3]/tbody/tr[" + sizeOfRaws + "]/td[2]/a")));
                     JavascriptExecutor executor1 = (JavascriptExecutor) driver;
                     executor1.executeScript("arguments[0].click();", link);
-                    break;}
-                catch (StaleElementReferenceException e){
+                    break;
+                } catch (StaleElementReferenceException e) {
                 }
                 for (String winHandle : driver.getWindowHandles()) { //Gets the new window handle
                     driver.switchTo().window(winHandle);        // switch focus of WebDriver to the next found window handle (that's your newly opened window)
@@ -654,7 +824,7 @@ public class PageFields {
 
     /////////////////////////    STRIPE DASHBOARD REPORT SEARCH    /////////////////////////////////
 
-    public void searchStripeOrder (String text)  {
+    public void searchStripeOrder1 (String text)  {
 
         List<WebElement> Rows = driver.findElements(By.tagName("a"));
 
@@ -673,6 +843,40 @@ public class PageFields {
         }
     }
 
+    public void searchStripeOrder(String text) {
+
+
+        WebElement searchTransaction = driver.findElement(By.xpath("//input[@class='db-SuggestionInput-input']"));
+        searchTransaction.sendKeys(text);
+
+        try {
+                WebElement results = (new WebDriverWait(driver, 60))
+                        .until(ExpectedConditions.presenceOfElementLocated
+                                (By.xpath("//span[contains(text(),'result')]")));
+                if(results.isDisplayed()){
+                    searchTransaction.sendKeys(Keys.RETURN);
+                }
+            } catch (StaleElementReferenceException e) {
+            }
+        WebElement transactionDetails =  (new WebDriverWait(driver, 60))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(),'USD')]")));
+        transactionDetails.click();
+        for (String winHandle : driver.getWindowHandles()) { //Gets the new window handle
+            driver.switchTo().window(winHandle);        // switch focus of WebDriver to the next found window handle (that's your newly opened window)
+        }
+    }
+
+    public void validateStripeOrder(String text){
+
+        List<WebElement> valTransaction = driver.findElements(By.className(".Text-display--inline"));
+        for (WebElement orderId : valTransaction) {
+            Assert.assertTrue("Donation amount is incorrect or not present", orderId.getText().equals("$15.00"));
+            Assert.assertTrue("First and Last name is incorrect or not present", orderId.getText().equals("Unit Tester"));
+            Assert.assertTrue("Email address is incorrect or not present", orderId.getText().equals(text));
+            Assert.assertTrue("Address is incorrect or not present",
+                    orderId.getText().equals("1 Hilltop Baltimore, 20001, US"));
+        }
+    }
 
     /////////////////////////    SET FIELDS     /////////////////////////////////
 
@@ -1237,8 +1441,7 @@ public class PageFields {
                     }
                 };
         try {
-            Thread.sleep(3000);
-            WebDriverWait wait = new WebDriverWait(driver, 30);
+            WebDriverWait wait = new WebDriverWait(driver, 60);
             wait.until(expectation);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");

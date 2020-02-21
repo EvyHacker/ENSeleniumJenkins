@@ -10,7 +10,8 @@ import java.io.IOException;
 
 import static com.fnoor.PageFields.SERVICE_BASEURL;
 
-public class PostalDatabase {
+public class
+PostalDatabase {
 
     static FundraisingPageHelper helper = new FundraisingPageHelper();
     private static String FUNDRAISING_TEST;
@@ -413,5 +414,46 @@ public class PostalDatabase {
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
         helper.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase21", fields);
+    }
+
+    public static void postalDatabase38(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+
+        driver.get("https://politicalnetworks.com/page/13048/action/1?mode=DEMO");
+
+        fields.setFirstname("Evy");
+        fields.setLastname("Tester");
+//		Call the createEmail function
+        String new_email = fields.createETTEmail(testId);
+        fields.setEmailAddress(new_email);
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("W71NG");
+        fields.selectCountry("US");
+
+        fields.submit();
+
+        Assert.assertTrue("You are not on the 2nd page",
+                driver.getCurrentUrl().equals("https://politicalnetworks.com/page/13048/action/2"));
+
+        fields.validateETTContactDetailsTitle("Mr");
+        fields.validateETTContactDetailsFirstName("Steve");
+        fields.validateETTContactDetailsLastName("Pound");
+        fields.validateETTContactDetailsOrganization("Ealing North");
+        fields.validateETTMessageEditable("Message (default - uneditable): ETT_38 Postal Database (two pages)");
+        fields.submit();
+
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13048/action/3"));
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Message not present", bodytext.contains("Your message has been sent successfully."));
+        Assert.assertTrue("First Name is incorrect/not present", bodytext.contains("Evy"));
+        Assert.assertTrue("Last Name is incorrect/not present", bodytext.contains("Tester"));
+        Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
+        Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
+
+        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase38", fields);
     }
 }

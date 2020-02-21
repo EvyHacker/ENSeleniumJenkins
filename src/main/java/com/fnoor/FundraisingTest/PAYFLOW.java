@@ -1,5 +1,6 @@
 package com.fnoor.FundraisingTest;
 
+import com.fnoor.FundraisingPageDriver;
 import com.fnoor.FundraisingPageHelper;
 import com.fnoor.PageFields;
 import org.junit.Assert;
@@ -16,11 +17,11 @@ import java.time.format.DateTimeFormatter;
 
 public class PAYFLOW {
 
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
+    static FundraisingPageDriver page = new FundraisingPageDriver();
     private static  String FUNDRAISING_TEST;
 
     public static void payflowProSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        helper.ensAuthTest();
+        page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/10879/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
@@ -58,6 +59,8 @@ public class PAYFLOW {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/10879/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
 
@@ -69,11 +72,12 @@ public class PAYFLOW {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Visa"));
 
-        helper.getSupporterByEmail(FUNDRAISING_TEST="payflowProSingle", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST="payflowProSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="payflowProSingle", fields);
     }
 
     public static void payflowProRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        helper.ensAuthTest();
+        page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/10880/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
@@ -111,6 +115,8 @@ public class PAYFLOW {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/10880/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
 
@@ -121,11 +127,12 @@ public class PAYFLOW {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Visa"));
 
-        helper.getSupporterByEmail(FUNDRAISING_TEST="payflowProRecurring", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST="payflowProRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="payflowProRecurring", fields);
     }
 
     public static void payflowProPayViaPaypal(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        helper.ensAuthTest();
+        page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/10887/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
@@ -164,18 +171,21 @@ public class PAYFLOW {
             fields.submitPaypal();
             fields.waitForPageLoad();}
 
+        fields.waitForPageLoad();
         WebElement paypalContinue = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
-                        (By.id("payment-submit-btn")));
-        if(paypalContinue.getCssValue("value").contains("Continue")) {
-            JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", paypalContinue);
-        }paypalContinue.click();
+                        (By.xpath("//*[@id=\"payment-submit-btn\"]")));
+
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();", paypalContinue);
         fields.waitForPageLoad();
 
         //		Assert that the payment was successful and the third page was reached
-        String myurl1 = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/10887/donate/3"));
+
+        Assert.assertTrue("Urls are not the same",
+                driver.getCurrentUrl().equals("https://politicalnetworks.com/page/10887/donate/3"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -186,6 +196,7 @@ public class PAYFLOW {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Paypal"));
 
-        helper.getSupporterByEmail(FUNDRAISING_TEST="payflowProPayViaPaypal", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST="payflowProPayViaPaypal", fields);
+        page.getSupporterById(FUNDRAISING_TEST="payflowProPayViaPaypal", fields);
     }
 }

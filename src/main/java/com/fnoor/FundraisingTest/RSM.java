@@ -89,6 +89,8 @@ public class RSM {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/846/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3523"));
@@ -99,6 +101,7 @@ public class RSM {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="rsmSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="rsmSingle", fields);
     }
 
     public static void rsmRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -142,6 +145,8 @@ public class RSM {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/870/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3524"));
@@ -152,6 +157,7 @@ public class RSM {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="rsmRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="rsmRecurring", fields);
     }
 
     public static void rsmDirectDebit(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -162,8 +168,8 @@ public class RSM {
         fields.setFirstname("Unit");
         fields.setLastname("Tester");
 //		Call the createEmail function
-        String new_email = fields.createEmail(testId);
-        fields.setEmailAddress("evy@engagingnetworks.net");
+        String new_email = fields.createRSMemail(testId);
+        fields.setEmailAddress(new_email);
         fields.setAddress1("49 Featherstone Street");
         fields.setCity("LONDON");
         fields.setRegion("AYLESBURY");
@@ -194,6 +200,8 @@ public class RSM {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/847/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3525"));
@@ -203,7 +211,8 @@ public class RSM {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("RECUR_UNMANAGED"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST:Direct Debit"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST="rsmDirectDebit", fields);
+         getSupporterByEmailRSM(FUNDRAISING_TEST="rsmDirectDebit", fields);
+        page.getSupporterById(FUNDRAISING_TEST="rsmDirectDebit", fields);
     }
 
     public static void rsm3DSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -252,6 +261,8 @@ public class RSM {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12784/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8490"));
@@ -262,6 +273,7 @@ public class RSM {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST = "rsm3DSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="rsm3DSingle", fields);
     }
 
     public static void rsm3DRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -319,6 +331,8 @@ public class RSM {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12785/donate/3"));
 
+        fields.getSupporterTaxID();
+
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8491"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("RSM Credit Car"));
@@ -328,5 +342,6 @@ public class RSM {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
 
         getSupporterByEmailRSM(FUNDRAISING_TEST = "rsm3DRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="rsm3DRecurring", fields);
     }
 }

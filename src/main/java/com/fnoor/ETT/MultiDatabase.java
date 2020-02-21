@@ -160,6 +160,68 @@ public class MultiDatabase {
         helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase16", fields);
     }
 
+    public static void multiDatabase16_2(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+
+        driver.get("https://politicalnetworks.com/page/12904/action/1?mode=DEMO");
+
+        fields.setFirstname("Evy");
+        fields.setLastname("Tester");
+//		Call the createEmail function
+        String new_email = fields.createETTEmail(testId);
+        fields.setEmailAddress(new_email);
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("D123AA");
+        fields.selectCountry("US");
+
+        fields.submit();
+
+        Assert.assertTrue("You are not on the 2nd page",
+                driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12904/action/2"));
+
+        fields.validateETTContactDetailsTitle("Mr");
+        fields.validateETTContactDetailsTitle("Ms");
+        fields.validateETTContactDetailsTitle("Mr");
+        fields.validateETTContactDetailsFirstName("Anna");
+        fields.validateETTContactDetailsFirstName("Priyanka");
+        fields.validateETTContactDetailsFirstName("Dan");
+        fields.validateETTContactDetailsLastName("Chua");
+        fields.validateETTContactDetailsLastName("Shinkar");
+        fields.validateETTContactDetailsLastName("Szymczak");
+        fields.validateETTContactDetailsOrganization("Engaging Networks");
+
+        fields.validateETTTargetMessage("Dear Anna,");
+        fields.validateETTTargetMessage("My message to Anna Chua");
+        fields.validateETTTargetMessage("Message (default): ETT_16 Multi Database (two pages) - plain text");
+        fields.validateETTTargetMessage("Kind regards,");
+        fields.validateETTTargetMessage("Evy Tester");
+        fields.setETTToggle();
+        fields.validateETTTargetMessage("Dear Ms Shinkar,");
+        fields.validateETTTargetMessage("My message to Priyanka Shinkar");
+        fields.validateETTTargetMessage("Message (default): ETT_16 Multi Database (two pages) - plain text");
+        fields.validateETTTargetMessage("Kind regards,");
+        fields.validateETTTargetMessage("Evy Tester");
+        fields.openETTToggle();
+        fields.validateETTTargetMessage("Dear Mr Szymczak");
+        fields.validateETTTargetMessage("My message to Dan Szymczak");
+
+        fields.submit();
+
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12904/action/3"));
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Message not present", bodytext.contains("Your message has been sent successfully."));
+        Assert.assertTrue("First Name is incorrect/not present", bodytext.contains("Evy"));
+        Assert.assertTrue("Last Name is incorrect/not present", bodytext.contains("Tester"));
+        Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
+        Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
+
+        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase16_2", fields);
+    }
+
     public static void multiDatabase17(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12905/action/1?mode=DEMO");
@@ -417,5 +479,105 @@ public class MultiDatabase {
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
         helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabaseCommitteesEdit", fields);
+    }
+
+    public static void multiDatabase39(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+
+        driver.get("https://politicalnetworks.com/page/13049/action/1?mode=DEMO");
+
+        fields.setFirstname("Evy");
+        fields.setLastname("Tester");
+//		Call the createEmail function
+        String new_email = fields.createETTEmail(testId);
+        fields.setEmailAddress(new_email);
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("D123AA");
+        fields.selectCountry("US");
+
+        fields.submit();
+
+        Assert.assertTrue("You are not on the 2nd page",
+                driver.getCurrentUrl().equals("https://politicalnetworks.com/page/13049/action/2"));
+
+        fields.validateETTContactDetailsTitle("Ms");
+        fields.validateETTContactDetailsTitle("Mr");
+        fields.validateETTContactDetailsFirstName("Priyanka");
+        fields.validateETTContactDetailsFirstName("Dan");
+        fields.validateETTContactDetailsLastName("Shinkar");
+        fields.validateETTContactDetailsLastName("Szymczak");
+        fields.validateETTContactDetailsOrganization("Engaging Networks");
+        fields.validateETTTargetMessage("Dear Ms Shinkar,");
+        fields.validateETTTargetMessage("My message to Priyanka Shinkar");
+        fields.validateETTTargetMessage("Message (default): ETT_39 Multi Database (two pages) - plain text");
+        fields.validateETTTargetMessage("Kind regards,");
+        fields.validateETTTargetMessage("Evy Tester");
+        fields.setETTToggle();
+        fields.validateETTTargetMessage("Dear Mr Szymczak,");
+        fields.validateETTTargetMessage("My message to Dan Szymczak");
+        fields.validateETTTargetMessage("Message (default): ETT_39 Multi Database (two pages) - plain text");
+        fields.validateETTTargetMessage("Kind regards,");
+        fields.validateETTTargetMessage("Evy Tester");
+
+        fields.submit();
+
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13049/action/3"));
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Message not present", bodytext.contains("Your message has been sent successfully."));
+        Assert.assertTrue("First Name is incorrect/not present", bodytext.contains("Evy"));
+        Assert.assertTrue("Last Name is incorrect/not present", bodytext.contains("Tester"));
+        Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
+        Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
+
+        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase39", fields);
+    }
+
+    public static void multiDatabase39_2(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+
+        driver.get("https://politicalnetworks.com/page/13049/action/1?mode=DEMO");
+
+        fields.setFirstname("Evy");
+        fields.setLastname("Tester");
+//		Call the createEmail function
+        String new_email = fields.createETTEmail(testId);
+        fields.setEmailAddress(new_email);
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("A123AA");
+        fields.selectCountry("US");
+
+        fields.submit();
+
+        Assert.assertTrue("You are not on the 2nd page",
+                driver.getCurrentUrl().equals("https://politicalnetworks.com/page/13049/action/2"));
+
+        fields.validateETTContactDetailsTitle("Ms");
+        fields.validateETTContactDetailsFirstName("Marta");
+        fields.validateETTContactDetailsLastName("Fornal de Seixas");
+        fields.validateETTTargetMessage("Dear Ms Fornal de Seixas,");
+        fields.validateETTTargetMessage("My message to Marta Fornal de Seixas");
+        fields.validateETTTargetMessage("Message (default): ETT_39 Multi Database (two pages) - plain text");
+        fields.validateETTTargetMessage("Kind regards,");
+        fields.validateETTTargetMessage("Evy Tester");
+
+        fields.submit();
+
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13049/action/3"));
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Message not present", bodytext.contains("Your message has been sent successfully."));
+        Assert.assertTrue("First Name is incorrect/not present", bodytext.contains("Evy"));
+        Assert.assertTrue("Last Name is incorrect/not present", bodytext.contains("Tester"));
+        Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
+        Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
+
+        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase39_2", fields);
     }
 }

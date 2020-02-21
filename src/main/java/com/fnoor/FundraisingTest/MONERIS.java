@@ -30,6 +30,7 @@ public class MONERIS {
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
+        System.out.println("Email:" + new_email);
 
         fields.submit();
 
@@ -50,6 +51,8 @@ public class MONERIS {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/845/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3519"));
@@ -60,6 +63,7 @@ public class MONERIS {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="moneriseSelectSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="moneriseSelectSingle", fields);
     }
 
     public static void moneriseSelectRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -103,16 +107,19 @@ public class MONERIS {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/867/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Campaign ID not present", bodytext.contains("3520"));
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("3519"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
         Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("CAD"));
-        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
-        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: UP"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="moneriseSelectRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="moneriseSelectRecurring", fields);
     }
 
     public static void monerisVaultRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -158,6 +165,8 @@ public class MONERIS {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/869/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3522"));
@@ -168,6 +177,7 @@ public class MONERIS {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="monerisVaultRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="monerisVaultRecurring", fields);
     }
 
     public static void monerisSingleNoCvv(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -198,6 +208,8 @@ public class MONERIS {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/10938/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("6378"));
@@ -208,6 +220,7 @@ public class MONERIS {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="monerisSingleNoCvv", fields);
+        page.getSupporterById(FUNDRAISING_TEST="monerisSingleNoCvv", fields);
     }
 
     public static void monerisRecurringNoCvv(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -243,6 +256,8 @@ public class MONERIS {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/10939/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("6379"));
@@ -253,6 +268,7 @@ public class MONERIS {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="monerisRecurringNoCvv", fields);
+        page.getSupporterById(FUNDRAISING_TEST="monerisRecurringNoCvv", fields);
     }
 
     public static void monerisVault3DSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -299,6 +315,8 @@ public class MONERIS {
         String myurl1 = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12779/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8481"));
@@ -309,6 +327,7 @@ public class MONERIS {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="monerisVault3DSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="monerisVault3DSingle", fields);
     }
 
     public static void monerisVault3DRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -359,6 +378,8 @@ public class MONERIS {
         String myurl1 = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12783/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8489"));
@@ -369,5 +390,53 @@ public class MONERIS {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="monerisVault3DRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="monerisVault3DRecurring", fields);
+    }
+
+    public static void moneriseSelectSingleUP(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/13068/donate/1?mode=DEMO");
+
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("Unit");
+        fields.setLastname("Tester");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+        System.out.println("Email:" + new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+        fields.selectCountry("US");
+
+        fields.setCCName("Unit Tester");
+        fields.setCCNUmber("6250944000000771");
+        fields.setCCExpiry(new CharSequence[] {"12", "2049"});
+        fields.setCCV("371");
+
+        fields.submit();
+
+        //		Assert that the payment was successful and the third page was reached
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13068/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("8855"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Canada"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("CAD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: UP"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST="moneriseSelectSingleUP", fields);
+        page.getSupporterById(FUNDRAISING_TEST="moneriseSelectSingleUP", fields);
     }
 }

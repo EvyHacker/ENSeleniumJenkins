@@ -31,6 +31,7 @@ public class ACIMultiUsers {
 
         fields.submit();
 
+        fields.waitForPageLoad();
         fields.setAddress1("1 Hilltop");
         fields.setCity("Baltimore");
         fields.selectRegion("MD");
@@ -73,6 +74,8 @@ public class ACIMultiUsers {
 
         fields.submit();
 
+        fields.waitForPageLoad();
+        Thread.sleep(4000);
         fields.setAddress1("1 Hilltop");
         fields.setCity("Baltimore");
         fields.selectRegion("MD");
@@ -202,6 +205,7 @@ public class ACIMultiUsers {
 
         fields.submit();
 
+        fields.waitForPageLoad();
         fields.setAddress1("1 Hilltop");
         fields.setCity("Baltimore");
         fields.selectRegion("MD");
@@ -701,6 +705,7 @@ public class ACIMultiUsers {
 
         fields.submit();
 
+        fields.waitForPageLoad();
         fields.setAddress1("1 Hilltop");
         fields.setCity("Baltimore");
         fields.selectRegion("MD");

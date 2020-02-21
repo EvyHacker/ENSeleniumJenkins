@@ -1,12 +1,10 @@
 package com.fnoor.ValidationTests;
 
+import com.fnoor.FundraisingPageDriver;
 import com.fnoor.FundraisingPageHelper;
 import com.fnoor.PageFields;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,16 +12,17 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static com.fnoor.PageFields.STRIPEDASHBOARD;
 
 public class StripeVal {
 
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
+    static FundraisingPageDriver page = new FundraisingPageDriver();
     private static String FUNDRAISING_TEST;
 
     public static void stripeSingleVal(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        helper.ensAuthTestVal();
+        page.ensAuthTestVal();
         driver.navigate().to("https://politicalnetworks.com/page/12843/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
@@ -50,9 +49,10 @@ public class StripeVal {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12843/donate/3"));
 
-        String txnId = driver.findElement(By.cssSelector(".txnID")).getText();
-        String newTxnId = txnId.replaceAll("TXN ID:-\\s", " ");
-        System.out.println("ID: " + newTxnId);
+        fields.getSupporterTaxID();
+        page.getSupporterByEmail(FUNDRAISING_TEST = "stripeSingleVal", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "stripeSingleVal", fields);
+        String txId = fields.getSupporterTaxIDVal();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -77,23 +77,18 @@ public class StripeVal {
         Assert.assertTrue("You are not on payments page",
                 myStripePaymentsURL.contains("https://dashboard.stripe.com/test/payments"));
         fields.waitForPageLoad();
-        fields.searchStripeOrder(newTxnId);
+        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+        fields.searchStripeOrder(txId);
+
         fields.waitForPageLoad();
-
-        List<WebElement> valTransaction = driver.findElements(By.className(".Text-display--inline"));
-        for (WebElement orderId : valTransaction) {
-            Assert.assertTrue("Donation amount is incorrect or not present", orderId.getText().equals("$15.00"));
-            Assert.assertTrue("First and Last name is incorrect or not present", orderId.getText().equals("Unit Tester"));
-            Assert.assertTrue("Email address is incorrect or not present", orderId.getText().equals(new_email));
-            Assert.assertTrue("Address is incorrect or not present",
-                    orderId.getText().equals("1 Hilltop Baltimore, 20001, US"));
-        }
-
-        helper.getSupporterByEmail(FUNDRAISING_TEST = "stripeSingleVal", fields);
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
+                .equals("https://dashboard.stripe.com/test/payments/" + txId));
+        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+        fields.validateStripeOrder(new_email);
     }
 
     public static void stripeRecurringVal(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        helper.ensAuthTestVal();
+        page.ensAuthTestVal();
         driver.navigate().to("https://politicalnetworks.com/page/12843/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("1");
@@ -126,9 +121,10 @@ public class StripeVal {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12843/donate/3"));
 
-        String txnId = driver.findElement(By.cssSelector(".txnID")).getText();
-        String newTxnId = txnId.replaceAll("TXN ID:-\\s", " ");
-        System.out.println("ID: " + newTxnId);
+        fields.getSupporterTaxID();
+        page.getSupporterByEmail(FUNDRAISING_TEST = "stripeRecurringVal", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "stripeRecurringVal", fields);
+        String txId = fields.getSupporterTaxIDVal();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -147,30 +143,23 @@ public class StripeVal {
         WebElement myPaymentsElement = (new WebDriverWait(driver, 30))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.xpath("//span[contains(text(),'Payments')]")));
-        JavascriptExecutor executorPayment = (JavascriptExecutor) driver;
-        executorPayment.executeScript("arguments[0].click();", myPaymentsElement);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", myPaymentsElement);
         fields.waitForPageLoad();
         String myStripePaymentsURL = driver.getCurrentUrl();
         Assert.assertTrue("You are not on payments page",
                 myStripePaymentsURL.contains("https://dashboard.stripe.com/test/payments"));
         fields.waitForPageLoad();
-        fields.searchStripeOrder(newTxnId);
+        fields.searchStripeOrder(txId);
+
         fields.waitForPageLoad();
-
-        List<WebElement> valTransaction = driver.findElements(By.className(".Text-display--inline"));
-        for (WebElement orderId : valTransaction) {
-            Assert.assertTrue("Donation amount is incorrect or not present", orderId.getText().equals("$1.00"));
-            Assert.assertTrue("First and Last name is incorrect or not present", orderId.getText().equals("Unit Tester"));
-            Assert.assertTrue("Email address is incorrect or not present", orderId.getText().equals(new_email));
-            Assert.assertTrue("Address is incorrect or not present",
-                    orderId.getText().equals("1 Hilltop Baltimore, 20001, US"));
-        }
-
-        helper.getSupporterByEmail(FUNDRAISING_TEST = "stripeRecurringVal", fields);
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
+                .equals("https://dashboard.stripe.com/test/payments1/" + txId));
+        fields.validateStripeOrder(new_email);
     }
 
     public static void stripeSingle3DVal(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        helper.ensAuthTestVal();
+        page.ensAuthTestVal();
         driver.navigate().to("https://politicalnetworks.com/page/12841/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("20");
@@ -231,9 +220,8 @@ public class StripeVal {
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12841/donate/3"));
 
 //      Get the details from the third page and Verify the fields
-        String txnId = driver.findElement(By.cssSelector(".txnID")).getText();
-        String newTxnId = txnId.replaceAll("TXN ID:-\\s", " ");
-        System.out.println("ID: " + newTxnId);
+
+        String txnId = fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
 
@@ -259,7 +247,7 @@ public class StripeVal {
         Assert.assertTrue("You are not on payments page",
                 myStripePaymentsURL.contains("https://dashboard.stripe.com/test/payments"));
         fields.waitForPageLoad();
-        fields.searchStripeOrder(newTxnId);
+        fields.searchStripeOrder(txnId);
         fields.waitForPageLoad();
 
         List<WebElement> valTransaction = driver.findElements(By.className(".Text-display--inline"));
@@ -271,11 +259,12 @@ public class StripeVal {
                     orderId.getText().equals("1 Hilltop Baltimore, 20001, US"));
         }
 
-        helper.getSupporterByEmail(FUNDRAISING_TEST = "stripeSingle3DVal", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST = "stripeSingle3DVal", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "stripeSingle3DVal", fields);
     }
 
     public static void stripeRecurring3DVal(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        helper.ensAuthTestVal();
+        page.ensAuthTestVal();
         driver.navigate().to("https://politicalnetworks.com/page/12841/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
@@ -342,9 +331,7 @@ public class StripeVal {
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12841/donate/3"));
 
 //      Get the details from the third page and Verify the fields
-        String txnId = driver.findElement(By.cssSelector(".txnID")).getText();
-        String newTxnId = txnId.replaceAll("TXN ID:-\\s", " ");
-        System.out.println("ID: " + newTxnId);
+        String txnId = fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
 
@@ -370,7 +357,7 @@ public class StripeVal {
         Assert.assertTrue("You are not on payments page",
                 myStripePaymentsURL.contains("https://dashboard.stripe.com/test/payments"));
         fields.waitForPageLoad();
-        fields.searchStripeOrder(newTxnId);
+        fields.searchStripeOrder(txnId);
         fields.waitForPageLoad();
 
         List<WebElement> valTransaction = driver.findElements(By.className(".Text-display--inline"));
@@ -382,6 +369,7 @@ public class StripeVal {
                     orderId.getText().equals("1 Hilltop Baltimore, 20001, US"));
         }
 
-        helper.getSupporterByEmail(FUNDRAISING_TEST = "stripeRecurring3DVal", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST = "stripeRecurring3DVal", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "stripeRecurring3DVal", fields);
     }
 }

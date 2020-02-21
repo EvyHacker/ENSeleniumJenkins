@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-
 public class IATS {
+
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
     private static  String FUNDRAISING_TEST;
@@ -56,6 +56,8 @@ public class IATS {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/841/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3509"));
@@ -66,11 +68,12 @@ public class IATS {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("VISA"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="iatsSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="iatsSingle", fields);
     }
 
 
     public static void IATSRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-      //  page.ensAuthTest();
+        page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/861/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
@@ -108,6 +111,8 @@ public class IATS {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/861/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3510"));
@@ -117,7 +122,8 @@ public class IATS {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("VISA"));
 
-       // page.getSupporterByEmail(FUNDRAISING_TEST="IATSRecurring", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST="IATSRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="IATSRecurring", fields);
     }
 
     public static void IATSACHRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -162,6 +168,8 @@ public class IATS {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/5724/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("4542"));
@@ -171,7 +179,8 @@ public class IATS {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("BANK_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("ACHEFT"));
 
-       // page.getSupporterByEmail(FUNDRAISING_TEST="IATSACHRecurring", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST="IATSACHRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="IATSACHRecurring", fields);
     }
 
     public static void IATSACHRecurPaymenttypelogic(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -226,6 +235,8 @@ public class IATS {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/5725/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("4543"));
@@ -234,6 +245,8 @@ public class IATS {
         Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("BANK_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("ACHEFT"));
-      //  page.getSupporterByEmail(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields);
+
+        page.getSupporterByEmail(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields);
+        page.getSupporterById(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields);
     }
 }

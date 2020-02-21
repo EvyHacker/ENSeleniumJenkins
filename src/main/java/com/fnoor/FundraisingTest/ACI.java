@@ -17,7 +17,7 @@ public class ACI {
     private static  String FUNDRAISING_TEST;
 
     public static void aciSingleVisa(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        page.ensAuthTest();
+       // page.ensAuthTest();
 
         //Testing Visa#4120300909000003 test number
         driver.get("https://politicalnetworks.com/page/12988/donate/1");
@@ -319,7 +319,7 @@ public class ACI {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext6.contains("TEST: Visa"));
 
         System.out.println("Visa7: transaction complete");
-        page.getSupporterByEmail(FUNDRAISING_TEST="aciSingleVisa", fields);
+       // page.getSupporterByEmail(FUNDRAISING_TEST="aciSingleVisa", fields);
     }
 
     public static void aciSingleMasterCard(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {

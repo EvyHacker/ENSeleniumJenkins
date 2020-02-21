@@ -1,11 +1,11 @@
 package com.fnoor.FundraisingTest;
 
 import com.fnoor.FundraisingPageDriver;
-import com.fnoor.FundraisingPageHelper;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -14,11 +14,10 @@ import java.time.format.DateTimeFormatter;
 public class WORLDPAY {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
     private static  String FUNDRAISING_TEST;
 
     public static void worldpayCCSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        helper.ensAuthTest();
+        page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/842/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
@@ -49,6 +48,8 @@ public class WORLDPAY {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/842/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3511"));
@@ -58,12 +59,13 @@ public class WORLDPAY {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA-SSL"));
 
-        helper.getSupporterByEmail(FUNDRAISING_TEST="WorldpayCCSingle", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST="WorldpayCCSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="WorldpayCCSingle", fields);
     }
 
 
     public static void worldpayCCRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        helper.ensAuthTest();
+        page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/862/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
@@ -108,10 +110,11 @@ public class WORLDPAY {
 
         fields.submit();
 
-
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/862/donate/2"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -122,11 +125,12 @@ public class WORLDPAY {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA-SSL"));
 
-        helper.getSupporterByEmail(FUNDRAISING_TEST="WorldpayCCRecurring", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST="WorldpayCCRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="WorldpayCCRecurring", fields);
     }
 
     public static void worldpay3DSecureTest(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        helper.ensAuthTest();
+        page.ensAuthTest();
 
         driver.get("https://politicalnetworks.com/page/863/donate/1?mode=DEMO");
 
@@ -148,18 +152,27 @@ public class WORLDPAY {
 
         fields.selectPaymentType("Visa");
         fields.selectPayCurrency("USD");
-        fields.setCCName("Unit Tester");
+        fields.setCCName("3D");
         fields.setCCNUmber("5454545454545454");
         fields.setCCExpiry(new CharSequence[] {"12", "2020"});
         fields.setCCV("123");
 
-
         fields.submit();
+        //Validate 3D secure page
+        fields.waitForPageLoad();
+        Assert.assertTrue(driver.getCurrentUrl()
+                .contains("https://secure-test.worldpay.com/jsp/test/shopper/ThreeDResponseSimulator.jsp?orderCode="));
+        String securetext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("3d Amount is incorrect/not present", securetext.contains("USD 15.00"));
+        WebElement submitButton = driver.findElement(By.xpath("//input[@class='lefty']"));
+        submitButton.click();
 
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/863/donate/3"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -170,12 +183,13 @@ public class WORLDPAY {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA-SSL"));
 
-        helper.getSupporterByEmail(FUNDRAISING_TEST="worldpay3DSecureTest", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST="worldpay3DSecureTest", fields);
+        page.getSupporterById(FUNDRAISING_TEST="worldpay3DSecureTest", fields);
     }
 
     //3d authentication disabled
     public static void worldpay3DRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        helper.ensAuthTest();
+        page.ensAuthTest();
 
         driver.get("https://politicalnetworks.com/page/10877/donate/1?mode=DEMO");
 
@@ -198,15 +212,27 @@ public class WORLDPAY {
         fields.setRecurFreq("MONTHLY");
         fields.setRecurDay("23");
 
-        fields.setCCName("Unit Tester");
+        fields.setCCName("3D");
         fields.setCCNUmber("4222222222222220");
         fields.setCCExpiry(new CharSequence[] {"12", "2020"});
         fields.setCCV("123");
 
         fields.submit();
+        //Validate 3D secure page
+        fields.waitForPageLoad();
+        Assert.assertTrue(driver.getCurrentUrl()
+                .contains("https://secure-test.worldpay.com/jsp/test/shopper/ThreeDResponseSimulator.jsp?orderCode="));
+        String securetext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("3d Amount is incorrect/not present", securetext.contains("USD 15.00"));
+        WebElement submitButton = driver.findElement(By.xpath("//input[@class='lefty']"));
+        submitButton.click();
+
+        fields.waitForPageLoad();
 
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/10877/donate/3"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -217,6 +243,7 @@ public class WORLDPAY {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA-SSL"));
 
-        helper.getSupporterByEmail(FUNDRAISING_TEST="worldpay3DRecurring", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST="worldpay3DRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="worldpay3DRecurring", fields);
     }
 }

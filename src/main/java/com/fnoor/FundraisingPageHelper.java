@@ -135,11 +135,41 @@ public class FundraisingPageHelper extends FundraisingPageDriver {
         }
         String jsonResponse = IOUtils.toString(response.getEntity().getContent(), "UTF-8");
         System.out.println("RESPONSE as String(getSupporterByEmailETT): " + jsonResponse);
-
+        System.out.println("SupporterEmail: " + supporterEmail);
 //        ObjectMapper mapper = new ObjectMapper();
 //        JsonNode node = mapper.readTree(jsonResponse);
 //        subjectETT = node.get("subject").asText();
 //        System.out.println("subjectETT: " + subjectETT);
+
+    }
+
+    @AfterTest(alwaysRun = true)
+    public static void getSupporterByEmailRSM(String testId, PageFields fields) throws IOException, InterruptedException {
+        System.out.println("In after class");
+        HttpClient client = HttpClientBuilder.create().build();
+        supporterEmail = fields.createRSMemail(testId);
+
+        HttpGet get = new HttpGet(SERVICE_URL + "/supporter?email=" + supporterEmail);
+        get.setHeader("Content-Type", "application/json");
+        get.setHeader("ens-auth-token", ens_auth_token);
+
+        HttpResponse response = client.execute(get);
+        int status = response.getStatusLine().getStatusCode();
+        if (status != HTTP_STATUS_OK) {
+            throw new IOException("Unable to authenticate. Received invalid http status=" + status);
+        }
+        String jsonResponse = IOUtils.toString(response.getEntity().getContent(), "UTF-8");
+        System.out.println("RESPONSE as String(getSupporterByEmail): " + jsonResponse);
+
+        // use jackson library to pull the string into json objects
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode node = mapper.readTree(jsonResponse);
+        supporterId = node.get("supporterId").asText();
+        supporterEmail = node.get("Email Address").asText();
+        System.out.println("supporterId: " + supporterId);
+
+        System.out.println("status: " + status);
+        System.out.println("SupporterEmail: " + supporterEmail);
 
     }
 
