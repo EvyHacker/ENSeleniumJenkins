@@ -180,6 +180,14 @@ public class FundraisingPageDriver {
 
         switch (testCase) {
 
+            case "TestNG":{
+                Testing.paysafe3DSingle();
+                break;
+            }
+            case "Test":{
+                TestNGIats.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
+                break;
+            }
             case "IATS": {
                 IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
                 IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring", fields, driver);
@@ -189,6 +197,7 @@ public class FundraisingPageDriver {
             }
             case "F100": {//PB_F1
                 IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
+                break;
             }
             case "F101":{//PB_F2
                 IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring", fields, driver);

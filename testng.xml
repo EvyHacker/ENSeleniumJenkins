@@ -6,10 +6,11 @@
         <listener class-name="org.testng.reporters.JUnitReportReporter"/>
     </listeners>
     <test name="Donations">
-<!--        <classes>-->
-<!--            <class name="com.fnoor.FundraisingTest.Testing" />-->
+        <classes>
+            <class name="com.fnoor.FundraisingTest.TestNGIats" />
+            <class name="com.fnoor.FundraisingTest.Testing" />
 
-<!--        </classes>-->
+        </classes>
 <!--        <classes>-->
 <!--            <class name="api.http.calls.ApiTest" />-->
 <!--        </classes>-->

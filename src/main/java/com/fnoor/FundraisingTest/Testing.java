@@ -38,8 +38,8 @@ public class Testing {
     static FundraisingPageHelper helper = new FundraisingPageHelper();
     private static String FUNDRAISING_TEST;
     public static WebDriver driver;
-    PageFields fields;
-    String testId;
+    private static PageFields fields;
+    private static String testId;
     String currentFrame = null;
 
 
@@ -139,7 +139,7 @@ public class Testing {
     }
     @Test
 
-    public void paysafe3DSingle() throws InterruptedException, IOException {
+    public static void paysafe3DSingle() throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12868/donate/1?mode=DEMO");
 
