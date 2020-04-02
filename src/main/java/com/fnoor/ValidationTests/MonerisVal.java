@@ -74,6 +74,7 @@ public class MonerisVal {
         fields.monerisLogin();
 
         fields.waitForPageLoad();
+        Thread.sleep(4000);
         fields.searchMonerisOrder(newTxnId);
         fields.waitForPageLoad();
 //        Assert.assertTrue("Didn't redirect to transactions page", driver.getCurrentUrl().

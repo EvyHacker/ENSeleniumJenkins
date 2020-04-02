@@ -9,11 +9,19 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
+
+import static com.fnoor.PageFields.PAYPALPASSWORD;
+import static com.fnoor.PageFields.PAYPALUSERNAME;
 
 public class PAYFLOW {
 
@@ -158,45 +166,50 @@ public class PAYFLOW {
         fields.submit();
 
         fields.waitForPageLoad();
-        String myurl = driver.getCurrentUrl();
-        if (myurl.contains("#/checkout")){
-            fields.waitForPageLoad();
-        }else{
+//        String myurl = driver.getCurrentUrl();
+//        if (myurl.contains("#/checkout")) {
+//            fields.waitForPageLoad();
+//        } else {
             //Submit Paypal payment
-            fields.waitForPageLoad();
             fields.setPaypalEmail();
-            fields.submitPaypal();
+            fields.nextPayapl();
             fields.waitForPageLoad();
             fields.setPaypalPassword();
             fields.submitPaypal();
-            fields.waitForPageLoad();}
+            //fields.waitForPageLoad();
 
-        fields.waitForPageLoad();
-        WebElement paypalContinue = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.xpath("//*[@id=\"payment-submit-btn\"]")));
+        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].click();", paypalContinue);
-        fields.waitForPageLoad();
+        Assert.assertTrue("You didnt submit the payment",
+                driver.getCurrentUrl().contains("https://www.sandbox.paypal.com/webapps/hermes?flow=1-P&ulReturn=true&token="));
 
-        //		Assert that the payment was successful and the third page was reached
+            WebElement paypalContinue = (new WebDriverWait(driver, 60))
+                    .until(ExpectedConditions.presenceOfElementLocated
+                            (By.id("payment-submit-btn")));
 
-        Assert.assertTrue("Urls are not the same",
-                driver.getCurrentUrl().equals("https://politicalnetworks.com/page/10887/donate/3"));
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].click();", paypalContinue);
+//        paypalContinue.click();
+//        paypalContinue.submit();
+            fields.waitForPageLoad();
 
-        fields.getSupporterTaxID();
+            //		Assert that the payment was successful and the third page was reached
+
+            Assert.assertTrue("Urls are not the same",
+                    driver.getCurrentUrl().equals("https://politicalnetworks.com/page/10887/donate/3"));
+
+            fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
-        String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Campaign ID not present", bodytext.contains("6317"));
-        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Payflow Gateway"));
-        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
-        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
-        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
-        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Paypal"));
+            String bodytext = driver.findElement(By.tagName("body")).getText();
+            Assert.assertTrue("Campaign ID not present", bodytext.contains("6317"));
+            Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Payflow Gateway"));
+            Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+            Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
+            Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+            Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Paypal"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST="payflowProPayViaPaypal", fields);
-        page.getSupporterById(FUNDRAISING_TEST="payflowProPayViaPaypal", fields);
-    }
+            page.getSupporterByEmail(FUNDRAISING_TEST = "payflowProPayViaPaypal", fields);
+            page.getSupporterById(FUNDRAISING_TEST = "payflowProPayViaPaypal", fields);
+        }
 }

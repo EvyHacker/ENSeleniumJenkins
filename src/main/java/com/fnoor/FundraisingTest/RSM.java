@@ -39,7 +39,7 @@ public class RSM {
             throw new IOException("Unable to authenticate. Received invalid http status=" + status);
         }
         String jsonResponse = IOUtils.toString(response.getEntity().getContent(), "UTF-8");
-        System.out.println("RESPONSE as String(getSupporterByEmail): " + jsonResponse);
+        System.out.println("RESPONSE as String(getSupporterByEmailRSM): " + jsonResponse);
 
         // use jackson library to pull the string into json objects
         ObjectMapper mapper = new ObjectMapper();

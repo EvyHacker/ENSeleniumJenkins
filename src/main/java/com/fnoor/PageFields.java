@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -165,22 +166,14 @@ public class PageFields {
     WebElement field_DataReports;
 
     //  Paypal login details
-    @FindBy(name = "login_email")
-    WebElement field_Paypal_loginemail;
-    @FindBy(name = "login_password")
-    WebElement field_Paypal_loginpassword;
-    @FindBy(id = "btnNext")
-    WebElement field_Paypal_Next;
-    @FindBy(id = "btnLogin")
-    WebElement field_Paypal_Login;
-    @FindBy(xpath = "//a[@id='createAccount']")
-    WebElement field_Paypal_CreateAcc;
-    @FindBy(id = "confirmButtonTop")
-    WebElement field_Paypal_Confirm;
-    @FindBy(id = "paypalLogo")
-    WebElement field_paypal_Logo;
-    @FindBy(id = "createAccount")
-    WebElement paypalCreateAccount;
+    @FindBy(id = "email") WebElement field_Paypal_loginemail;
+    @FindBy(id = "password") WebElement field_Paypal_loginpassword;
+    @FindBy(id = "btnNext") WebElement field_Paypal_Next;
+    @FindBy(id = "btnLogin") WebElement field_Paypal_Login;
+    @FindBy(xpath = "//a[@id='createAccount']") WebElement field_Paypal_CreateAcc;
+    @FindBy(id = "confirmButtonTop") WebElement field_Paypal_Confirm;
+    @FindBy(id = "paypalLogo") WebElement field_paypal_Logo;
+    @FindBy(id = "createAccount") WebElement paypalCreateAccount;
 
     // Login Fields //
     @FindBy(id = "enLoginUsername")
@@ -203,32 +196,20 @@ public class PageFields {
     WebElement field_Store_Moneris;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/form[1]/table[1]/tbody[1]/tr[6]/td[2]/input[1]")
     WebElement field_Password_Moneris;
-    @FindBy(name = "do_login")
-    WebElement field_Moneris_Submit;
-    @FindBy(name = "forgot_pass")
-    WebElement field_Moneris_ForgotPass;
-    @FindBy(xpath = "//td[contains(text(),'ORDER ID')]")
-    public List<WebElement> field_Order_ID;
+    @FindBy(name = "do_login") WebElement field_Moneris_Submit;
+    @FindBy(name = "forgot_pass") WebElement field_Moneris_ForgotPass;
+    @FindBy(xpath = "//td[contains(text(),'ORDER ID')]") public List<WebElement> field_Order_ID;
 
     // PaySafe login and dashboard details
-    @FindBy(id = "j_username")
-    WebElement field_Username_Paysafe;
-    @FindBy(id = "j_password")
-    WebElement field_Password_Paysafe;
-    @FindBy(id = "loginBtn")
-    WebElement field_Login_Paysafe;
-    @FindBy(xpath = "//a[contains(text(),'Forgot your password?')]")
-    WebElement field_ForgotPass_Paysafe;
-    @FindBy(id = "_menuReports")
-    WebElement field_Reports_PaySafe;
-    @FindBy(id = "btnSearch")
-    WebElement field_GenerateSummaryPyaSafe;
-    @FindBy(xpath = "//a[contains(text(),'Fully Settled')]")
-    WebElement field_TransactionPaysafe;
-    @FindBy(xpath = " //a[contains(text(),'Engagingnetworks')]")
-    WebElement field_AccountPaysafe;
-    @FindBy(id = "rowsPerPage")
-    WebElement field_selectRowsPerPage;
+    @FindBy(id = "j_username") WebElement field_Username_Paysafe;
+    @FindBy(id = "j_password") WebElement field_Password_Paysafe;
+    @FindBy(id = "loginBtn") WebElement field_Login_Paysafe;
+    @FindBy(xpath = "//a[contains(text(),'Forgot your password?')]") WebElement field_ForgotPass_Paysafe;
+    @FindBy(id = "_menuReports") WebElement field_Reports_PaySafe;
+    @FindBy(id = "btnSearch") WebElement field_GenerateSummaryPyaSafe;
+    @FindBy(xpath = "//a[contains(text(),'Fully Settled')]") WebElement field_TransactionPaysafe;
+    @FindBy(xpath = " //a[contains(text(),'Engagingnetworks')]") WebElement field_AccountPaysafe;
+    @FindBy(id = "rowsPerPage") WebElement field_selectRowsPerPage;
 
     //   Stripe validation details   //
     @FindBy(id = "email")
@@ -623,33 +604,54 @@ public class PageFields {
 
     ///////////////////////// SET PAYPAL LOGIN   /////////////////////////////////
 
-    public void setPaypalEmail() {
+    public void setPaypalEmail()  {
         try {
             if (field_Paypal_CreateAcc.isDisplayed()) {
-                field_Paypal_loginemail.sendKeys(PAYPALUSERNAME);
+                WebElement paypalEmail = (new WebDriverWait(driver, 20))
+                        .until(ExpectedConditions.visibilityOf(field_Paypal_loginemail));
+                paypalEmail.sendKeys(PAYPALUSERNAME);
             }
-        } catch (NoSuchElementException e) {
+        } catch (Exception e) {
         }
     }
 
     public void setPaypalPassword() {
         try {
             if (field_Paypal_CreateAcc.isDisplayed()) {
-                field_Paypal_loginpassword.sendKeys(PAYPALPASSWORD);
+                WebElement paypalPassword = (new WebDriverWait(driver, 20))
+                        .until(ExpectedConditions.visibilityOf(field_Paypal_loginpassword));
+                paypalPassword.sendKeys(PAYPALPASSWORD);
             }
         } catch (NoSuchElementException e) {
         }
     }
 
-    public void submitPaypal() {
+    public void nextPayapl() {
         try {
             if (field_Paypal_Next.isDisplayed()) {
-                field_Paypal_Next.click();
-            } else {
+                WebElement paypalNext = (new WebDriverWait(driver, 20))
+                        .until(ExpectedConditions.visibilityOf(field_Paypal_Next));
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
-                executor.executeScript("arguments[0].click();", field_Paypal_Login);
+                executor.executeScript("arguments[0].click();", paypalNext);
             }
-        } catch (NoSuchElementException e) {
+//            else {
+//                WebElement paypalLogin = (new WebDriverWait(driver, 20))
+//                        .until(ExpectedConditions.visibilityOf(field_Paypal_Login));
+//                JavascriptExecutor executor = (JavascriptExecutor) driver;
+//                executor.executeScript("arguments[0].click();", paypalLogin);
+//           }
+        } catch (Exception e) {
+        }
+    }
+
+    public void submitPaypal(){
+
+        try {
+            WebElement paypalLogin = (new WebDriverWait(driver, 20))
+                    .until(ExpectedConditions.visibilityOf(field_Paypal_Login));
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", paypalLogin);
+        } catch (Exception e) {
         }
     }
 
@@ -753,8 +755,8 @@ public class PageFields {
 //                        (By.linkText("Transactions")));
 //        executor.executeScript("arguments[0].click();", transaction);
 
-        WebElement customerIdSearch = driver.findElement(By.name("other_custid"));
-        executor.executeScript("arguments[0].click();", customerIdSearch);
+//        WebElement customerIdSearch = driver.findElement(By.name("other_custid_value"));
+//        executor.executeScript("arguments[0].click();", customerIdSearch);
         //JavascriptExecutor executor0 = (JavascriptExecutor) driver;
         //executor.executeScript("arguments[0].click();", customerIdSearch);
         WebElement submitSearch = driver.findElement(By.name("do_query"));

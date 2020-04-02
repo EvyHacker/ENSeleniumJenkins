@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class PAYSAFE {
 
@@ -165,7 +166,13 @@ public class PAYSAFE {
 
         //      Validate resend code function
         fields.waitForPageLoad();
-        driver.switchTo().frame("Cardinal-CCA-IFrame");
+        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
+        for (WebElement iframeT : iframes) {
+            System.out.println("Frame " + iframeT);
+            System.out.println("Frame1 " + iframeT.getAttribute("id"));
+            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));}
+        driver.switchTo().frame("Cardinal-collector");
+        //driver.switchTo().frame(1);
         WebElement resendCode = driver.findElement(By.name("resendChallengeData"));
         resendCode.submit();
         WebElement alertMessage = (new WebDriverWait(driver, 20))

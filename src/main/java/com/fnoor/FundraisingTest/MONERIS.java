@@ -128,16 +128,17 @@ public class MONERIS {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Unitî");
+        fields.setLastname("Tester€");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
 
         fields.submit();
 
-        fields.setAddress1("1 Hilltop");
-        fields.setCity("Baltimore");
+        fields.setAddress1("1 H₣illtop");
+        fields.setCity("ÀàÂâÆæÇçÈèÉèÉéÊêËëÎîÏïÔôŒœÙùÛûÜü « »  €₣");
+        //fields.setCity("Baltimore");
         fields.selectRegion("MD");
         fields.setPostCode("20001");
         fields.selectCountry("US");
@@ -160,7 +161,7 @@ public class MONERIS {
         fields.setCCV("123");
 
         fields.submit();
-
+        fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/869/donate/3"));
@@ -277,21 +278,21 @@ public class MONERIS {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Uniât");
+        fields.setLastname("ÀàÂâÆæÇçÈèÉèÉéÊêËëÎîÏïÔôŒœÙùÛûÜü « »  €₣");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
 
         fields.submit();
 
-        fields.setAddress1("1 Hilltop");
-        fields.setCity("Baltimore");
+        fields.setAddress1("1 ÎHilltop«");
+        fields.setCity("Baltimoreë");
         fields.selectRegion("MD");
         fields.setPostCode("20001");
         fields.selectCountry("US");
 
-        fields.setCCName("Unit Tester");
+        fields.setCCName("Unit Testerô");
         fields.setCCNUmber("4012001037141112");
         fields.setCCExpiry(new CharSequence[]{"12", "2020"});
         fields.setCCV("123");
@@ -336,8 +337,8 @@ public class MONERIS {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Unit»");
+        fields.setLastname("Testerî");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -345,8 +346,9 @@ public class MONERIS {
         fields.submit();
         fields.waitForPageLoad();
 
-        fields.setAddress1("1 Hilltop");
-        fields.setCity("Baltimore");
+        fields.setAddress1("ÀàÂâÆæÇçÈèÉèÉéÊêËëÎîÏïÔôŒœÙùÛûÜü « »  €₣");
+        //fields.setCity("Baltimore");
+        fields.setCity("Montralœt");
         fields.selectRegion("MD");
         fields.setPostCode("20001");
 

@@ -3,18 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="e9ec9c8a-8c77-45cd-a867-fdcaf19d3872" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/Testing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/MONERIS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/MONERIS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYFLOW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYFLOW.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYSAFE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYSAFE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/RSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/RSM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/PageFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/PageFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/ValidationTests/MonerisVal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/ValidationTests/MonerisVal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/IATS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/IATS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/Testing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/Testing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/MONERIS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/MONERIS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYFLOW.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYFLOW.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYSAFE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYSAFE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/fnautomation-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/fnautomation-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,9 +164,10 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.TestNGIats.iatsSingle" />
+      <item itemvalue="JUnit.TestNGIats" />
       <item itemvalue="TestNG.Testing.paysafe3DSingle" />
       <item itemvalue="TestNG.Testing.paysafe3DSingle (1)" />
-      <item itemvalue="JUnit.TestNGIats" />
       <item itemvalue="TestNG.TestNGIats.iatsSingle" />
       <item itemvalue="TestNG./Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/testng.xml" />
     </list>
@@ -244,12 +248,13 @@
     <state width="1398" height="211" key="GridCell.Tab.0.right/0.23.1440.824/1440.23.2560.1057@0.23.1440.824" timestamp="1582327208002" />
     <state width="1398" height="211" key="GridCell.Tab.0.right/0.23.1440.825/1440.23.2560.1057@0.23.1440.825" timestamp="1582326480348" />
     <state width="1398" height="211" key="GridCell.Tab.0.right/0.23.1440.826/1440.23.2560.1057@0.23.1440.826" timestamp="1582326434314" />
-    <state x="399" y="268" key="com.intellij.ide.util.TipDialog" timestamp="1582319902153">
-      <screen x="0" y="23" width="1440" height="824" />
+    <state x="399" y="266" key="com.intellij.ide.util.TipDialog" timestamp="1585685965879">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
-    <state x="399" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.816/1440.23.2560.1057@0.23.1440.816" timestamp="1581095437840" />
-    <state x="399" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.821/1440.23.2560.1057@0.23.1440.821" timestamp="1580739024395" />
-    <state x="399" y="267" key="com.intellij.ide.util.TipDialog/0.23.1440.822/1440.23.2560.1057@0.23.1440.822" timestamp="1581618902581" />
+    <state x="399" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.816/1440.23.2560.1057@0.23.1440.816" timestamp="1585012860624" />
+    <state x="399" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.821/1440.23.1920.1057@0.23.1440.821" timestamp="1583336920487" />
+    <state x="399" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.821/1440.23.2560.1057@0.23.1440.821" timestamp="1585685965879" />
+    <state x="399" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.822/1440.23.2560.1057@0.23.1440.822" timestamp="1585576890182" />
     <state x="399" y="268" key="com.intellij.ide.util.TipDialog/0.23.1440.824/1440.23.2560.1057@0.23.1440.824" timestamp="1582319902153" />
   </component>
 </project>

@@ -20,7 +20,9 @@ import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -28,6 +30,7 @@ import org.testng.annotations.BeforeClass;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.TimeUnit;
 
 import static com.fnoor.PageFields.*;
 
@@ -46,7 +49,6 @@ public class FundraisingPageDriver {
 
             // Test Account 09
             String body = "dae1e490-ddce-4be9-9225-8910b090d674";
-            // Evy's Test Account
 
             InputStream is = new ByteArrayInputStream(body.getBytes());
             InputStreamEntity inputStreamEntity;
@@ -172,11 +174,24 @@ public class FundraisingPageDriver {
             //System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
             driver = new FirefoxDriver();
         }else{
-        System.setProperty("webdriver.chrome.driver", webDriverProperty);
-            driver = new ChromeDriver();}
+            System.setProperty("webdriver.chrome.driver", webDriverProperty);
+            DesiredCapabilities capabilitiesChrome = DesiredCapabilities.chrome();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("disable-gpu");
+            options.addArguments("--always-authorize-plugins");
+            options.addArguments("--dns-prefetch-disable");
+            options.addArguments("--load-extension=\"+s+\"/stopper");
+            options.addArguments("--disable-features=VizDisplayCompositor");
+            options.addArguments("pageLoadStrategy=normal");
+            options.addArguments("--headless");
+            capabilitiesChrome.setCapability(ChromeOptions.CAPABILITY,options);
+           System.out.println("Im here");
+            driver = new ChromeDriver(options);
+            driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+        }
+
 
         PageFields fields = PageFactory.initElements(driver, PageFields.class);
-        FundraisingPageHelper helper = new FundraisingPageHelper();
 
         switch (testCase) {
 
@@ -340,6 +355,7 @@ public class FundraisingPageDriver {
             }
             case "F502":{//PB_F16
                 RSM.rsmDirectDebit(FUNDRAISING_TEST="rsmDirectDebit", fields, driver);
+                break;
             }
             case "F503":{//PB_F50
                 RSM.rsm3DSingle(FUNDRAISING_TEST="rsm3DSingle", fields, driver);
@@ -437,6 +453,11 @@ public class FundraisingPageDriver {
                 StripeVal.stripeRecurring3DVal(FUNDRAISING_TEST = "stripeRecurring3DVal", fields, driver);
                 break;
             }
+            case "StripeJenkins":{
+                STRIPE.stripeSingle(FUNDRAISING_TEST = "stripeSingle", fields, driver);
+                STRIPE.stripeRecurring(FUNDRAISING_TEST = "stripeRecurring", fields, driver);
+                STRIPE.stripeBancontactSingle(FUNDRAISING_TEST = "stripeBancontactSingle", fields, driver);
+            }
             case "F900": {//PB_F40
                 STRIPE.stripeSingle(FUNDRAISING_TEST = "stripeSingle", fields, driver);
             }
@@ -445,6 +466,7 @@ public class FundraisingPageDriver {
             }
             case "F902": {//PB_F42
                 STRIPE.stripeBancontactSingle(FUNDRAISING_TEST = "stripeBancontactSingle", fields, driver);
+                break;
             }
             case "F903": {//PB_F46
                 STRIPE.stripeSingle3D(FUNDRAISING_TEST = "stripeSingle3D", fields, driver);
@@ -484,7 +506,6 @@ public class FundraisingPageDriver {
             }
             case "F1000": {//PB_F54
                 ACI.aciSingleVisa(FUNDRAISING_TEST = "aciSingleVisa", fields, driver);
-                break;
             }
             case "F1001": {//PB_F54
                 ACI.aciSingleMasterCard(FUNDRAISING_TEST = "aciSingleMasterCard", fields, driver);
@@ -731,6 +752,7 @@ public class FundraisingPageDriver {
             }
             case "A1": {
                 PB_A1_PET.petition(FUNDRAISING_TEST = "petition", fields, driver);
+                break;
             }
             case "A2": {
                 PB_A2_DCF.dataCapture(FUNDRAISING_TEST = "dataCapture", fields, driver);
@@ -740,6 +762,7 @@ public class FundraisingPageDriver {
             }
             case "A4": {
                 PB_A4_ETT1.customTarget(FUNDRAISING_TEST = "customTarget", fields, driver);
+                break;
             }
             case "A5": {
                 PB_A5_ETT2.singleDBETT(FUNDRAISING_TEST = "singleDBETT", fields, driver);
