@@ -93,7 +93,7 @@ public class PageFields {
     @FindBy(id = "en__field_supporter_bankAccountType") WebElement field_BankAccType;
     @FindBy(id = "en__field_supporter_bankAccountNumber") WebElement field_BankAccNumber;
     @FindBy(id = "en__field_supporter_bankRoutingNumber") WebElement field_BankRoutingNumber;
-    @FindBy(id = "en__field_transaction_donationAmt") WebElement field_DonationAmt;
+    @FindBy(name = "transaction.donationAmt") WebElement field_DonationAmt;
     @FindBy(id = "en__field_transaction_paymenttype") WebElement field_PaymentType;
     @FindBy(id = "en__field_transaction_paycurrency") WebElement field_PaymentCurrency;
     @FindBys(value = @FindBy(name = "transaction.ccexpire")) List<WebElement> field_CCExpirySplit;
