@@ -2,12 +2,9 @@ package com.fnoor.Standalone;
 
 import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
-import junit.framework.Assert;
-import org.junit.Test;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
 
 public class PB_A4_ETT1 {
 
@@ -26,14 +23,16 @@ public class PB_A4_ETT1 {
 
         fields.submit();
 
-        String myurlfinal = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurlfinal.equals("https://politicalnetworks.com/page/11068/action/2"));
-        Assert.assertTrue("Target block not present", fields.verifyTargetblockIsPresent());
-
-        String customMessage = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Contact info not found ", customMessage.contains("My message to A5 customtarget1"));
-        Assert.assertTrue("Supporter details not found in Target message", customMessage.contains("Unit Tester"));
-
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().equals("https://politicalnetworks.com/page/11068/action/2"));
+        fields.validateETTContactDetailsTitle("Junior");
+        fields.validateETTContactDetailsFirstName("A5");
+        fields.validateETTContactDetailsLastName("customtarget1");
+        fields.validateETTContactDetailsOrganization("Amazing Stories");
+        fields.validateETTTargetMessage("Mr");
+        fields.validateETTTargetMessage("My message to Marta A5 customtarget1");
+        fields.validateETTTargetMessage("Test message");
+        fields.validateETTTargetMessage("Kind regards,");
+        fields.validateETTTargetMessage("Unit Tester");
         fields.submit();
 
         String myurlfinalUrl = driver.getCurrentUrl();

@@ -6,16 +6,18 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
+import static com.fnoor.PageFields.ENLOGIN;
+
 
 public class IATS {
 
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
-    private static  String FUNDRAISING_TEST;
+    private static String FUNDRAISING_TEST;
 
     @Test
     public static void iatsSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -49,7 +51,7 @@ public class IATS {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4222222222222220");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
         fields.setCCV("123");
 
         fields.submit();
@@ -69,8 +71,8 @@ public class IATS {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("VISA"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST="iatsSingle", fields);
-        page.getSupporterById(FUNDRAISING_TEST="iatsSingle", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST = "iatsSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "iatsSingle", fields);
     }
 
 
@@ -104,7 +106,7 @@ public class IATS {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4222222222222220");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
         fields.setCCV("123");
 
         fields.submit();
@@ -124,12 +126,12 @@ public class IATS {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("VISA"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST="IATSRecurring", fields);
-        page.getSupporterById(FUNDRAISING_TEST="IATSRecurring", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST = "IATSRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "IATSRecurring", fields);
     }
 
     public static void IATSACHRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-      //  page.ensAuthTest();
+        //  page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/5724/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
@@ -181,12 +183,12 @@ public class IATS {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("BANK_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("ACHEFT"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST="IATSACHRecurring", fields);
-        page.getSupporterById(FUNDRAISING_TEST="IATSACHRecurring", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST = "IATSACHRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "IATSACHRecurring", fields);
     }
 
     public static void IATSACHRecurPaymenttypelogic(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-      //  page.ensAuthTest();
+        //  page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/5725/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
@@ -208,7 +210,7 @@ public class IATS {
         fields.selectPayCurrency("USD");
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4222222222222220");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
         fields.setCCV("123");
 
         fields.submit();
@@ -225,7 +227,7 @@ public class IATS {
         fields.setBankRoutingNumber("000000000");
 
 
-       // fields.clickRecurringSinglePaymentchkbox();
+        // fields.clickRecurringSinglePaymentchkbox();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate startDate = LocalDate.now().plusDays(1);
         fields.setRecurStartDate(dtf.format(startDate).toString());
@@ -248,7 +250,81 @@ public class IATS {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("BANK_RECURRING"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("ACHEFT"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields);
-        page.getSupporterById(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST = "IATSACHRecurPaymenttypelogic", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "IATSACHRecurPaymenttypelogic", fields);
+    }
+
+    public static void IATSvalidateTransaction(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+
+        driver.navigate().to(ENLOGIN);
+        fields.enLogin();
+        fields.waitForPageLoad();
+        Thread.sleep(2000);
+        LocalDate date = LocalDate.now();
+        //String strDate = format(date);
+
+        //Validate IATSsingle transaction
+        fields.searchSupporter("pb_iatssingle_" + date.toString() + "@tellamazingstories.com");
+        Thread.sleep(2000);
+
+        // Validate supporter Details
+        fields.selectSupporter();
+        Thread.sleep(2000);
+        Assert.assertTrue("First name missing from supporter details", fields.getSupporterDetails().contains("Unit"));
+        Assert.assertTrue("Last name missing from supporter details", fields.getSupporterDetails().contains("Tester"));
+        Assert.assertTrue("Address1 missing from supporter details", fields.getSupporterDetails().contains("1 Hilltop"));
+        Assert.assertTrue("City missing from supporter details", fields.getSupporterDetails().contains("Baltimore"));
+        Assert.assertTrue("Region name missing from supporter details", fields.getSupporterDetails().contains("MD"));
+        Assert.assertTrue("Country name missing from supporter details", fields.getSupporterDetails().contains("US"));
+        Assert.assertTrue("Postcode missing from supporter details", fields.getSupporterDetails().contains("20001"));
+
+        //Validate transaction details
+       fields.expendTransaction();
+       Thread.sleep(2000);
+        Assert.assertTrue("Transaction error, amount is incorrect or missing ",
+                fields.getTransactionDetails().contains("Amount 15USD"));
+        Assert.assertTrue("Transaction error, status is incorrect or not present",
+                fields.getTransactionDetails().contains("success"));
+        Assert.assertTrue("Transaction error, gateway is incorrect or not present",
+                fields.getTransactionDetails().contains("IATS North America"));
+        Assert.assertTrue("Transaction error, payment type is incorrect or not present",
+                fields.getTransactionDetails().contains("VISA"));
+        Assert.assertTrue("Transaction error, transaction type is incorrect or not present",
+                fields.getTransactionDetails().contains("Recurring? N"));
+        Assert.assertTrue("Transaction error, campaign ID is missing or incorrect",
+                fields.getTransactionDetails().contains("3509"));
+
+        //Validate IATS NA Recurring transaction
+        fields.nextSupporter("pb_iatsrecurring_" + date.toString() + "@tellamazingstories.com");
+        Thread.sleep(2000);
+
+        // Validate supporter Details
+        fields.selectSupporter();
+        Thread.sleep(2000);
+        Assert.assertTrue("First name missing from supporter details", fields.getSupporterDetails().contains("Unit"));
+        Assert.assertTrue("Last name missing from supporter details", fields.getSupporterDetails().contains("Tester"));
+        Assert.assertTrue("Address1 missing from supporter details", fields.getSupporterDetails().contains("1 Hilltop"));
+        Assert.assertTrue("City missing from supporter details", fields.getSupporterDetails().contains("Baltimore"));
+        Assert.assertTrue("Region name missing from supporter details", fields.getSupporterDetails().contains("MD"));
+        Assert.assertTrue("Country name missing from supporter details", fields.getSupporterDetails().contains("US"));
+        Assert.assertTrue("Postcode missing from supporter details", fields.getSupporterDetails().contains("20001"));
+
+        //Validate transaction details
+        fields.expendTransaction();
+        Thread.sleep(2000);
+        Assert.assertTrue("Transaction error, amount is incorrect or missing ",
+                fields.getTransactionDetails().contains("Amount 15USD"));
+        Assert.assertTrue("Transaction error, status is incorrect or not present",
+                fields.getTransactionDetails().contains("success"));
+        Assert.assertTrue("Transaction error, gateway is incorrect or not present",
+                fields.getTransactionDetails().contains("IATS North America"));
+        Assert.assertTrue("Transaction error, payment type is incorrect or not present",
+                fields.getTransactionDetails().contains("VISA"));
+        Assert.assertTrue("Transaction error, transaction type is incorrect or not present",
+                fields.getTransactionDetails().contains("Recurring? Y"));
+        Assert.assertTrue("Transaction error, campaign ID is missing or incorrect",
+                fields.getTransactionDetails().contains("3510"));
+
+
     }
 }

@@ -227,7 +227,7 @@ public class STRIPE {
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4000002500003155");
         fields.setCCExpiry(new CharSequence[] {"12", "2020"});
-        fields.setCCV("123");
+        fields.setCCV("111");
 
         fields.submit();
 

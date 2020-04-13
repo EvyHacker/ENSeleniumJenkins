@@ -63,107 +63,96 @@ public class PageFields {
     public static final String PAYSAFEPASSWORD = "Engage18!";
 
     //  Personal Details Fields //
-    @FindBy(id = "en__field_supporter_firstName")
-    WebElement field_Firstname;
-    @FindBy(id = "en__field_supporter_lastName")
-    WebElement field_Lastname;
-    @FindBy(id = "en__field_supporter_title")
-    WebElement field_Title;
-    @FindBy(id = "en__field_supporter_emailAddress")
-    WebElement field_EmailAddress;
+    @FindBy(id = "en__field_supporter_firstName") WebElement field_Firstname;
+    @FindBy(id = "en__field_supporter_lastName") WebElement field_Lastname;
+    @FindBy(id = "en__field_supporter_title") WebElement field_Title;
+    @FindBy(id = "en__field_supporter_emailAddress") WebElement field_EmailAddress;
 
     //	Address Fields //
-    @FindBy(id = "en__field_supporter_address1")
-    WebElement field_Address1;
-    @FindBy(id = "en__field_supporter_address2")
-    WebElement field_Address2;
-    @FindBy(id = "en__field_supporter_city")
-    WebElement field_City;
-    @FindBy(id = "en__field_supporter_region")
-    WebElement field_Region;
-    @FindBy(id = "en__field_supporter_postcode")
-    WebElement field_Postcode;
-    @FindBy(id = "en__field_supporter_country")
-    WebElement field_Country;
+    @FindBy(id = "en__field_supporter_address1") WebElement field_Address1;
+    @FindBy(id = "en__field_supporter_address2") WebElement field_Address2;
+    @FindBy(id = "en__field_supporter_city") WebElement field_City;
+    @FindBy(id = "en__field_supporter_region") WebElement field_Region;
+    @FindBy(id = "en__field_supporter_postcode") WebElement field_Postcode;
+    @FindBy(id = "en__field_supporter_country") WebElement field_Country;
 
     //  Other Fields //
-    @FindBy(id = "en__field_transaction_othamt1")
-    WebElement field_OtherAmt1;
-    @FindBy(id = "en__field_transaction_othamt2")
-    WebElement field_OtherAmt2;
-    @FindBy(id = "en__field_transaction_othamt3")
-    WebElement field_OtherAmt3;
-    @FindBy(id = "en__field_transaction_othamt4")
-    WebElement field_OtherAmt4;
-    @FindBy(id = "en__field_supporter_appealCode")
-    WebElement field_Appealcode;
-    @FindBy(id = "en__field_transaction_dirgift")
-    WebElement field_Directgift;
-    @FindBy(id = "en__field_transaction_comments")
-    WebElement field_Addcomments;
-    @FindBy(id = "en__field_transaction_taxdeductible")
-    WebElement field_Taxdeductible;
-    @FindBy(id = "en__field_supporter_phoneNumber")
-    WebElement field_phonenum;
+    @FindBy(id = "en__field_transaction_othamt1") WebElement field_OtherAmt1;
+    @FindBy(id = "en__field_transaction_othamt2") WebElement field_OtherAmt2;
+    @FindBy(id = "en__field_transaction_othamt3") WebElement field_OtherAmt3;
+    @FindBy(id = "en__field_transaction_othamt4") WebElement field_OtherAmt4;
+    @FindBy(id = "en__field_supporter_appealCode") WebElement field_Appealcode;
+    @FindBy(id = "en__field_transaction_dirgift") WebElement field_Directgift;
+    @FindBy(id = "en__field_transaction_comments") WebElement field_Addcomments;
+    @FindBy(id = "en__field_transaction_taxdeductible") WebElement field_Taxdeductible;
+    @FindBy(id = "en__field_supporter_phoneNumber") WebElement field_phonenum;
 
     //	Payment Fields //
-    @FindBy(id = "en__field_transaction_ccnumber")
-    WebElement field_CCNumber;
-    @FindBy(id = "en__field_supporter_creditCardHolderName")
-    WebElement field_CCName;
-    @FindBy(id = "en__field_supporter_bankAccountType")
-    WebElement field_BankAccType;
-    @FindBy(id = "en__field_supporter_bankAccountNumber")
-    WebElement field_BankAccNumber;
-    @FindBy(id = "en__field_supporter_bankRoutingNumber")
-    WebElement field_BankRoutingNumber;
-    @FindBy(id = "en__field_transaction_donationAmt")
-    WebElement field_DonationAmt;
-    @FindBy(id = "en__field_transaction_paymenttype")
-    WebElement field_PaymentType;
-    @FindBy(id = "en__field_transaction_paycurrency")
-    WebElement field_PaymentCurrency;
-    @FindBys(value = @FindBy(name = "transaction.ccexpire"))
-    List<WebElement> field_CCExpirySplit;
-    @FindBy(id = "en__field_transaction_ccvv")
-    WebElement field_CCV;
-    @FindBy(id = "en__field_transaction_recurrpay")
-    WebElement field_RecurSinglePaychkbox;
-    @FindBy(id = "en__field_transaction_recurrpay0")
-    WebElement field_RecurPaychkbox;
-    @FindBy(id = "en__field_transaction_recurrpay1")
-    WebElement field_No_RecurPaychebox;
-    @FindBy(id = "en__field_transaction_recurrday")
-    WebElement field_RecurDay;
-    @FindBy(id = "en__field_transaction_recurrstart")
-    WebElement field_RecurStart;
-    @FindBy(id = "en__field_transaction_recurrend")
-    WebElement field_RecurEnd;
-    @FindBy(id = "en__field_transaction_recurrfreq")
-    WebElement field_RecurFreq;
-    @FindBy(id = "en__field_transaction_recurrcnt")
-    WebElement field_RecurCount;
-    @FindBy(id = "en__field_transaction_recurprd")
-    WebElement field_RecurPeriod;
-    @FindBy(css = ".en__submit button")
-    WebElement field_Submit;
+    @FindBy(id = "en__field_transaction_ccnumber") WebElement field_CCNumber;
+    @FindBy(id = "en__field_supporter_creditCardHolderName") WebElement field_CCName;
+    @FindBy(id = "en__field_supporter_bankAccountType") WebElement field_BankAccType;
+    @FindBy(id = "en__field_supporter_bankAccountNumber") WebElement field_BankAccNumber;
+    @FindBy(id = "en__field_supporter_bankRoutingNumber") WebElement field_BankRoutingNumber;
+    @FindBy(id = "en__field_transaction_donationAmt") WebElement field_DonationAmt;
+    @FindBy(id = "en__field_transaction_paymenttype") WebElement field_PaymentType;
+    @FindBy(id = "en__field_transaction_paycurrency") WebElement field_PaymentCurrency;
+    @FindBys(value = @FindBy(name = "transaction.ccexpire")) List<WebElement> field_CCExpirySplit;
+    @FindBy(id = "en__field_transaction_ccvv") WebElement field_CCV;
+    @FindBy(id = "en__field_transaction_recurrpay") WebElement field_RecurSinglePaychkbox;
+    @FindBy(id = "en__field_transaction_recurrpay0") WebElement field_RecurPaychkbox;
+    @FindBy(id = "en__field_transaction_recurrpay1") WebElement field_No_RecurPaychebox;
+    @FindBy(id = "en__field_transaction_recurrday") WebElement field_RecurDay;
+    @FindBy(id = "en__field_transaction_recurrstart") WebElement field_RecurStart;
+    @FindBy(id = "en__field_transaction_recurrend") WebElement field_RecurEnd;
+    @FindBy(id = "en__field_transaction_recurrfreq") WebElement field_RecurFreq;
+    @FindBy(id = "en__field_transaction_recurrcnt") WebElement field_RecurCount;
+    @FindBy(id = "en__field_transaction_recurprd") WebElement field_RecurPeriod;
+    @FindBy(css = ".en__submit button") WebElement field_Submit;
 
-    //   Supporter Transaction Details //
-    @FindBy(id = "searchForm-q")
-    WebElement field_SearchSupporter;
-    @FindBy(className = "btn-go")
-    WebElement field_SearchSupporterButton;
-    @FindBy(className = "icon--search--color")
-    WebElement field_SelectSupporter;
-    @FindBy(css = ".gadget__transactionHistory__transaction__field.gadget__transactionHistory__transaction__field__name")
-    List<WebElement> field_TransactionDetails;
-    @FindBy(css = "gadget__singleDonations__transaction__row")
-    List<WebElement> field_SupporterDetailsList;
-    // @FindBy(className = "gadget__transactionHistory__transactionDetail__row__field") List<WebElement> txn_details;
-    @FindBy(css = ".gadget__transactionHistory__transactionDetail")
-    WebElement field_AllTransactionDetails;
-    @FindBy(linkText = "Data & Reports")
-    WebElement field_DataReports;
+    //   SUPPORTER TRANSACTION DETAILS
+    @FindBy(id = "searchForm-q") WebElement field_SearchSupporter;
+    @FindBy(className = "btn-go") WebElement field_SearchSupporterButton;
+    @FindBy(className = "icon--search--color") WebElement field_SelectSupporter;
+    @FindBy(css = ".f.f0") List<WebElement> field_SupporterDataList;
+    @FindBy(linkText = "close") WebElement field_CloseLookUpSupporter;
+    @FindBy(css = ".gadget__transactionHistory__transaction__field.gadget__transactionHistory__transaction__field__name") List<WebElement> field_TransactionDetails;
+    @FindBy(css = "gadget__singleDonations__transaction__row") List<WebElement> field_SupporterDetailsList;
+    @FindBy(className = "gadget__transactionHistory__transactionDetail__row__field") List<WebElement> txn_details;
+    @FindBy(css = ".gadget__transactionHistory__transactionDetail") WebElement field_AllTransactionDetails;
+    @FindBy(linkText = "Data & Reports") WebElement field_DataReports;
+    @FindBy(css = ".gadget__transactionHistory__transaction__field.gadget__transactionHistory__transaction__field__name") List<WebElement> txn_history_list;
+    @FindBy(css =".gadget__transactionHistory__transaction__field.gadget__transactionHistory__transaction__field__type")
+    public List<WebElement> txn_hist_type_list;
+    @FindBy(css = ".gadget__transactionHistory__transaction--open") WebElement full_txn_details;
+
+    //   SUPPORTER TRANSACTION DETAILS
+    @FindBy(name = "supporter.firstName") WebElement field_SupFirstName;
+    @FindBy(name = "supporter.lastName") WebElement field_SupLastName;
+    @FindBy(name = "supporter.address1") WebElement field_SupAddress1;
+    @FindBy(name = "supporter.city") WebElement field_SupCity;
+    @FindBy(name = "supporter.region") WebElement field_SupRegion;
+    @FindBy(name = "supporter.country") WebElement field_SupCountry;
+    @FindBy(name = "supporter.postcode") WebElement field_SupPostcode;
+    @FindBy(name = "supporter.emailAddress") WebElement field_SupEmail;
+
+    //   SINGLE DONATION GADGET FIELDS
+    @FindBy(css = ".gadget__singleDonations__donation__name") List<WebElement> single_donation_list;
+    @FindBy(css = ".gadget__singleDonations__donation--open") WebElement full_single_donation_details;
+
+    //	RECURRING DONATION GADGET FIELDS
+    @FindBy(css = ".gadget___recurringDonations__recurring__name") List<WebElement> recurring_donation_list;
+    @FindBy(css = ".gadget__recurringDetail") WebElement full_recurring_details;
+    @FindBy(css = ".gadget__recurringDetail__right") WebElement recurring_details_right;
+
+    //	ECARD GADGET FIELDS
+    @FindBy(css = ".gadget__ecards__ecard__name") List<WebElement> ecard_gadget_list;
+    @FindBy(css = ".gadget__ecards__detail") WebElement full_ecard_detail;
+
+    // 	EVENT GADGET FIELDS
+    @FindBy(css = ".gadget__events__list .gadget__events__name") List<WebElement> event_gadget_list;
+
+    //	ECOMMERCE GADGET FIELDS
+    @FindBy(css = ".enList__column.enList__column--name") List<WebElement> ecommerce_gadget_list;
 
     //  Paypal login details
     @FindBy(id = "email") WebElement field_Paypal_loginemail;
@@ -176,18 +165,13 @@ public class PageFields {
     @FindBy(id = "createAccount") WebElement paypalCreateAccount;
 
     // Login Fields //
-    @FindBy(id = "enLoginUsername")
-    WebElement field_Username;
-    @FindBy(id = "enLoginPassword")
-    WebElement field_Password;
-    @FindBy(xpath = "//button[@class='button button--login']")
-    WebElement field_Submit1;
+    @FindBy(id = "enLoginUsername") WebElement field_Username;
+    @FindBy(id = "enLoginPassword") WebElement field_Password;
+    @FindBy(xpath = "//button[@class='button button--login']") WebElement field_Submit1;
 
     //3D login
-    @FindBy(id = "test-source-authorize-3ds")
-    WebElement stripe3D_Complete;
-    @FindBy(css = ".txnID")
-    WebElement txn_id;
+    @FindBy(id = "test-source-authorize-3ds") WebElement stripe3D_Complete;
+    @FindBy(css = ".txnID") WebElement txn_id;
 
     //  Moneris login and dashboard details
     @FindBy(xpath = "/html[1]/body[1]/div[1]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/form[1]/table[1]/tbody[1]/tr[4]/td[2]/input[1]")
@@ -212,87 +196,53 @@ public class PageFields {
     @FindBy(id = "rowsPerPage") WebElement field_selectRowsPerPage;
 
     //   Stripe validation details   //
-    @FindBy(id = "email")
-    WebElement field_UsernameStripe;
-    @FindBy(name = "password")
-    WebElement field_PasswordStripe;
-    @FindBy(xpath = "//button[@type=\"submit\"]")
-    WebElement field_SubmitStripe;
-    @FindBy(xpath = "//span[contains(text(),'Description')]")
-    List<WebElement> field_StripeTransactions;
-    @FindBy(css = ".Padding-all--8")
-    WebElement field_StripeTransactionId;
-    @FindBy(xpath = "//span[contains(text(),'Forgot your password?')]")
-    WebElement field_ForgotPassword_Stripe;
+    @FindBy(id = "email") WebElement field_UsernameStripe;
+    @FindBy(name = "password") WebElement field_PasswordStripe;
+    @FindBy(xpath = "//button[@type=\"submit\"]") WebElement field_SubmitStripe;
+    @FindBy(xpath = "//span[contains(text(),'Description')]") List<WebElement> field_StripeTransactions;
+    @FindBy(css = ".Padding-all--8") WebElement field_StripeTransactionId;
+    @FindBy(xpath = "//span[contains(text(),'Forgot your password?')]") WebElement field_ForgotPassword_Stripe;
 
     //	Ecommerce Symbolic Gift Fields  //
-    @FindBy(css = ".en__ecfeature__link>a")
-    WebElement field_featuredprod;
-    @FindBy(css = ".en__component.en__component--ecfeature")
-    WebElement field_featureblock;
-    @FindBy(css = ".en__component.en__component--ecfeaturelist")
-    WebElement field_featurelist;
-    @FindBy(css = ".en__ecnav__list.en__ecnav__list--main li:nth-of-type(2)")
-    WebElement field_nav_cart;
-    @FindBy(css = ".en__ecnav__list.en__ecnav__list--main li:nth-of-type(1)")
-    WebElement field_nav_home;
-    @FindBy(css = ".en__ecnav__list.en__ecnav__list--main li:nth-of-type(3)")
-    WebElement field_cart;
-    @FindBy(css = ".en__productList")
-    WebElement field_ecom_prodlist;
-    @FindBy(name = "ec.product.quantity")
-    WebElement field_ecom_prodquantity;
-    @FindBy(css = "button[class='en__button']")
-    WebElement field_ecom_addProd;
-    @FindBy(css = ".en__component--eccheckout__emptyMessage>p")
-    WebElement field_ecom_emptyCartMsg;
-    @FindBy(css = ".en__button.en__component--eccheckout__continue")
-    WebElement field_ecom_continueShopping;
-    @FindBy(css = ".en__ecnav__cartCount>span")
-    WebElement field_ecom_cartCount;
-    @FindBy(css = ".en__component--eccheckout__submit.en__button")
-    WebElement field_ecom_checkout;
-    @FindBy(css = "#en__field__method00")
-    WebElement field_ecom_deliverymethod;
-    @FindBy(css = "#en__field__message00")
-    WebElement fields_econ_personal_message;
-    @FindBy(id = "en__field_transaction_inmem")
-    WebElement field_InMemoriam;
-    @FindBy(id = "en__field_transaction_honname")
-    WebElement field_honoreeName;
-    @FindBy(id = "en__field_transaction_infemail")
-    WebElement field_informEmail;
-    @FindBy(id = "en__field_transaction_infname")
-    WebElement field_informName;
-    @FindBy(className = ".en__field__element--checkbox")
-    WebElement field_optIn;
+    @FindBy(css = ".en__ecfeature__link>a") WebElement field_featuredprod;
+    @FindBy(css = ".en__component.en__component--ecfeature") WebElement field_featureblock;
+    @FindBy(css = ".en__component.en__component--ecfeaturelist") WebElement field_featurelist;
+    @FindBy(css = ".en__ecnav__list.en__ecnav__list--main li:nth-of-type(2)") WebElement field_nav_cart;
+    @FindBy(css = ".en__ecnav__list.en__ecnav__list--main li:nth-of-type(1)") WebElement field_nav_home;
+    @FindBy(css = ".en__ecnav__list.en__ecnav__list--main li:nth-of-type(3)") WebElement field_cart;
+    @FindBy(css = ".en__productList") WebElement field_ecom_prodlist;
+    @FindBy(name = "ec.product.quantity") WebElement field_ecom_prodquantity;
+    @FindBy(css = "button[class='en__button']") WebElement field_ecom_addProd;
+    @FindBy(css = ".en__component--eccheckout__emptyMessage>p") WebElement field_ecom_emptyCartMsg;
+    @FindBy(css = ".en__button.en__component--eccheckout__continue") WebElement field_ecom_continueShopping;
+    @FindBy(css = ".en__ecnav__cartCount>span") WebElement field_ecom_cartCount;
+    @FindBy(css = ".en__component--eccheckout__submit.en__button") WebElement field_ecom_checkout;
+    @FindBy(css = "#en__field__method00") WebElement field_ecom_deliverymethod;
+    @FindBy(css = "#en__field__message00") WebElement fields_econ_personal_message;
+    @FindBy(id = "en__field_transaction_inmem") WebElement field_InMemoriam;
+    @FindBy(id = "en__field_transaction_honname") WebElement field_honoreeName;
+    @FindBy(id = "en__field_transaction_infemail") WebElement field_informEmail;
+    @FindBy(id = "en__field_transaction_infname") WebElement field_informName;
+    @FindBy(className = ".en__field__element--checkbox") WebElement field_optIn;
 
     //	Premium gift block fields
-    @FindBy(css = ".en__pg__name")
-    WebElement field_premgift_itemname;
-    @FindBy(css = ".en__pgList")
-    WebElement field_premgift_itemlist;
+    @FindBy(css = ".en__pg__name") WebElement field_premgift_itemname;
+    @FindBy(css = ".en__pgList") WebElement field_premgift_itemlist;
 
     //  Event Fields   //
-    @FindBy(css = ".en__ticketBlock")
-    WebElement field_event_block;
-    @FindBy(css = ".en__ticket__field.en__ticket__field--info")
-    WebElement field_event_tktinfo;
-    @FindBy(css = ".en__ticket__field.en__ticket__field--cost")
-    WebElement field_event_tktcost;
+    @FindBy(css = ".en__ticketBlock") WebElement field_event_block;
+    @FindBy(css = ".en__ticket__field.en__ticket__field--info") WebElement field_event_tktinfo;
+    @FindBy(css = ".en__ticket__field.en__ticket__field--cost") WebElement field_event_tktcost;
     //	@FindBy(css = ".en__ticket__field.en__ticket__field--quantity") WebElement field_event_tktquantity;
-    @FindBy(css = ".en__ticket__quantity")
-    WebElement field_event_tktquantity;
-    @FindBy(css = ".en__ticket__minus")
-    WebElement field_event_tktminus;
-    @FindBy(css = ".en__ticket__plus")
-    WebElement field_event_tktplus;
-    @FindBy(css = ".en__additional__input")
-    WebElement field_event_additionalamt;
-    @FindBy(css = ".en__additional__promo")
-    WebElement field_event_promo;
-    @FindBy(css = ".en__ticketSummary__checkout")
-    WebElement field_event_checkout;
+    @FindBy(css = ".en__ticket__quantity") WebElement field_event_tktquantity;
+    @FindBy(css = ".en__ticket__minus") WebElement field_event_tktminus;
+    @FindBy(css = ".en__ticket__plus") WebElement field_event_tktplus;
+    @FindBy(css = ".en__additional__input") WebElement field_event_additionalamt;
+    @FindBy(css = ".en__additional__promo") WebElement field_event_promo;
+    @FindBy(css = ".en__ticketSummary__checkout") WebElement field_event_checkout;
+    @FindBy(name = "event.ticketType.0.tickets.0.registrants.0.firstName") WebElement field_AtendeeFN;
+    @FindBy(name = "event.ticketType.0.tickets.0.registrants.0.lastName") WebElement field_AtendeeLN;
+    @FindBy(name = "event.ticketType.0.tickets.0.registrants.0.emailAddress") WebElement field_AtendeeEmail;
 
     // Order summary details //
     @FindBy(css = ".en__orderSummary__data.en__orderSummary__data--cost")
@@ -546,9 +496,11 @@ public class PageFields {
 
     public void enLogin() {
 
+        WebElement login = (new WebDriverWait(driver, 30))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='button button--login']")));
         field_Username.sendKeys(USERNAME);
         field_Password.sendKeys(PASSWORD);
-        field_Submit1.click();
+        login.click();
     }
 
     public void acLogin() {
@@ -666,17 +618,28 @@ public class PageFields {
 
     /////////////////////////    SUPPORTER DETAILS     /////////////////////////////////
 
-    public void searchSupporter(String text, WebDriver driver) throws InterruptedException {
+    public void searchSupporter(String text) throws InterruptedException {
         field_DataReports.click();
-        WebElement lookUpSupporter = (new WebDriverWait(driver, 20))
+        WebElement lookUpSupporter = (new WebDriverWait(driver, 30))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.linkText("Lookup supporter")));
         lookUpSupporter.click();
-        WebElement searchSupporter = (new WebDriverWait(driver, 20))
+        WebElement searchSupporter = (new WebDriverWait(driver, 30))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.id("searchForm-q")));
         searchSupporter.sendKeys(text);
         field_SearchSupporterButton.submit();
+    }
+
+    public void nextSupporter(String text){
+        field_CloseLookUpSupporter.click();
+        WebElement searchSupporter = (new WebDriverWait(driver, 30))
+                .until(ExpectedConditions.presenceOfElementLocated
+                        (By.id("searchForm-q")));
+        searchSupporter.clear();
+        searchSupporter.sendKeys(text);
+        field_SearchSupporterButton.submit();
+
     }
 
     public void selectSupporter() {
@@ -687,23 +650,30 @@ public class PageFields {
     public String getSupporterDetails() {
         StringBuilder supp_details = new StringBuilder();
 
-        for (WebElement supp_det : field_SupporterDetailsList) {
+        for (WebElement supp_det : field_SupporterDataList) {
             supp_details = supp_details.append(supp_det.getAttribute("value"));
         }
         return supp_details.toString();
+    }
+
+    public void expendTransaction(){
+        for (int i = 0; i < 1; i++) {
+            WebElement txn = field_TransactionDetails.get(i);
+            txn.click();
+        }
     }
 
     public String getTransactionDetails() throws InterruptedException {
         /// click on the latest txn, get the txn details and return them
         String full_txn_text = null;
 
-        for (int i = 0; i < 1; i++) {
-            WebElement txn = field_TransactionDetails.get(i);
-            txn.click();
-            Thread.sleep(2000);
+//        for (int i = 0; i < 1; i++) {
+//            WebElement txn = field_TransactionDetails.get(i);
+//            txn.click();
+//            Thread.sleep(2000);
             full_txn_text = field_AllTransactionDetails.getText();
 
-        }
+      //  }
         return full_txn_text;
     }
 
@@ -882,6 +852,48 @@ public class PageFields {
 
     /////////////////////////    SET FIELDS     /////////////////////////////////
 
+    public String getSupFirstName() {
+        if (field_SupFirstName.getText()!= null) {
+            return field_SupFirstName.getAttribute("value");
+        }
+        return null;
+    }
+
+    public String getSupLastName() {
+        if (field_SupLastName.getText()!= null) {
+            return field_SupLastName.getAttribute("value");
+        }
+        return null;
+    }
+
+    public String getSupEmail() {
+        if (field_SupEmail.getText()!= null) {
+            return field_SupEmail.getAttribute("value");
+        }
+        return null;
+    }
+
+    public String getSupAddress1() {
+        if (field_SupAddress1.getText()!= null) {
+            return field_SupAddress1.getAttribute("value");
+        }
+        return null;
+    }
+
+    public String getSupCity() {
+        if (field_SupCity.getText()!= null) {
+            return field_SupCity.getAttribute("value");
+        }
+        return null;
+    }
+
+    public String getSupPostCode() {
+        if (field_SupPostcode.getText()!= null) {
+            return field_SupPostcode.getAttribute("value");
+        }
+        return null;
+    }
+
     public String getFirstName() {
         if (field_Firstname.getText()!= null) {
             return field_Firstname.getAttribute("value");
@@ -909,10 +921,15 @@ public class PageFields {
         }
         return null;
     }
-
     public String createEmail(String testID) {
         LocalDate date = LocalDate.now();
         String email = "PB_"+ testID + "_" + date.toString() + "@tellamazingstories.com";
+        return email;
+    }
+
+    public String createETTEmail(String testID) {
+        LocalDate date = LocalDate.now();
+        String email = "PB_"+ testID + "_" + date.toString() + "@restmail.net";
         return email;
     }
 
@@ -921,10 +938,47 @@ public class PageFields {
         return email;
     }
 
-    public String createETTEmail(String testID) {
-        LocalDate date = LocalDate.now();
-        String email = "ETT_"+ testID + "_" + date.toString() + "@restmail.net";
-        return email;
+
+    public void setSupFirstName(String text) {
+        field_SupFirstName.clear();
+        field_SupFirstName.sendKeys(text);
+
+    }
+
+    public void setSupLastName(String text) {
+        field_SupLastName.clear();
+        field_SupLastName.sendKeys(text);
+
+    }
+
+    public void setSupEmailAddress(String text) {
+        field_SupEmail.sendKeys(text);
+    }
+
+    public void setSupAddress(String text) {
+            field_SupAddress1.clear();
+            field_SupAddress1.sendKeys(text);
+
+    }
+
+    public void setSupCity(String text) {
+            field_SupCity.clear();
+            field_SupCity.sendKeys(text);
+    }
+
+    public void selectSupRegion(String text) {
+        Select regiondropdown = new Select(field_SupRegion);
+        regiondropdown.selectByValue(text);
+    }
+
+    public void setSupPostcode(String text) {
+        field_SupPostcode.clear();
+        field_SupPostcode.sendKeys(text);
+    }
+
+    public void selectSupCountry(String text) {
+        Select regiondropdown = new Select(field_SupCountry);
+        regiondropdown.selectByValue(text);
     }
 
     public void setFirstname(String text) {
@@ -1191,8 +1245,7 @@ public class PageFields {
         countrydropdown.selectByValue(text);
     }
 
-    public void selectRegion(String text)
-    {
+    public void selectRegion(String text) {
         Select regiondropdown = new Select(field_Region);
         regiondropdown.selectByValue(text);
     }
@@ -1382,6 +1435,20 @@ public class PageFields {
     public void additionalAmtEvent(String addamt) {
         field_event_additionalamt.sendKeys(addamt);
     }
+
+    public void attendeeTicketFN(String text){
+        field_AtendeeFN.sendKeys(text);
+    }
+
+    public void attendeeTicketLN(String text){
+        field_AtendeeLN.sendKeys(text);
+    }
+
+    public void attendeeTicketEmail(String text){
+        field_AtendeeEmail.sendKeys(text);
+    }
+
+
 
     public boolean VerifyEventOrderSummaryBlock() {
         String tktamt = field_event_tktamt.getText();

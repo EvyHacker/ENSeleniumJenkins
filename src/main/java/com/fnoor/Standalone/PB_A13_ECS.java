@@ -2,7 +2,7 @@ package com.fnoor.Standalone;
 
 import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -37,12 +37,15 @@ public class PB_A13_ECS {
         String removeEventTicket = fields.getTktQuantity();
         Assert.assertTrue("Second ticket hasn't been removed from your cart, please try again "
                 , removeEventTicket.equals("1"));
-
         fields.additionalAmtEvent("50");
+
         fields.eventCheckout();
         fields.waitForPageLoad();
 
         Assert.assertTrue(driver.getCurrentUrl().contains("https://politicalnetworks.com/page/11073/event/2"));
+        fields.attendeeTicketFN("Atendee 1");
+        fields.attendeeTicketLN("Atendee 2");
+        fields.attendeeTicketEmail("testid_atendee1@tellamazingstories.com");
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4222222222222220");
         fields.setCCExpiry(new CharSequence[] {"12", "2020"});

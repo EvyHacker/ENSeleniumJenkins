@@ -4,9 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fnoor.ETT.*;
 import com.fnoor.FundraisingTest.*;
-import com.fnoor.Redirects.PB_B1_PETDON_P1;
-import com.fnoor.Redirects.PB_B2_PETDON_P2;
-import com.fnoor.Redirects.PB_B3_INMEMDON;
+import com.fnoor.Redirects.*;
 import com.fnoor.Standalone.*;
 import com.fnoor.ValidationTests.MonerisVal;
 import com.fnoor.ValidationTests.PaySafeVal;
@@ -37,8 +35,6 @@ import static com.fnoor.PageFields.*;
 public class FundraisingPageDriver {
 
     private static  String FUNDRAISING_TEST;
-    static public String txID;
-    protected IATS iats;
     static WebDriver driver;
 
 @BeforeClass(alwaysRun = true)
@@ -208,6 +204,7 @@ public class FundraisingPageDriver {
                 IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring", fields, driver);
                 IATS.IATSACHRecurring(FUNDRAISING_TEST="IATSACHRecurring", fields, driver);
                 IATS.IATSACHRecurPaymenttypelogic(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields, driver);
+                IATS.IATSvalidateTransaction(FUNDRAISING_TEST="IATSvalidateTransaction", fields, driver);
                 break;
             }
             case "F100": {//PB_F1
@@ -222,6 +219,9 @@ public class FundraisingPageDriver {
             }
             case "F103":{//PB_F30
                 IATS.IATSACHRecurPaymenttypelogic(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields, driver);
+            }
+            case "F104":{
+                IATS.IATSvalidateTransaction(FUNDRAISING_TEST="IATSvalidateTransaction", fields, driver);
                 break;
             }
             case "WORLDPAY":{
@@ -778,7 +778,6 @@ public class FundraisingPageDriver {
             }
             case "A11": {
                 PB_A11_TWT2.singleDB(FUNDRAISING_TEST = "singleDB", fields, driver);
-                break;
             }
             case "A12": {
                 PB_A12_TWT3.multiDB(FUNDRAISING_TEST = "multiDB", fields, driver);
@@ -797,6 +796,9 @@ public class FundraisingPageDriver {
                 PB_B1_PETDON_P1.petition2DonationP1(FUNDRAISING_TEST = "petition2DonationP1", fields, driver);
                 PB_B2_PETDON_P2.petition2DonationP2(FUNDRAISING_TEST = "petition2DonationP2", fields, driver);
                 PB_B3_INMEMDON.inMemoriamDonation(FUNDRAISING_TEST = "inMemoriamDonation", fields, driver);
+                PB_B4_ETTETT2.ETTtoETT2(FUNDRAISING_TEST = "ETTtoETT2", fields, driver);
+                PB_B5_DON2PET.donationToPetition(FUNDRAISING_TEST = "donationToPetition", fields, driver);
+                PB_B6_DON2TWEET.donationToTweet(FUNDRAISING_TEST = "donationToTweet", fields, driver);
                 break;
             }
             case "B1": {
@@ -807,6 +809,18 @@ public class FundraisingPageDriver {
             }
             case "B3": {
                 PB_B3_INMEMDON.inMemoriamDonation(FUNDRAISING_TEST = "inMemoriamDonation", fields, driver);
+            }
+            case "B4": {
+                PB_B4_ETTETT2.ETTtoETT2(FUNDRAISING_TEST = "ETTtoETT2", fields, driver);
+            }
+            case "B5": {
+                PB_B5_DON2PET.donationToPetition(FUNDRAISING_TEST = "donationToPetition", fields, driver);
+            }
+            case "B6": {
+                PB_B6_DON2TWEET.donationToTweet(FUNDRAISING_TEST = "donationToTweet", fields, driver);
+            }
+            case "B7": {
+                PB_B7_DATA2ETT.dataToETT(FUNDRAISING_TEST = "dataToETT", fields, driver);
                 break;
             }
             default: {

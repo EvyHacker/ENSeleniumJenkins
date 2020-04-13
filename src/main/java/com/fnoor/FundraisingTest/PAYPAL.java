@@ -179,6 +179,7 @@ public class PAYPAL {
         //Submit Paypal payment
         //driver.switchTo().defaultContent();
         fields.waitForPageLoad();
+        Thread.sleep(50000);
 //        String paypalAmount = driver.findElement(By.className("ltrOverride")).getText();
 //        System.out.println("PPL amount " + paypalAmount);
 //        Assert.assertTrue("Donation amount displayed is incorrect", paypalAmount.contains("$15.00"));
@@ -243,7 +244,7 @@ public class PAYPAL {
         fields.submit();
 
         fields.setPaypalEmail();
-        fields.submitPaypal();
+        fields.nextPayapl();
         fields.waitForPageLoad();
         fields.setPaypalPassword();
         fields.submitPaypal();
@@ -259,6 +260,7 @@ public class PAYPAL {
         }
 
         fields.waitForPageLoad();
+            Thread.sleep(30000);
         WebElement paypalAgree = (new WebDriverWait(driver, 30))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.cssSelector("#consentButton")));
@@ -395,7 +397,7 @@ public class PAYPAL {
         Assert.assertTrue("Didn't redirect to Paypal", myurl.contains("https://www.sandbox.paypal.com/"));
         fields.waitForPageLoad();
         fields.setPaypalEmail();
-        fields.submitPaypal();
+        fields.nextPayapl();
         fields.waitForPageLoad();
         fields.setPaypalPassword();
         fields.submitPaypal();
@@ -404,6 +406,7 @@ public class PAYPAL {
         //Submit Paypal payment
 //        String paypalAmount = driver.findElement(By.id("transactionCart")).getText();
 //        Assert.assertTrue("Donation amount displayed is incorrect", paypalAmount.contains("$15"));
+        Thread.sleep(4000);
         WebElement paypalContinue = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.id("confirmButtonTop")));
@@ -542,7 +545,7 @@ public class PAYPAL {
         fields.waitForPageLoad();
 
         fields.setPaypalEmail();
-        fields.submitPaypal();
+        fields.nextPayapl();
         fields.waitForPageLoad();
         fields.setPaypalPassword();
         fields.submitPaypal();
