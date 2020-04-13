@@ -25,6 +25,7 @@ public class IATS {
         driver.get("https://politicalnetworks.com/page/841/donate/1?mode=DEMO");
 
         fields.waitForPageLoad();
+        Thread.sleep(2000);
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
         fields.setFirstname("Unit");
