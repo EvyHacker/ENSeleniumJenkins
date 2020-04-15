@@ -9,6 +9,7 @@
         <classes>
             <class name="com.fnoor.FundraisingTest.TestNGIats" />
             <class name="com.fnoor.FundraisingTest.Testing" />
+            <class name="com.fnoor.FundraisingTest.IATS" />
 
         </classes>
 <!--        <classes>-->

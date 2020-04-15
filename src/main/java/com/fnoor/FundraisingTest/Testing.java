@@ -72,12 +72,12 @@ public class Testing {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver",
                 "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/linux/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("enable-automation");
-        options.addArguments("--headless");
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--no-sandbox");
+//        options.addArguments("enable-automation");
+//        options.addArguments("--headless");
         driver = new ChromeDriver();
-        fields = PageFactory.initElements(driver, PageFields.class);
+      //  fields = PageFactory.initElements(driver, PageFields.class);
     }
 
     @AfterClass(alwaysRun = true)
