@@ -162,9 +162,9 @@ public class FundraisingPageDriver {
         }
 
         String env = args[0];
-        String webdrive = args[1];
+        String webdriver = args[1];
         String testCase = args[2];
-        String webDriverProperty = String.format("webdrivers/%s/%s", env, webdrive);
+        String webDriverProperty = String.format("webdrivers/%s/%s", env, webdriver);
         if (env.equals("win")) {
             System.setProperty("webdriver.gecko.driver", webDriverProperty);
             //System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
@@ -181,9 +181,8 @@ public class FundraisingPageDriver {
             options.addArguments("pageLoadStrategy=normal");
             options.addArguments("--headless");
             capabilitiesChrome.setCapability(ChromeOptions.CAPABILITY,options);
-           System.out.println("Im here");
             driver = new ChromeDriver(options);
-            driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+            driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         }
 
 
@@ -213,6 +212,7 @@ public class FundraisingPageDriver {
             }
             case "F101":{//PB_F2
                 IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring", fields, driver);
+                break;
             }
             case "F102":{//PB_F29
                 IATS.IATSACHRecurring(FUNDRAISING_TEST="IATSACHRecurring", fields, driver);

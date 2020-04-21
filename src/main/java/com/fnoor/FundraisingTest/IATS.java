@@ -3,23 +3,24 @@ package com.fnoor.FundraisingTest;
 import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import static com.fnoor.PageFields.ENLOGIN;
 
-
+@Test(groups = {"donations"})
 public class IATS {
 
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
     private static String FUNDRAISING_TEST;
 
-    @Test
+
     public static void iatsSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/841/donate/1?mode=DEMO");

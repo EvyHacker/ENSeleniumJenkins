@@ -160,18 +160,19 @@ public class PAYPAL {
         fields.waitForPageLoad();
 
         fields.setPaypalEmail();
-        fields.submitPaypal();
+        fields.nextPayapl();
         fields.waitForPageLoad();
         fields.setPaypalPassword();
-        try{
-            WebElement paypalLogin = (new WebDriverWait(driver, 20))
-                    .until(ExpectedConditions.presenceOfElementLocated
-                            (By.id("btnLogin")));
-            JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", paypalLogin);
-            //fields.submitPaypal();
-        } catch (StaleElementReferenceException e) {
-        }
+        fields.submitPaypal();
+//        try{
+//            WebElement paypalLogin = (new WebDriverWait(driver, 20))
+//                    .until(ExpectedConditions.presenceOfElementLocated
+//                            (By.id("btnLogin")));
+//            JavascriptExecutor executor = (JavascriptExecutor) driver;
+//            executor.executeScript("arguments[0].click();", paypalLogin);
+//            //fields.submitPaypal();
+//        } catch (StaleElementReferenceException e) {
+//        }
 
 //        JavascriptExecutor executor = (JavascriptExecutor) driver;
 //        executor.executeScript("arguments[0].click();", fields.submitPaypal());
@@ -188,13 +189,12 @@ public class PAYPAL {
                         (By.name("payment-submit-btn")));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", paypalContinue);
-//        paypalContinue.submit();
-//        paypalContinue.click();
         fields.waitForPageLoad();
 
         //		Assert that the payment was successful and the third page was reached
-        String myurl1 = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/844/donate/3"));
+        Thread.sleep(4000);
+        Assert.assertTrue("Urls are not the same",
+                driver.getCurrentUrl().equals("https://politicalnetworks.com/page/844/donate/3"));
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -266,12 +266,12 @@ public class PAYPAL {
                         (By.cssSelector("#consentButton")));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", paypalAgree);
-
-
         fields.waitForPageLoad();
+
         //		Assert that the payment was successful and the third page was reached
-        String myurl1 = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/866/donate/3"));
+        Thread.sleep(4000);
+        Assert.assertTrue("Urls are not the same",
+                driver.getCurrentUrl().equals("https://politicalnetworks.com/page/866/donate/3"));
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -403,20 +403,20 @@ public class PAYPAL {
         fields.submitPaypal();
         fields.waitForPageLoad();
 
-        //Submit Paypal payment
-//        String paypalAmount = driver.findElement(By.id("transactionCart")).getText();
-//        Assert.assertTrue("Donation amount displayed is incorrect", paypalAmount.contains("$15"));
         Thread.sleep(4000);
-        WebElement paypalContinue = (new WebDriverWait(driver, 20))
+        WebElement paypalAmount = (new WebDriverWait(driver, 40))
+                .until(ExpectedConditions.presenceOfElementLocated(By.className("Cart_cartAmount_4dnoL")));
+        Assert.assertTrue("Donation amount displayed is incorrect", paypalAmount.getText().contains("$15"));
+        WebElement paypalContinue = (new WebDriverWait(driver, 60))
                 .until(ExpectedConditions.presenceOfElementLocated
-                        (By.id("confirmButtonTop")));
+                        (By.id("payment-submit-btn")));
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();", paypalContinue);
         fields.waitForPageLoad();
 
         //		Assert that the payment was successful and the third page was reached
-        String myurl1 = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12374/donate/3"));
+        Thread.sleep(6000);
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12374/donate/3"));
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
