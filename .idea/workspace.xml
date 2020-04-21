@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9ec9c8a-8c77-45cd-a867-fdcaf19d3872" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/IATS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/IATS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYPAL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYPAL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/fnautomation-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-    </list>
+    <list default="true" id="e9ec9c8a-8c77-45cd-a867-fdcaf19d3872" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
