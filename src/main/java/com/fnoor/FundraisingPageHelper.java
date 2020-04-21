@@ -196,16 +196,7 @@ public class FundraisingPageHelper extends FundraisingPageDriver {
 //            case "F100": {//PB_F1
 //                IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
 //            }
-            case "F101":{//PB_F2
-                IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring", fields, driver);
-            }
-            case "F102":{//PB_F29
-                IATS.IATSACHRecurring(FUNDRAISING_TEST="IATSACHRecurring", fields, driver);
-            }
-            case "F103":{//PB_F30
-                IATS.IATSACHRecurPaymenttypelogic(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields, driver);
-                break;
-            }
+
             case "F200":{//PB_F3
                 WORLDPAY.worldpayCCSingle(FUNDRAISING_TEST="WorldpayCCSingle", fields, driver);
             }

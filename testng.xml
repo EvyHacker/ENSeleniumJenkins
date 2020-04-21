@@ -2,15 +2,23 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Regression">
-    <listeners>
-        <listener class-name="org.testng.reporters.JUnitReportReporter"/>
-    </listeners>
-    <test name="Donations">
+<!--    <listeners>-->
+<!--        <listener class-name="org.testng.ITestListener"/>-->
+<!--    </listeners>-->
+    <parameter name="iatsSingle" value="iatsSingle"/>
+    <parameter name="IATSRecurring" value="IATSRecurring"/>
+    <parameter name="IATSACHRecurring" value="IATSACHRecurring"/>
+    <parameter name="IATSACHRecurPaymenttypelogic" value="IATSACHRecurPaymenttypelogic"/>
+    <test name="Donations"  preserve-order="true">
         <classes>
-            <class name="com.fnoor.FundraisingTest.TestNGIats" />
-            <class name="com.fnoor.FundraisingTest.Testing" />
-            <class name="com.fnoor.FundraisingTest.IATS" />
-
+<!--            <class name="com.fnoor.FundraisingTest.TestNGIats" />-->
+<!--            <class name="com.fnoor.FundraisingTest.Testing" />-->
+            <class name="com.fnoor.FundraisingTest.IATS" >
+            <methods>
+                <include name="iatsSingle" />
+                <include name="IATSRecurring" />
+            </methods>
+            </class>
         </classes>
 <!--        <classes>-->
 <!--            <class name="api.http.calls.ApiTest" />-->

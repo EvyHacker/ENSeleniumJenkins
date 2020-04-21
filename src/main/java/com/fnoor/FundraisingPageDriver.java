@@ -22,6 +22,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 
@@ -37,7 +38,7 @@ public class FundraisingPageDriver {
     private static  String FUNDRAISING_TEST;
     static WebDriver driver;
 
-@BeforeClass(alwaysRun = true)
+    @BeforeClass(alwaysRun = true)
     public static void ensAuthTest() {
         HttpPost post = new HttpPost(SERVICE_URL + "/authenticate");
         post.setHeader("Content-Type", "application/json");
@@ -186,6 +187,7 @@ public class FundraisingPageDriver {
         }
 
 
+
         PageFields fields = PageFactory.initElements(driver, PageFields.class);
 
         switch (testCase) {
@@ -199,29 +201,29 @@ public class FundraisingPageDriver {
                 break;
             }
             case "IATS": {
-                IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
-                IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring", fields, driver);
-                IATS.IATSACHRecurring(FUNDRAISING_TEST="IATSACHRecurring", fields, driver);
-                IATS.IATSACHRecurPaymenttypelogic(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields, driver);
-                IATS.IATSvalidateTransaction(FUNDRAISING_TEST="IATSvalidateTransaction", fields, driver);
+                IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle");
+                IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring");
+                IATS.IATSACHRecurring(FUNDRAISING_TEST="IATSACHRecurring");
+                IATS.IATSACHRecurPaymenttypelogic(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic");
+                IATS.IATSvalidateTransaction();
                 break;
             }
             case "F100": {//PB_F1
-                IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle", fields, driver);
+                IATS.iatsSingle(FUNDRAISING_TEST="iatsSingle");
                 break;
             }
             case "F101":{//PB_F2
-                IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring", fields, driver);
+                IATS.IATSRecurring(FUNDRAISING_TEST="IATSRecurring");
                 break;
             }
             case "F102":{//PB_F29
-                IATS.IATSACHRecurring(FUNDRAISING_TEST="IATSACHRecurring", fields, driver);
+                IATS.IATSACHRecurring(FUNDRAISING_TEST="IATSACHRecurring");
             }
             case "F103":{//PB_F30
-                IATS.IATSACHRecurPaymenttypelogic(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic", fields, driver);
+                IATS.IATSACHRecurPaymenttypelogic(FUNDRAISING_TEST="IATSACHRecurPaymenttypelogic");
             }
             case "F104":{
-                IATS.IATSvalidateTransaction(FUNDRAISING_TEST="IATSvalidateTransaction", fields, driver);
+                IATS.IATSvalidateTransaction();
                 break;
             }
             case "WORLDPAY":{

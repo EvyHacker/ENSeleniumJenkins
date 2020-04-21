@@ -42,32 +42,6 @@ public class Testing {
     private static String testId;
     String currentFrame = null;
 
-
-//    public TestWatcher watcher = new TestWatcher() {     @Override
-//    protected void failed(Throwable e, Description description) {
-//        status= "falha";
-//    }
-//        @Override
-//        protected void skipped(AssumptionViolatedException e, Description description) {
-//            status= "skiped";
-//        }
-//        @Override
-//        protected void succeeded(Description description) {
-//            status= "sucesso";
-//        }
-//        @Override
-//        protected void finished(Description d) {
-//            try {
-//                PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("target/teststream.txt", true)));
-//                out.println("{\"metodo\":\""+actualTestMethod+"\", \"status\":\""+status+"\", "
-//                        + "\"classe\":\""+actualTestClass+"\", \"descricao\":\""+actualTestMethod+"\"}");
-//                out.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    };
-
     @BeforeClass(alwaysRun = true)
     public void setUp() {
         System.setProperty("webdriver.chrome.driver",
@@ -84,44 +58,7 @@ public class Testing {
     public void tearDown() {
         driver.quit();
     }
-//    @AfterMethod
-//    public static void takeSnapShot(ITestResult result) throws Exception{
-//
-//        if(ITestResult.FAILURE==result.getStatus()){
-//
-//            //Convert web driver object to TakeScreenshot
-//            TakesScreenshot scrShot =((TakesScreenshot)driver);
-//
-//            //Call getScreenshotAs method to create image file
-//            File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-//
-//            //Move image file to new destination
-//            File DestFile=new File("./ScreenShots/"+result.getName()+".png");
-//            //Copy file at destination
-//            FileUtils.copyFile(SrcFile, DestFile);
-//            System.out.println("Screenshot taken");
-//        }
-//
-//
-//    }
-//private void takeScreenshot(String className, String method, LocalTime timestamp) {
-//    if (driver instanceof TakesScreenshot) {
-//        TakesScreenshot screenshotTakingDriver = (TakesScreenshot) this.driver;
-//        try {
-//            File localScreenshots = new File(new File("target"), "screenshots");
-//            if (!localScreenshots.exists() || !localScreenshots.isDirectory()) {
-//                localScreenshots.mkdirs();
-//            }
-//            File screenshot = new File(localScreenshots, className + "_" + method + "_" + timestamp.getHour() + "." + timestamp.getMinute() + ".png");
-//            FileUtils.moveFile(screenshotTakingDriver.getScreenshotAs(OutputType.FILE), screenshot);
-//            logger.info("Screenshot for class={} method={} saved in: {}", className, method, screenshot.getAbsolutePath());
-//        } catch (Exception e1) {
-//            logger.error("Unable to take screenshot", e1);
-//        }
-//    } else {
-//        logger.info("Driver '{}' can't take screenshots so skipping it.", driver.getClass());
-//    }
-//}
+
 
     public String captureScreen() {
         String path;

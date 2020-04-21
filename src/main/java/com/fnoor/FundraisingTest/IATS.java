@@ -5,23 +5,45 @@ import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
 
 import static com.fnoor.PageFields.ENLOGIN;
 
-@Test(groups = {"donations"})
-public class IATS {
 
+public class IATS {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
     private static String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    public static PageFields fields;
 
+    @BeforeClass(alwaysRun = true)
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver",
+                "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/linux/chromedriver");
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--no-sandbox");
+//        options.addArguments("enable-automation");
+//        options.addArguments("--headless");
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        fields = PageFactory.initElements(driver, PageFields.class);
+    }
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        driver.quit();
+    }
 
-    public static void iatsSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"iatsSingle"})
+    @Test
+    public static void iatsSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/841/donate/1?mode=DEMO");
 
@@ -76,10 +98,12 @@ public class IATS {
 
         page.getSupporterByEmail(FUNDRAISING_TEST = "iatsSingle", fields);
         page.getSupporterById(FUNDRAISING_TEST = "iatsSingle", fields);
+
     }
 
-
-    public static void IATSRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"IATSRecurring"})
+    @Test
+    public static void IATSRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/861/donate/1?mode=DEMO");
 
@@ -131,10 +155,13 @@ public class IATS {
 
         page.getSupporterByEmail(FUNDRAISING_TEST = "IATSRecurring", fields);
         page.getSupporterById(FUNDRAISING_TEST = "IATSRecurring", fields);
+
     }
 
-    public static void IATSACHRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        //  page.ensAuthTest();
+    @Parameters({"IATSACHRecurring"})
+    @Test(enabled = false)
+    public static void IATSACHRecurring(String testId) throws InterruptedException, IOException {
+        page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/5724/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
@@ -188,10 +215,13 @@ public class IATS {
 
         page.getSupporterByEmail(FUNDRAISING_TEST = "IATSACHRecurring", fields);
         page.getSupporterById(FUNDRAISING_TEST = "IATSACHRecurring", fields);
+
     }
 
-    public static void IATSACHRecurPaymenttypelogic(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
-        //  page.ensAuthTest();
+    @Parameters({"IATSACHRecurPaymenttypelogic"})
+    @Test(enabled = false)
+    public static void IATSACHRecurPaymenttypelogic(String testId) throws InterruptedException, IOException {
+        page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/5725/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
@@ -255,9 +285,11 @@ public class IATS {
 
         page.getSupporterByEmail(FUNDRAISING_TEST = "IATSACHRecurPaymenttypelogic", fields);
         page.getSupporterById(FUNDRAISING_TEST = "IATSACHRecurPaymenttypelogic", fields);
+
     }
 
-    public static void IATSvalidateTransaction(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Test(enabled = false)
+    public static void IATSvalidateTransaction() throws InterruptedException, IOException {
 
         driver.navigate().to(ENLOGIN);
         fields.enLogin();
@@ -327,7 +359,6 @@ public class IATS {
                 fields.getTransactionDetails().contains("Recurring? Y"));
         Assert.assertTrue("Transaction error, campaign ID is missing or incorrect",
                 fields.getTransactionDetails().contains("3510"));
-
 
     }
 }
