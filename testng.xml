@@ -3,8 +3,10 @@
 
 <suite name="Regression">
 <!--    <listeners>-->
-<!--        <listener class-name="org.testng.ITestListener"/>-->
+<!--        <listener class-name="com.fnoor.WebDriverListener"></listener>-->
 <!--    </listeners>-->
+    <parameter name="browser" value="chrome" />
+    <parameter name="environment" value="${environment}"/>
     <parameter name="iatsSingle" value="iatsSingle"/>
     <parameter name="IATSRecurring" value="IATSRecurring"/>
     <parameter name="IATSACHRecurring" value="IATSACHRecurring"/>
@@ -17,6 +19,9 @@
             <methods>
                 <include name="iatsSingle" />
                 <include name="IATSRecurring" />
+                <include name="IATSACHRecurring" />
+                <include name="IATSACHRecurPaymenttypelogic" />
+                <include name="IATSvalidateTransaction" />
             </methods>
             </class>
         </classes>

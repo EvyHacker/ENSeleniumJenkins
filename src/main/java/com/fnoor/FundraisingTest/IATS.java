@@ -1,11 +1,16 @@
 package com.fnoor.FundraisingTest;
 
 import com.fnoor.FundraisingPageDriver;
+import com.fnoor.LocalDriverManager;
 import com.fnoor.PageFields;
+import com.gargoylesoftware.htmlunit.WebWindow;
+import com.gargoylesoftware.htmlunit.WebWindowAdapter;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.*;
 
@@ -19,31 +24,40 @@ import static com.fnoor.PageFields.ENLOGIN;
 
 public class IATS {
 
+
     static FundraisingPageDriver page = new FundraisingPageDriver();
     private static String FUNDRAISING_TEST;
-    public static WebDriver driver;
-    public static PageFields fields;
 
-    @BeforeClass(alwaysRun = true)
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver",
-                "/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/webdrivers/linux/chromedriver");
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--no-sandbox");
-//        options.addArguments("enable-automation");
-//        options.addArguments("--headless");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        fields = PageFactory.initElements(driver, PageFields.class);
-    }
+   static WebDriver driver = page.driverSettings();
+   // static WebDriver driver ;
+    //public static PageFields fields;
+    static PageFields fields = PageFactory.initElements(driver, PageFields.class);
+
+
+//@Parameters({ "browser" })
+//@BeforeClass
+//public void setUp(String browser) {
+//    System.out.println("*******************");
+//    System.out.println("launching firefox browser");
+//    WebDriver driver = page.createInstance(browser);
+//   // driver = page.getBrowser("browser");
+//    driver.manage().window().maximize();
+//}
+
     @AfterClass(alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }
 
+    private static void invokeBrowser(String url) {
+        System.out.println("Thread id = " + Thread.currentThread().getId());
+        System.out.println("Hashcode of webDriver instance = " + LocalDriverManager.getDriver().hashCode());
+        LocalDriverManager.getDriver().get(url);
+    }
     @Parameters({"iatsSingle"})
     @Test
     public static void iatsSingle(String testId) throws InterruptedException, IOException {
+
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/841/donate/1?mode=DEMO");
 
@@ -102,7 +116,7 @@ public class IATS {
     }
 
     @Parameters({"IATSRecurring"})
-    @Test
+    @Test(enabled = false)
     public static void IATSRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/861/donate/1?mode=DEMO");

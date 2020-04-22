@@ -30,7 +30,7 @@
                     <goal>java</goal>
                 </goals>
                 <configuration>
-                    <mainClass>com.fnoor.FundraisingPageDriver</mainClass>
+                    <mainClass></mainClass>
 <!--                    <arguments>-->
 <!--                        <argument>{env}</argument>-->
 <!--                        <argument>{webdriver}</argument>-->
@@ -45,6 +45,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                                 <configuration>
+<!--                                    <systemPropertyVariables>-->
+<!--                                        <browser>${browser}</browser>-->
+<!--                                        <environment>${environment}</environment>-->
+<!--                                    </systemPropertyVariables>-->
+                                    <parallel>methods</parallel>
+                                    <threadCount>5</threadCount>
                                     <suiteXmlFiles>
                                         <suiteXmlFile>testng.xml</suiteXmlFile>
                                     </suiteXmlFiles>
