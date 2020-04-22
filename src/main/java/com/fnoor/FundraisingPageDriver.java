@@ -22,6 +22,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.*;
 
@@ -35,7 +36,7 @@ import static com.fnoor.PageFields.*;
 public class FundraisingPageDriver {
 
     private static String FUNDRAISING_TEST;
-    public static WebDriver driver;
+    static WebDriver driver = null;
     //PageFields fields = PageFactory.initElements(driver, PageFields.class);
 
     @BeforeClass(alwaysRun = true)
@@ -161,10 +162,12 @@ public class FundraisingPageDriver {
     @Parameters({"browser"})
     @BeforeTest
     public static WebDriver createInstance(String browser) {
-        WebDriver driver = null;
+       // WebDriver driver = null;
+
         if (browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "webdrivers/linux/chromedriver");
             driver = new ChromeDriver();
+
             return driver;
         }
         if (browser.equalsIgnoreCase("firefox")) {
@@ -173,52 +176,58 @@ public class FundraisingPageDriver {
             return driver;
         }
         if (browser.equalsIgnoreCase("internet")) {
-            driver = new InternetExplorerDriver();
+            driver = new SafariDriver();
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             return driver;
         }
 
         return driver;
     }
 
-
-    public static WebDriver getBrowser(String browser) {
-        WebDriver driver;
-        switch (browser) {
-            case "firefox":
-                return driver = new FirefoxDriver();
-            case "chrome":
-                System.setProperty("webdriver.chrome.driver", "webdrivers/linux/chromedriver");
-                return driver = new ChromeDriver();
-            case "IE":
-                System.setProperty("webdriver.gecko.driver", "webdrivers/linux/geckodriver");
-                return driver = new FirefoxDriver();
-            default:
-                System.out.println("browser : " + browser + " is invalid, Launching Firefox as browser of choice..");
-                return driver = new InternetExplorerDriver();
-        }
+    @AfterTest(alwaysRun = true)
+    public void tearDown() {
+        driver.quit();
     }
-    public static WebDriver driverSettings() {
-
-        System.setProperty("webdriver.chrome.driver", "webdrivers/linux/chromedriver");
-        DesiredCapabilities capabilitiesChrome = DesiredCapabilities.chrome();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("disable-gpu");
-        options.addArguments("--always-authorize-plugins");
-        options.addArguments("--dns-prefetch-disable");
-        options.addArguments("--load-extension=\"+s+\"/stopper");
-        options.addArguments("--disable-features=VizDisplayCompositor");
-        options.addArguments("pageLoadStrategy=normal");
-        options.addArguments("--headless");
-        capabilitiesChrome.setCapability(ChromeOptions.CAPABILITY, options);
-        System.out.println("Im here");
-        driver = new ChromeDriver(options);
-        //driver = new FirefoxDriver();
-        driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
-        return driver;
-    }
-
 }
+//    public static WebDriver getBrowser(String browser) {
+//        WebDriver driver;
+//        switch (browser) {
+//            case "firefox":
+//                return driver = new FirefoxDriver();
+//            case "chrome":
+//                System.setProperty("webdriver.chrome.driver", "webdrivers/linux/chromedriver");
+//                return driver = new ChromeDriver();
+//            case "IE":
+//                System.setProperty("webdriver.gecko.driver", "webdrivers/linux/geckodriver");
+//                return driver = new FirefoxDriver();
+//            default:
+//                System.out.println("browser : " + browser + " is invalid, Launching Firefox as browser of choice..");
+//                return driver = new InternetExplorerDriver();
+//        }
+//    }
+//    public static WebDriver driverSettings() {
+//
+//        System.setProperty("webdriver.chrome.driver", "webdrivers/linux/chromedriver");
+//        DesiredCapabilities capabilitiesChrome = DesiredCapabilities.chrome();
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("disable-gpu");
+//        options.addArguments("--always-authorize-plugins");
+//        options.addArguments("--dns-prefetch-disable");
+//        options.addArguments("--load-extension=\"+s+\"/stopper");
+//        options.addArguments("--disable-features=VizDisplayCompositor");
+//        options.addArguments("pageLoadStrategy=normal");
+//        options.addArguments("--headless");
+//        capabilitiesChrome.setCapability(ChromeOptions.CAPABILITY, options);
+//        System.out.println("Im here");
+//        driver = new ChromeDriver(options);
+//        //driver = new FirefoxDriver();
+//        driver.manage().deleteAllCookies();
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+//
+//        return driver;
+//    }
+//
+//}

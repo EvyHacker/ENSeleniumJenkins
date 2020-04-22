@@ -5,7 +5,7 @@
 <!--    <listeners>-->
 <!--        <listener class-name="com.fnoor.WebDriverListener"></listener>-->
 <!--    </listeners>-->
-    <parameter name="browser" value="chrome" />
+    <parameter name="browser" value="${browser}" />
     <parameter name="environment" value="${environment}"/>
     <parameter name="iatsSingle" value="iatsSingle"/>
     <parameter name="IATSRecurring" value="IATSRecurring"/>

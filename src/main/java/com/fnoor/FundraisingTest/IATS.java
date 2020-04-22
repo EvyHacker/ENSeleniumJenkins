@@ -27,93 +27,81 @@ public class IATS {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
     private static String FUNDRAISING_TEST;
-
-   static WebDriver driver = page.driverSettings();
+    static WebDriver driver = null;
+   //static WebDriver driver = page.driverSettings();
    // static WebDriver driver ;
     //public static PageFields fields;
-    static PageFields fields = PageFactory.initElements(driver, PageFields.class);
+    public static PageFields fields;// = PageFactory.initElements(driver, PageFields.class);
 
 
-//@Parameters({ "browser" })
-//@BeforeClass
-//public void setUp(String browser) {
-//    System.out.println("*******************");
-//    System.out.println("launching firefox browser");
-//    WebDriver driver = page.createInstance(browser);
-//   // driver = page.getBrowser("browser");
-//    driver.manage().window().maximize();
-//}
-
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        driver.quit();
-    }
 
     private static void invokeBrowser(String url) {
         System.out.println("Thread id = " + Thread.currentThread().getId());
         System.out.println("Hashcode of webDriver instance = " + LocalDriverManager.getDriver().hashCode());
         LocalDriverManager.getDriver().get(url);
     }
-    @Parameters({"iatsSingle"})
+    @Parameters({"iatsSingle", "browser"})
     @Test
-    public static void iatsSingle(String testId) throws InterruptedException, IOException {
+    public static void iatsSingle(String testId,String browser) throws InterruptedException, IOException {
 
-        page.ensAuthTest();
-        driver.get("https://politicalnetworks.com/page/841/donate/1?mode=DEMO");
-
-        fields.waitForPageLoad();
-        Thread.sleep(2000);
-        fields.selectDonationAmt("15");
-        fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+            page.ensAuthTest();
+            driver = page.createInstance(browser);
+            driver.get("https://politicalnetworks.com/page/841/donate/1?mode=DEMO");
+            PageFields fields = PageFactory.initElements(driver, PageFields.class);
+            fields.waitForPageLoad();
+            Thread.sleep(2000);
+            fields.selectDonationAmt("15");
+            fields.selectTitle("Ms");
+            fields.setFirstname("Unit");
+            fields.setLastname("Tester");
 //		Call the createEmail function
-        String new_email = fields.createEmail(testId);
-        fields.setEmailAddress(new_email);
+            String new_email = fields.createEmail(testId);
+            fields.setEmailAddress(new_email);
 
-        fields.submit();
+            fields.submit();
 
-        fields.setAddress1("1 Hilltop");
-        fields.setCity("Baltimore");
-        fields.selectRegion("MD");
-        fields.setPostCode("20001");
-        fields.selectCountry("US");
+            fields.setAddress1("1 Hilltop");
+            fields.setCity("Baltimore");
+            fields.selectRegion("MD");
+            fields.setPostCode("20001");
+            fields.selectCountry("US");
 
-        fields.setOtherAmt1("other amount test1");
-        fields.setOtherAmt2("other amount test2");
-        fields.setOtherAmt3("other amount test3");
-        fields.setOtherAmt4("other amount test4");
-        fields.setAppealCode("appeal code test");
-        fields.setDirectMyGift("direct gift test");
-        fields.setAdditionalComments("additional comments");
-        fields.setTaxDeductible("Y");
+            fields.setOtherAmt1("other amount test1");
+            fields.setOtherAmt2("other amount test2");
+            fields.setOtherAmt3("other amount test3");
+            fields.setOtherAmt4("other amount test4");
+            fields.setAppealCode("appeal code test");
+            fields.setDirectMyGift("direct gift test");
+            fields.setAdditionalComments("additional comments");
+            fields.setTaxDeductible("Y");
 
-        fields.setCCName("Unit Tester");
-        fields.setCCNUmber("4222222222222220");
-        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
-        fields.setCCV("123");
+            fields.setCCName("Unit Tester");
+            fields.setCCNUmber("4222222222222220");
+            fields.setCCExpiry(new CharSequence[]{"12", "2020"});
+            fields.setCCV("123");
 
-        fields.submit();
+            fields.submit();
 
 //		Assert that the payment was successful and the third page was reached
-        String myurl = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/841/donate/3"));
+            String myurl = driver.getCurrentUrl();
+            Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/841/donate/3"));
 
-        fields.getSupporterTaxID();
+            fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
-        String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Campaign ID not present", bodytext.contains("3509"));
-        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
-        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
-        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
-        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
-        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("VISA"));
+            String bodytext = driver.findElement(By.tagName("body")).getText();
+            Assert.assertTrue("Campaign ID not present", bodytext.contains("3509"));
+            Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
+            Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+            Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
+            Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+            Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("VISA"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST = "iatsSingle", fields);
-        page.getSupporterById(FUNDRAISING_TEST = "iatsSingle", fields);
+            page.getSupporterByEmail(FUNDRAISING_TEST = "iatsSingle", fields);
+            page.getSupporterById(FUNDRAISING_TEST = "iatsSingle", fields);
+            driver.quit();
 
-    }
+        }
 
     @Parameters({"IATSRecurring"})
     @Test(enabled = false)
@@ -169,7 +157,7 @@ public class IATS {
 
         page.getSupporterByEmail(FUNDRAISING_TEST = "IATSRecurring", fields);
         page.getSupporterById(FUNDRAISING_TEST = "IATSRecurring", fields);
-
+        driver.quit();
     }
 
     @Parameters({"IATSACHRecurring"})

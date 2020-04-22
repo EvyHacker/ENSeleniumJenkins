@@ -2,26 +2,27 @@
 <testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression" duration-ms="13934" started-at="2020-04-22T18:26:11 EDT" finished-at="2020-04-22T18:26:25 EDT">
+  <suite name="Regression" duration-ms="14152" started-at="2020-04-22T19:05:23 EDT" finished-at="2020-04-22T19:05:37 EDT">
     <groups>
     </groups>
-    <test name="Donations" duration-ms="13934" started-at="2020-04-22T18:26:11 EDT" finished-at="2020-04-22T18:26:25 EDT">
+    <test name="Donations" duration-ms="14152" started-at="2020-04-22T19:05:23 EDT" finished-at="2020-04-22T19:05:37 EDT">
       <class name="com.fnoor.FundraisingTest.IATS">
-        <test-method status="PASS" signature="iatsSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.IATS@769a1df5]" name="iatsSingle" duration-ms="13442" started-at="2020-04-22T18:26:11 EDT" finished-at="2020-04-22T18:26:24 EDT">
+        <test-method status="PASS" signature="iatsSingle(java.lang.String, java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.IATS@396e2f39]" name="iatsSingle" duration-ms="14125" started-at="2020-04-22T19:05:23 EDT" finished-at="2020-04-22T19:05:37 EDT">
           <params>
             <param index="0">
               <value>
                 <![CDATA[iatsSingle]]>
               </value>
             </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iatsSingle -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.IATS@769a1df5]" name="tearDown" is-config="true" duration-ms="421" started-at="2020-04-22T18:26:24 EDT" finished-at="2020-04-22T18:26:25 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
       </class> <!-- com.fnoor.FundraisingTest.IATS -->
     </test> <!-- Donations -->
   </suite> <!-- Regression -->
