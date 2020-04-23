@@ -1,41 +1,24 @@
 package com.fnoor.FundraisingTest;
 
 import com.fnoor.FundraisingPageDriver;
-import com.fnoor.FundraisingPageHelper;
 import com.fnoor.PageFields;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
-import org.junit.AssumptionViolatedException;
-import org.junit.Rule;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.Augmenter;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
-import javax.imageio.ImageIO;
 import java.io.*;
-import java.time.LocalTime;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class Testing {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
     private static String FUNDRAISING_TEST;
     public static WebDriver driver;
     private static PageFields fields;

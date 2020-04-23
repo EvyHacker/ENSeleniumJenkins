@@ -52,9 +52,10 @@
 <!--                                    <parallel>methods</parallel>-->
 <!--                                    <threadCount>5</threadCount>-->
                                     <suiteXmlFiles>
-                                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                                     </suiteXmlFiles>
-                                    <groups>donations</groups>
+                                    <groups>Donations IATS</groups>
+                                    <groups>Donations VANTIV</groups>
                                 </configuration>
             </plugin>
             <plugin>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Regression">
+<suite name="Regression IATS">
 <!--    <listeners>-->
 <!--        <listener class-name="com.fnoor.WebDriverListener"></listener>-->
 <!--    </listeners>-->
@@ -11,7 +11,12 @@
     <parameter name="IATSRecurring" value="IATSRecurring"/>
     <parameter name="IATSACHRecurring" value="IATSACHRecurring"/>
     <parameter name="IATSACHRecurPaymenttypelogic" value="IATSACHRecurPaymenttypelogic"/>
-    <test name="Donations"  preserve-order="true">
+    <test name="Donations IATS"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="iats"/>
+            </run>
+        </groups>
         <classes>
 <!--            <class name="com.fnoor.FundraisingTest.TestNGIats" />-->
 <!--            <class name="com.fnoor.FundraisingTest.Testing" />-->

@@ -1,6 +1,6 @@
 package com.fnoor.ETT;
 
-import com.fnoor.FundraisingPageHelper;
+import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -10,8 +10,8 @@ import java.io.IOException;
 
 public class HouseCommittees {
 
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
-    private static String FUNDRAISING_TEST;
+    static FundraisingPageDriver page = new FundraisingPageDriver();
+    static String FUNDRAISING_TEST;
 
     // Validate OH state (Rep. Brad Wenstrup)
 
@@ -50,7 +50,7 @@ public class HouseCommittees {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "houseCommmitteesOH", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "houseCommmitteesOH", fields);
     }
 
     // Validate HI state (Rep. Ed Case)
@@ -95,7 +95,7 @@ public class HouseCommittees {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "houseCommmitteesHI", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "houseCommmitteesHI", fields);
     }
 
     // Validate Defense Subcommittee (Rep. Cheri Bustos)
@@ -139,7 +139,7 @@ public class HouseCommittees {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "houseCommmitteesDefense", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "houseCommmitteesDefense", fields);
     }
 
     // Validate CA state  (Rep. Juan Vargas)
@@ -182,7 +182,7 @@ public class HouseCommittees {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "houseCommmitteesCA", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "houseCommmitteesCA", fields);
     }
 
     public static void houseCommmitteesCustTarget(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -293,6 +293,6 @@ public class HouseCommittees {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "houseCommmitteesCustTarget", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "houseCommmitteesCustTarget", fields);
     }
 }

@@ -2,7 +2,7 @@ package com.fnoor.Standalone;
 
 import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

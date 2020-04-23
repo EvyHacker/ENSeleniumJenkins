@@ -1,6 +1,6 @@
 package com.fnoor.ETT;
 
-import com.fnoor.FundraisingPageHelper;
+import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -10,8 +10,8 @@ import java.io.IOException;
 
 public class CustomTarget {
 
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
-    private static String FUNDRAISING_TEST;
+    static FundraisingPageDriver page = new FundraisingPageDriver();
+    static String FUNDRAISING_TEST;
 
     public static void customTarget1(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
 
@@ -58,7 +58,7 @@ public class CustomTarget {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget1", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget1", fields);
     }
 
     public static void customTarget2(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -99,7 +99,7 @@ public class CustomTarget {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget2", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget2", fields);
 //        Assert.assertTrue(subjectETT.contains
 //                ("Subject: ETT_2 Custom target (single page) - 2 targets - editable area (Default Message)"));
     }
@@ -146,7 +146,7 @@ public class CustomTarget {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget3", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget3", fields);
     }
 
     public static void customTarget4(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -204,7 +204,7 @@ public class CustomTarget {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget4", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget4", fields);
     }
 
     public static void customTarget5(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -244,7 +244,7 @@ public class CustomTarget {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget5", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget5", fields);
     }
 
     public static void customTarget6(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -288,6 +288,6 @@ public class CustomTarget {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget6", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget6", fields);
     }
 }

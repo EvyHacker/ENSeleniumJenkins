@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression VANTIV">
+    <!--    <listeners>-->
+    <!--        <listener class-name="com.fnoor.WebDriverListener"></listener>-->
+    <!--    </listeners>-->
+    <parameter name="browser" value="${browser}" />
+    <parameter name="environment" value="${environment}"/>
+    <parameter name="vantivSingle" value="vantivSingle"/>
+    <parameter name="vantivRecurring" value="vantivRecurring"/>
+    <parameter name="vantiveCheck" value="vantiveCheck"/>
+    <parameter name="vantivSingleAcheft" value="vantivSingleAcheft"/>
+    <parameter name="vantivRecurringAcheft" value="vantivRecurringAcheft"/>
+    <test name="Donations_VANTIV"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="vantiv"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fnoor.FundraisingTest.VANTIV" >
+                <methods>
+                    <include name="vantivSingle" />
+                    <include name="vantivRecurring" />
+                    <include name="vantiveCheck" />
+                    <include name="vantivSingleAcheft" />
+                    <include name="vantivRecurringAcheft" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

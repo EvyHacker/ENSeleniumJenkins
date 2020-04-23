@@ -1,6 +1,6 @@
 package com.fnoor.ETT;
 
-import com.fnoor.FundraisingPageHelper;
+import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class SenateCommittees {
 
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
+    static FundraisingPageDriver page = new FundraisingPageDriver();
     private static String FUNDRAISING_TEST;
 
     public static void senateCommmittees25(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -59,7 +59,7 @@ public class SenateCommittees {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "senateCommmitteesAK", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "senateCommmitteesAK", fields);
     }
 
     // Validate MD state (Sen. Chris Van Hollen & Sen. Benjamin L. Cardin)
@@ -109,7 +109,7 @@ public class SenateCommittees {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "senateCommmitteesMD", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "senateCommmitteesMD", fields);
     }
 
     //Banking, Housing, and Urban Affairs
@@ -153,7 +153,7 @@ public class SenateCommittees {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "senateCommmitteesBanking", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "senateCommmitteesBanking", fields);
     }
 
     //Validate Florida senator Marco Rubio
@@ -197,7 +197,7 @@ public class SenateCommittees {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "senateCommmitteesFL", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "senateCommmitteesFL", fields);
     }
 
     //Validate Custom messages based on rules
@@ -308,7 +308,7 @@ public class SenateCommittees {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "senateCommmitteesCustTarget", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "senateCommmitteesCustTarget", fields);
     }
 }
 

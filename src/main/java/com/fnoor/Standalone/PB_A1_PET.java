@@ -1,15 +1,15 @@
 package com.fnoor.Standalone;
 
-import com.fnoor.FundraisingPageHelper;
+import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class PB_A1_PET {
 
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
-    private static String FUNDRAISING_TEST;
+    static FundraisingPageDriver page = new FundraisingPageDriver();
+    static String FUNDRAISING_TEST;
 
 
     public static void petition(String testId, PageFields fields, WebDriver driver) throws InterruptedException {

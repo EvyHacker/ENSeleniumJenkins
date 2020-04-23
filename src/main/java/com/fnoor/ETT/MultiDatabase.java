@@ -1,6 +1,6 @@
 package com.fnoor.ETT;
 
-import com.fnoor.FundraisingPageHelper;
+import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,8 +11,8 @@ import java.io.IOException;
 public class MultiDatabase {
 
 
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
-    private static String FUNDRAISING_TEST;
+    static FundraisingPageDriver page = new FundraisingPageDriver();
+    static String FUNDRAISING_TEST;
 
     public static void multiDatabase13(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
 
@@ -44,7 +44,7 @@ public class MultiDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("GB"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase13", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase13", fields);
     }
 
 
@@ -78,7 +78,7 @@ public class MultiDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("GB"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase14", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase14", fields);
     }
 
     public static void multiDatabase15(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -111,7 +111,7 @@ public class MultiDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("GB"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase15", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase15", fields);
 
     }
 
@@ -157,7 +157,7 @@ public class MultiDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase16", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase16", fields);
     }
 
     public static void multiDatabase16_2(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -219,7 +219,7 @@ public class MultiDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase16_2", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase16_2", fields);
     }
 
     public static void multiDatabase17(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -269,7 +269,7 @@ public class MultiDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("GB"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase17", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase17", fields);
     }
 
     public static void multiDatabase18(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -325,7 +325,7 @@ public class MultiDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase18", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase18", fields);
     }
 
     public static void multiDatabaseCommittees(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -383,7 +383,7 @@ public class MultiDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabaseCommittees", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabaseCommittees", fields);
     }
 
     public static void multiDatabaseCommitteesEdit(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -478,7 +478,7 @@ public class MultiDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabaseCommitteesEdit", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabaseCommitteesEdit", fields);
     }
 
     public static void multiDatabase39(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -533,7 +533,7 @@ public class MultiDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase39", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase39", fields);
     }
 
     public static void multiDatabase39_2(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -578,6 +578,6 @@ public class MultiDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase39_2", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase39_2", fields);
     }
 }

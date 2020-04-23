@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
 
 import static com.fnoor.PageFields.ENLOGIN;
 
@@ -19,15 +20,20 @@ public class IATS {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
     static String FUNDRAISING_TEST;
-    public static WebDriver driver;// = null;
-    static PageFields fields;// = PageFactory.initElements(driver, PageFields.class);
-//    }
+    public static WebDriver driver;
+    static PageFields fields;
+
     @Parameters({"browser"})
     @BeforeClass(alwaysRun=true)
     public void setUp(String browser) throws MalformedURLException {
         driver = page.createInstance(browser);
         fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
+
     @AfterClass(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
@@ -36,7 +42,7 @@ public class IATS {
     }
 
     @Parameters({"iatsSingle"})
-    @Test
+    @Test(groups = { "iats" })
     public static void iatsSingle(String testId) throws InterruptedException, IOException {
 
         page.ensAuthTest();
@@ -98,7 +104,7 @@ public class IATS {
     }
 
     @Parameters({"IATSRecurring"})
-    @Test
+    @Test(groups = { "iats" })
     public static void IATSRecurring(String testId) throws InterruptedException, IOException {
 
         page.ensAuthTest();
@@ -155,7 +161,7 @@ public class IATS {
     }
 
     @Parameters({"IATSACHRecurring"})
-    @Test
+    @Test(groups = { "iats" })
     public static void IATSACHRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/5724/donate/1?mode=DEMO");
@@ -215,7 +221,7 @@ public class IATS {
     }
 
     @Parameters({"IATSACHRecurPaymenttypelogic"})
-    @Test
+    @Test(groups = { "iats" })
     public static void IATSACHRecurPaymenttypelogic(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/5725/donate/1?mode=DEMO");
@@ -284,7 +290,7 @@ public class IATS {
 
     }
 
-    @Test(enabled = false)
+    @Test(groups = { "iats" })
     public static void IATSvalidateTransaction() throws InterruptedException, IOException {
 
         driver.navigate().to(ENLOGIN);

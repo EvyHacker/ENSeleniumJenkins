@@ -135,6 +135,23 @@ public class FundraisingPageDriver {
     }
 
     @AfterTest(alwaysRun = true)
+    public static void getSupporterByEmailETT(String testId, PageFields fields) throws IOException {
+
+        HttpClient client = HttpClientBuilder.create().build();
+        supporterEmail = fields.createETTEmail(testId);
+        HttpGet get = new HttpGet(SERVICE_URL_ETT + supporterEmail);
+
+        HttpResponse response = client.execute(get);
+        int status = response.getStatusLine().getStatusCode();
+        if (status != HTTP_STATUS_OK) {
+            throw new IOException("Unable to authenticate. Received invalid http status=" + status);
+        }
+        String jsonResponse = IOUtils.toString(response.getEntity().getContent(), "UTF-8");
+        System.out.println("RESPONSE as String(getSupporterByEmailETT): " + jsonResponse);
+        System.out.println("SupporterEmail: " + supporterEmail);
+    }
+
+    @AfterTest(alwaysRun = true)
     public static void getSupporterById(String testId, PageFields fields) throws IOException, InterruptedException {
         System.out.println("In after class getSupporterById:");
         HttpClient client = HttpClientBuilder.create().build();
@@ -176,8 +193,6 @@ public class FundraisingPageDriver {
         }
         if (browser.equalsIgnoreCase("internet")) {
             driver = new SafariDriver();
-//            driver.manage().window().maximize();
-//            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             return driver;
         }
         return driver;

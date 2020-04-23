@@ -2,24 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9ec9c8a-8c77-45cd-a867-fdcaf19d3872" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/vantiv.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/ETT/CustomTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/ETT/CustomTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/ETT/HouseCommittees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/ETT/HouseCommittees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/ETT/MultiDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/ETT/MultiDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/ETT/PostalDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/ETT/PostalDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/ETT/SenateCommittees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/ETT/SenateCommittees.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageHelper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/Iframe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYFLOW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYFLOW.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/STRIPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/STRIPE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/Testing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/VANTIV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/VANTIV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A11_TWT2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A11_TWT2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A12_TWT3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A12_TWT3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A15_PTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A15_PTM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A1_PET.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A1_PET.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A2_DCF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A2_DCF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A3_DCF2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A3_DCF2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A5_ETT2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A5_ETT2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A8_EMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A8_EMS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A9_ECF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A9_ECF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/ValidationTests/StripeVal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/ValidationTests/StripeVal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/ETT/CustomTarget.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/ETT/CustomTarget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/ETT/HouseCommittees.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/ETT/HouseCommittees.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/ETT/MultiDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/ETT/MultiDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/ETT/PostalDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/ETT/PostalDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/ETT/SenateCommittees.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/ETT/SenateCommittees.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageHelper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/IATS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/IATS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/fnautomation-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/Iframe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYFLOW.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYFLOW.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/STRIPE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/STRIPE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/Testing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/Testing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/VANTIV.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/VANTIV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A11_TWT2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A11_TWT2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A12_TWT3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A12_TWT3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A15_PTM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A15_PTM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A1_PET.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A1_PET.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A2_DCF.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A2_DCF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A3_DCF2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A3_DCF2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A5_ETT2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A5_ETT2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A8_EMS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A8_EMS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A9_ECF.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A9_ECF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/ValidationTests/StripeVal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/ValidationTests/StripeVal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/Regression/Donations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/collapseall.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/jquery-1.7.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.FundraisingTest.IATS.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Regression/testng-failed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.FundraisingTest.IATS.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.FundraisingTest.IATS.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Regression/Donations.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iats.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,6 +257,11 @@
     </state>
     <state x="219" y="128" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.822/1440.23.2560.1057@0.23.1440.822" timestamp="1582326989750" />
     <state x="219" y="128" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.823/1440.23.2560.1057@0.23.1440.823" timestamp="1587590831979" />
+    <state x="458" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587655227351">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state x="458" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.823/1440.23.2560.1057@0.23.1440.823" timestamp="1587653894481" />
+    <state x="458" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.825/1440.23.2560.1057@0.23.1440.825" timestamp="1587655227351" />
     <state width="1398" height="210" key="GridCell.Tab.0.bottom" timestamp="1587590104168">
       <screen x="0" y="23" width="1440" height="823" />
     </state>

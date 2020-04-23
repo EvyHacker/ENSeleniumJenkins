@@ -1,6 +1,6 @@
 package com.fnoor.ETT;
 
-import com.fnoor.FundraisingPageHelper;
+import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -13,8 +13,8 @@ import static com.fnoor.PageFields.SERVICE_BASEURL;
 public class
 PostalDatabase {
 
-    static FundraisingPageHelper helper = new FundraisingPageHelper();
-    private static String FUNDRAISING_TEST;
+    static FundraisingPageDriver page = new FundraisingPageDriver();
+    static String FUNDRAISING_TEST;
 
     public static void postalDatabase7(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
 
@@ -46,7 +46,7 @@ PostalDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("GB"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase7", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase7", fields);
     }
 
     public static void postalDatabase8(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -79,7 +79,7 @@ PostalDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("GB"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase8", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase8", fields);
     }
 
     public static void postalDatabase9(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -112,7 +112,7 @@ PostalDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("GB"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase9", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase9", fields);
     }
 
     public static void postalDatabase10(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -158,7 +158,7 @@ PostalDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase10", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase10", fields);
     }
 
     public static void postalDatabase11(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -199,7 +199,7 @@ PostalDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase11", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase11", fields);
     }
 
     public static void postalDatabase12(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -274,7 +274,7 @@ PostalDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("GB"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase12", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase12", fields);
         }
 
     public static void postalDatabase19(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -323,7 +323,7 @@ PostalDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase19", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase19", fields);
          }
 
     public static void postalDatabase20(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -368,7 +368,7 @@ PostalDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase20", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase20", fields);
     }
 
     public static void postalDatabase21(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -413,7 +413,7 @@ PostalDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase21", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase21", fields);
     }
 
     public static void postalDatabase38(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
@@ -454,6 +454,6 @@ PostalDatabase {
         Assert.assertTrue("Email is incorrect/not present", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Country is incorrect/not present", bodytext.contains("US"));
 
-        helper.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase38", fields);
+        page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase38", fields);
     }
 }
