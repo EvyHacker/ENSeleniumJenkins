@@ -19,43 +19,18 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-<!--&lt;!&ndash;            <plugin>&ndash;&gt;-->
-<!--&lt;!&ndash;                <groupId>org.codehaus.mojo</groupId>&ndash;&gt;-->
-<!--&lt;!&ndash;                <artifactId>exec-maven-plugin</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;                <version>1.2.1</version>&ndash;&gt;-->
-<!--&lt;!&ndash;                <executions>&ndash;&gt;-->
-<!--&lt;!&ndash;                <execution>&ndash;&gt;-->
-<!--&lt;!&ndash;                <phase>test</phase>&ndash;&gt;-->
-<!--&lt;!&ndash;                <goals>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <goal>java</goal>&ndash;&gt;-->
-<!--&lt;!&ndash;                </goals>&ndash;&gt;-->
-<!--&lt;!&ndash;                <configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <mainClass></mainClass>&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                    <arguments>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                        <argument>{env}</argument>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                        <argument>{webdriver}</argument>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                        <argument>{testCase}</argument>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                    </arguments>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;                </configuration>&ndash;&gt;-->
-<!--                </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                                 <configuration>
-<!--                                    <systemPropertyVariables>-->
-<!--                                        <browser>${browser}</browser>-->
-<!--                                        <environment>${environment}</environment>-->
-<!--                                    </systemPropertyVariables>-->
-<!--                                    <parallel>methods</parallel>-->
-<!--                                    <threadCount>5</threadCount>-->
                                     <suiteXmlFiles>
                                         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                                     </suiteXmlFiles>
                                     <groups>Donations IATS</groups>
                                     <groups>Donations VANTIV</groups>
+                                    <groups>Donations WORLDPAY</groups>
+                                    <groups>Donations MONERIS</groups>
                                 </configuration>
             </plugin>
             <plugin>

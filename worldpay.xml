@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression WORLDPAY">
+    <!--    <listeners>-->
+    <!--        <listener class-name="com.fnoor.WebDriverListener"></listener>-->
+    <!--    </listeners>-->
+    <parameter name="browser" value="${browser}" />
+    <parameter name="environment" value="${environment}"/>
+    <parameter name="worldpayCCSingle" value="worldpayCCSingle"/>
+    <parameter name="worldpayCCRecurring" value="worldpayCCRecurring"/>
+    <parameter name="worldpay3DSecureTest" value="worldpay3DSecureTest"/>
+    <parameter name="worldpay3DRecurring" value="worldpay3DRecurring"/>
+    <test name="Donations WORLDPAY"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="iats"/>
+            </run>
+        </groups>
+        <classes>
+            <!--            <class name="com.fnoor.FundraisingTest.TestNGIats" />-->
+            <!--            <class name="com.fnoor.FundraisingTest.Testing" />-->
+            <class name="com.fnoor.FundraisingTest.WORLDPAY" >
+                <methods>
+                    <include name="worldpayCCSingle" />
+                    <include name="worldpayCCRecurring" />
+                    <include name="worldpay3DSecureTest" />
+                    <include name="worldpay3DRecurring" />
+                    <include name="IATSvalidateTransaction" />
+                </methods>
+            </class>
+        </classes>
+        <!--        <classes>-->
+        <!--            <class name="api.http.calls.ApiTest" />-->
+        <!--        </classes>-->
+    </test>
+</suite>

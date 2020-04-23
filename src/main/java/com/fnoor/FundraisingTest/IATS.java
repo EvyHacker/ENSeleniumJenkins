@@ -46,9 +46,7 @@ public class IATS {
     public static void iatsSingle(String testId) throws InterruptedException, IOException {
 
         page.ensAuthTest();
-       // driver = page.createInstance(browser);
         driver.get("https://politicalnetworks.com/page/841/donate/1?mode=DEMO");
-        //PageFields fields = PageFactory.initElements(driver, PageFields.class);
         fields.waitForPageLoad();
         Thread.sleep(2000);
         fields.selectDonationAmt("15");

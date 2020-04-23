@@ -2,13 +2,6 @@ package com.fnoor;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fnoor.ETT.*;
-import com.fnoor.FundraisingTest.*;
-import com.fnoor.Redirects.*;
-import com.fnoor.Standalone.*;
-import com.fnoor.ValidationTests.MonerisVal;
-import com.fnoor.ValidationTests.PaySafeVal;
-import com.fnoor.ValidationTests.StripeVal;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -18,26 +11,19 @@ import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.*;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.concurrent.TimeUnit;
 
 import static com.fnoor.PageFields.*;
 
 public class FundraisingPageDriver {
 
-    private static String FUNDRAISING_TEST;
     static WebDriver driver;
-    //PageFields fields = PageFactory.initElements(driver, PageFields.class);
 
     @BeforeClass(alwaysRun = true)
     public static void ensAuthTest() {
@@ -197,51 +183,4 @@ public class FundraisingPageDriver {
         }
         return driver;
     }
-
-    public static void  getBrowser() {
-        driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    }
 }
-//        WebDriver driver;
-//        switch (browser) {
-//            case "firefox":
-//                return driver = new FirefoxDriver();
-//            case "chrome":
-//                System.setProperty("webdriver.chrome.driver", "webdrivers/linux/chromedriver");
-//                return driver = new ChromeDriver();
-//            case "IE":
-//                System.setProperty("webdriver.gecko.driver", "webdrivers/linux/geckodriver");
-//                return driver = new FirefoxDriver();
-//            default:
-//                System.out.println("browser : " + browser + " is invalid, Launching Firefox as browser of choice..");
-//                return driver = new InternetExplorerDriver();
-//        }
-//    }
-//    public static WebDriver driverSettings() {
-//
-//        System.setProperty("webdriver.chrome.driver", "webdrivers/linux/chromedriver");
-//        DesiredCapabilities capabilitiesChrome = DesiredCapabilities.chrome();
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("disable-gpu");
-//        options.addArguments("--always-authorize-plugins");
-//        options.addArguments("--dns-prefetch-disable");
-//        options.addArguments("--load-extension=\"+s+\"/stopper");
-//        options.addArguments("--disable-features=VizDisplayCompositor");
-//        options.addArguments("pageLoadStrategy=normal");
-//        options.addArguments("--headless");
-//        capabilitiesChrome.setCapability(ChromeOptions.CAPABILITY, options);
-//        System.out.println("Im here");
-//        driver = new ChromeDriver(options);
-//        //driver = new FirefoxDriver();
-//        driver.manage().deleteAllCookies();
-//        driver.manage().window().maximize();
-//        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-//        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-//
-//        return driver;
-//    }
-//
-//}

@@ -7,19 +7,48 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
 
 public class MONERIS {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
-    private static  String FUNDRAISING_TEST;
+    static String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    static PageFields fields;
 
-    public static void moneriseSelectSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"browser"})
+    @BeforeClass(alwaysRun=true)
+    public void setUp(String browser) throws MalformedURLException {
+        driver = page.createInstance(browser);
+        fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Parameters({"moneriseSelectSingle"})
+    @Test(groups = { "moneris" })
+    public static void moneriseSelectSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/845/donate/1?mode=DEMO");
 
@@ -66,7 +95,9 @@ public class MONERIS {
         page.getSupporterById(FUNDRAISING_TEST="moneriseSelectSingle", fields);
     }
 
-    public static void moneriseSelectRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"moneriseSelectRecurring"})
+    @Test(groups = { "moneris" })
+    public static void moneriseSelectRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/867/donate/1?mode=DEMO");
 
@@ -122,7 +153,9 @@ public class MONERIS {
         page.getSupporterById(FUNDRAISING_TEST="moneriseSelectRecurring", fields);
     }
 
-    public static void monerisVaultRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"monerisVaultRecurring"})
+    @Test(groups = { "moneris" })
+    public static void monerisVaultRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/869/donate/1?mode=DEMO");
 
@@ -181,7 +214,9 @@ public class MONERIS {
         page.getSupporterById(FUNDRAISING_TEST="monerisVaultRecurring", fields);
     }
 
-    public static void monerisSingleNoCvv(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"monerisSingleNoCvv"})
+    @Test(groups = { "moneris" })
+    public static void monerisSingleNoCvv(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/10938/donate/1?mode=DEMO");
 
@@ -224,7 +259,9 @@ public class MONERIS {
         page.getSupporterById(FUNDRAISING_TEST="monerisSingleNoCvv", fields);
     }
 
-    public static void monerisRecurringNoCvv(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"monerisRecurringNoCvv"})
+    @Test(groups = { "moneris" })
+    public static void monerisRecurringNoCvv(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/10939/donate/1?mode=DEMO");
 
@@ -272,7 +309,9 @@ public class MONERIS {
         page.getSupporterById(FUNDRAISING_TEST="monerisRecurringNoCvv", fields);
     }
 
-    public static void monerisVault3DSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"monerisVault3DSingle"})
+    @Test(groups = { "moneris" })
+    public static void monerisVault3DSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12779/donate/1?mode=DEMO");
 
@@ -331,7 +370,9 @@ public class MONERIS {
         page.getSupporterById(FUNDRAISING_TEST="monerisVault3DSingle", fields);
     }
 
-    public static void monerisVault3DRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"monerisVault3DRecurring"})
+    @Test(groups = { "moneris" })
+    public static void monerisVault3DRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12783/donate/1?mode=DEMO");
 
@@ -395,7 +436,9 @@ public class MONERIS {
         page.getSupporterById(FUNDRAISING_TEST="monerisVault3DRecurring", fields);
     }
 
-    public static void moneriseSelectSingleUP(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"moneriseSelectSingleUP"})
+    @Test(groups = { "moneris" })
+    public static void moneriseSelectSingleUP(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/13068/donate/1?mode=DEMO");
 

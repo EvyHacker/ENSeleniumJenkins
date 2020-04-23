@@ -6,17 +6,46 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
 
 public class WORLDPAY {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
-    private static  String FUNDRAISING_TEST;
+    static String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    static PageFields fields;
 
-    public static void worldpayCCSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"browser"})
+    @BeforeClass(alwaysRun=true)
+    public void setUp(String browser) throws MalformedURLException {
+        driver = page.createInstance(browser);
+        fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Parameters({"worldpayCCSingle"})
+    @Test(groups = { "worldpay" })
+    public static void worldpayCCSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/842/donate/1?mode=DEMO");
 
@@ -63,8 +92,9 @@ public class WORLDPAY {
         page.getSupporterById(FUNDRAISING_TEST="WorldpayCCSingle", fields);
     }
 
-
-    public static void worldpayCCRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"worldpayCCRecurring"})
+    @Test(groups = { "worldpay" })
+    public static void worldpayCCRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/862/donate/1?mode=DEMO");
 
@@ -129,7 +159,9 @@ public class WORLDPAY {
         page.getSupporterById(FUNDRAISING_TEST="WorldpayCCRecurring", fields);
     }
 
-    public static void worldpay3DSecureTest(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"worldpay3DSecureTest"})
+    @Test(groups = { "worldpay" })
+    public static void worldpay3DSecureTest(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
 
         driver.get("https://politicalnetworks.com/page/863/donate/1?mode=DEMO");
@@ -187,8 +219,9 @@ public class WORLDPAY {
         page.getSupporterById(FUNDRAISING_TEST="worldpay3DSecureTest", fields);
     }
 
-    //3d authentication disabled
-    public static void worldpay3DRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"worldpay3DRecurring"})
+    @Test(groups = { "worldpay" })
+    public static void worldpay3DRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
 
         driver.get("https://politicalnetworks.com/page/10877/donate/1?mode=DEMO");
