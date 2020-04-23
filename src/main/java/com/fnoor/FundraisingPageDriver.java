@@ -36,7 +36,7 @@ import static com.fnoor.PageFields.*;
 public class FundraisingPageDriver {
 
     private static String FUNDRAISING_TEST;
-    static WebDriver driver = null;
+    static WebDriver driver;
     //PageFields fields = PageFactory.initElements(driver, PageFields.class);
 
     @BeforeClass(alwaysRun = true)
@@ -160,14 +160,13 @@ public class FundraisingPageDriver {
     }
 
     @Parameters({"browser"})
-    @BeforeTest
+    @BeforeClass
     public static WebDriver createInstance(String browser) {
-       // WebDriver driver = null;
+        // WebDriver driver = null;
 
         if (browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "webdrivers/linux/chromedriver");
             driver = new ChromeDriver();
-
             return driver;
         }
         if (browser.equalsIgnoreCase("firefox")) {
@@ -177,20 +176,20 @@ public class FundraisingPageDriver {
         }
         if (browser.equalsIgnoreCase("internet")) {
             driver = new SafariDriver();
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//            driver.manage().window().maximize();
+//            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             return driver;
         }
-
         return driver;
     }
 
-    @AfterTest(alwaysRun = true)
-    public void tearDown() {
-        driver.quit();
+    public static void  getBrowser() {
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 }
-//    public static WebDriver getBrowser(String browser) {
 //        WebDriver driver;
 //        switch (browser) {
 //            case "firefox":

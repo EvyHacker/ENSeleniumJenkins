@@ -49,8 +49,8 @@
 <!--                                        <browser>${browser}</browser>-->
 <!--                                        <environment>${environment}</environment>-->
 <!--                                    </systemPropertyVariables>-->
-                                    <parallel>methods</parallel>
-                                    <threadCount>5</threadCount>
+<!--                                    <parallel>methods</parallel>-->
+<!--                                    <threadCount>5</threadCount>-->
                                     <suiteXmlFiles>
                                         <suiteXmlFile>testng.xml</suiteXmlFile>
                                     </suiteXmlFiles>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Regression]">
+  <parameter name="iatsSingle" value="iatsSingle"/>
+  <parameter name="environment" value="${environment}"/>
+  <parameter name="IATSACHRecurring" value="IATSACHRecurring"/>
+  <parameter name="IATSRecurring" value="IATSRecurring"/>
+  <parameter name="browser" value="firefox"/>
+  <parameter name="IATSACHRecurPaymenttypelogic" value="IATSACHRecurPaymenttypelogic"/>
+  <test thread-count="5" verbose="0" name="Donations(failed)">
+    <groups>
+      <run>
+        <include name="donations"/>
+        <include name="donations"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.fnoor.FundraisingTest.IATS">
+        <methods>
+          <include name="setUp"/>
+          <include name="iatsSingle" invocation-numbers="0"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.fnoor.FundraisingTest.IATS -->
+    </classes>
+  </test> <!-- Donations(failed) -->
+</suite> <!-- Failed suite [Regression] -->
