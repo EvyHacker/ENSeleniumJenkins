@@ -35,6 +35,7 @@
                                     <groups>Donations RSM</groups>
                                     <groups>Donations STRIPE</groups>
                                     <groups>Donations PAYSAFE</groups>
+                                    <groups>Donations PAYPAL</groups>
                                 </configuration>
             </plugin>
             <plugin>

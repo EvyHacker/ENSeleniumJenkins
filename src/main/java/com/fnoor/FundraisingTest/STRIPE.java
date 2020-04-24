@@ -107,7 +107,7 @@ public class STRIPE {
     }
 
     @Parameters({"stripeRecurring"})
-    @Test(enabled = false, groups = { "stripe" })
+    @Test(groups = { "stripe" })
     public static void stripeRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/11503/donate/1?mode=DEMO");

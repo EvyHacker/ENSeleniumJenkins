@@ -4,19 +4,50 @@ import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import sun.awt.datatransfer.ToolkitThreadBlockedHandler;
+import sun.security.krb5.internal.TGSRep;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
 
 public class PAYPAL {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
-    private static  String FUNDRAISING_TEST;
+    static String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    static PageFields fields;
 
-    public static void paypalPaymentsProSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"browser"})
+    @BeforeClass(alwaysRun=true)
+    public void setUp(String browser) throws MalformedURLException {
+        driver = page.createInstance(browser);
+        fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Parameters({"paypalPaymentsProSingle"})
+    @Test(groups = { "paypal" })
+    public static void paypalPaymentsProSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
 
         driver.get("https://politicalnetworks.com/page/843/donate/1?mode=DEMO");
@@ -51,6 +82,8 @@ public class PAYPAL {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/843/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3515"));
@@ -61,9 +94,12 @@ public class PAYPAL {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Visa"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="paypalPaymentsProSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="paypalPaymentsProSingle", fields);
     }
 
-    public static void payPalPaymentsProRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"payPalPaymentsProRecurring"})
+    @Test(groups = { "paypal" })
+    public static void payPalPaymentsProRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
 
         driver.get("https://politicalnetworks.com/page/865/donate/1?mode=DEMO");
@@ -103,6 +139,8 @@ public class PAYPAL {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/865/donate/3"));
 
+        fields.getSupporterTaxID();
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3516"));
@@ -113,10 +151,12 @@ public class PAYPAL {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Visa"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="payPalPaymentsProRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="payPalPaymentsProRecurring", fields);
     }
 
-
-    public  static void payViaPayPalSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"payViaPayPalSingle"})
+    @Test(groups = { "paypal" })
+    public  static void payViaPayPalSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/844/donate/1?mode=DEMO");
 
@@ -164,37 +204,23 @@ public class PAYPAL {
         fields.waitForPageLoad();
         fields.setPaypalPassword();
         fields.submitPaypal();
-//        try{
-//            WebElement paypalLogin = (new WebDriverWait(driver, 20))
-//                    .until(ExpectedConditions.presenceOfElementLocated
-//                            (By.id("btnLogin")));
-//            JavascriptExecutor executor = (JavascriptExecutor) driver;
-//            executor.executeScript("arguments[0].click();", paypalLogin);
-//            //fields.submitPaypal();
-//        } catch (StaleElementReferenceException e) {
-//        }
-
-//        JavascriptExecutor executor = (JavascriptExecutor) driver;
-//        executor.executeScript("arguments[0].click();", fields.submitPaypal());
-
-        //Submit Paypal payment
-        //driver.switchTo().defaultContent();
         fields.waitForPageLoad();
-        Thread.sleep(50000);
-//        String paypalAmount = driver.findElement(By.className("ltrOverride")).getText();
-//        System.out.println("PPL amount " + paypalAmount);
-//        Assert.assertTrue("Donation amount displayed is incorrect", paypalAmount.contains("$15.00"));
-        WebElement paypalContinue = (new WebDriverWait(driver, 20))
+        Thread.sleep(20000);
+
+        WebElement paypalContinue = (new WebDriverWait(driver, 40))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.name("payment-submit-btn")));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", paypalContinue);
+        Thread.sleep(4000);
         fields.waitForPageLoad();
 
         //		Assert that the payment was successful and the third page was reached
-        Thread.sleep(4000);
+
         Assert.assertTrue("Urls are not the same",
                 driver.getCurrentUrl().equals("https://politicalnetworks.com/page/844/donate/3"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -206,9 +232,12 @@ public class PAYPAL {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Paypal"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="payViaPayPalSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="payViaPayPalSingle", fields);
     }
 
-    public static void payViaPayPalRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"payViaPayPalRecurring"})
+    @Test(groups = { "paypal" })
+    public static void payViaPayPalRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/866/donate/1?mode=DEMO");
 
@@ -248,7 +277,7 @@ public class PAYPAL {
         fields.waitForPageLoad();
         fields.setPaypalPassword();
         fields.submitPaypal();
-        fields.waitForPageLoad();
+        fields.waitForPageLoadPayPal();
 
             try {
                 WebElement paypalContinue = (new WebDriverWait(driver, 20))
@@ -259,19 +288,20 @@ public class PAYPAL {
             } catch (StaleElementReferenceException e) {
         }
 
-        fields.waitForPageLoad();
-            Thread.sleep(30000);
+        fields.waitForPageLoadPayPal();
         WebElement paypalAgree = (new WebDriverWait(driver, 30))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.cssSelector("#consentButton")));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", paypalAgree);
-        fields.waitForPageLoad();
+        fields.waitForPageLoadPayPal();
 
         //		Assert that the payment was successful and the third page was reached
-        Thread.sleep(4000);
+
         Assert.assertTrue("Urls are not the same",
                 driver.getCurrentUrl().equals("https://politicalnetworks.com/page/866/donate/3"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -283,10 +313,13 @@ public class PAYPAL {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Paypal"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="payViaPayPalRecurring", fields);
+        page.getSupporterById(FUNDRAISING_TEST="payViaPayPalRecurring", fields);
     }
 
     // Can not validate via email for the transaction when sending API call
-    public static void paypalCardinalComSingle3D(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"paypalCardinalComSingle3D"})
+    @Test(groups = { "paypal" })
+    public static void paypalCardinalComSingle3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12374/donate/1?mode=DEMO");
 
@@ -295,8 +328,8 @@ public class PAYPAL {
         fields.setFirstname("Unit");
         fields.setLastname("Tester");
 //		Call the createEmail function
-        // String new_email = fields.createEmail(testId);
-        fields.setEmailAddress("testid_paypal@tellamazingstories.com");
+        String new_email = fields.createRSMemail(testId);
+        fields.setEmailAddress(new_email);
 
         fields.submit();
 
@@ -340,9 +373,11 @@ public class PAYPAL {
         executor.executeScript("arguments[0].click();", mySubmitDynamicElement);
 
         fields.waitForPageLoad();
-
+        Thread.sleep(2000);
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12374/donate/3"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -353,10 +388,13 @@ public class PAYPAL {
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Visa"));
 
-        //page.getSupporterByEmail(FUNDRAISING_TEST="paypalCardinalComSingle3D", fields);
+        page.getSupporterByEmailRSM(FUNDRAISING_TEST = "paypalCardinalComSingle3D", fields);
+        page.getSupporterById(FUNDRAISING_TEST="paypalCardinalComSingle3D", fields);
     }
 
-    public static void paypalViaPayPalCardinalComSingle3D(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"paypalViaPayPalCardinalComSingle3D"})
+    @Test(groups = { "paypal" })
+    public static void paypalViaPayPalCardinalComSingle3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.navigate().to("https://politicalnetworks.com/page/12374/donate/1?mode=DEMO");
 
@@ -390,33 +428,35 @@ public class PAYPAL {
 
         fields.submit();
 
-        fields.waitForPageLoad();
-        fields.waitForURLToChange("https://www.sandbox.paypal.com/");
-        //		Assert that the payment is redirected to Paypal page
-        String myurl = driver.getCurrentUrl();
-        Assert.assertTrue("Didn't redirect to Paypal", myurl.contains("https://www.sandbox.paypal.com/"));
-        fields.waitForPageLoad();
+        fields.waitForPageLoadPayPal();
         fields.setPaypalEmail();
         fields.nextPayapl();
         fields.waitForPageLoad();
         fields.setPaypalPassword();
         fields.submitPaypal();
-        fields.waitForPageLoad();
+        fields.waitForPageLoadPayPal();
 
-        Thread.sleep(4000);
+        Thread.sleep(6000);
         WebElement paypalAmount = (new WebDriverWait(driver, 40))
                 .until(ExpectedConditions.presenceOfElementLocated(By.className("Cart_cartAmount_4dnoL")));
         Assert.assertTrue("Donation amount displayed is incorrect", paypalAmount.getText().contains("$15"));
         WebElement paypalContinue = (new WebDriverWait(driver, 60))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.id("payment-submit-btn")));
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].click();", paypalContinue);
-        fields.waitForPageLoad();
+        try{
+            JavascriptExecutor js = (JavascriptExecutor)driver;
+            js.executeScript("arguments[0].click();", paypalContinue);
+        }catch(Exception e) {
+            System.err.println(e.getMessage());
+        }
+
+        fields.waitForPageLoadPayPal();
 
         //		Assert that the payment was successful and the third page was reached
-        Thread.sleep(6000);
+        Thread.sleep(2000);
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12374/donate/3"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -428,9 +468,12 @@ public class PAYPAL {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Paypal"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="paypalViaPayPalCardinalComSingle3D", fields);
+        page.getSupporterById(FUNDRAISING_TEST="paypalViaPayPalCardinalComSingle3D", fields);
     }
 
-    public static void paypalCardinalComRecurring3D(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"paypalCardinalComRecurring3D"})
+    @Test(groups = { "paypal" })
+    public static void paypalCardinalComRecurring3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12374/donate/1?mode=DEMO");
 
@@ -483,11 +526,13 @@ public class PAYPAL {
                         (By.name("UsernamePasswordEntry")));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", mySubmitDynamicElement);
-
+        Thread.sleep(2000);
         fields.waitForPageLoad();
 
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12374/donate/3"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -499,9 +544,12 @@ public class PAYPAL {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Visa"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="paypalCardinalComRecurring3D", fields);
+        page.getSupporterById(FUNDRAISING_TEST="paypalCardinalComRecurring3D", fields);
     }
 
-    public static void stripeViaPaypalSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"stripeViaPaypalSingle"})
+    @Test(groups = { "paypal" })
+    public static void stripeViaPaypalSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12511/donate/1?mode=DEMO");
 
@@ -537,7 +585,7 @@ public class PAYPAL {
 
         fields.submit();
 
-        fields.waitForPageLoad();
+        fields.waitForPageLoadPayPal();
         fields.waitForURLToChange("https://www.sandbox.paypal.com/");
         //		Assert that the payment is redirected to Paypal page
         String myurl = driver.getCurrentUrl();
@@ -550,22 +598,21 @@ public class PAYPAL {
         fields.setPaypalPassword();
         fields.submitPaypal();
         fields.waitForPageLoad();
+        Thread.sleep(6000);
 
-        //Submit Paypal payment
-
-//        String paypalAmount = driver.findElement(By.id("transactionCart")).getText();
-//        Assert.assertTrue("Donation amount displayed is incorrect", paypalAmount.contains("$15"));
         WebElement paypalContinue = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
-                        (By.id("confirmButtonTop")));
+                        (By.name("payment-submit-btn")));
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();", paypalContinue);
-
+        Thread.sleep(2000);
         fields.waitForPageLoad();
 
         //		Assert that the payment was successful and the third page was reached
-        String myurl1 = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12511/donate/3"));
+        Assert.assertTrue("Urls are not the same",  driver.getCurrentUrl()
+                .equals("https://politicalnetworks.com/page/12511/donate/3"));
+
+        fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
@@ -577,5 +624,6 @@ public class PAYPAL {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Paypal"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="stripeViaPaypalSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="stripeViaPaypalSingle", fields);
     }
 }

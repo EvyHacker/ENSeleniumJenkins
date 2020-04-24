@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression PAYPAL">
+    <!--    <listeners>-->
+    <!--        <listener class-name="com.fnoor.WebDriverListener"></listener>-->
+    <!--    </listeners>-->
+    <parameter name="browser" value="${browser}" />
+    <parameter name="environment" value="${environment}"/>
+    <parameter name="paypalPaymentsProSingle" value="paypalPaymentsProSingle"/>
+    <parameter name="payPalPaymentsProRecurring" value="payPalPaymentsProRecurring"/>
+    <parameter name="payViaPayPalSingle" value="payViaPayPalSingle"/>
+    <parameter name="payViaPayPalRecurring" value="payViaPayPalRecurring"/>
+    <parameter name="paypalCardinalComSingle3D" value="paypalCardinalComSingle3D"/>
+    <parameter name="paypalViaPayPalCardinalComSingle3D" value="paypalViaPayPalCardinalComSingle3D"/>
+    <parameter name="paypalCardinalComRecurring3D" value="paypalCardinalComRecurring3D"/>
+    <parameter name="stripeViaPaypalSingle" value="stripeViaPaypalSingle"/>
+    <test name="Donations PAYPAL"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="paypal"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fnoor.FundraisingTest.PAYPAL" >
+                <methods>
+                    <include name="paypalPaymentsProSingle" />
+                    <include name="payPalPaymentsProRecurring" />
+                    <include name="payViaPayPalSingle" />
+                    <include name="payViaPayPalRecurring" />
+                    <include name="paypalCardinalComSingle3D" />
+                    <include name="paypalViaPayPalCardinalComSingle3D" />
+                    <include name="paypalCardinalComRecurring3D" />
+                    <include name="stripeViaPaypalSingle" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
