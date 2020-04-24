@@ -47,7 +47,7 @@ public class PAYFLOW {
     }
 
     @Parameters({"payflowProSingle"})
-    @Test(enabled = false, groups = { "payflow" })
+    @Test(groups = { "payflow" })
     public static void payflowProSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/10879/donate/1?mode=DEMO");
@@ -105,7 +105,7 @@ public class PAYFLOW {
     }
 
     @Parameters({"payflowProRecurring"})
-    @Test(enabled = false, groups = { "payflow" })
+    @Test(groups = { "payflow" })
     public static void payflowProRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/10880/donate/1?mode=DEMO");

@@ -4,20 +4,49 @@ import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class PAYSAFE {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
-    private static  String FUNDRAISING_TEST;
+    static String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    static PageFields fields;
 
-    public static void paysafeSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"browser"})
+    @BeforeClass(alwaysRun=true)
+    public void setUp(String browser) throws MalformedURLException {
+        driver = page.createInstance(browser);
+        fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Parameters({"paysafeSingle"})
+    @Test(groups = { "paysafe" })
+    public static void paysafeSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/873/donate/1?mode=DEMO");
 
@@ -66,7 +95,9 @@ public class PAYSAFE {
         page.getSupporterById(FUNDRAISING_TEST="paysafeSingle", fields);
     }
 
-    public static void paysafeRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"paysafeRecurring"})
+    @Test(groups = { "paysafe" })
+    public static void paysafeRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/874/donate/1?mode=DEMO");
 
@@ -135,7 +166,9 @@ public class PAYSAFE {
         page.getSupporterById(FUNDRAISING_TEST="paysafeRecurring", fields);
     }
 
-    public static void paysafe3DSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"paysafe3DSingle"})
+    @Test(groups = { "paysafe" })
+    public static void paysafe3DSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/13147/donate/1?mode=DEMO");
 
@@ -166,49 +199,8 @@ public class PAYSAFE {
 
         //      Validate resend code function
         fields.waitForPageLoad();
-        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
-        for (WebElement iframeT : iframes) {
-            System.out.println("Frame " + iframeT);
-            System.out.println("Frame1 " + iframeT.getAttribute("id"));
-            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));}
-
-       // driver.switchTo().frame("Cardinal-collector");
-        Thread.sleep(2000);
+        Thread.sleep(200);
         driver.switchTo().frame("Cardinal-CCA-IFrame");
-        Thread.sleep(2000);
-
-//        WebElement resendCode = (new WebDriverWait(driver, 20))
-//                .until(ExpectedConditions.presenceOfElementLocated(By.name("challengeCancel")));
-//        resendCode.submit();
-////        WebElement resendCode = (new WebDriverWait(driver, 20))
-////                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".button")));
-////        if(resendCode.getAttribute("value").equals("RESEND CODE")){
-////            resendCode.submit();
-////        }
-//
-//        fields.waitForPageLoad();
-//        WebElement alertMessage = driver.findElement(By.cssSelector(".alert"));
-//        Assert.assertTrue("The code hasn't been resent" ,
-//                alertMessage.getText().contains("Your code has been resent."));
-
-        //      Validate cancel transaction
-
-//        WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
-//        cancelTransaction.submit();
-//        fields.waitForPageLoad();
-//        Thread.sleep(2000);
-//        Assert.assertTrue("You didnt cancelled the transaction" ,
-//                driver.getCurrentUrl().equals("https://politicalnetworks.com/page/13147/donate/2?val"));
-////        WebElement alertNote = (new WebDriverWait(driver, 20))
-////                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//li[@class='en__error']")));
-////        Assert.assertTrue("Your transaction didn't go through" ,
-////                alertNote.getText().contains("This transaction has failed as there has been an error in processing your payment."));
-//        WebElement submitTxn = driver.findElement(By.tagName("button"));
-//        submitTxn.click();
-//
-//        //      Validate 3D authentication
-//        fields.waitForPageLoad();
-
         WebElement donationAmount = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".challengeinfotext")));
         Assert.assertTrue("Donation amount is incorrect or not present" ,
@@ -221,18 +213,16 @@ public class PAYSAFE {
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();", submit);
         fields.waitForPageLoad();
+        Thread.sleep(200);
 
         //		Assert that the payment was successful and the third page was reached
         driver.switchTo().defaultContent();
-        Thread.sleep(2000);
-        String myurl = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13147/donate/3"));
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().equals("https://politicalnetworks.com/page/13147/donate/3"));
 
         fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Campaign ID not present", bodytext.contains("8955"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$1.00"));
         Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
@@ -243,7 +233,9 @@ public class PAYSAFE {
         page.getSupporterById(FUNDRAISING_TEST="paysafe3DSingle", fields);
     }
 
-    public static void paysafe3DRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"paysafe3DRecurring"})
+    @Test(groups = { "paysafe" })
+    public static void paysafe3DRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12869/donate/1?mode=DEMO");
 
@@ -256,8 +248,6 @@ public class PAYSAFE {
         fields.setEmailAddress(new_email);
 
         fields.submit();
-
-
         fields.setAddress1("1 Hilltop");
         fields.setCity("Baltimore");
         fields.selectRegion("MD");
@@ -292,34 +282,10 @@ public class PAYSAFE {
 
         fields.submit();
 
-        //      Validate resend code function
+        //      Validate 3D transaction
         fields.waitForPageLoad();
-        WebElement fr = driver.findElement(By.tagName("iframe"));
-        driver.switchTo().frame(fr);
-        Thread.sleep(2000);
-//        WebElement resendCode = driver.findElement(By.name("resendChallengeData"));
-//        resendCode.submit();
-//        WebElement alertMessage = (new WebDriverWait(driver, 20))
-//                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert")));
-//        Assert.assertTrue("The code hasn't been resent" ,
-//                alertMessage.getText().contains("Your code has been resent."));
-//
-//        //      Validate cancel transaction
-//
-//        fields.waitForPageLoad();
-//        WebElement cancelTransaction = driver.findElement(By.name("challengeCancel"));
-//        cancelTransaction.submit();
-//        fields.waitForPageLoad();
-//        WebElement alertNote = driver.findElement(By.xpath("//li[@class='en__error']"));
-//        Assert.assertTrue("Your transaction didn't go through" ,
-//                alertNote.getText().contains("This transaction has failed as there has been an error in processing your payment."));
-//        Assert.assertTrue("Donation amount is incorrect or not present" ,
-//                driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12869/donate/2?val"));
-//        fields.submit();
-//
-//        //      Validate 3D authentication
-//        fields.waitForPageLoad();
-        //driver.switchTo().frame("Cardinal-CCA-IFrame");
+        Thread.sleep(200);
+        driver.switchTo().frame("Cardinal-CCA-IFrame");
         WebElement donationAmount = driver.findElement(By.cssSelector(".challengeinfotext"));
         Assert.assertTrue("Donation amount is incorrect or not present" ,
                 donationAmount.getText().contains("$10.00"));
@@ -330,11 +296,10 @@ public class PAYSAFE {
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();", submit);
         fields.waitForPageLoad();
-
+        Thread.sleep(200);
         //		Assert that the payment was successful and the third page was reached
         driver.switchTo().defaultContent();
-        String myurl = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12869/donate/3"));
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12869/donate/3"));
 
         fields.getSupporterTaxID();
 

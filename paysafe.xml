@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression PAYSAFE">
+    <!--    <listeners>-->
+    <!--        <listener class-name="com.fnoor.WebDriverListener"></listener>-->
+    <!--    </listeners>-->
+    <parameter name="browser" value="${browser}" />
+    <parameter name="environment" value="${environment}"/>
+    <parameter name="paysafeSingle" value="paysafeSingle"/>
+    <parameter name="paysafeRecurring" value="paysafeRecurring"/>
+    <parameter name="paysafe3DSingle" value="paysafe3DSingle"/>
+    <parameter name="paysafe3DRecurring" value="paysafe3DRecurring"/>
+    <test name="Donations PAYSAFE"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="paysafe"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fnoor.FundraisingTest.PAYSAFE" >
+                <methods>
+                    <include name="paysafeSingle" />
+                    <include name="paysafeRecurring" />
+                    <include name="paysafe3DSingle" />
+                    <include name="paysafe3DRecurring" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

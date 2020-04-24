@@ -33,6 +33,8 @@
                                     <groups>Donations MONERIS</groups>
                                     <groups>Donations PAYFLOW</groups>
                                     <groups>Donations RSM</groups>
+                                    <groups>Donations STRIPE</groups>
+                                    <groups>Donations PAYSAFE</groups>
                                 </configuration>
             </plugin>
             <plugin>

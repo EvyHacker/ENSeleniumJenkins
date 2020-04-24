@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression STRIPE">
+    <!--    <listeners>-->
+    <!--        <listener class-name="com.fnoor.WebDriverListener"></listener>-->
+    <!--    </listeners>-->
+    <parameter name="browser" value="${browser}" />
+    <parameter name="environment" value="${environment}"/>
+    <parameter name="stripeSingle" value="stripeSingle"/>
+    <parameter name="stripeRecurring" value="stripeRecurring"/>
+    <parameter name="stripeBancontactSingle" value="stripeBancontactSingle"/>
+    <parameter name="stripeSingle3D" value="stripeSingle3D"/>
+    <parameter name="stripeRecurring3D" value="stripeRecurring3D"/>
+    <test name="Donations STRIPE"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="stripe"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fnoor.FundraisingTest.STRIPE" >
+                <methods>
+                    <include name="stripeSingle" />
+                    <include name="stripeRecurring" />
+                    <include name="stripeBancontactSingle" />
+                    <include name="stripeSingle3D" />
+                    <include name="stripeRecurring3D" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

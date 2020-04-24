@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results skipped="0" failed="0" ignored="2" total="4" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression PAYFLOW" duration-ms="102371" started-at="2020-04-24T09:27:53 EDT" finished-at="2020-04-24T09:29:35 EDT">
+  <suite name="Regression PAYSAFE" duration-ms="152349" started-at="2020-04-24T12:35:39 EDT" finished-at="2020-04-24T12:38:12 EDT">
     <groups>
-      <group name="payflow">
-        <method signature="PAYFLOW.payflowProPayViaPaypal(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@6ec8211c]" name="payflowProPayViaPaypal" class="com.fnoor.FundraisingTest.PAYFLOW"/>
-      </group> <!-- payflow -->
+      <group name="paysafe">
+        <method signature="PAYSAFE.paysafe3DRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYSAFE@6ec8211c]" name="paysafe3DRecurring" class="com.fnoor.FundraisingTest.PAYSAFE"/>
+        <method signature="PAYSAFE.paysafe3DSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYSAFE@6ec8211c]" name="paysafe3DSingle" class="com.fnoor.FundraisingTest.PAYSAFE"/>
+      </group> <!-- paysafe -->
     </groups>
-    <test name="Donations PAYFLOW" duration-ms="102371" started-at="2020-04-24T09:27:53 EDT" finished-at="2020-04-24T09:29:35 EDT">
-      <class name="com.fnoor.FundraisingTest.PAYFLOW">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@6ec8211c]" name="setUp" is-config="true" duration-ms="1902" started-at="2020-04-24T09:27:53 EDT" finished-at="2020-04-24T09:27:55 EDT">
+    <test name="Donations PAYSAFE" duration-ms="152349" started-at="2020-04-24T12:35:39 EDT" finished-at="2020-04-24T12:38:12 EDT">
+      <class name="com.fnoor.FundraisingTest.PAYSAFE">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYSAFE@6ec8211c]" name="setUp" is-config="true" duration-ms="1653" started-at="2020-04-24T12:35:39 EDT" finished-at="2020-04-24T12:35:41 EDT">
           <params>
             <param index="0">
               <value>
@@ -21,22 +22,33 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="payflowProPayViaPaypal(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@6ec8211c]" name="payflowProPayViaPaypal" duration-ms="100334" started-at="2020-04-24T09:27:55 EDT" finished-at="2020-04-24T09:29:35 EDT">
+        <test-method status="PASS" signature="paysafe3DSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYSAFE@6ec8211c]" name="paysafe3DSingle" duration-ms="74396" started-at="2020-04-24T12:35:41 EDT" finished-at="2020-04-24T12:36:56 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[payflowProPayViaPaypal]]>
+                <![CDATA[paysafe3DSingle]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- payflowProPayViaPaypal -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@6ec8211c]" name="tearDown" is-config="true" duration-ms="110" started-at="2020-04-24T09:29:35 EDT" finished-at="2020-04-24T09:29:35 EDT">
+        </test-method> <!-- paysafe3DSingle -->
+        <test-method status="PASS" signature="paysafe3DRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYSAFE@6ec8211c]" name="paysafe3DRecurring" duration-ms="76159" started-at="2020-04-24T12:36:56 EDT" finished-at="2020-04-24T12:38:12 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[paysafe3DRecurring]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- paysafe3DRecurring -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.PAYSAFE@6ec8211c]" name="tearDown" is-config="true" duration-ms="112" started-at="2020-04-24T12:38:12 EDT" finished-at="2020-04-24T12:38:12 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.FundraisingTest.PAYFLOW -->
-    </test> <!-- Donations PAYFLOW -->
-  </suite> <!-- Regression PAYFLOW -->
+      </class> <!-- com.fnoor.FundraisingTest.PAYSAFE -->
+    </test> <!-- Donations PAYSAFE -->
+  </suite> <!-- Regression PAYSAFE -->
 </testng-results>
