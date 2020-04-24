@@ -3,6 +3,7 @@ package com.fnoor.FundraisingTest;
 import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
+import org.omg.PortableServer.THREAD_POLICY_ID;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -48,7 +49,7 @@ public class STRIPE {
     }
 
     @Parameters({"stripeSingle"})
-    @Test(enabled = false, groups = { "stripe" })
+    @Test(groups = { "stripe" })
     public static void stripeSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/11502/donate/1?mode=DEMO");
@@ -160,7 +161,7 @@ public class STRIPE {
     }
 
     @Parameters({"stripeBancontactSingle"})
-    @Test(enabled = false, groups = { "stripe" })
+    @Test(groups = { "stripe" })
     public static void stripeBancontactSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/11504/donate/1?mode=DEMO");
@@ -225,7 +226,7 @@ public class STRIPE {
     }
 
     @Parameters({"stripeSingle3D"})
-    @Test( groups = { "stripe" })
+    @Test(groups = { "stripe" })
     public static void stripeSingle3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12663/donate/1?mode=DEMO");
@@ -263,58 +264,19 @@ public class STRIPE {
         fields.submit();
 
         fields.waitForPageLoad();
-
-        //driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
-
-        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
-        for (WebElement iframeT : iframes) {
-            System.out.println("Frame " + iframeT);
-            System.out.println("Frame1 " + iframeT.getAttribute("id"));
-            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));}
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        Thread.sleep(200);
         driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
-        //driver.switchTo().frame("__privateStripeFrame4");
-        //driver.switchTo().frame("challengeFrame");
-        System.out.println("Im here");
-        List<WebElement> iframes2 = driver.findElements(By.tagName("iframe"));
-        for (WebElement iframeTp : iframes2) {
-            System.out.println("Frame00 " + iframeTp);
-            System.out.println("Frame10 " + iframeTp.getAttribute("id"));
-            System.out.println("Frame20 " + iframeTp.getAttribute("outerHTML"));}
         driver.switchTo().frame("challengeFrame");
-        //fields.waitForPageLoad();
 
-        List<WebElement> id = driver.findElements(By.tagName("button"));
-        for (WebElement iframeTp : id) {
-            System.out.println("id00 " + iframeTp);
-            System.out.println("id10 " + iframeTp.getAttribute("id"));
-            System.out.println("id20 " + iframeTp.getAttribute("class"));}
-        //Fail transaction and assert page URL
-        WebElement myFailDynamicElement = (new WebDriverWait(driver, 30))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.id("test-source-fail-3ds")));
-        myFailDynamicElement.submit();
-//        JavascriptExecutor executor = (JavascriptExecutor)driver;
-//        executor.executeScript("arguments[0].click();", myFailDynamicElement);
-        fields.waitForPageLoad();
-        driver.switchTo().defaultContent();
-        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
-                .equals("https://politicalnetworks.com/page/12663/donate/2?val"));
-        fields.waitForPageLoad();
-        fields.submit();
-
-        //Complete transaction
-        fields.waitForPageLoad();
-        driver.switchTo().frame("__privateStripeFrame6");
-        //driver.switchTo().frame("challengeFrame");
-        //fields.waitForPageLoad();
-        WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
+        WebElement mySubmitDynamicElement = (new WebDriverWait(driver, 30))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.id("test-source-authorize-3ds")));
         JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", myCompleteDynamicElement);
-
+        executor.executeScript("arguments[0].click();", mySubmitDynamicElement);
         fields.waitForPageLoad();
+
+        Thread.sleep(200);
+        driver.switchTo().defaultContent();
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12663/donate/3"));
         fields.getSupporterTaxID();
@@ -331,6 +293,7 @@ public class STRIPE {
 
         page.getSupporterByEmail(FUNDRAISING_TEST="stripeSingle3D", fields);
         page.getSupporterById(FUNDRAISING_TEST="stripeSingle3D", fields);
+
     }
 
     @Parameters({"stripeRecurring3D"})
@@ -371,36 +334,20 @@ public class STRIPE {
         fields.submit();
 
         fields.waitForPageLoad();
-        driver.switchTo().frame("__privateStripeFrame4");
+        Thread.sleep(200);
+        driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
         driver.switchTo().frame("challengeFrame");
         fields.waitForPageLoad();
 
-        //Fail transaction and assert page URL
-        WebElement myFailDynamicElement = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.id("test-source-fail-3ds")));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", myFailDynamicElement);
-
-        String myurliframe = driver.getCurrentUrl();
-        Assert.assertTrue("Didn't redirect to Submit payment page", myurliframe.equals("https://politicalnetworks.com/page/12777/donate/2"));
-        driver.switchTo().defaultContent();
-        fields.waitForPageLoad();
-        fields.submit();
-
-        //Complete transaction
-        fields.waitForPageLoad();
-        driver.switchTo().frame("__privateStripeFrame4");
-        driver.switchTo().frame("challengeFrame");
-        fields.waitForPageLoad();
         WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.id("test-source-authorize-3ds")));
         JavascriptExecutor executor1 = (JavascriptExecutor)driver;
         executor1.executeScript("arguments[0].click();", myCompleteDynamicElement);
-
         fields.waitForPageLoad();
 
+        Thread.sleep(200);
+        driver.switchTo().defaultContent();
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12777/donate/3"));
 
@@ -408,7 +355,6 @@ public class STRIPE {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-
         Assert.assertTrue("Campaign ID not present", bodytext.contains("8479"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Stripe Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
