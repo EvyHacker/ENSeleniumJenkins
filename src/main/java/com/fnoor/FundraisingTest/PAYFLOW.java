@@ -7,10 +7,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
@@ -18,9 +24,31 @@ import java.util.concurrent.TimeUnit;
 public class PAYFLOW {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
-    private static  String FUNDRAISING_TEST;
+    static String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    static PageFields fields;
 
-    public static void payflowProSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"browser"})
+    @BeforeClass(alwaysRun=true)
+    public void setUp(String browser) throws MalformedURLException {
+        driver = page.createInstance(browser);
+        fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Parameters({"payflowProSingle"})
+    @Test(enabled = false, groups = { "payflow" })
+    public static void payflowProSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/10879/donate/1?mode=DEMO");
 
@@ -76,7 +104,9 @@ public class PAYFLOW {
         page.getSupporterById(FUNDRAISING_TEST="payflowProSingle", fields);
     }
 
-    public static void payflowProRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"payflowProRecurring"})
+    @Test(enabled = false, groups = { "payflow" })
+    public static void payflowProRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/10880/donate/1?mode=DEMO");
 
@@ -131,7 +161,9 @@ public class PAYFLOW {
         page.getSupporterById(FUNDRAISING_TEST="payflowProRecurring", fields);
     }
 
-    public static void payflowProPayViaPaypal(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"payflowProPayViaPaypal"})
+    @Test(groups = { "payflow" })
+    public static void payflowProPayViaPaypal(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/10887/donate/1?mode=DEMO");
 
@@ -151,27 +183,20 @@ public class PAYFLOW {
         fields.setPostCode("20001");
         fields.selectCountry("US");
         fields.clickRecurringSinglePaymentchkbox();
-
         fields.selectPaymentType("Paypal");
         fields.selectPayCurrency("USD");
-
         fields.submit();
 
         fields.waitForPageLoad();
-//        String myurl = driver.getCurrentUrl();
-//        if (myurl.contains("#/checkout")) {
-//            fields.waitForPageLoad();
-//        } else {
-            //Submit Paypal payment
-            fields.setPaypalEmail();
-            fields.nextPayapl();
-            fields.waitForPageLoad();
-            fields.setPaypalPassword();
-            fields.submitPaypal();
+        fields.setPaypalEmail();
+        fields.nextPayapl();
+        fields.waitForPageLoad();
+        fields.setPaypalPassword();
+        fields.submitPaypal();
             //fields.waitForPageLoad();
 
-        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-
+        driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+        Thread.sleep(4000);
         Assert.assertTrue("You didnt submit the payment",
                 driver.getCurrentUrl().contains("https://www.sandbox.paypal.com/webapps/hermes?flow=1-P&ulReturn=true&token="));
 
@@ -181,12 +206,10 @@ public class PAYFLOW {
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();", paypalContinue);
-//        paypalContinue.click();
-//        paypalContinue.submit();
             fields.waitForPageLoad();
-
+            driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
             //		Assert that the payment was successful and the third page was reached
-
+            Thread.sleep(4000);
             Assert.assertTrue("Urls are not the same",
                     driver.getCurrentUrl().equals("https://politicalnetworks.com/page/10887/donate/3"));
 

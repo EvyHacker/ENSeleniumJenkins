@@ -14,15 +14,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
 
 import static com.fnoor.PageFields.*;
 import static com.fnoor.PageFields.supporterEmail;
 
 public class RSM {
+
+    static FundraisingPageDriver page = new FundraisingPageDriver();
+    static String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    static PageFields fields;
 
     public static void getSupporterByEmailRSM(String testId, PageFields fields) throws IOException, InterruptedException {
         System.out.println("In after class");
@@ -53,10 +65,27 @@ public class RSM {
 
     }
 
-    static FundraisingPageDriver page = new FundraisingPageDriver();
-    private static  String FUNDRAISING_TEST;
+    @Parameters({"browser"})
+    @BeforeClass(alwaysRun=true)
+    public void setUp(String browser) throws MalformedURLException {
+        driver = page.createInstance(browser);
+        fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    }
 
-    public static void rsmSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Parameters({"rsmSingle"})
+    @Test(groups = { "rsm" })
+    public static void rsmSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/846/donate/1?mode=DEMO");
 
@@ -104,7 +133,9 @@ public class RSM {
         page.getSupporterById(FUNDRAISING_TEST="rsmSingle", fields);
     }
 
-    public static void rsmRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"rsmRecurring"})
+    @Test(groups = { "rsm" })
+    public static void rsmRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/870/donate/1?mode=DEMO");
 
@@ -160,7 +191,9 @@ public class RSM {
         page.getSupporterById(FUNDRAISING_TEST="rsmRecurring", fields);
     }
 
-    public static void rsmDirectDebit(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"rsmDirectDebit"})
+    @Test(groups = { "rsm" })
+    public static void rsmDirectDebit(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/847/donate/1?mode=DEMO");
 
@@ -215,7 +248,9 @@ public class RSM {
         page.getSupporterById(FUNDRAISING_TEST="rsmDirectDebit", fields);
     }
 
-    public static void rsm3DSingle(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"rsm3DSingle"})
+    @Test(groups = { "rsm" })
+    public static void rsm3DSingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12784/donate/1?mode=DEMO");
 
@@ -276,7 +311,9 @@ public class RSM {
         page.getSupporterById(FUNDRAISING_TEST="rsm3DSingle", fields);
     }
 
-    public static void rsm3DRecurring(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"rsm3DRecurring"})
+    @Test(groups = { "rsm" })
+    public static void rsm3DRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12785/donate/1?mode=DEMO");
 

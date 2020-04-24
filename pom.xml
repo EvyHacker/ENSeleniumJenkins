@@ -31,6 +31,8 @@
                                     <groups>Donations VANTIV</groups>
                                     <groups>Donations WORLDPAY</groups>
                                     <groups>Donations MONERIS</groups>
+                                    <groups>Donations PAYFLOW</groups>
+                                    <groups>Donations RSM</groups>
                                 </configuration>
             </plugin>
             <plugin>
