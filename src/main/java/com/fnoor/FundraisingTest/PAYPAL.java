@@ -7,10 +7,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import sun.awt.datatransfer.ToolkitThreadBlockedHandler;
 import sun.security.krb5.internal.TGSRep;
 
@@ -28,7 +25,7 @@ public class PAYPAL {
     static PageFields fields;
 
     @Parameters({"browser"})
-    @BeforeClass(alwaysRun=true)
+    @BeforeMethod(alwaysRun=true)
     public void setUp(String browser) throws MalformedURLException {
         driver = page.createInstance(browser);
         fields = PageFactory.initElements(driver, PageFields.class);
@@ -38,7 +35,7 @@ public class PAYPAL {
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
-    @AfterClass(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
             driver.quit();
@@ -192,7 +189,7 @@ public class PAYPAL {
 
         fields.submit();
 
-        fields.waitForPageLoad();
+        fields.waitForPageLoadPayPal();
         fields.waitForURLToChange("https://www.sandbox.paypal.com/");
         //		Assert that the payment is redirected to Paypal page
         String myurl = driver.getCurrentUrl();
@@ -204,8 +201,8 @@ public class PAYPAL {
         fields.waitForPageLoad();
         fields.setPaypalPassword();
         fields.submitPaypal();
-        fields.waitForPageLoad();
-        Thread.sleep(20000);
+        fields.waitForPageLoadPayPal();
+        Thread.sleep(6000);
 
         WebElement paypalContinue = (new WebDriverWait(driver, 40))
                 .until(ExpectedConditions.presenceOfElementLocated
@@ -271,14 +268,14 @@ public class PAYPAL {
         fields.selectPayCurrency("USD");
 
         fields.submit();
-
+        fields.waitForPageLoadPayPal();
         fields.setPaypalEmail();
         fields.nextPayapl();
         fields.waitForPageLoad();
         fields.setPaypalPassword();
         fields.submitPaypal();
         fields.waitForPageLoadPayPal();
-
+        Thread.sleep(4000);
             try {
                 WebElement paypalContinue = (new WebDriverWait(driver, 20))
                         .until(ExpectedConditions.presenceOfElementLocated
@@ -286,39 +283,41 @@ public class PAYPAL {
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", paypalContinue);
             } catch (StaleElementReferenceException e) {
-        }
+                System.err.println(e.getMessage());
+            }
 
-        fields.waitForPageLoadPayPal();
-        WebElement paypalAgree = (new WebDriverWait(driver, 30))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.cssSelector("#consentButton")));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", paypalAgree);
-        fields.waitForPageLoadPayPal();
+            fields.waitForPageLoadPayPal();
+            WebElement paypalAgree = (new WebDriverWait(driver, 30))
+                    .until(ExpectedConditions.presenceOfElementLocated
+                            (By.cssSelector("#consentButton")));
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", paypalAgree);
+            Thread.sleep(2000);
+            fields.waitForPageLoadPayPal();
 
-        //		Assert that the payment was successful and the third page was reached
+            //		Assert that the payment was successful and the third page was reached
 
-        Assert.assertTrue("Urls are not the same",
-                driver.getCurrentUrl().equals("https://politicalnetworks.com/page/866/donate/3"));
+            Assert.assertTrue("Urls are not the same",
+                    driver.getCurrentUrl().equals("https://politicalnetworks.com/page/866/donate/3"));
 
-        fields.getSupporterTaxID();
+            fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
-        String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Campaign ID not present", bodytext.contains("3518"));
-        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
-        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
-        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
-        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
-        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Paypal"));
+            String bodytext = driver.findElement(By.tagName("body")).getText();
+            Assert.assertTrue("Campaign ID not present", bodytext.contains("3518"));
+            Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
+            Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+            Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
+            Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
+            Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Paypal"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST="payViaPayPalRecurring", fields);
-        page.getSupporterById(FUNDRAISING_TEST="payViaPayPalRecurring", fields);
-    }
+            page.getSupporterByEmail(FUNDRAISING_TEST = "payViaPayPalRecurring", fields);
+            page.getSupporterById(FUNDRAISING_TEST = "payViaPayPalRecurring", fields);
+        }
 
     // Can not validate via email for the transaction when sending API call
     @Parameters({"paypalCardinalComSingle3D"})
-    @Test(groups = { "paypal" })
+    @Test(enabled = false, groups = { "paypal" })
     public static void paypalCardinalComSingle3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12374/donate/1?mode=DEMO");
@@ -371,9 +370,9 @@ public class PAYPAL {
                         (By.name("UsernamePasswordEntry")));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", mySubmitDynamicElement);
-
-        fields.waitForPageLoad();
         Thread.sleep(2000);
+        fields.waitForPageLoad();
+
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12374/donate/3"));
 
@@ -393,7 +392,7 @@ public class PAYPAL {
     }
 
     @Parameters({"paypalViaPayPalCardinalComSingle3D"})
-    @Test(groups = { "paypal" })
+    @Test(enabled = false, groups = { "paypal" })
     public static void paypalViaPayPalCardinalComSingle3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.navigate().to("https://politicalnetworks.com/page/12374/donate/1?mode=DEMO");
@@ -472,7 +471,7 @@ public class PAYPAL {
     }
 
     @Parameters({"paypalCardinalComRecurring3D"})
-    @Test(groups = { "paypal" })
+    @Test(enabled = false, groups = { "paypal" })
     public static void paypalCardinalComRecurring3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12374/donate/1?mode=DEMO");
@@ -578,35 +577,27 @@ public class PAYPAL {
         fields.setDirectMyGift("direct gift test");
         fields.setAdditionalComments("additional comments");
         fields.setTaxDeductible("Y");
-
         fields.selectPaymentType("Paypal");
         fields.selectPayCurrency("USD");
         fields.setCCNUmber("4242424242424242");
-
         fields.submit();
-
-        fields.waitForPageLoadPayPal();
-        fields.waitForURLToChange("https://www.sandbox.paypal.com/");
-        //		Assert that the payment is redirected to Paypal page
-        String myurl = driver.getCurrentUrl();
-        Assert.assertTrue("Didn't redirect to Paypal", myurl.contains("https://www.sandbox.paypal.com/"));
-        fields.waitForPageLoad();
 
         fields.setPaypalEmail();
         fields.nextPayapl();
         fields.waitForPageLoad();
         fields.setPaypalPassword();
         fields.submitPaypal();
-        fields.waitForPageLoad();
-        Thread.sleep(6000);
+        fields.waitForPageLoadPayPal();
+        Thread.sleep(4000);
 
         WebElement paypalContinue = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.name("payment-submit-btn")));
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();", paypalContinue);
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         fields.waitForPageLoad();
+
 
         //		Assert that the payment was successful and the third page was reached
         Assert.assertTrue("Urls are not the same",  driver.getCurrentUrl()

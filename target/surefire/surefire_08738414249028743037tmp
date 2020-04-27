@@ -1,8 +1,0 @@
-#surefire_0
-#Fri Apr 24 14:56:58 EDT 2020
-browser=chrome
-user.dir=/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins
-suiteXmlFile=paypal.xml
-surefire=true
-localRepository=/Users/ievgeniiagaidarenko/.m2/repository
-basedir=/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins

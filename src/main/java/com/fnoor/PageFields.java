@@ -159,7 +159,7 @@ public class PageFields {
     @FindBy(id = "password") WebElement field_Paypal_loginpassword;
     @FindBy(id = "btnNext") WebElement field_Paypal_Next;
     @FindBy(id = "btnLogin") WebElement field_Paypal_Login;
-    @FindBy(xpath = "//a[@id='createAccount']") WebElement field_Paypal_CreateAcc;
+    @FindBy(id = "createAccount") WebElement field_Paypal_CreateAcc;
     @FindBy(id = "confirmButtonTop") WebElement field_Paypal_Confirm;
     @FindBy(id = "paypalLogo") WebElement field_paypal_Logo;
     @FindBy(id = "createAccount") WebElement paypalCreateAccount;

@@ -123,7 +123,7 @@ public class MONERIS {
         fields.setCCV("123");
 
         fields.setRecurDay("23");
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDate startDate = LocalDate.now().plusDays(1);
         fields.setRecurStartDate(dtf.format(startDate).toString());
         LocalDate endDate = LocalDate.now().plusYears(1);
@@ -143,11 +143,11 @@ public class MONERIS {
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("Campaign ID not present", bodytext.contains("3519"));
-        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
         Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("CAD"));
-        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
-        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: UP"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("TYPE: RECUR_UNMANAGED"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="moneriseSelectRecurring", fields);
         page.getSupporterById(FUNDRAISING_TEST="moneriseSelectRecurring", fields);
@@ -449,8 +449,6 @@ public class MONERIS {
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
-        System.out.println("Email:" + new_email);
-
         fields.submit();
 
         fields.setAddress1("1 Hilltop");

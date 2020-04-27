@@ -24,14 +24,14 @@
         <classes>
             <class name="com.fnoor.FundraisingTest.PAYPAL" >
                 <methods>
-                    <include name="paypalPaymentsProSingle" />
-                    <include name="payPalPaymentsProRecurring" />
-                    <include name="payViaPayPalSingle" />
                     <include name="payViaPayPalRecurring" />
+                    <include name="paypalPaymentsProSingle" />
                     <include name="paypalCardinalComSingle3D" />
                     <include name="paypalViaPayPalCardinalComSingle3D" />
                     <include name="paypalCardinalComRecurring3D" />
                     <include name="stripeViaPaypalSingle" />
+                    <include name="payPalPaymentsProRecurring" />
+                    <include name="payViaPayPalSingle" />
                 </methods>
             </class>
         </classes>
