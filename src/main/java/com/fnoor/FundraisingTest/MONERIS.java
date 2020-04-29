@@ -142,11 +142,11 @@ public class MONERIS {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Campaign ID not present", bodytext.contains("3519"));
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("3520"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Canada"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
         Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("CAD"));
-        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("TYPE: RECUR_UNMANAGED"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("RECUR_UNMANAGED"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="moneriseSelectRecurring", fields);

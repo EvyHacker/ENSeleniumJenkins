@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="8" passed="7">
+<testng-results skipped="0" failed="0" ignored="7" total="8" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression MONERIS" duration-ms="92325" started-at="2020-04-27T15:39:40 EDT" finished-at="2020-04-27T15:41:12 EDT">
+  <suite name="Regression MONERIS" duration-ms="12229" started-at="2020-04-28T20:00:31 EDT" finished-at="2020-04-28T20:00:43 EDT">
     <groups>
       <group name="moneris">
-        <method signature="MONERIS.monerisRecurringNoCvv(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="monerisRecurringNoCvv" class="com.fnoor.FundraisingTest.MONERIS"/>
-        <method signature="MONERIS.monerisSingleNoCvv(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="monerisSingleNoCvv" class="com.fnoor.FundraisingTest.MONERIS"/>
-        <method signature="MONERIS.monerisVault3DRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="monerisVault3DRecurring" class="com.fnoor.FundraisingTest.MONERIS"/>
-        <method signature="MONERIS.monerisVault3DSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="monerisVault3DSingle" class="com.fnoor.FundraisingTest.MONERIS"/>
-        <method signature="MONERIS.monerisVaultRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="monerisVaultRecurring" class="com.fnoor.FundraisingTest.MONERIS"/>
-        <method signature="MONERIS.moneriseSelectRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="moneriseSelectRecurring" class="com.fnoor.FundraisingTest.MONERIS"/>
-        <method signature="MONERIS.moneriseSelectSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="moneriseSelectSingle" class="com.fnoor.FundraisingTest.MONERIS"/>
-        <method signature="MONERIS.moneriseSelectSingleUP(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="moneriseSelectSingleUP" class="com.fnoor.FundraisingTest.MONERIS"/>
+        <method signature="MONERIS.moneriseSelectRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@2e3fc542]" name="moneriseSelectRecurring" class="com.fnoor.FundraisingTest.MONERIS"/>
       </group> <!-- moneris -->
     </groups>
-    <test name="Donations MONERIS" duration-ms="92325" started-at="2020-04-27T15:39:40 EDT" finished-at="2020-04-27T15:41:12 EDT">
+    <test name="Donations MONERIS" duration-ms="12229" started-at="2020-04-28T20:00:31 EDT" finished-at="2020-04-28T20:00:43 EDT">
       <class name="com.fnoor.FundraisingTest.MONERIS">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="setUp" is-config="true" duration-ms="2880" started-at="2020-04-27T15:39:40 EDT" finished-at="2020-04-27T15:39:43 EDT">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@2e3fc542]" name="setUp" is-config="true" duration-ms="1856" started-at="2020-04-28T20:00:31 EDT" finished-at="2020-04-28T20:00:33 EDT">
           <params>
             <param index="0">
               <value>
@@ -28,18 +21,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="moneriseSelectSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="moneriseSelectSingle" duration-ms="10410" started-at="2020-04-27T15:39:43 EDT" finished-at="2020-04-27T15:39:53 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[moneriseSelectSingle]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- moneriseSelectSingle -->
-        <test-method status="FAIL" signature="moneriseSelectRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="moneriseSelectRecurring" duration-ms="8635" started-at="2020-04-27T15:39:53 EDT" finished-at="2020-04-27T15:40:02 EDT">
+        <test-method status="PASS" signature="moneriseSelectRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@2e3fc542]" name="moneriseSelectRecurring" duration-ms="10352" started-at="2020-04-28T20:00:33 EDT" finished-at="2020-04-28T20:00:43 EDT">
           <params>
             <param index="0">
               <value>
@@ -47,123 +29,9 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Gateway details are incorrect/not present]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Gateway details are incorrect/not present
-at org.junit.Assert.fail(Assert.java:88)
-at org.junit.Assert.assertTrue(Assert.java:41)
-at com.fnoor.FundraisingTest.MONERIS.moneriseSelectRecurring(MONERIS.java:146)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1257)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-at org.testng.TestNG.runSuites(TestNG.java:1032)
-at org.testng.TestNG.run(TestNG.java:1000)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- moneriseSelectRecurring -->
-        <test-method status="PASS" signature="monerisVaultRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="monerisVaultRecurring" duration-ms="9702" started-at="2020-04-27T15:40:02 EDT" finished-at="2020-04-27T15:40:11 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[monerisVaultRecurring]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- monerisVaultRecurring -->
-        <test-method status="PASS" signature="monerisSingleNoCvv(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="monerisSingleNoCvv" duration-ms="7425" started-at="2020-04-27T15:40:11 EDT" finished-at="2020-04-27T15:40:19 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[monerisSingleNoCvv]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- monerisSingleNoCvv -->
-        <test-method status="PASS" signature="monerisRecurringNoCvv(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="monerisRecurringNoCvv" duration-ms="7894" started-at="2020-04-27T15:40:19 EDT" finished-at="2020-04-27T15:40:27 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[monerisRecurringNoCvv]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- monerisRecurringNoCvv -->
-        <test-method status="PASS" signature="monerisVault3DSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="monerisVault3DSingle" duration-ms="19418" started-at="2020-04-27T15:40:27 EDT" finished-at="2020-04-27T15:40:46 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[monerisVault3DSingle]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- monerisVault3DSingle -->
-        <test-method status="PASS" signature="monerisVault3DRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="monerisVault3DRecurring" duration-ms="17503" started-at="2020-04-27T15:40:46 EDT" finished-at="2020-04-27T15:41:04 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[monerisVault3DRecurring]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- monerisVault3DRecurring -->
-        <test-method status="PASS" signature="moneriseSelectSingleUP(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="moneriseSelectSingleUP" duration-ms="8273" started-at="2020-04-27T15:41:04 EDT" finished-at="2020-04-27T15:41:12 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[moneriseSelectSingleUP]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- moneriseSelectSingleUP -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.MONERIS@150c158]" name="tearDown" is-config="true" duration-ms="130" started-at="2020-04-27T15:41:12 EDT" finished-at="2020-04-27T15:41:12 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
       </class> <!-- com.fnoor.FundraisingTest.MONERIS -->
     </test> <!-- Donations MONERIS -->
   </suite> <!-- Regression MONERIS -->

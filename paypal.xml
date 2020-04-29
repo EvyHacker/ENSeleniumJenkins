@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Regression PAYPAL">
-    <!--    <listeners>-->
-    <!--        <listener class-name="com.fnoor.WebDriverListener"></listener>-->
-    <!--    </listeners>-->
+        <listeners>
+            <listener class-name="com.fnoor.TestNGCustomReportListener"></listener>
+        </listeners>
     <parameter name="browser" value="${browser}" />
     <parameter name="environment" value="${environment}"/>
     <parameter name="paypalPaymentsProSingle" value="paypalPaymentsProSingle"/>
@@ -24,6 +24,8 @@
         <classes>
             <class name="com.fnoor.FundraisingTest.PAYPAL" >
                 <methods>
+                    <include name="payPalPaymentsProRecurring" />
+                    <include name="payViaPayPalSingle" />
                     <include name="payViaPayPalRecurring" />
                     <include name="paypalPaymentsProSingle" />
                     <include name="paypalCardinalComSingle3D" />
