@@ -83,7 +83,7 @@ public class STRIPE {
         fields.setCCV("123");
 
         fields.submit();
-        Thread.sleep(300);
+        Thread.sleep(600);
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/11502/donate/3"));
 
@@ -141,6 +141,7 @@ public class STRIPE {
         fields.submit();
 
         fields.waitForPageLoad();
+        Thread.sleep(600);
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/11503/donate/3"));
         fields.getSupporterTaxID();
