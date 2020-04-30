@@ -260,7 +260,7 @@ public class WORLDPAY {
         Assert.assertTrue("3d Amount is incorrect/not present", securetext.contains("USD 15.00"));
         WebElement submitButton = driver.findElement(By.xpath("//input[@class='lefty']"));
         submitButton.click();
-        Thread.sleep(800);
+        Thread.sleep(1000);
         fields.waitForPageLoad();
 
         String myurl = driver.getCurrentUrl();
