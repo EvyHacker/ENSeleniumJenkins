@@ -200,16 +200,18 @@ public class PAYFLOW {
         Assert.assertTrue("You didnt submit the payment",
                 driver.getCurrentUrl().contains("https://www.sandbox.paypal.com/webapps/hermes?flow=1-P&ulReturn=true&token="));
 
-            WebElement paypalContinue = (new WebDriverWait(driver, 60))
+            WebElement paypalContinue = (new WebDriverWait(driver, 120))
                     .until(ExpectedConditions.presenceOfElementLocated
                             (By.id("payment-submit-btn")));
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();", paypalContinue);
-            fields.waitForPageLoad();
-            driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+            Thread.sleep(6000);
+            fields.waitForPageLoadPayPal();
+
+
             //		Assert that the payment was successful and the third page was reached
-            Thread.sleep(4000);
+
             Assert.assertTrue("Urls are not the same",
                     driver.getCurrentUrl().equals("https://politicalnetworks.com/page/10887/donate/3"));
 
