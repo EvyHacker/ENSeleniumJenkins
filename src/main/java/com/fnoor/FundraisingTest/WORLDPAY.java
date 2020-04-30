@@ -201,6 +201,7 @@ public class WORLDPAY {
 
         fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
+        Thread.sleep(800);
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/863/donate/3"));
 
@@ -259,7 +260,7 @@ public class WORLDPAY {
         Assert.assertTrue("3d Amount is incorrect/not present", securetext.contains("USD 15.00"));
         WebElement submitButton = driver.findElement(By.xpath("//input[@class='lefty']"));
         submitButton.click();
-
+        Thread.sleep(800);
         fields.waitForPageLoad();
 
         String myurl = driver.getCurrentUrl();

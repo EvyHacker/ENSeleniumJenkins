@@ -18,8 +18,6 @@
             </run>
         </groups>
         <classes>
-            <!--            <class name="com.fnoor.FundraisingTest.TestNGIats" />-->
-            <!--            <class name="com.fnoor.FundraisingTest.Testing" />-->
             <class name="com.fnoor.FundraisingTest.WORLDPAY" >
                 <methods>
                     <include name="worldpayCCSingle" />
@@ -30,8 +28,5 @@
                 </methods>
             </class>
         </classes>
-        <!--        <classes>-->
-        <!--            <class name="api.http.calls.ApiTest" />-->
-        <!--        </classes>-->
     </test>
 </suite>

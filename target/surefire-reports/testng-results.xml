@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression STRIPE" duration-ms="11497" started-at="2020-04-30T15:58:48 EDT" finished-at="2020-04-30T15:58:59 EDT">
+  <suite name="Regression WORLDPAY" duration-ms="13797" started-at="2020-04-30T16:20:27 EDT" finished-at="2020-04-30T16:20:41 EDT">
     <groups>
-      <group name="stripe">
-        <method signature="STRIPE.stripeSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@25bbf683]" name="stripeSingle" class="com.fnoor.FundraisingTest.STRIPE"/>
-      </group> <!-- stripe -->
+      <group name="worldpay">
+        <method signature="WORLDPAY.worldpay3DRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.WORLDPAY@25bbf683]" name="worldpay3DRecurring" class="com.fnoor.FundraisingTest.WORLDPAY"/>
+      </group> <!-- worldpay -->
     </groups>
-    <test name="Donations STRIPE" duration-ms="11497" started-at="2020-04-30T15:58:48 EDT" finished-at="2020-04-30T15:58:59 EDT">
-      <class name="com.fnoor.FundraisingTest.STRIPE">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@25bbf683]" name="setUp" is-config="true" duration-ms="3906" started-at="2020-04-30T15:58:48 EDT" finished-at="2020-04-30T15:58:52 EDT">
+    <test name="Donations WORLDPAY" duration-ms="13797" started-at="2020-04-30T16:20:27 EDT" finished-at="2020-04-30T16:20:41 EDT">
+      <class name="com.fnoor.FundraisingTest.WORLDPAY">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.WORLDPAY@25bbf683]" name="setUp" is-config="true" duration-ms="4529" started-at="2020-04-30T16:20:27 EDT" finished-at="2020-04-30T16:20:32 EDT">
           <params>
             <param index="0">
               <value>
@@ -21,18 +21,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="stripeSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@25bbf683]" name="stripeSingle" duration-ms="7567" started-at="2020-04-30T15:58:52 EDT" finished-at="2020-04-30T15:58:59 EDT">
+        <test-method status="PASS" signature="worldpay3DRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.WORLDPAY@25bbf683]" name="worldpay3DRecurring" duration-ms="9241" started-at="2020-04-30T16:20:32 EDT" finished-at="2020-04-30T16:20:41 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[stripeSingle]]>
+                <![CDATA[worldpay3DRecurring]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- stripeSingle -->
-      </class> <!-- com.fnoor.FundraisingTest.STRIPE -->
-    </test> <!-- Donations STRIPE -->
-  </suite> <!-- Regression STRIPE -->
+        </test-method> <!-- worldpay3DRecurring -->
+      </class> <!-- com.fnoor.FundraisingTest.WORLDPAY -->
+    </test> <!-- Donations WORLDPAY -->
+  </suite> <!-- Regression WORLDPAY -->
 </testng-results>
