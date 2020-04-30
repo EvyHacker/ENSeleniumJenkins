@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression PAYFLOW" duration-ms="32634" started-at="2020-04-30T15:02:22 EDT" finished-at="2020-04-30T15:02:55 EDT">
+  <suite name="Regression STRIPE" duration-ms="11497" started-at="2020-04-30T15:58:48 EDT" finished-at="2020-04-30T15:58:59 EDT">
     <groups>
-      <group name="payflow">
-        <method signature="PAYFLOW.payflowProPayViaPaypal(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@25bbf683]" name="payflowProPayViaPaypal" class="com.fnoor.FundraisingTest.PAYFLOW"/>
-      </group> <!-- payflow -->
+      <group name="stripe">
+        <method signature="STRIPE.stripeSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@25bbf683]" name="stripeSingle" class="com.fnoor.FundraisingTest.STRIPE"/>
+      </group> <!-- stripe -->
     </groups>
-    <test name="Donations PAYFLOW" duration-ms="32634" started-at="2020-04-30T15:02:22 EDT" finished-at="2020-04-30T15:02:55 EDT">
-      <class name="com.fnoor.FundraisingTest.PAYFLOW">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@25bbf683]" name="setUp" is-config="true" duration-ms="2129" started-at="2020-04-30T15:02:23 EDT" finished-at="2020-04-30T15:02:25 EDT">
+    <test name="Donations STRIPE" duration-ms="11497" started-at="2020-04-30T15:58:48 EDT" finished-at="2020-04-30T15:58:59 EDT">
+      <class name="com.fnoor.FundraisingTest.STRIPE">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@25bbf683]" name="setUp" is-config="true" duration-ms="3906" started-at="2020-04-30T15:58:48 EDT" finished-at="2020-04-30T15:58:52 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[firefox]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="payflowProPayViaPaypal(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@25bbf683]" name="payflowProPayViaPaypal" duration-ms="30480" started-at="2020-04-30T15:02:25 EDT" finished-at="2020-04-30T15:02:55 EDT">
+        <test-method status="PASS" signature="stripeSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@25bbf683]" name="stripeSingle" duration-ms="7567" started-at="2020-04-30T15:58:52 EDT" finished-at="2020-04-30T15:58:59 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[payflowProPayViaPaypal]]>
+                <![CDATA[stripeSingle]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- payflowProPayViaPaypal -->
-      </class> <!-- com.fnoor.FundraisingTest.PAYFLOW -->
-    </test> <!-- Donations PAYFLOW -->
-  </suite> <!-- Regression PAYFLOW -->
+        </test-method> <!-- stripeSingle -->
+      </class> <!-- com.fnoor.FundraisingTest.STRIPE -->
+    </test> <!-- Donations STRIPE -->
+  </suite> <!-- Regression STRIPE -->
 </testng-results>

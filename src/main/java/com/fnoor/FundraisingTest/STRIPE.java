@@ -83,7 +83,7 @@ public class STRIPE {
         fields.setCCV("123");
 
         fields.submit();
-
+        Thread.sleep(300);
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/11502/donate/3"));
 
@@ -140,6 +140,7 @@ public class STRIPE {
         fields.setCCV("123");
         fields.submit();
 
+        fields.waitForPageLoad();
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/11503/donate/3"));
         fields.getSupporterTaxID();
@@ -198,6 +199,7 @@ public class STRIPE {
         fields.submit();
 
 //        Authorize the payment
+        Thread.sleep(4000);
         Assert.assertTrue("Didn't redirect to Stripe payment page",
                 driver.getCurrentUrl().contains("bancontact&usage=single_use"));
         WebElement myDynamicElement = (new WebDriverWait(driver, 10))
@@ -273,7 +275,7 @@ public class STRIPE {
         executor.executeScript("arguments[0].click();", mySubmitDynamicElement);
         fields.waitForPageLoad();
 
-        Thread.sleep(200);
+        Thread.sleep(4000);
         driver.switchTo().defaultContent();
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12663/donate/3"));
@@ -344,7 +346,7 @@ public class STRIPE {
         executor1.executeScript("arguments[0].click();", myCompleteDynamicElement);
         fields.waitForPageLoad();
 
-        Thread.sleep(200);
+        Thread.sleep(4000);
         driver.switchTo().defaultContent();
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12777/donate/3"));

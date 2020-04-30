@@ -196,7 +196,7 @@ public class PAYFLOW {
             //fields.waitForPageLoad();
 
         driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
-        Thread.sleep(4000);
+        Thread.sleep(6000);
         Assert.assertTrue("You didnt submit the payment",
                 driver.getCurrentUrl().contains("https://www.sandbox.paypal.com/webapps/hermes?flow=1-P&ulReturn=true&token="));
 
