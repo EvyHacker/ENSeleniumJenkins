@@ -494,10 +494,11 @@ public class PageFields {
 
     /////////////////////////    LOGGINS     /////////////////////////////////
 
-    public void enLogin() {
+    public void enLogin() throws InterruptedException {
 
         WebElement login = (new WebDriverWait(driver, 60))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".button")));
+        Thread.sleep(2000);
         field_Username.sendKeys(USERNAME);
         field_Password.sendKeys(PASSWORD);
         login.click();
