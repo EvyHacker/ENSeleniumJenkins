@@ -8,8 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
-import sun.awt.datatransfer.ToolkitThreadBlockedHandler;
-import sun.security.krb5.internal.TGSRep;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

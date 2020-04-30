@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression REDIRECT">
+    <listeners>
+        <listener class-name="com.fnoor.TestNGCustomReportListener"></listener>
+    </listeners>
+    <parameter name="browser" value="${browser}" />
+    <parameter name="environment" value="${environment}"/>
+    <parameter name="petition2DonationP1" value="petition2DonationP1"/>
+    <parameter name="petition2DonationP2" value="petition2DonationP2"/>
+    <parameter name="inMemoriamDonation" value="inMemoriamDonation"/>
+    <parameter name="ETTtoETT2" value="ETTtoETT2"/>
+    <parameter name="donationToPetition" value="donationToPetition"/>
+    <parameter name="donationToTweet" value="donationToTweet"/>
+    <parameter name="dataToETT" value="dataToETT"/>
+    <test name="Donations REDIRECT"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="redirect"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fnoor.Redirects.PB_B1_PETDON_P1" >
+                <methods>
+                    <include name="petition2DonationP1" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Redirects.PB_B2_PETDON_P2" >
+                <methods>
+                    <include name="petition2DonationP2" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Redirects.PB_B3_INMEMDON" >
+                <methods>
+                    <include name="inMemoriamDonation" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Redirects.PB_B4_ETTETT2" >
+                <methods>
+                    <include name="ETTtoETT2" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Redirects.PB_B5_DON2PET" >
+                <methods>
+                    <include name="donationToPetition" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Redirects.PB_B6_DON2TWEET" >
+                <methods>
+                    <include name="donationToTweet" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Redirects.PB_B7_DATA2ETT" >
+                <methods>
+                    <include name="dataToETT" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

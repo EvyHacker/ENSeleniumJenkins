@@ -5,15 +5,43 @@ import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
+import java.net.MalformedURLException;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 public class PB_A10_TWT1 {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
-    private static  String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    static PageFields fields;
 
-    public static void tweetCustomTarget(String testId, PageFields fields, WebDriver driver) throws InterruptedException {
+    @Parameters({"browser"})
+    @BeforeMethod(alwaysRun=true)
+    public void setUp(String browser) throws MalformedURLException {
+        driver = page.createInstance(browser);
+        fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Parameters({"tweetCustomTarget"})
+    @Test(groups = { "standalone" })
+    public static void tweetCustomTarget(String testId) throws InterruptedException {
         driver.get("https://politicalnetworks.com/page/11981/tweet/1?mode=DEMO");
 
         fields.selectTitle("Miss");

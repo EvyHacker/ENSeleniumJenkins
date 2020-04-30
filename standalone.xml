@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression STANDALONE">
+    <listeners>
+        <listener class-name="com.fnoor.TestNGCustomReportListener"></listener>
+    </listeners>
+    <parameter name="browser" value="${browser}" />
+    <parameter name="environment" value="${environment}"/>
+    <parameter name="petition" value="petition"/>
+    <parameter name="dataCapture" value="dataCapture"/>
+    <parameter name="dataCapture2" value="dataCapture2"/>
+    <parameter name="customTarget" value="customTarget"/>
+    <parameter name="singleDBETT" value="singleDBETT"/>
+    <parameter name="signUp" value="signUp"/>
+    <parameter name="ecardValidation" value="ecardValidation"/>
+    <parameter name="tweetCustomTarget" value="tweetCustomTarget"/>
+    <parameter name="singleDB" value="singleDB"/>
+    <parameter name="multiDB" value="multiDB"/>
+    <parameter name="event" value="event"/>
+    <parameter name="premiumDonationSingle" value="premiumDonationSingle"/>
+    <parameter name="ecommerceSymbolicGift" value="ecommerceSymbolicGift"/>
+    <test name="Donations STANDALONE"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="standalone"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fnoor.Standalone.PB_A1_PET" >
+                <methods>
+                    <include name="petition" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A2_DCF" >
+                <methods>
+                    <include name="dataCapture" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A3_DCF2" >
+                <methods>
+                    <include name="dataCapture2" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A4_ETT1" >
+                <methods>
+                    <include name="customTarget" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A5_ETT2" >
+                <methods>
+                    <include name="singleDBETT" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A8_EMS" >
+                <methods>
+                    <include name="signUp" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A9_ECF" >
+                <methods>
+                    <include name="ecardValidation" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A10_TWT1" >
+                <methods>
+                    <include name="tweetCustomTarget" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A11_TWT2" >
+                <methods>
+                    <include name="singleDB" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A12_TWT3" >
+                <methods>
+                    <include name="multiDB" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A13_ECS" >
+                <methods>
+                    <include name="event" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A15_PTM" >
+                <methods>
+                    <include name="premiumDonationSingle" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A16_ETM" >
+                <methods>
+                    <include name="ecommerceSymbolicGift" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

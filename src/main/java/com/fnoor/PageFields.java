@@ -496,7 +496,7 @@ public class PageFields {
 
     public void enLogin() {
 
-        WebElement login = (new WebDriverWait(driver, 30))
+        WebElement login = (new WebDriverWait(driver, 60))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='button button--login']")));
         field_Username.sendKeys(USERNAME);
         field_Password.sendKeys(PASSWORD);
