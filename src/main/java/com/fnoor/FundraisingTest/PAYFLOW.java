@@ -35,8 +35,8 @@ public class PAYFLOW {
         fields = PageFactory.initElements(driver, PageFields.class);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(600, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(600, TimeUnit.SECONDS);
     }
 
     @AfterClass(alwaysRun = true)
@@ -200,13 +200,13 @@ public class PAYFLOW {
         Assert.assertTrue("You didnt submit the payment",
                 driver.getCurrentUrl().contains("https://www.sandbox.paypal.com/webapps/hermes?flow=1-P&ulReturn=true&token="));
 
-            WebElement paypalContinue = (new WebDriverWait(driver, 120))
+            WebElement paypalContinue = (new WebDriverWait(driver, 600))
                     .until(ExpectedConditions.presenceOfElementLocated
                             (By.id("payment-submit-btn")));
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();", paypalContinue);
-            Thread.sleep(6000);
+            Thread.sleep(8000);
             fields.waitForPageLoadPayPal();
 
 
