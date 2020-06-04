@@ -35,8 +35,8 @@ public class PAYFLOW {
         fields = PageFactory.initElements(driver, PageFields.class);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(600, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(600, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(800, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(800, TimeUnit.SECONDS);
     }
 
     @AfterClass(alwaysRun = true)
@@ -206,8 +206,9 @@ public class PAYFLOW {
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();", paypalContinue);
-            Thread.sleep(8000);
+            Thread.sleep(6000);
             fields.waitForPageLoadPayPal();
+
 
 
             //		Assert that the payment was successful and the third page was reached

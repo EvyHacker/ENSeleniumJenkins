@@ -19,9 +19,9 @@
         <classes>
             <class name="com.fnoor.FundraisingTest.PAYFLOW" >
                 <methods>
-<!--                    <include name="payflowProSingle" />-->
-<!--                    <include name="payflowProRecurring" />-->
+                    <include name="payflowProSingle" />
                     <include name="payflowProPayViaPaypal" />
+                    <include name="payflowProRecurring" />
                 </methods>
             </class>
         </classes>
