@@ -219,6 +219,7 @@ public class PAYSAFE {
         //		Assert that the payment was successful and the third page was reached
         driver.switchTo().defaultContent();
         fields.waitForPageLoad();
+        Thread.sleep(2000);
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().equals("https://politicalnetworks.com/page/13147/donate/3"));
 
         fields.getSupporterTaxID();

@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression VANTIV" duration-ms="39358" started-at="2020-06-29T13:35:50 EDT" finished-at="2020-06-29T13:36:29 EDT">
+  <suite name="Regression PAYFLOW" duration-ms="48917" started-at="2020-06-29T15:00:24 EDT" finished-at="2020-06-29T15:01:13 EDT">
     <groups>
-      <group name="vantiv">
-        <method signature="VANTIV.vantivRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivRecurring" class="com.fnoor.FundraisingTest.VANTIV"/>
-        <method signature="VANTIV.vantivRecurringAcheft(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivRecurringAcheft" class="com.fnoor.FundraisingTest.VANTIV"/>
-        <method signature="VANTIV.vantivSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivSingle" class="com.fnoor.FundraisingTest.VANTIV"/>
-        <method signature="VANTIV.vantivSingleAcheft(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivSingleAcheft" class="com.fnoor.FundraisingTest.VANTIV"/>
-        <method signature="VANTIV.vantiveCheck(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantiveCheck" class="com.fnoor.FundraisingTest.VANTIV"/>
-      </group> <!-- vantiv -->
+      <group name="payflow">
+        <method signature="PAYFLOW.payflowProPayViaPaypal(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@6ec8211c]" name="payflowProPayViaPaypal" class="com.fnoor.FundraisingTest.PAYFLOW"/>
+        <method signature="PAYFLOW.payflowProRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@6ec8211c]" name="payflowProRecurring" class="com.fnoor.FundraisingTest.PAYFLOW"/>
+        <method signature="PAYFLOW.payflowProSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@6ec8211c]" name="payflowProSingle" class="com.fnoor.FundraisingTest.PAYFLOW"/>
+      </group> <!-- payflow -->
     </groups>
-    <test name="Donations_VANTIV" duration-ms="39358" started-at="2020-06-29T13:35:50 EDT" finished-at="2020-06-29T13:36:29 EDT">
-      <class name="com.fnoor.FundraisingTest.VANTIV">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="setUp" is-config="true" duration-ms="2479" started-at="2020-06-29T13:35:50 EDT" finished-at="2020-06-29T13:35:52 EDT">
+    <test name="Donations PAYFLOW" duration-ms="48917" started-at="2020-06-29T15:00:24 EDT" finished-at="2020-06-29T15:01:13 EDT">
+      <class name="com.fnoor.FundraisingTest.PAYFLOW">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@6ec8211c]" name="setUp" is-config="true" duration-ms="2794" started-at="2020-06-29T15:00:24 EDT" finished-at="2020-06-29T15:00:27 EDT">
           <params>
             <param index="0">
               <value>
@@ -25,66 +23,44 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="vantivSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivSingle" duration-ms="9715" started-at="2020-06-29T13:35:52 EDT" finished-at="2020-06-29T13:36:02 EDT">
+        <test-method status="PASS" signature="payflowProSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@6ec8211c]" name="payflowProSingle" duration-ms="9157" started-at="2020-06-29T15:00:27 EDT" finished-at="2020-06-29T15:00:36 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[vantivSingle]]>
+                <![CDATA[payflowProSingle]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- vantivSingle -->
-        <test-method status="PASS" signature="vantivRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivRecurring" duration-ms="5804" started-at="2020-06-29T13:36:02 EDT" finished-at="2020-06-29T13:36:08 EDT">
+        </test-method> <!-- payflowProSingle -->
+        <test-method status="PASS" signature="payflowProPayViaPaypal(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@6ec8211c]" name="payflowProPayViaPaypal" duration-ms="28901" started-at="2020-06-29T15:00:36 EDT" finished-at="2020-06-29T15:01:05 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[vantivRecurring]]>
+                <![CDATA[payflowProPayViaPaypal]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- vantivRecurring -->
-        <test-method status="PASS" signature="vantiveCheck(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantiveCheck" duration-ms="7632" started-at="2020-06-29T13:36:08 EDT" finished-at="2020-06-29T13:36:16 EDT">
+        </test-method> <!-- payflowProPayViaPaypal -->
+        <test-method status="PASS" signature="payflowProRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@6ec8211c]" name="payflowProRecurring" duration-ms="7846" started-at="2020-06-29T15:01:05 EDT" finished-at="2020-06-29T15:01:13 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[vantiveCheck]]>
+                <![CDATA[payflowProRecurring]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- vantiveCheck -->
-        <test-method status="PASS" signature="vantivSingleAcheft(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivSingleAcheft" duration-ms="6653" started-at="2020-06-29T13:36:16 EDT" finished-at="2020-06-29T13:36:22 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[vantivSingleAcheft]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- vantivSingleAcheft -->
-        <test-method status="PASS" signature="vantivRecurringAcheft(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivRecurringAcheft" duration-ms="6935" started-at="2020-06-29T13:36:22 EDT" finished-at="2020-06-29T13:36:29 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[vantivRecurringAcheft]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- vantivRecurringAcheft -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="tearDown" is-config="true" duration-ms="102" started-at="2020-06-29T13:36:29 EDT" finished-at="2020-06-29T13:36:29 EDT">
+        </test-method> <!-- payflowProRecurring -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.PAYFLOW@6ec8211c]" name="tearDown" is-config="true" duration-ms="177" started-at="2020-06-29T15:01:13 EDT" finished-at="2020-06-29T15:01:13 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.FundraisingTest.VANTIV -->
-    </test> <!-- Donations_VANTIV -->
-  </suite> <!-- Regression VANTIV -->
+      </class> <!-- com.fnoor.FundraisingTest.PAYFLOW -->
+    </test> <!-- Donations PAYFLOW -->
+  </suite> <!-- Regression PAYFLOW -->
 </testng-results>
