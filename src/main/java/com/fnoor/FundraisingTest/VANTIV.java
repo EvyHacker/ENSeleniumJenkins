@@ -6,10 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -25,7 +22,7 @@ public class VANTIV {
     static PageFields fields;
 
     @Parameters({"browser"})
-    @BeforeClass(alwaysRun=true)
+    @BeforeMethod(alwaysRun=true)
     public void setUp(String browser) throws MalformedURLException {
         driver = page.createInstance(browser);
         fields = PageFactory.initElements(driver, PageFields.class);
@@ -35,7 +32,7 @@ public class VANTIV {
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
-    @AfterClass(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
             driver.quit();
