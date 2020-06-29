@@ -5,8 +5,15 @@ import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 import static com.fnoor.PageFields.SERVICE_BASEURL;
 
@@ -15,8 +22,30 @@ PostalDatabase {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
     static String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    static PageFields fields;
 
-    public static void postalDatabase7(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"browser"})
+    @BeforeClass(alwaysRun=true)
+    public void setUp(String browser) throws MalformedURLException {
+        driver = page.createInstance(browser);
+        fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(800, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(800, TimeUnit.SECONDS);
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Parameters({"postalDatabase7"})
+    @Test(groups = { "postalDatabase" })
+    public static void postalDatabase7(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12889/action/1?mode=DEMO");
 
@@ -49,7 +78,9 @@ PostalDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase7", fields);
     }
 
-    public static void postalDatabase8(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"postalDatabase8"})
+    @Test(groups = { "postalDatabase" })
+    public static void postalDatabase8(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12890/action/1?mode=DEMO");
 
@@ -82,7 +113,9 @@ PostalDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase8", fields);
     }
 
-    public static void postalDatabase9(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"postalDatabase9"})
+    @Test(groups = { "postalDatabase" })
+    public static void postalDatabase9(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12891/action/1?mode=DEMO");
 
@@ -115,7 +148,9 @@ PostalDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase9", fields);
     }
 
-    public static void postalDatabase10(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"postalDatabase10"})
+    @Test(groups = { "postalDatabase" })
+    public static void postalDatabase10(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12892/action/1?mode=DEMO");
 
@@ -161,7 +196,9 @@ PostalDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase10", fields);
     }
 
-    public static void postalDatabase11(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"postalDatabase11"})
+    @Test(groups = { "postalDatabase" })
+    public static void postalDatabase11(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12893/action/1?mode=DEMO");
 
@@ -202,7 +239,9 @@ PostalDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase11", fields);
     }
 
-    public static void postalDatabase12(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"postalDatabase12"})
+    @Test(groups = { "postalDatabase" })
+    public static void postalDatabase12(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12900/action/1?mode=DEMO");
 
@@ -277,7 +316,9 @@ PostalDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase12", fields);
         }
 
-    public static void postalDatabase19(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"postalDatabase19"})
+    @Test(groups = { "postalDatabase" })
+    public static void postalDatabase19(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12907/action/1?mode=DEMO");
 
@@ -326,7 +367,9 @@ PostalDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase19", fields);
          }
 
-    public static void postalDatabase20(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"postalDatabase20"})
+    @Test(groups = { "postalDatabase" })
+    public static void postalDatabase20(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12908/action/1?mode=DEMO");
 
@@ -370,8 +413,9 @@ PostalDatabase {
 
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase20", fields);
     }
-
-    public static void postalDatabase21(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"postalDatabase21"})
+    @Test(groups = { "postalDatabase" })
+    public static void postalDatabase21(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12921/action/1?mode=DEMO");
 
@@ -416,7 +460,9 @@ PostalDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "postalDatabase21", fields);
     }
 
-    public static void postalDatabase38(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"postalDatabase38"})
+    @Test(groups = { "postalDatabase" })
+    public static void postalDatabase38(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/13048/action/1?mode=DEMO");
 

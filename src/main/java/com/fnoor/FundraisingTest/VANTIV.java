@@ -75,6 +75,7 @@ public class VANTIV {
 
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
+        fields.waitForPageLoad();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/871/donate/3"));
 
         fields.getSupporterTaxID();

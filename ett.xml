@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression ETT">
+    <listeners>
+        <listener class-name="com.fnoor.TestNGCustomReportListener"></listener>
+    </listeners>
+    <parameter name="browser" value="${browser}" />
+    <parameter name="environment" value="${environment}"/>
+    <parameter name="customTarget1" value="customTarget1"/>
+    <parameter name="customTarget2" value="customTarget2"/>
+    <parameter name="customTarget3" value="customTarget3"/>
+    <parameter name="customTarget4" value="customTarget4"/>
+    <parameter name="customTarget5" value="customTarget5"/>
+    <parameter name="customTarget6" value="customTarget6"/>
+    <parameter name="houseCommmitteesOH" value="houseCommmitteesOH"/>
+    <parameter name="houseCommmitteesHI" value="houseCommmitteesHI"/>
+    <parameter name="houseCommmitteesDefense" value="houseCommmitteesDefense"/>
+    <parameter name="houseCommmitteesCA" value="houseCommmitteesCA"/>
+    <parameter name="houseCommmitteesCustTarget" value="houseCommmitteesCustTarget"/>
+    <parameter name="multiDatabase13" value="multiDatabase13"/>
+    <parameter name="multiDatabase14" value="multiDatabase14"/>
+    <parameter name="multiDatabase15" value="multiDatabase15"/>
+    <parameter name="multiDatabase13" value="multiDatabase13"/>
+    <parameter name="multiDatabase16" value="multiDatabase16"/>
+    <parameter name="multiDatabase16_2" value="multiDatabase16_2"/>
+    <parameter name="multiDatabase17" value="multiDatabase17"/>
+    <parameter name="multiDatabase18" value="multiDatabase18"/>
+    <parameter name="multiDatabaseCommittees" value="multiDatabaseCommittees"/>
+    <parameter name="multiDatabaseCommitteesEdit" value="multiDatabaseCommitteesEdit"/>
+    <parameter name="multiDatabase39" value="multiDatabase39"/>
+    <parameter name="multiDatabase39_2" value="multiDatabase39_2"/>
+    <parameter name="postalDatabase7" value="postalDatabase7"/>
+    <parameter name="postalDatabase8" value="postalDatabase8"/>
+    <parameter name="postalDatabase9" value="postalDatabase9"/>
+    <parameter name="postalDatabase10" value="postalDatabase10"/>
+    <parameter name="postalDatabase11" value="postalDatabase11"/>
+    <parameter name="postalDatabase12" value="postalDatabase12"/>
+    <parameter name="postalDatabase19" value="postalDatabase19"/>
+    <parameter name="postalDatabase20" value="postalDatabase20"/>
+    <parameter name="postalDatabase21" value="postalDatabase21"/>
+    <parameter name="postalDatabase38" value="postalDatabase38"/>
+<!--    <parameter name="senateCommmittees25" value="senateCommmittees25"/>-->
+    <parameter name="senateCommmitteesAK" value="senateCommmitteesAK"/>
+    <parameter name="senateCommmitteesMD" value="senateCommmitteesMD"/>
+    <parameter name="senateCommmitteesBanking" value="senateCommmitteesBanking"/>
+    <parameter name="senateCommmitteesFL" value="senateCommmitteesFL"/>
+    <parameter name="senateCommmitteesCustTarget" value="senateCommmitteesCustTarget"/>
+    <test name="ETT CustomTarget"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="customTarget"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fnoor.ETT.CustomTarget" >
+                <methods>
+                    <include name="customTarget1" />
+                    <include name="customTarget2" />
+                    <include name="customTarget3" />
+                    <include name="customTarget4" />
+                    <include name="customTarget5" />
+                    <include name="customTarget6" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ETT HouseCommittees"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="houseCommittees"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fnoor.ETT.HouseCommittees" >
+                <methods>
+                    <include name="houseCommmitteesOH" />
+                    <include name="houseCommmitteesHI" />
+                    <include name="houseCommmitteesDefense" />
+                    <include name="houseCommmitteesCA" />
+                    <include name="houseCommmitteesCustTarget" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ETT MultiDatabase"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="multiDatabase"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fnoor.ETT.MultiDatabase" >
+                <methods>
+                    <include name="multiDatabase13" />
+                    <include name="multiDatabase14" />
+                    <include name="multiDatabase15" />
+                    <include name="multiDatabase16" />
+                    <include name="multiDatabase16_2" />
+                    <include name="multiDatabase17" />
+                    <include name="multiDatabase18" />
+                    <include name="multiDatabaseCommittees" />
+                    <include name="multiDatabaseCommitteesEdit" />
+                    <include name="multiDatabase39" />
+                    <include name="multiDatabase39_2" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ETT PostalDatabase"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="postalDatabase"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fnoor.ETT.PostalDatabase" >
+                <methods>
+                    <include name="postalDatabase7" />
+                    <include name="postalDatabase8" />
+                    <include name="postalDatabase9" />
+                    <include name="postalDatabase10" />
+                    <include name="postalDatabase11" />
+                    <include name="postalDatabase12" />
+                    <include name="postalDatabase19" />
+                    <include name="postalDatabase20" />
+                    <include name="postalDatabase21" />
+                    <include name="postalDatabase38" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ETT SenateCommittees"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="senateCommittees"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fnoor.ETT.SenateCommittees" >
+                <methods>
+<!--                    <include name="senateCommmittees25" />-->
+                    <include name="senateCommmitteesAK" />
+                    <include name="senateCommmitteesMD" />
+                    <include name="senateCommmitteesBanking" />
+                    <include name="senateCommmitteesFL" />
+                    <include name="senateCommmitteesCustTarget" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

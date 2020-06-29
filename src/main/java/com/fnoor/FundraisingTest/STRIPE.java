@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class STRIPE {
@@ -35,8 +36,8 @@ public class STRIPE {
         fields = PageFactory.initElements(driver, PageFields.class);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(600, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(600, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
     @AfterClass(alwaysRun = true)
@@ -264,20 +265,46 @@ public class STRIPE {
 
         fields.submit();
 
+        // Verify failed transaction
         fields.waitForPageLoad();
-        Thread.sleep(200);
-        driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
-        driver.switchTo().frame("challengeFrame");
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
+                        (By.id("challengeFrame")));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
+                (By.name("acsFrame")));
 
-        WebElement mySubmitDynamicElement = (new WebDriverWait(driver, 30))
+        WebElement myFailTransaction = (new WebDriverWait(driver, 30))
+                .until(ExpectedConditions.presenceOfElementLocated
+                        (By.id("test-source-fail-3ds")));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", myFailTransaction);
+        fields.waitForPageLoad();
+
+        driver.switchTo().defaultContent();
+        Thread.sleep(4000);
+        String alert = driver.findElement(By.xpath("//li[@class='en__error en__error__gateway']")).getText();
+        Assert.assertTrue("There is no alerts on the page",
+                alert.contains("This transaction has failed as there has been an error in processing your payment."));
+        fields.submit();
+
+        // Verify success transaction
+        fields.waitForPageLoad();
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
+                (By.id("challengeFrame")));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
+                (By.name("acsFrame")));
+
+        WebElement myCompleteTransaction = (new WebDriverWait(driver, 30))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.id("test-source-authorize-3ds")));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", mySubmitDynamicElement);
+        executor.executeScript("arguments[0].click();", myCompleteTransaction);
         fields.waitForPageLoad();
 
         Thread.sleep(4000);
         driver.switchTo().defaultContent();
+
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12663/donate/3"));
         fields.getSupporterTaxID();
@@ -334,11 +361,14 @@ public class STRIPE {
 
         fields.submit();
 
+        // Verify success transaction
         fields.waitForPageLoad();
-        Thread.sleep(200);
-        driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
-        driver.switchTo().frame("challengeFrame");
-        fields.waitForPageLoad();
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
+                (By.id("challengeFrame")));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
+                (By.name("acsFrame")));
 
         WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
@@ -347,7 +377,7 @@ public class STRIPE {
         executor1.executeScript("arguments[0].click();", myCompleteDynamicElement);
         fields.waitForPageLoad();
 
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         driver.switchTo().defaultContent();
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12777/donate/3"));

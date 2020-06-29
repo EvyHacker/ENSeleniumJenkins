@@ -33,8 +33,8 @@ public class PAYSAFE {
         fields = PageFactory.initElements(driver, PageFields.class);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(600, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(600, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
     @AfterClass(alwaysRun = true)
@@ -77,6 +77,7 @@ public class PAYSAFE {
 
         //		Assert that the payment was successful and the third page was reached
         String myurl = driver.getCurrentUrl();
+        fields.waitForPageLoad();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/873/donate/3"));
 
         fields.getSupporterTaxID();
@@ -111,7 +112,7 @@ public class PAYSAFE {
 
         fields.submit();
 
-
+        fields.waitForPageLoad();
         fields.setAddress1("1 Hilltop");
         fields.setCity("Baltimore");
         fields.selectRegion("MD");
@@ -198,7 +199,7 @@ public class PAYSAFE {
         fields.submit();
 
         //      Validate resend code function
-        fields.waitForPageLoad();
+
         Thread.sleep(200);
         driver.switchTo().frame("Cardinal-CCA-IFrame");
         WebElement donationAmount = (new WebDriverWait(driver, 20))
@@ -213,10 +214,11 @@ public class PAYSAFE {
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();", submit);
         fields.waitForPageLoad();
-        Thread.sleep(200);
+
 
         //		Assert that the payment was successful and the third page was reached
         driver.switchTo().defaultContent();
+        fields.waitForPageLoad();
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().equals("https://politicalnetworks.com/page/13147/donate/3"));
 
         fields.getSupporterTaxID();
@@ -248,6 +250,7 @@ public class PAYSAFE {
         fields.setEmailAddress(new_email);
 
         fields.submit();
+        fields.waitForPageLoad();
         fields.setAddress1("1 Hilltop");
         fields.setCity("Baltimore");
         fields.selectRegion("MD");
@@ -283,7 +286,7 @@ public class PAYSAFE {
         fields.submit();
 
         //      Validate 3D transaction
-        fields.waitForPageLoad();
+
         Thread.sleep(200);
         driver.switchTo().frame("Cardinal-CCA-IFrame");
         WebElement donationAmount = driver.findElement(By.cssSelector(".challengeinfotext"));
@@ -296,9 +299,10 @@ public class PAYSAFE {
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();", submit);
         fields.waitForPageLoad();
-        Thread.sleep(200);
+
         //		Assert that the payment was successful and the third page was reached
         driver.switchTo().defaultContent();
+        Thread.sleep(2000);
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12869/donate/3"));
 
         fields.getSupporterTaxID();

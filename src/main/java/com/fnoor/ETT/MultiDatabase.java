@@ -5,16 +5,45 @@ import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 public class MultiDatabase {
 
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
     static String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    static PageFields fields;
 
-    public static void multiDatabase13(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"browser"})
+    @BeforeClass(alwaysRun=true)
+    public void setUp(String browser) throws MalformedURLException {
+        driver = page.createInstance(browser);
+        fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(800, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(800, TimeUnit.SECONDS);
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Parameters({"multiDatabase13"})
+    @Test(groups = { "multiDatabase" })
+    public static void multiDatabase13(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12901/action/1?mode=DEMO");
 
@@ -47,8 +76,9 @@ public class MultiDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase13", fields);
     }
 
-
-    public static void multiDatabase14(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"multiDatabase14"})
+    @Test(groups = { "multiDatabase" })
+    public static void multiDatabase14(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12902/action/1?mode=DEMO");
 
@@ -81,7 +111,9 @@ public class MultiDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase14", fields);
     }
 
-    public static void multiDatabase15(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"multiDatabase15"})
+    @Test(groups = { "multiDatabase" })
+    public static void multiDatabase15(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12903/action/1?mode=DEMO");
 
@@ -115,7 +147,9 @@ public class MultiDatabase {
 
     }
 
-    public static void multiDatabase16(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"multiDatabase16"})
+    @Test(groups = { "multiDatabase" })
+    public static void multiDatabase16(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12904/action/1?mode=DEMO");
 
@@ -160,7 +194,9 @@ public class MultiDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase16", fields);
     }
 
-    public static void multiDatabase16_2(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"multiDatabase16_2"})
+    @Test(groups = { "multiDatabase" })
+    public static void multiDatabase16_2(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12904/action/1?mode=DEMO");
 
@@ -222,7 +258,9 @@ public class MultiDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase16_2", fields);
     }
 
-    public static void multiDatabase17(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"multiDatabase17"})
+    @Test(groups = { "multiDatabase" })
+    public static void multiDatabase17(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12905/action/1?mode=DEMO");
 
@@ -272,7 +310,9 @@ public class MultiDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase17", fields);
     }
 
-    public static void multiDatabase18(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"multiDatabase18"})
+    @Test(groups = { "multiDatabase" })
+    public static void multiDatabase18(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12906/action/1?mode=DEMO");
 
@@ -328,7 +368,9 @@ public class MultiDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase18", fields);
     }
 
-    public static void multiDatabaseCommittees(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"multiDatabaseCommittees"})
+    @Test(groups = { "multiDatabase" })
+    public static void multiDatabaseCommittees(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12951/action/1");
 
@@ -386,7 +428,9 @@ public class MultiDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabaseCommittees", fields);
     }
 
-    public static void multiDatabaseCommitteesEdit(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"multiDatabaseCommitteesEdit"})
+    @Test(groups = { "multiDatabase" })
+    public static void multiDatabaseCommitteesEdit(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12952/action/1");
 
@@ -481,7 +525,9 @@ public class MultiDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabaseCommitteesEdit", fields);
     }
 
-    public static void multiDatabase39(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"multiDatabase39"})
+    @Test(groups = { "multiDatabase" })
+    public static void multiDatabase39(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/13049/action/1?mode=DEMO");
 
@@ -536,7 +582,9 @@ public class MultiDatabase {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "multiDatabase39", fields);
     }
 
-    public static void multiDatabase39_2(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"multiDatabase39_2"})
+    @Test(groups = { "multiDatabase" })
+    public static void multiDatabase39_2(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/13049/action/1?mode=DEMO");
 

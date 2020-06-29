@@ -6,22 +6,54 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 public class SenateCommittees {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
-    private static String FUNDRAISING_TEST;
+    static String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    static PageFields fields;
 
-    public static void senateCommmittees25(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"browser"})
+    @BeforeClass(alwaysRun=true)
+    public void setUp(String browser) throws MalformedURLException {
+        driver = page.createInstance(browser);
+        fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(800, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(800, TimeUnit.SECONDS);
+    }
 
-        driver.get("https://politicalnetworks.com/page/12929/action/1");
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Parameters({"senateCommmittees25"})
+  //  @Test(groups = { "senateCommittees" })
+    @Test(enabled = false)
+    public static void senateCommmittees25(String testId) throws InterruptedException, IOException {
+
+       // driver.get("https://politicalnetworks.com/page/12929/action/1");
     }
 
     // Validate AK state (Sen. Lisa Murkowski & Sen. Dan Sullivan)
 
-    public static void senateCommmitteesAK(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"senateCommmitteesAK"})
+    @Test(groups = { "senateCommittees" })
+    public static void senateCommmitteesAK(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12930/action/1");
 
@@ -63,7 +95,9 @@ public class SenateCommittees {
     }
 
     // Validate MD state (Sen. Chris Van Hollen & Sen. Benjamin L. Cardin)
-    public static void senateCommmitteesMD(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"senateCommmitteesMD"})
+    @Test(groups = { "senateCommittees" })
+    public static void senateCommmitteesMD(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12930/action/1");
 
@@ -113,7 +147,9 @@ public class SenateCommittees {
     }
 
     //Banking, Housing, and Urban Affairs
-    public static void senateCommmitteesBanking(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"senateCommmitteesBanking"})
+    @Test(groups = { "senateCommittees" })
+    public static void senateCommmitteesBanking(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12940/action/1");
 
@@ -157,7 +193,9 @@ public class SenateCommittees {
     }
 
     //Validate Florida senator Marco Rubio
-    public static void senateCommmitteesFL(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"senateCommmitteesFL"})
+    @Test(groups = { "senateCommittees" })
+    public static void senateCommmitteesFL(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12941/action/1");
 
@@ -201,7 +239,9 @@ public class SenateCommittees {
     }
 
     //Validate Custom messages based on rules
-    public static void senateCommmitteesCustTarget(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"senateCommmitteesCustTarget"})
+    @Test(groups = { "senateCommittees" })
+    public static void senateCommmitteesCustTarget(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12947/action/1");
 

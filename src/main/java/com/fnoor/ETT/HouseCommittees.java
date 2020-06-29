@@ -5,17 +5,44 @@ import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 public class HouseCommittees {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
     static String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    static PageFields fields;
 
-    // Validate OH state (Rep. Brad Wenstrup)
+    @Parameters({"browser"})
+    @BeforeClass(alwaysRun=true)
+    public void setUp(String browser) throws MalformedURLException {
+        driver = page.createInstance(browser);
+        fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(800, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(800, TimeUnit.SECONDS);
+    }
 
-    public static void houseCommmitteesOH(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Parameters({"houseCommmitteesOH"})
+    @Test(groups = { "houseCommittees" })
+    public static void houseCommmitteesOH(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12942/action/1");
 
@@ -54,8 +81,9 @@ public class HouseCommittees {
     }
 
     // Validate HI state (Rep. Ed Case)
-
-    public static void houseCommmitteesHI(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"houseCommmitteesHI"})
+    @Test(groups = { "houseCommittees" })
+    public static void houseCommmitteesHI(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12942/action/1");
 
@@ -99,7 +127,9 @@ public class HouseCommittees {
     }
 
     // Validate Defense Subcommittee (Rep. Cheri Bustos)
-    public static void houseCommmitteesDefense(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"houseCommmitteesDefense"})
+    @Test(groups = { "houseCommittees" })
+    public static void houseCommmitteesDefense(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12944/action/1");
 
@@ -143,7 +173,9 @@ public class HouseCommittees {
     }
 
     // Validate CA state  (Rep. Juan Vargas)
-    public static void houseCommmitteesCA(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"houseCommmitteesCA"})
+    @Test(groups = { "houseCommittees" })
+    public static void houseCommmitteesCA(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12945/action/1");
 
@@ -185,7 +217,9 @@ public class HouseCommittees {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "houseCommmitteesCA", fields);
     }
 
-    public static void houseCommmitteesCustTarget(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"houseCommmitteesCustTarget"})
+    @Test(groups = { "houseCommittees" })
+    public static void houseCommmitteesCustTarget(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12950/action/1");
 

@@ -38,6 +38,7 @@
                                     <groups>Donations PAYPAL</groups>
                                     <groups>Donations REDIRECT</groups>
                                     <groups>Donations STANDALONE</groups>
+                                    <groups>ETT</groups>
                                 </configuration>
             </plugin>
             <plugin>

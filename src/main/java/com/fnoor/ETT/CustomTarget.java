@@ -5,15 +5,44 @@ import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 public class CustomTarget {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
     static String FUNDRAISING_TEST;
+    public static WebDriver driver;
+    static PageFields fields;
 
-    public static void customTarget1(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"browser"})
+    @BeforeClass(alwaysRun=true)
+    public void setUp(String browser) throws MalformedURLException {
+        driver = page.createInstance(browser);
+        fields = PageFactory.initElements(driver, PageFields.class);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(800, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(800, TimeUnit.SECONDS);
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Parameters({"customTarget1"})
+    @Test(groups = { "customTarget" })
+    public static void customTarget1(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12875/action/1?mode=DEMO");
 
@@ -61,7 +90,9 @@ public class CustomTarget {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget1", fields);
     }
 
-    public static void customTarget2(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"customTarget2"})
+    @Test(groups = { "customTarget" })
+    public static void customTarget2(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12878/action/1?mode=DEMO");
 
@@ -104,7 +135,9 @@ public class CustomTarget {
 //                ("Subject: ETT_2 Custom target (single page) - 2 targets - editable area (Default Message)"));
     }
 
-    public static void customTarget3(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"customTarget3"})
+    @Test(groups = { "customTarget" })
+    public static void customTarget3(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12879/action/1?mode=DEMO");
 
@@ -149,7 +182,9 @@ public class CustomTarget {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget3", fields);
     }
 
-    public static void customTarget4(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"customTarget4"})
+    @Test(groups = { "customTarget" })
+    public static void customTarget4(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12880/action/1?mode=DEMO");
 
@@ -207,7 +242,9 @@ public class CustomTarget {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget4", fields);
     }
 
-    public static void customTarget5(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"customTarget5"})
+    @Test(groups = { "customTarget" })
+    public static void customTarget5(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12883/action/1?mode=DEMO");
 
@@ -247,7 +284,9 @@ public class CustomTarget {
         page.getSupporterByEmailETT(FUNDRAISING_TEST = "customTarget5", fields);
     }
 
-    public static void customTarget6(String testId, PageFields fields, WebDriver driver) throws InterruptedException, IOException {
+    @Parameters({"customTarget6"})
+    @Test(groups = { "customTarget" })
+    public static void customTarget6(String testId) throws InterruptedException, IOException {
 
         driver.get("https://politicalnetworks.com/page/12885/action/1?mode=DEMO");
 
