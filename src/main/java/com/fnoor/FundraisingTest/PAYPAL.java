@@ -29,8 +29,8 @@ public class PAYPAL {
         fields = PageFactory.initElements(driver, PageFields.class);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(600, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(600, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
     @AfterMethod(alwaysRun = true)
@@ -200,16 +200,16 @@ public class PAYPAL {
         fields.setPaypalPassword();
         fields.submitPaypal();
         fields.waitForPageLoadPayPal();
-        Thread.sleep(6000);
+        Thread.sleep(4000);
 
         WebElement paypalContinue = (new WebDriverWait(driver, 40))
                 .until(ExpectedConditions.presenceOfElementLocated
-                        (By.name("payment-submit-btn")));
+                        (By.id("payment-submit-btn")));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", paypalContinue);
-        Thread.sleep(4000);
-        fields.waitForPageLoad();
 
+        fields.waitForPageLoad();
+        Thread.sleep(2000);
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same",
@@ -590,11 +590,12 @@ public class PAYPAL {
 
         WebElement paypalContinue = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
-                        (By.name("payment-submit-btn")));
+                        (By.id("payment-submit-btn")));
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();", paypalContinue);
-        Thread.sleep(4000);
         fields.waitForPageLoad();
+        Thread.sleep(4000);
+
 
 
         //		Assert that the payment was successful and the third page was reached
