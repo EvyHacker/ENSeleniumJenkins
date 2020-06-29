@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression STRIPE" duration-ms="68946" started-at="2020-06-29T13:28:46 EDT" finished-at="2020-06-29T13:29:55 EDT">
+  <suite name="Regression VANTIV" duration-ms="39358" started-at="2020-06-29T13:35:50 EDT" finished-at="2020-06-29T13:36:29 EDT">
     <groups>
-      <group name="stripe">
-        <method signature="STRIPE.stripeBancontactSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@6ec8211c]" name="stripeBancontactSingle" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@6ec8211c]" name="stripeRecurring" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeRecurring3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@6ec8211c]" name="stripeRecurring3D" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@6ec8211c]" name="stripeSingle" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeSingle3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@6ec8211c]" name="stripeSingle3D" class="com.fnoor.FundraisingTest.STRIPE"/>
-      </group> <!-- stripe -->
+      <group name="vantiv">
+        <method signature="VANTIV.vantivRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivRecurring" class="com.fnoor.FundraisingTest.VANTIV"/>
+        <method signature="VANTIV.vantivRecurringAcheft(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivRecurringAcheft" class="com.fnoor.FundraisingTest.VANTIV"/>
+        <method signature="VANTIV.vantivSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivSingle" class="com.fnoor.FundraisingTest.VANTIV"/>
+        <method signature="VANTIV.vantivSingleAcheft(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivSingleAcheft" class="com.fnoor.FundraisingTest.VANTIV"/>
+        <method signature="VANTIV.vantiveCheck(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantiveCheck" class="com.fnoor.FundraisingTest.VANTIV"/>
+      </group> <!-- vantiv -->
     </groups>
-    <test name="Donations STRIPE" duration-ms="68946" started-at="2020-06-29T13:28:46 EDT" finished-at="2020-06-29T13:29:55 EDT">
-      <class name="com.fnoor.FundraisingTest.STRIPE">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@6ec8211c]" name="setUp" is-config="true" duration-ms="2628" started-at="2020-06-29T13:28:46 EDT" finished-at="2020-06-29T13:28:49 EDT">
+    <test name="Donations_VANTIV" duration-ms="39358" started-at="2020-06-29T13:35:50 EDT" finished-at="2020-06-29T13:36:29 EDT">
+      <class name="com.fnoor.FundraisingTest.VANTIV">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="setUp" is-config="true" duration-ms="2479" started-at="2020-06-29T13:35:50 EDT" finished-at="2020-06-29T13:35:52 EDT">
           <params>
             <param index="0">
               <value>
@@ -25,66 +25,66 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="stripeSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@6ec8211c]" name="stripeSingle" duration-ms="10771" started-at="2020-06-29T13:28:49 EDT" finished-at="2020-06-29T13:29:00 EDT">
+        <test-method status="PASS" signature="vantivSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivSingle" duration-ms="9715" started-at="2020-06-29T13:35:52 EDT" finished-at="2020-06-29T13:36:02 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[stripeSingle]]>
+                <![CDATA[vantivSingle]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- stripeSingle -->
-        <test-method status="PASS" signature="stripeRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@6ec8211c]" name="stripeRecurring" duration-ms="9561" started-at="2020-06-29T13:29:00 EDT" finished-at="2020-06-29T13:29:09 EDT">
+        </test-method> <!-- vantivSingle -->
+        <test-method status="PASS" signature="vantivRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivRecurring" duration-ms="5804" started-at="2020-06-29T13:36:02 EDT" finished-at="2020-06-29T13:36:08 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[stripeRecurring]]>
+                <![CDATA[vantivRecurring]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- stripeRecurring -->
-        <test-method status="PASS" signature="stripeBancontactSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@6ec8211c]" name="stripeBancontactSingle" duration-ms="14930" started-at="2020-06-29T13:29:09 EDT" finished-at="2020-06-29T13:29:24 EDT">
+        </test-method> <!-- vantivRecurring -->
+        <test-method status="PASS" signature="vantiveCheck(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantiveCheck" duration-ms="7632" started-at="2020-06-29T13:36:08 EDT" finished-at="2020-06-29T13:36:16 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[stripeBancontactSingle]]>
+                <![CDATA[vantiveCheck]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- stripeBancontactSingle -->
-        <test-method status="PASS" signature="stripeSingle3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@6ec8211c]" name="stripeSingle3D" duration-ms="19133" started-at="2020-06-29T13:29:24 EDT" finished-at="2020-06-29T13:29:43 EDT">
+        </test-method> <!-- vantiveCheck -->
+        <test-method status="PASS" signature="vantivSingleAcheft(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivSingleAcheft" duration-ms="6653" started-at="2020-06-29T13:36:16 EDT" finished-at="2020-06-29T13:36:22 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[stripeSingle3D]]>
+                <![CDATA[vantivSingleAcheft]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- stripeSingle3D -->
-        <test-method status="PASS" signature="stripeRecurring3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@6ec8211c]" name="stripeRecurring3D" duration-ms="11768" started-at="2020-06-29T13:29:43 EDT" finished-at="2020-06-29T13:29:55 EDT">
+        </test-method> <!-- vantivSingleAcheft -->
+        <test-method status="PASS" signature="vantivRecurringAcheft(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="vantivRecurringAcheft" duration-ms="6935" started-at="2020-06-29T13:36:22 EDT" finished-at="2020-06-29T13:36:29 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[stripeRecurring3D]]>
+                <![CDATA[vantivRecurringAcheft]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- stripeRecurring3D -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@6ec8211c]" name="tearDown" is-config="true" duration-ms="123" started-at="2020-06-29T13:29:55 EDT" finished-at="2020-06-29T13:29:55 EDT">
+        </test-method> <!-- vantivRecurringAcheft -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.VANTIV@6ec8211c]" name="tearDown" is-config="true" duration-ms="102" started-at="2020-06-29T13:36:29 EDT" finished-at="2020-06-29T13:36:29 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.FundraisingTest.STRIPE -->
-    </test> <!-- Donations STRIPE -->
-  </suite> <!-- Regression STRIPE -->
+      </class> <!-- com.fnoor.FundraisingTest.VANTIV -->
+    </test> <!-- Donations_VANTIV -->
+  </suite> <!-- Regression VANTIV -->
 </testng-results>
