@@ -32,8 +32,6 @@
                     <include name="paypalViaPayPalCardinalComSingle3D" />
                     <include name="paypalCardinalComRecurring3D" />
                     <include name="stripeViaPaypalSingle" />
-                    <include name="payPalPaymentsProRecurring" />
-                    <include name="payViaPayPalSingle" />
                 </methods>
             </class>
         </classes>

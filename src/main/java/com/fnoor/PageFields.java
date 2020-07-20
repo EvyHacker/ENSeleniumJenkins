@@ -108,6 +108,7 @@ public class PageFields {
     @FindBy(id = "en__field_transaction_recurrcnt") WebElement field_RecurCount;
     @FindBy(id = "en__field_transaction_recurprd") WebElement field_RecurPeriod;
     @FindBy(css = ".en__submit button") WebElement field_Submit;
+    @FindBy(className = "en__field__input en__field__input--text en__field__idealselect") WebElement field_PaymentIdeal;
 
     //   SUPPORTER TRANSACTION DETAILS
     @FindBy(id = "searchForm-q") WebElement field_SearchSupporter;
@@ -161,7 +162,7 @@ public class PageFields {
     @FindBy(id = "btnLogin") WebElement field_Paypal_Login;
     @FindBy(id = "createAccount") WebElement field_Paypal_CreateAcc;
     @FindBy(id = "confirmButtonTop") WebElement field_Paypal_Confirm;
-    @FindBy(id = "paypalLogo") WebElement field_paypal_Logo;
+    @FindBy(xpath = "//*[@id=\"loginSection\"]/div/div[2]/a") WebElement field_paypal_Logo;
     @FindBy(id = "createAccount") WebElement paypalCreateAccount;
 
     // Login Fields //
@@ -557,6 +558,27 @@ public class PageFields {
 
     ///////////////////////// SET PAYPAL LOGIN   /////////////////////////////////
 
+    public void noLogPaypal(){
+        try {
+            if (field_paypal_Logo.isDisplayed()) {
+                field_paypal_Logo.click();
+            }else{
+                WebElement paypalEmail = (new WebDriverWait(driver, 20))
+                        .until(ExpectedConditions.visibilityOf(field_Paypal_loginemail));
+                paypalEmail.sendKeys(PAYPALUSERNAME);
+            }
+        } catch (Exception e) {
+        }
+    }
+
+    public void logPaypal(){
+        try {
+        if (field_paypal_Logo.isDisplayed()) {
+            field_paypal_Logo.click();
+        }
+        } catch (Exception e) {
+        }
+    }
     public void setPaypalEmail()  {
         try {
             if (field_Paypal_CreateAcc.isDisplayed()) {
@@ -1275,6 +1297,11 @@ public class PageFields {
         Thread.sleep(2000);
     }
 
+    public void selectPaymentBank(String text)
+    {
+        Select paymenttypedropdown = new Select(field_PaymentIdeal);
+        paymenttypedropdown.selectByVisibleText(text);
+    }
 
     ///////////	      ECOMMERCE SYMBOLIC        /////////////
 

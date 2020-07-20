@@ -338,19 +338,19 @@ public class MONERIS {
 
         fields.submit();
 
-        fields.waitForPageLoad();
-        fields.waitForURLToChange("https://pit.3dsecure.net/");
-
-        //Assert user got redirected to payment page
-        String myurl = driver.getCurrentUrl();
-        Assert.assertTrue("Didn't redirect to Submit payment page", myurl.contains("https://pit.3dsecure.net/"));
-
-        WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[4]/td/input[1]")));
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].click();", myCompleteDynamicElement);
-        fields.waitForPageLoad();
+//        fields.waitForPageLoad();
+//        fields.waitForURLToChange("https://pit.3dsecure.net/");
+//
+//        //Assert user got redirected to payment page
+//        String myurl = driver.getCurrentUrl();
+//        Assert.assertTrue("Didn't redirect to Submit payment page", myurl.contains("https://pit.3dsecure.net/"));
+//
+//        WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated
+//                        (By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[4]/td/input[1]")));
+//        JavascriptExecutor js = (JavascriptExecutor)driver;
+//        js.executeScript("arguments[0].click();", myCompleteDynamicElement);
+//        fields.waitForPageLoad();
 
         String myurl1 = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12779/donate/3"));
@@ -405,18 +405,18 @@ public class MONERIS {
 
         fields.submit();
 
-        fields.waitForPageLoad();
-        fields.waitForURLToChange("https://pit.3dsecure.net/");
-
-        //Assert user got redirected to payment page
-        String myurl = driver.getCurrentUrl();
-        Assert.assertTrue("Didn't redirect to Submit payment page", myurl.contains("https://pit.3dsecure.net/"));
-
-        WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[4]/td/input[1]")));
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].click();", myCompleteDynamicElement);
+//        fields.waitForPageLoad();
+//        fields.waitForURLToChange("https://pit.3dsecure.net/");
+//
+//        //Assert user got redirected to payment page
+//        String myurl = driver.getCurrentUrl();
+//        Assert.assertTrue("Didn't redirect to Submit payment page", myurl.contains("https://pit.3dsecure.net/"));
+//
+//        WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated
+//                        (By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[4]/td/input[1]")));
+//        JavascriptExecutor js = (JavascriptExecutor)driver;
+//        js.executeScript("arguments[0].click();", myCompleteDynamicElement);
 
         String myurl1 = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl1.equals("https://politicalnetworks.com/page/12783/donate/3"));

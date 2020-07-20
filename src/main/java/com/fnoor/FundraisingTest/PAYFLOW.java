@@ -188,17 +188,19 @@ public class PAYFLOW {
         fields.submit();
 
         fields.waitForPageLoad();
+        fields.logPaypal();
+        fields.waitForPageLoad();
         fields.setPaypalEmail();
         fields.nextPayapl();
         fields.waitForPageLoad();
         fields.setPaypalPassword();
         fields.submitPaypal();
-            //fields.waitForPageLoad();
+        fields.waitForPageLoad();
 
         driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
         Thread.sleep(6000);
         Assert.assertTrue("You didnt submit the payment",
-                driver.getCurrentUrl().contains("https://www.sandbox.paypal.com/webapps/hermes?flow=1-P&ulReturn=true&token="));
+                driver.getCurrentUrl().contains("https://www.sandbox.paypal.com/"));
 
             WebElement paypalContinue = (new WebDriverWait(driver, 600))
                     .until(ExpectedConditions.presenceOfElementLocated

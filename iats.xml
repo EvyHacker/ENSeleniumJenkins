@@ -2,9 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Regression IATS">
-<!--    <listeners>-->
-<!--        <listener class-name="com.fnoor.WebDriverListener"></listener>-->
-<!--    </listeners>-->
     <parameter name="browser" value="${browser}" />
     <parameter name="environment" value="${environment}"/>
     <parameter name="iatsSingle" value="iatsSingle"/>
@@ -18,8 +15,6 @@
             </run>
         </groups>
         <classes>
-<!--            <class name="com.fnoor.FundraisingTest.TestNGIats" />-->
-<!--            <class name="com.fnoor.FundraisingTest.Testing" />-->
             <class name="com.fnoor.FundraisingTest.IATS" >
             <methods>
                 <include name="iatsSingle" />
@@ -30,8 +25,5 @@
             </methods>
             </class>
         </classes>
-<!--        <classes>-->
-<!--            <class name="api.http.calls.ApiTest" />-->
-<!--        </classes>-->
     </test>
 </suite>

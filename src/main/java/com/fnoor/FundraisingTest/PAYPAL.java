@@ -193,7 +193,8 @@ public class PAYPAL {
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Didn't redirect to Paypal", myurl.contains("https://www.sandbox.paypal.com/"));
         fields.waitForPageLoad();
-
+        fields.logPaypal();
+        fields.waitForPageLoad();
         fields.setPaypalEmail();
         fields.nextPayapl();
         fields.waitForPageLoad();
@@ -267,6 +268,8 @@ public class PAYPAL {
 
         fields.submit();
         fields.waitForPageLoadPayPal();
+        fields.noLogPaypal();
+        fields.waitForPageLoad();
         fields.setPaypalEmail();
         fields.nextPayapl();
         fields.waitForPageLoad();
@@ -275,11 +278,12 @@ public class PAYPAL {
         fields.waitForPageLoadPayPal();
         Thread.sleep(4000);
             try {
-                WebElement paypalContinue = (new WebDriverWait(driver, 20))
-                        .until(ExpectedConditions.presenceOfElementLocated
-                                (By.cssSelector("#fiSubmitButton")));
+                WebElement paypalContinue = (new WebDriverWait(driver, 60))
+                        .until(ExpectedConditions.visibilityOfElementLocated
+                                (By.xpath("//*[contains(text(), 'Continue')]")));
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", paypalContinue);
+
             } catch (StaleElementReferenceException e) {
                 System.err.println(e.getMessage());
             }
@@ -287,7 +291,7 @@ public class PAYPAL {
             fields.waitForPageLoadPayPal();
             WebElement paypalAgree = (new WebDriverWait(driver, 30))
                     .until(ExpectedConditions.presenceOfElementLocated
-                            (By.cssSelector("#consentButton")));
+                            (By.id("confirmButtonTop")));
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", paypalAgree);
             Thread.sleep(2000);
@@ -426,6 +430,8 @@ public class PAYPAL {
         fields.submit();
 
         fields.waitForPageLoadPayPal();
+        fields.logPaypal();
+        fields.waitForPageLoad();
         fields.setPaypalEmail();
         fields.nextPayapl();
         fields.waitForPageLoad();
@@ -580,6 +586,9 @@ public class PAYPAL {
         fields.setCCNUmber("4242424242424242");
         fields.submit();
 
+        fields.waitForPageLoad();
+        fields.logPaypal();
+        fields.waitForPageLoad();
         fields.setPaypalEmail();
         fields.nextPayapl();
         fields.waitForPageLoad();

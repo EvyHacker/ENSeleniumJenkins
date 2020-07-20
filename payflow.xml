@@ -2,9 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Regression PAYFLOW">
-    <!--    <listeners>-->
-    <!--        <listener class-name="com.fnoor.WebDriverListener"></listener>-->
-    <!--    </listeners>-->
     <parameter name="browser" value="${browser}" />
     <parameter name="environment" value="${environment}"/>
     <parameter name="payflowProSingle" value="payflowProSingle"/>

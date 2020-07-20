@@ -2,9 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Regression STRIPE">
-    <!--    <listeners>-->
-    <!--        <listener class-name="com.fnoor.WebDriverListener"></listener>-->
-    <!--    </listeners>-->
     <parameter name="browser" value="${browser}" />
     <parameter name="environment" value="${environment}"/>
     <parameter name="stripeSingle" value="stripeSingle"/>
@@ -12,6 +9,10 @@
     <parameter name="stripeBancontactSingle" value="stripeBancontactSingle"/>
     <parameter name="stripeSingle3D" value="stripeSingle3D"/>
     <parameter name="stripeRecurring3D" value="stripeRecurring3D"/>
+    <parameter name="stripeSEPAsingle" value="stripeSEPAsingle"/>
+    <parameter name="stripeSEPArecurring" value="stripeSEPArecurring"/>
+    <parameter name="stripeIDEALsingleABN" value="stripeIDEALsingleABN"/>
+    <parameter name="stripeIDEALsingleASN" value="stripeIDEALsingleASN"/>
     <test name="Donations STRIPE"  preserve-order="true">
         <groups>
             <run>
@@ -26,6 +27,10 @@
                     <include name="stripeBancontactSingle" />
                     <include name="stripeSingle3D" />
                     <include name="stripeRecurring3D" />
+                    <include name="stripeSEPAsingle" />
+                    <include name="stripeSEPArecurring" />
+                    <include name="stripeIDEALsingleABN" />
+                    <include name="stripeIDEALsingleASN" />
                 </methods>
             </class>
         </classes>
