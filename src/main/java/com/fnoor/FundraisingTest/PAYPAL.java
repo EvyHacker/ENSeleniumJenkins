@@ -32,7 +32,7 @@ public class PAYPAL {
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
-
+//
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
@@ -49,8 +49,8 @@ public class PAYPAL {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Paypal");
+        fields.setLastname("ProSingle");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -101,8 +101,8 @@ public class PAYPAL {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Paypal");
+        fields.setLastname("ProRecurring");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -158,8 +158,8 @@ public class PAYPAL {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Paypal");
+        fields.setLastname("PaypalSingle");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -240,8 +240,8 @@ public class PAYPAL {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Paypal");
+        fields.setLastname("PaypalRecurring");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -291,7 +291,7 @@ public class PAYPAL {
             fields.waitForPageLoadPayPal();
             WebElement paypalAgree = (new WebDriverWait(driver, 30))
                     .until(ExpectedConditions.presenceOfElementLocated
-                            (By.id("confirmButtonTop")));
+                            (By.xpath("//*[contains(text(), 'Agree & Continue')]")));
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", paypalAgree);
             Thread.sleep(2000);
@@ -319,15 +319,15 @@ public class PAYPAL {
 
     // Can not validate via email for the transaction when sending API call
     @Parameters({"paypalCardinalComSingle3D"})
-    @Test(enabled = false, groups = { "paypal" })
+    @Test(groups = { "paypal" })
     public static void paypalCardinalComSingle3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12374/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Paypal");
+        fields.setLastname("Cardinal3DSingle");
 //		Call the createEmail function
         String new_email = fields.createRSMemail(testId);
         fields.setEmailAddress(new_email);
@@ -394,15 +394,15 @@ public class PAYPAL {
     }
 
     @Parameters({"paypalViaPayPalCardinalComSingle3D"})
-    @Test(enabled = false, groups = { "paypal" })
+    @Test(groups = { "paypal" })
     public static void paypalViaPayPalCardinalComSingle3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.navigate().to("https://politicalnetworks.com/page/12374/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Paypal");
+        fields.setLastname("PaypalCardinal3D");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -475,15 +475,15 @@ public class PAYPAL {
     }
 
     @Parameters({"paypalCardinalComRecurring3D"})
-    @Test(enabled = false, groups = { "paypal" })
+    @Test(groups = { "paypal" })
     public static void paypalCardinalComRecurring3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/12374/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Paypal");
+        fields.setLastname("CardinalRecurring3D");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -559,8 +559,8 @@ public class PAYPAL {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Paypal");
+        fields.setLastname("StripeViaPaypalSingle");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -583,11 +583,11 @@ public class PAYPAL {
         fields.setTaxDeductible("Y");
         fields.selectPaymentType("Paypal");
         fields.selectPayCurrency("USD");
-        fields.setCCNUmber("4242424242424242");
+        //fields.setCCNUmber("4242424242424242");
         fields.submit();
 
-        fields.waitForPageLoad();
-        fields.logPaypal();
+//        fields.waitForPageLoad();
+//        fields.logPaypal();
         fields.waitForPageLoad();
         fields.setPaypalEmail();
         fields.nextPayapl();
@@ -597,7 +597,7 @@ public class PAYPAL {
         fields.waitForPageLoadPayPal();
         Thread.sleep(4000);
 
-        WebElement paypalContinue = (new WebDriverWait(driver, 20))
+        WebElement paypalContinue = (new WebDriverWait(driver, 200))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.id("payment-submit-btn")));
         JavascriptExecutor js = (JavascriptExecutor)driver;

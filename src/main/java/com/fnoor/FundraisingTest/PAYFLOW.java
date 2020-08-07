@@ -54,8 +54,8 @@ public class PAYFLOW {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Payflow");
+        fields.setLastname("ProSingle");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -112,8 +112,8 @@ public class PAYFLOW {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Payflow");
+        fields.setLastname("ProRecurring");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -169,8 +169,8 @@ public class PAYFLOW {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Payflow");
+        fields.setLastname("ProViaPaypal");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -187,8 +187,6 @@ public class PAYFLOW {
         fields.selectPayCurrency("USD");
         fields.submit();
 
-        fields.waitForPageLoad();
-        fields.logPaypal();
         fields.waitForPageLoad();
         fields.setPaypalEmail();
         fields.nextPayapl();

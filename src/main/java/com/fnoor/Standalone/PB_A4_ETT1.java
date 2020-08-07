@@ -44,8 +44,8 @@ public class PB_A4_ETT1 {
         driver.get("https://politicalnetworks.com/page/11068/action/1?mode=DEMO");
 
         fields.selectTitle("Miss");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Custom");
+        fields.setLastname("Target");
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
         fields.setAppealCode("testAppealCode");
@@ -61,15 +61,15 @@ public class PB_A4_ETT1 {
         fields.validateETTTargetMessage("My message to Marta A5 customtarget1");
         fields.validateETTTargetMessage("Test message");
         fields.validateETTTargetMessage("Kind regards,");
-        fields.validateETTTargetMessage("Unit Tester");
+        fields.validateETTTargetMessage("Custom Target");
         fields.submit();
 
         String myurlfinalUrl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurlfinalUrl.equals("https://politicalnetworks.com/page/11068/action/3"));
         //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("First name missing from last page ", bodytext.contains("Unit"));
-        Assert.assertTrue("Last name missing from last page", bodytext.contains("Tester"));
+        Assert.assertTrue("First name missing from last page ", bodytext.contains("Custom"));
+        Assert.assertTrue("Last name missing from last page", bodytext.contains("Target"));
         Assert.assertTrue("Email address missing from last page ", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Appeal code is incorrect/ not present", bodytext.contains("testAppealCode"));
     }

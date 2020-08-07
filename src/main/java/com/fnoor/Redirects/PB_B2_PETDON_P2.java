@@ -17,7 +17,6 @@ import java.util.concurrent.TimeUnit;
 public class PB_B2_PETDON_P2 {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
-    static String FUNDRAISING_TEST;
     public static WebDriver driver;
     static PageFields fields;
 
@@ -46,8 +45,8 @@ public class PB_B2_PETDON_P2 {
 
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Petition");
+        fields.setLastname("ToDonationP2");
         fields.setAddress1("2001 S Street NW");
         fields.setCity("Washington DC");
         fields.selectRegion("DC");
@@ -90,9 +89,9 @@ public class PB_B2_PETDON_P2 {
                 equals("https://politicalnetworks.com/page/841/donate/1?chain"));
         fields.selectTitle("Miss");
         Assert.assertTrue("First name is incorrect/ not present",fields.getFirstName().
-                equals("Unit"));
+                equals("Petition"));
         Assert.assertTrue("Last name is incorrect/ not present",fields.getLastName().
-                equals("Tester"));
+                equals("ToDonationP2"));
         Assert.assertTrue("Email address is incorrect/ not present",fields.getEmail().
                 equals(new_email));
 

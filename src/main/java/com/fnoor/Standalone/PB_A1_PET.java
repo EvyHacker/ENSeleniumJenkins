@@ -40,13 +40,13 @@ public class PB_A1_PET {
 
     @Parameters({"petition"})
     @Test(groups = { "standalone" })
-    public static void petition(String testId) throws InterruptedException {
+    public static void petition(String testId) throws InterruptedException{
         driver.get("https://politicalnetworks.com/page/10617/petition/1");
 
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Standalone");
+        fields.setLastname("Petition");
         fields.setAddress1("2001 S Street NW");
         fields.setCity("Washington DC");
         fields.selectRegion("DC");
@@ -59,8 +59,8 @@ public class PB_A1_PET {
         Assert.assertTrue("Urls are not the same", myurlfinalUrl.equals("https://politicalnetworks.com/page/10617/petition/2"));
         //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("First name missing from last page ", bodytext.contains("Unit"));
-        Assert.assertTrue("Last name missing from last page", bodytext.contains("Tester"));
+        Assert.assertTrue("First name missing from last page ", bodytext.contains("Standalone"));
+        Assert.assertTrue("Last name missing from last page", bodytext.contains("Petition"));
         Assert.assertTrue("Email address missing from last page ", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Address 1 is incorrect/ not present ", bodytext.contains("2001 S Street NW"));
         Assert.assertTrue("City is incorrect/ not present", bodytext.contains("Washington DC"));
@@ -68,5 +68,6 @@ public class PB_A1_PET {
         Assert.assertTrue("Region is incorrect/ not present", bodytext.contains("DC"));
         Assert.assertTrue("Country is incorrect/ not present", bodytext.contains("US"));
         Assert.assertTrue("Appeal code is incorrect/ not present", bodytext.contains("testAppealCode"));
+
     }
 }

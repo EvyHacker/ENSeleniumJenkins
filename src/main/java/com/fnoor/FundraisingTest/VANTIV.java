@@ -47,8 +47,8 @@ public class VANTIV {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Vantiv");
+        fields.setLastname("Single");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -98,8 +98,8 @@ public class VANTIV {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Vantiv");
+        fields.setLastname("Recurring");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -156,8 +156,8 @@ public class VANTIV {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Vantiv");
+        fields.setLastname("Check");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -217,8 +217,8 @@ public class VANTIV {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Vantiv");
+        fields.setLastname("SingleCheck");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -263,8 +263,8 @@ public class VANTIV {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Vantiv");
+        fields.setLastname("RecurringAcheft");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);

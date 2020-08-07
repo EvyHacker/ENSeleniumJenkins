@@ -44,8 +44,8 @@ public class PB_A13_ECS {
         driver.get("https://politicalnetworks.com/page/11073/event/1");
 
         fields.selectTitle("Miss");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Standalone");
+        fields.setLastname("Event");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -88,8 +88,8 @@ public class PB_A13_ECS {
         Assert.assertTrue("Urls are not the same", myurlfinal.equals("https://politicalnetworks.com/page/11073/event/3"));
         //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("First name missing from last page ", bodytext.contains("Unit"));
-        Assert.assertTrue("Last name missing from last page", bodytext.contains("Tester"));
+        Assert.assertTrue("First name missing from last page ", bodytext.contains("Standalone"));
+        Assert.assertTrue("Last name missing from last page", bodytext.contains("Event"));
         Assert.assertTrue("Email address missing from last page ", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Address 1 is incorrect/ not present ", bodytext.contains("1 Hilltop"));
         Assert.assertTrue("City is incorrect/ not present", bodytext.contains("Baltimore"));

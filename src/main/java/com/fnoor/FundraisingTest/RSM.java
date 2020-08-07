@@ -52,8 +52,8 @@ public class RSM {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("RSM");
+        fields.setLastname("Single");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -101,8 +101,8 @@ public class RSM {
         driver.get("https://politicalnetworks.com/page/870/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("RSM");
+        fields.setLastname("Recurring");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -159,8 +159,8 @@ public class RSM {
         driver.get("https://politicalnetworks.com/page/847/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("RSM");
+        fields.setLastname("DirectDebit");
 //		Call the createEmail function
         String new_email = fields.createRSMemail(testId);
         fields.setEmailAddress(new_email);
@@ -217,8 +217,8 @@ public class RSM {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("RSM");
+        fields.setLastname("Single3D");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -279,8 +279,8 @@ public class RSM {
         driver.get("https://politicalnetworks.com/page/12785/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("RSM");
+        fields.setLastname("RecurringThreeD");
 //		Call the createEmail function
         String new_email = fields.createRSMemail(testId);
         fields.setEmailAddress(new_email);

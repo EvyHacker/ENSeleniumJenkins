@@ -20,6 +20,7 @@
     <parameter name="event" value="event"/>
     <parameter name="premiumDonationSingle" value="premiumDonationSingle"/>
     <parameter name="ecommerceSymbolicGift" value="ecommerceSymbolicGift"/>
+    <parameter name="membershipDogsJoin" value="membershipDogsJoin"/>
     <test name="Donations STANDALONE"  preserve-order="true">
         <groups>
             <run>
@@ -90,6 +91,11 @@
             <class name="com.fnoor.Standalone.PB_A16_ETM" >
                 <methods>
                     <include name="ecommerceSymbolicGift" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Standalone.PB_A17_MSP" >
+                <methods>
+                    <include name="membershipDogsJoin" />
                 </methods>
             </class>
         </classes>

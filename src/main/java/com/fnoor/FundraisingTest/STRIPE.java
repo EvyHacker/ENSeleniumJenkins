@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Currency;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class STRIPE {
@@ -52,8 +54,8 @@ public class STRIPE {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Stripe");
+        fields.setLastname("Single");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -110,8 +112,8 @@ public class STRIPE {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Stripe");
+        fields.setLastname("Recurring");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -166,8 +168,8 @@ public class STRIPE {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Stripe");
+        fields.setLastname("BancontactSingle");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -232,8 +234,8 @@ public class STRIPE {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Stripe");
+        fields.setLastname("Single3D");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -329,8 +331,8 @@ public class STRIPE {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Stripe");
+        fields.setLastname("Recurring3D");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -402,8 +404,8 @@ public class STRIPE {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Stripe");
+        fields.setLastname("SEPASingle");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -452,8 +454,8 @@ public class STRIPE {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Stripe");
+        fields.setLastname("SEPAReccuring");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -508,8 +510,8 @@ public class STRIPE {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Stripe");
+        fields.setLastname("iDEALABN");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -593,8 +595,8 @@ public class STRIPE {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Stripe");
+        fields.setLastname("iDEALASN");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -654,6 +656,8 @@ public class STRIPE {
 
         fields.getSupporterTaxID();
 
+        System.out.println(Currency.getInstance("EUR").getSymbol(Locale.FRANCE));
+
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
 
@@ -667,4 +671,90 @@ public class STRIPE {
         page.getSupporterByEmail(FUNDRAISING_TEST="stripeIDEALsingleASN", fields);
         page.getSupporterById(FUNDRAISING_TEST="stripeIDEALsingleASN", fields);
     }
+
+    @Parameters({"stripeIDEALsingleASNRefund"})
+    @Test(groups = { "stripe" })
+    public static void stripeIDEALsingleASNRefund(String testId) throws InterruptedException, IOException {
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/13323/donate/1");
+
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("Stripe");
+        fields.setLastname("iDEALRefund");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+        fields.selectCountry("US");
+
+        fields.selectPaymentType("iDEAL");
+        driver.switchTo().frame(0);
+        WebElement idealSelect = (new WebDriverWait(driver, 20))
+                .until(ExpectedConditions.presenceOfElementLocated
+                        (By.cssSelector(".SelectField-control")));
+        Actions actions = new Actions(driver);
+        actions.click(idealSelect).perform();
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+        driver.switchTo().defaultContent();
+        fields.submit();
+        fields.waitForPageLoad();
+
+        // Validate fail test payment
+        Assert.assertTrue("Urls are not the same, payment didn't go through",
+                driver.getCurrentUrl().contains("https://stripe.com/sources/test_source?amount=1500&currency=eur"));
+        WebElement fail = driver.findElement(By.xpath("//*[contains(text(), 'Fail Test Payment')]"));
+        fail.click();
+        fields.waitForURLToChange("https://politicalnetworks.com/page/13323/donate/2?val" );
+        String error = driver.findElement(By.className("en__error")).getText();
+        Assert.assertTrue("Urls are not the same",
+                error.equals("This transaction has failed as there has been an error in processing your payment."));
+        fields.selectPaymentType("iDEAL");
+        driver.switchTo().frame(0);
+        try{
+            WebElement idealSelect1 = (new WebDriverWait(driver, 20))
+                    .until(ExpectedConditions.presenceOfElementLocated
+                            (By.cssSelector(".SelectField-control")));
+            actions.moveToElement(idealSelect1).click().perform();
+            actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+        } catch (StaleElementReferenceException e) {
+            System.err.println(e.getMessage());
+        }
+
+        driver.switchTo().defaultContent();
+        fields.submit();
+        fields.waitForPageLoad();
+
+        // Validate bank payment
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().contains("https://stripe.com/sources/test_source?amount=1500&currency=eur"));
+        WebElement authorize = driver.findElement(By.xpath("//*[contains(text(), 'Authorize Test Payment')]"));
+        authorize.click();
+        fields.waitForPageLoad();
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13323/donate/3"));
+
+        fields.getSupporterTaxID();
+
+        System.out.println(Currency.getInstance("EUR").getSymbol(Locale.FRANCE));
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("9163"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Stripe Gateway"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("€15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("EUR"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("BANK_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: ideal"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST="stripeIDEALsingleASN", fields);
+        page.getSupporterById(FUNDRAISING_TEST="stripeIDEALsingleASN", fields);
+    }
+
 }

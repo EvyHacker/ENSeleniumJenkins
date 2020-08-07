@@ -51,8 +51,8 @@ public class IATS {
         Thread.sleep(2000);
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("IATS");
+        fields.setLastname("Single");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -110,8 +110,8 @@ public class IATS {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("IATS");
+        fields.setLastname("Recurring");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -165,8 +165,8 @@ public class IATS {
         driver.get("https://politicalnetworks.com/page/5724/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("IATS");
+        fields.setLastname("ACH_Recurring");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -225,8 +225,8 @@ public class IATS {
         driver.get("https://politicalnetworks.com/page/5725/donate/1?mode=DEMO");
 
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("IATS");
+        fields.setLastname("RecurringLogic");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -289,7 +289,7 @@ public class IATS {
     }
 
     @Test(groups = { "iats" })
-    public static void IATSvalidateTransaction() throws InterruptedException, IOException {
+    public static void IATSvalidateTransaction() throws InterruptedException{
 
         driver.navigate().to(ENLOGIN);
         fields.enLogin();
@@ -305,8 +305,8 @@ public class IATS {
         // Validate supporter Details
         fields.selectSupporter();
         Thread.sleep(2000);
-        Assert.assertTrue("First name missing from supporter details", fields.getSupporterDetails().contains("Unit"));
-        Assert.assertTrue("Last name missing from supporter details", fields.getSupporterDetails().contains("Tester"));
+        Assert.assertTrue("First name missing from supporter details", fields.getSupporterDetails().contains("IATS"));
+        Assert.assertTrue("Last name missing from supporter details", fields.getSupporterDetails().contains("Single"));
         Assert.assertTrue("Address1 missing from supporter details", fields.getSupporterDetails().contains("1 Hilltop"));
         Assert.assertTrue("City missing from supporter details", fields.getSupporterDetails().contains("Baltimore"));
         Assert.assertTrue("Region name missing from supporter details", fields.getSupporterDetails().contains("MD"));
@@ -336,8 +336,8 @@ public class IATS {
         // Validate supporter Details
         fields.selectSupporter();
         Thread.sleep(2000);
-        Assert.assertTrue("First name missing from supporter details", fields.getSupporterDetails().contains("Unit"));
-        Assert.assertTrue("Last name missing from supporter details", fields.getSupporterDetails().contains("Tester"));
+        Assert.assertTrue("First name missing from supporter details", fields.getSupporterDetails().contains("IATS"));
+        Assert.assertTrue("Last name missing from supporter details", fields.getSupporterDetails().contains("Recurring"));
         Assert.assertTrue("Address1 missing from supporter details", fields.getSupporterDetails().contains("1 Hilltop"));
         Assert.assertTrue("City missing from supporter details", fields.getSupporterDetails().contains("Baltimore"));
         Assert.assertTrue("Region name missing from supporter details", fields.getSupporterDetails().contains("MD"));

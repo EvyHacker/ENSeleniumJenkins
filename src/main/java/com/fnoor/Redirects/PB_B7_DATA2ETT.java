@@ -43,8 +43,8 @@ public class PB_B7_DATA2ETT {
     public static void dataToETT(String testId) throws InterruptedException {
         driver.get("https://politicalnetworks.com/page/12599/data/1?mode=DEMO");
 
-        fields.setSupFirstName("Unit");
-        fields.setSupLastName("Tester");
+        fields.setSupFirstName("Data");
+        fields.setSupLastName("ToETT");
         String new_email = fields.createEmail(testId);
         fields.setSupEmailAddress(new_email);
         fields.setAppealCode("testAppealCode");
@@ -65,8 +65,8 @@ public class PB_B7_DATA2ETT {
         Assert.assertTrue("Didn't redirect to data capture page",driver.getCurrentUrl().
                 equals("https://politicalnetworks.com/page/11068/action/1?chain"));
 
-        Assert.assertTrue("First Name is missing or incorrect", fields.getSupFirstName().equals("Unit"));
-        Assert.assertTrue("Last Name  is missing or incorrect", fields.getSupLastName().equals("Tester"));
+        Assert.assertTrue("First Name is missing or incorrect", fields.getSupFirstName().equals("Data"));
+        Assert.assertTrue("Last Name  is missing or incorrect", fields.getSupLastName().equals("ToETT"));
         Assert.assertTrue("Email address is missing or incorrect", fields.getSupEmail().equals(new_email));
         fields.setAppealCode("testAppealCode");
 
@@ -83,7 +83,7 @@ public class PB_B7_DATA2ETT {
         fields.validateETTTargetMessage("My message to Marta A5 customtarget1");
         fields.validateETTTargetMessage("Test message");
         fields.validateETTTargetMessage("Kind regards,");
-        fields.validateETTTargetMessage("Unit Tester");
+        fields.validateETTTargetMessage("Data ToETT");
         fields.submit();
 
         fields.waitForPageLoad();
@@ -92,8 +92,8 @@ public class PB_B7_DATA2ETT {
                 equals("https://politicalnetworks.com/page/11068/action/3"));
         //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("First name missing from last page ", bodytext.contains("Unit"));
-        Assert.assertTrue("Last name missing from last page", bodytext.contains("Tester"));
+        Assert.assertTrue("First name missing from last page ", bodytext.contains("Data"));
+        Assert.assertTrue("Last name missing from last page", bodytext.contains("ToETT"));
         Assert.assertTrue("Email address missing from last page ", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Address 1 is incorrect/ not present ", bodytext.contains("1 Hilltop"));
         Assert.assertTrue("City is incorrect/ not present", bodytext.contains("Baltimore"));

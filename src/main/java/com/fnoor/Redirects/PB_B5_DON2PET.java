@@ -45,8 +45,8 @@ public class PB_B5_DON2PET {
         driver.get("https://politicalnetworks.com/page/12582/donate/1?mode=DEMO");
 
         fields.selectTitle("Miss");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Donation");
+        fields.setLastname("ToPetition");
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
         fields.setAddress1("1 Hilltop");
@@ -73,8 +73,8 @@ public class PB_B5_DON2PET {
         Assert.assertTrue("Didn't redirect to petition page",driver.getCurrentUrl().
                 equals("https://politicalnetworks.com/page/10617/petition/1?chain"));
         Assert.assertTrue("Email address is missing or incorrect", fields.getSupEmail().equals(new_email));
-        Assert.assertTrue("First Name is missing or incorrect", fields.getSupFirstName().equals("Unit"));
-        Assert.assertTrue("Last Name  is missing or incorrect", fields.getSupLastName().equals("Tester"));
+        Assert.assertTrue("First Name is missing or incorrect", fields.getSupFirstName().equals("Donation"));
+        Assert.assertTrue("Last Name  is missing or incorrect", fields.getSupLastName().equals("ToPetition"));
         Assert.assertTrue("Address is missing or incorrect", fields.getSupAddress1().equals("1 Hilltop"));
         Assert.assertTrue("City is missing or incorrect", fields.getSupCity().equals("Baltimore"));
         Assert.assertTrue("Last Name address is missing or incorrect", fields.getSupPostCode().equals("20001"));
@@ -85,8 +85,8 @@ public class PB_B5_DON2PET {
                 equals("https://politicalnetworks.com/page/10617/petition/2"));
 
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("First name missing from last page ", bodytext.contains("Unit"));
-        Assert.assertTrue("Last name missing from last page", bodytext.contains("Tester"));
+        Assert.assertTrue("First name missing from last page ", bodytext.contains("Donation"));
+        Assert.assertTrue("Last name missing from last page", bodytext.contains("ToPetition"));
         Assert.assertTrue("Email address missing from last page", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Address missing from last page", bodytext.contains("1 Hilltop"));
         Assert.assertTrue("City missing from last page", bodytext.contains("Baltimore"));

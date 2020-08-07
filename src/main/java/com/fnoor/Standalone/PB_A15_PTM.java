@@ -56,8 +56,8 @@ public class PB_A15_PTM {
         Assert.assertEquals(premGift, "Coffee mug - Premium");
 
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Premium");
+        fields.setLastname("Donation");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -86,8 +86,8 @@ public class PB_A15_PTM {
         Assert.assertTrue("Urls are not the same", myurlfinal.equals("https://politicalnetworks.com/page/12115/shop/3"));
         //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("First name missing from last page ", bodytext.contains("Unit"));
-        Assert.assertTrue("Last name missing from last page", bodytext.contains("Tester"));
+        Assert.assertTrue("First name missing from last page ", bodytext.contains("Premium"));
+        Assert.assertTrue("Last name missing from last page", bodytext.contains("Donation"));
         Assert.assertTrue("Email address missing from last page ", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Campaign ID not present", bodytext.contains("7752"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));

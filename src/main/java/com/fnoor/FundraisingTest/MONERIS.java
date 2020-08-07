@@ -54,8 +54,8 @@ public class MONERIS {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Moneris");
+        fields.setLastname("SelectSingle");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -103,8 +103,8 @@ public class MONERIS {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Moneris");
+        fields.setLastname("SelectRecurring");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -161,8 +161,8 @@ public class MONERIS {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unitî");
-        fields.setLastname("Tester€");
+        fields.setFirstname("Moneris");
+        fields.setLastname("VaultRecurring€");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -222,8 +222,8 @@ public class MONERIS {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Moneris");
+        fields.setLastname("SingleNoCVV");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -267,8 +267,8 @@ public class MONERIS {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Moneris");
+        fields.setLastname("RecurringNoCVV");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -317,8 +317,8 @@ public class MONERIS {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Uniât");
-        fields.setLastname("ÀàÂâÆæÇçÈèÉèÉéÊêËëÎîÏïÔôŒœÙùÛûÜü « »  €₣");
+        fields.setFirstname("Monerisât");
+        fields.setLastname("Vault3DSingleÀàÂâÆæÇçÈèÉèÉéÊêËëÎîÏïÔôŒœÙùÛûÜü « »  €₣");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -378,8 +378,8 @@ public class MONERIS {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit»");
-        fields.setLastname("Testerî");
+        fields.setFirstname("Moneris»");
+        fields.setLastname("Vault3DRecurringî");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -444,8 +444,8 @@ public class MONERIS {
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Moneris");
+        fields.setLastname("SelectSingleUp");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);

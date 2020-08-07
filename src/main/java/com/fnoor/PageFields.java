@@ -335,6 +335,16 @@ public class PageFields {
     @FindBy(name = "supporter.questions.1555")
     WebElement field_ETT_OptIn;
 
+    //   MEMBERSHIP   //
+
+    @FindBy(xpath = "//a[contains(@href,\"/page/12120/membership/2?membershipTypeId=71\")]")
+    public WebElement field_MSP_Join;
+    @FindBy(className = "en__memselector__item") List<WebElement>  field_MemberOptions;
+    @FindBy(id = "en__component--memadditional__input--radio--5") public WebElement field_MemberAddAmoun;
+    @FindBy(className = "en__orderSummary__data")List<WebElement>  field_MemberTotal;
+    @FindBy(name = "mem.member.0.firstName") WebElement field_MemberFN;
+    @FindBy(name = "mem.member.0.lastName") WebElement field_MemberLN;
+
     /////////////////////////    ETT FORMS AND FIELDS     /////////////////////////////////
 
 
@@ -491,6 +501,35 @@ public class PageFields {
     public void validateTargetTitle(String text) {
         Assert.assertTrue("Your target title is incorrect/not present", field_ETT_TargetSubject.getAttribute("value").contains(text));
     }
+
+
+    /////////////////////////    MEMBERSHIP     /////////////////////////////////
+
+
+    public void validatememberoption(String text) {
+        for (WebElement options : field_MemberOptions) {
+            if (options.getText().equals(text)) {
+                Assert.assertTrue("Membership option #1 amount incorrect/not present", options.getText().contains(text));
+            }
+        }
+    }
+
+    public void validateMembershipTotal(String text) {
+        for (WebElement total : field_MemberTotal) {
+            if (total.getText().equals(text)) {
+                Assert.assertTrue("Membership option #1 amount incorrect/not present", total.getText().contains(text));
+            }
+        }
+    }
+
+    public void setMemberFN(String text) {
+        field_MemberFN.sendKeys(text);
+    }
+
+    public void setMemberLN(String text) {
+        field_MemberLN.sendKeys(text);
+    }
+
 
 
     /////////////////////////    LOGGINS     /////////////////////////////////

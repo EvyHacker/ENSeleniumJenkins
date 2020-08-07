@@ -60,8 +60,8 @@ public class PB_A16_ETM {
         //		Assert that the payment was successful and the third page was reached
         Assert.assertTrue(driver.getCurrentUrl().contains("https://politicalnetworks.com/page/12116/shop/5"));
 
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Ecomm");
+        fields.setLastname("Gift");
         //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -90,8 +90,8 @@ public class PB_A16_ETM {
         Assert.assertTrue("Urls are not the same", myurlfinal.equals("https://politicalnetworks.com/page/12116/shop/7"));
         //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("First name missing from last page ", bodytext.contains("Unit"));
-        Assert.assertTrue("Last name missing from last page", bodytext.contains("Tester"));
+        Assert.assertTrue("First name missing from last page ", bodytext.contains("Ecomm"));
+        Assert.assertTrue("Last name missing from last page", bodytext.contains("Gift"));
         Assert.assertTrue("Email address missing from last page ", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Campaign ID not present", bodytext.contains("7754"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));

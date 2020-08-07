@@ -45,8 +45,8 @@ public class PB_B6_DON2TWEET {
         driver.get("https://politicalnetworks.com/page/12596/donate/1?mode=DEMO");
 
         fields.selectTitle("Miss");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Donation");
+        fields.setLastname("ToTweet");
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
         fields.setAddress1("1 Hilltop");
@@ -72,8 +72,8 @@ public class PB_B6_DON2TWEET {
         Assert.assertTrue("Didn't redirect to tweet page",driver.getCurrentUrl().
                 equals("https://politicalnetworks.com/page/11070/tweet/1?chain"));
 
-        Assert.assertTrue("First Name is missing or incorrect", fields.getSupFirstName().equals("Unit"));
-        Assert.assertTrue("Last Name  is missing or incorrect", fields.getSupLastName().equals("Tester"));
+        Assert.assertTrue("First Name is missing or incorrect", fields.getSupFirstName().equals("Donation"));
+        Assert.assertTrue("Last Name  is missing or incorrect", fields.getSupLastName().equals("ToTweet"));
         Assert.assertTrue("Email address is missing or incorrect", fields.getSupEmail().equals(new_email));
         fields.setAppealCode("testAppealCode");
 
@@ -85,8 +85,8 @@ public class PB_B6_DON2TWEET {
                 equals("https://politicalnetworks.com/page/11070/tweet/2"));
         //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("First name missing from last page ", bodytext.contains("Unit"));
-        Assert.assertTrue("Last name missing from last page", bodytext.contains("Tester"));
+        Assert.assertTrue("First name missing from last page ", bodytext.contains("Donation"));
+        Assert.assertTrue("Last name missing from last page", bodytext.contains("ToTweet"));
         Assert.assertTrue("Email address missing from last page ", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Address 1 is incorrect/ not present ", bodytext.contains("1 Hilltop"));
         Assert.assertTrue("City is incorrect/ not present", bodytext.contains("Baltimore"));

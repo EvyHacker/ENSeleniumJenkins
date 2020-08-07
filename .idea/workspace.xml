@@ -2,31 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9ec9c8a-8c77-45cd-a867-fdcaf19d3872" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A17_MSP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iats.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/moneris.xml" beforeDir="false" afterPath="$PROJECT_DIR$/moneris.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payflow.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payflow.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paypal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paypal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/IATS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/MONERIS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/MONERIS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYFLOW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYFLOW.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYSAFE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYSAFE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/RSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/RSM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/STRIPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/STRIPE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/VANTIV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/VANTIV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/WORLDPAY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/WORLDPAY.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/PageFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/PageFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B1_PETDON_P1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B1_PETDON_P1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B2_PETDON_P2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B2_PETDON_P2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B3_INMEMDON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B3_INMEMDON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B4_ETTETT2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B4_ETTETT2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B5_DON2PET.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B5_DON2PET.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B6_DON2TWEET.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B6_DON2TWEET.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B7_DATA2ETT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Redirects/PB_B7_DATA2ETT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A10_TWT1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A10_TWT1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A11_TWT2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A11_TWT2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A12_TWT3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A12_TWT3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A13_ECS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A13_ECS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A15_PTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A15_PTM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A16_ETM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A16_ETM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A1_PET.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A1_PET.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stripe.xml" beforeDir="false" afterPath="$PROJECT_DIR$/stripe.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A2_DCF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A2_DCF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A3_DCF2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A3_DCF2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A4_ETT1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A4_ETT1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A5_ETT2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A5_ETT2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A8_EMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A8_EMS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A9_ECF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A9_ECF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/standalone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/standalone.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/IATS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/IATS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/MONERIS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/MONERIS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYFLOW.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYFLOW.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYPAL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYPAL.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYSAFE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYSAFE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/RSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/RSM.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/STRIPE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/STRIPE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/VANTIV.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/VANTIV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/WORLDPAY.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/WORLDPAY.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B1_PETDON_P1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B1_PETDON_P1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B2_PETDON_P2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B2_PETDON_P2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B3_INMEMDON.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B3_INMEMDON.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B4_ETTETT2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B4_ETTETT2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B5_DON2PET.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B5_DON2PET.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B6_DON2TWEET.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B6_DON2TWEET.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B7_DATA2ETT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Redirects/PB_B7_DATA2ETT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A10_TWT1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A10_TWT1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A11_TWT2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A11_TWT2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A12_TWT3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A12_TWT3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A13_ECS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A13_ECS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A15_PTM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A15_PTM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A16_ETM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A16_ETM.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A1_PET.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A1_PET.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Regression PAYFLOW/Donations PAYFLOW.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A2_DCF.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A2_DCF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A3_DCF2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A3_DCF2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A4_ETT1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A4_ETT1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A5_ETT2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A5_ETT2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A8_EMS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A8_EMS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A9_ECF.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A9_ECF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Regression STRIPE/Donations STRIPE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.FundraisingTest.PAYFLOW.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Regression PAYFLOW/Donations PAYFLOW.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.FundraisingTest.STRIPE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Regression STRIPE/Donations STRIPE.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +91,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1Uu0tVZbZcpsllV8Bx9QDZcW4Qv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -54,9 +108,10 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/webdrivers/linux" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="nele.options" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -120,7 +175,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PB_B1_PETDON_P1.petition2DonationP1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PB_B1_PETDON_P1.petition2DonationP1" type="TestNG" nameIsGenerated="true">
       <module name="ENSeleniumJenkins" />
       <extension name="coverage">
         <pattern>
@@ -192,15 +247,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.PB_B1_PETDON_P1.petition2DonationP1" />
       <item itemvalue="TestNG.TestNGIats.iatsSingle" />
       <item itemvalue="TestNG.TestNGIats" />
       <item itemvalue="TestNG.Testing.paysafe3DSingle" />
       <item itemvalue="TestNG.IATS.iatsSingle" />
-      <item itemvalue="TestNG.PB_B1_PETDON_P1.petition2DonationP1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.PB_B1_PETDON_P1.petition2DonationP1" />
         <item itemvalue="TestNG.IATS.iatsSingle" />
         <item itemvalue="TestNG.IATS.iatsSingle" />
         <item itemvalue="TestNG.Testing.paysafe3DSingle" />
@@ -235,77 +289,49 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="320" y="99" key="#Project_Structure" timestamp="1587395923307">
-      <screen x="0" y="23" width="1440" height="827" />
+    <state x="256" y="148" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595268989836">
+      <screen x="0" y="23" width="1680" height="977" />
     </state>
-    <state x="320" y="99" key="#Project_Structure/0.23.1440.823/1440.23.2560.1057@0.23.1440.823" timestamp="1582327690975" />
-    <state x="320" y="99" key="#Project_Structure/0.23.1440.827/1440.23.2560.1057@0.23.1440.827" timestamp="1587395923307" />
-    <state x="458" y="208" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1586568775201">
-      <screen x="0" y="23" width="1440" height="826" />
-    </state>
-    <state x="458" y="208" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1440.826/1440.23.2560.1057@0.23.1440.826" timestamp="1586568775201" />
-    <state x="219" y="129" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588106000475">
-      <screen x="0" y="23" width="1440" height="827" />
-    </state>
-    <state x="219" y="128" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.822/1440.23.2560.1057@0.23.1440.822" timestamp="1582326989750" />
-    <state x="219" y="128" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.823/1440.23.2560.1057@0.23.1440.823" timestamp="1587590831979" />
     <state x="219" y="129" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.827/1440.23.2560.1057@0.23.1440.827" timestamp="1588106000475" />
-    <state x="458" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587655227351">
-      <screen x="0" y="23" width="1440" height="825" />
-    </state>
-    <state x="458" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.823/1440.23.2560.1057@0.23.1440.823" timestamp="1587653894481" />
-    <state x="458" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.825/1440.23.2560.1057@0.23.1440.825" timestamp="1587655227351" />
+    <state x="256" y="148" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.977/1680.23.2560.1057/-1228.23.1228.898@0.23.1680.977" timestamp="1595268989836" />
     <state width="1398" height="208" key="GridCell.Tab.0.bottom" timestamp="1588856531088">
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.821/1440.23.2560.1057@0.23.1440.821" timestamp="1588856531088" />
-    <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.23.1440.822/1440.23.2560.1057@0.23.1440.822" timestamp="1586816319977" />
-    <state width="1398" height="210" key="GridCell.Tab.0.bottom/0.23.1440.823/1440.23.2560.1057@0.23.1440.823" timestamp="1587590104168" />
-    <state width="1398" height="211" key="GridCell.Tab.0.bottom/0.23.1440.824/1440.23.2560.1057@0.23.1440.824" timestamp="1582327208003" />
     <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.825/1440.23.2560.1057@0.23.1440.825" timestamp="1588186343059" />
-    <state width="1398" height="211" key="GridCell.Tab.0.bottom/0.23.1440.826/1440.23.2560.1057@0.23.1440.826" timestamp="1582326434314" />
     <state width="1398" height="208" key="GridCell.Tab.0.center" timestamp="1588856531087">
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.821/1440.23.2560.1057@0.23.1440.821" timestamp="1588856531087" />
-    <state width="1398" height="209" key="GridCell.Tab.0.center/0.23.1440.822/1440.23.2560.1057@0.23.1440.822" timestamp="1586816319975" />
-    <state width="1398" height="210" key="GridCell.Tab.0.center/0.23.1440.823/1440.23.2560.1057@0.23.1440.823" timestamp="1587590104167" />
-    <state width="1398" height="211" key="GridCell.Tab.0.center/0.23.1440.824/1440.23.2560.1057@0.23.1440.824" timestamp="1582327208002" />
     <state width="1398" height="208" key="GridCell.Tab.0.center/0.23.1440.825/1440.23.2560.1057@0.23.1440.825" timestamp="1588186343057" />
-    <state width="1398" height="211" key="GridCell.Tab.0.center/0.23.1440.826/1440.23.2560.1057@0.23.1440.826" timestamp="1582326434313" />
     <state width="1398" height="208" key="GridCell.Tab.0.left" timestamp="1588856531086">
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.821/1440.23.2560.1057@0.23.1440.821" timestamp="1588856531086" />
-    <state width="1398" height="209" key="GridCell.Tab.0.left/0.23.1440.822/1440.23.2560.1057@0.23.1440.822" timestamp="1586816319974" />
-    <state width="1398" height="210" key="GridCell.Tab.0.left/0.23.1440.823/1440.23.2560.1057@0.23.1440.823" timestamp="1587590104166" />
-    <state width="1398" height="211" key="GridCell.Tab.0.left/0.23.1440.824/1440.23.2560.1057@0.23.1440.824" timestamp="1582327208002" />
     <state width="1398" height="208" key="GridCell.Tab.0.left/0.23.1440.825/1440.23.2560.1057@0.23.1440.825" timestamp="1588186343056" />
-    <state width="1398" height="211" key="GridCell.Tab.0.left/0.23.1440.826/1440.23.2560.1057@0.23.1440.826" timestamp="1582326434313" />
     <state width="1398" height="208" key="GridCell.Tab.0.right" timestamp="1588856531088">
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.821/1440.23.2560.1057@0.23.1440.821" timestamp="1588856531088" />
-    <state width="1398" height="209" key="GridCell.Tab.0.right/0.23.1440.822/1440.23.2560.1057@0.23.1440.822" timestamp="1586816319976" />
-    <state width="1398" height="210" key="GridCell.Tab.0.right/0.23.1440.823/1440.23.2560.1057@0.23.1440.823" timestamp="1587590104167" />
-    <state width="1398" height="211" key="GridCell.Tab.0.right/0.23.1440.824/1440.23.2560.1057@0.23.1440.824" timestamp="1582327208002" />
     <state width="1398" height="208" key="GridCell.Tab.0.right/0.23.1440.825/1440.23.2560.1057@0.23.1440.825" timestamp="1588186343058" />
-    <state width="1398" height="211" key="GridCell.Tab.0.right/0.23.1440.826/1440.23.2560.1057@0.23.1440.826" timestamp="1582326434314" />
-    <state x="208" y="23" key="SettingsEditor" timestamp="1586179512241">
-      <screen x="0" y="23" width="1440" height="826" />
+    <state x="349" y="150" key="SettingsEditor" timestamp="1595272566823">
+      <screen x="0" y="23" width="1680" height="977" />
     </state>
-    <state x="208" y="23" key="SettingsEditor/0.23.1440.826/1440.23.2560.1057@0.23.1440.826" timestamp="1586179512241" />
+    <state x="349" y="150" key="SettingsEditor/0.23.1680.977/1680.23.2560.1057/-1228.23.1228.898@0.23.1680.977" timestamp="1595272566823" />
     <state x="399" y="267" key="com.intellij.ide.util.TipDialog" timestamp="1590591741752">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
-    <state x="399" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.816/1440.23.2560.1057@0.23.1440.816" timestamp="1585012860624" />
-    <state x="399" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.821/1440.23.1920.1057@0.23.1440.821" timestamp="1583336920487" />
-    <state x="399" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.821/1440.23.2560.1057@0.23.1440.821" timestamp="1586301760592" />
-    <state x="399" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.822/1440.23.2560.1057@0.23.1440.822" timestamp="1587687196663" />
     <state x="399" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.823/1440.23.2560.1057@0.23.1440.823" timestamp="1588872682590" />
-    <state x="399" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.824/1440.23.2560.1057@0.23.1440.824" timestamp="1586811052935" />
     <state x="399" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.825/1440.23.2560.1057@0.23.1440.825" timestamp="1588115601039" />
     <state x="399" y="267" key="com.intellij.ide.util.TipDialog/0.23.1440.827/1440.23.2560.1057/-1024.-39.1024.745@0.23.1440.827" timestamp="1590591741752" />
     <state x="399" y="267" key="com.intellij.ide.util.TipDialog/0.23.1440.827/1440.23.2560.1057@0.23.1440.827" timestamp="1589573515120" />
+    <state x="547" y="125" key="refactoring.ChangeSignatureDialog" timestamp="1596581164739">
+      <screen x="0" y="23" width="1680" height="977" />
+    </state>
+    <state x="547" y="125" key="refactoring.ChangeSignatureDialog/0.23.1680.977/1680.23.2560.1057/-1024.23.1024.745@0.23.1680.977" timestamp="1596581164739" />
+    <state x="505" y="238" width="670" height="676" key="search.everywhere.popup" timestamp="1596551630961">
+      <screen x="0" y="23" width="1680" height="977" />
+    </state>
+    <state x="505" y="238" width="670" height="676" key="search.everywhere.popup/0.23.1680.977/1680.23.2560.1057/-1024.23.1024.745@0.23.1680.977" timestamp="1596551630961" />
   </component>
 </project>

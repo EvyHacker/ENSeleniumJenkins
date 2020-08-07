@@ -45,8 +45,8 @@ public class PB_A10_TWT1 {
         driver.get("https://politicalnetworks.com/page/11981/tweet/1?mode=DEMO");
 
         fields.selectTitle("Miss");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Tweet");
+        fields.setLastname("CustomTarget");
 //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -65,8 +65,8 @@ public class PB_A10_TWT1 {
                 equals("https://politicalnetworks.com/page/11981/tweet/2"));
         //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("First name missing from last page ", bodytext.contains("Unit"));
-        Assert.assertTrue("Last name missing from last page", bodytext.contains("Tester"));
+        Assert.assertTrue("First name missing from last page ", bodytext.contains("Tweet"));
+        Assert.assertTrue("Last name missing from last page", bodytext.contains("CustomTarget"));
         Assert.assertTrue("Email address missing from last page ", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Address 1 is incorrect/ not present ", bodytext.contains("2001 S Street NW"));
         Assert.assertTrue("City is incorrect/ not present", bodytext.contains("Washington DC"));

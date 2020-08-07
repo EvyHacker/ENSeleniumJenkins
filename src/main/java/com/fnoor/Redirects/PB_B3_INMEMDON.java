@@ -45,8 +45,8 @@ public class PB_B3_INMEMDON {
 
         fields.selectDonationAmt("5");
         fields.selectTitle("Miss");
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Memoriam");
+        fields.setLastname("Donation");
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
         fields.submit();
@@ -73,13 +73,14 @@ public class PB_B3_INMEMDON {
         Assert.assertTrue("Didn't redirect to donation page",driver.getCurrentUrl().
                 equals("https://politicalnetworks.com/page/12136/action/1?chain"));
         Assert.assertTrue("First name is incorrect/ not present",fields.getFirstName().
-                equals("Unit"));
+                equals("Memoriam"));
         Assert.assertTrue("Last name is incorrect/ not present",fields.getLastName().
-                equals("Tester"));
+                equals("Donation"));
         Assert.assertTrue("Email address is incorrect/ not present",fields.getEmail().
                 equals(new_email));
 
         fields.previewEcard();
+        fields.waitForPageLoad();
         driver.switchTo().frame(0);
         fields.waitForPageLoad();
         String ecardText = driver.findElement(By.id("emailContainer")).getText();
@@ -103,8 +104,8 @@ public class PB_B3_INMEMDON {
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("First name missing from last page ", bodytext.contains("Unit"));
-        Assert.assertTrue("Last name missing from last page", bodytext.contains("Tester"));
+        Assert.assertTrue("First name missing from last page ", bodytext.contains("Memoriam"));
+        Assert.assertTrue("Last name missing from last page", bodytext.contains("Donation"));
         Assert.assertTrue("Email address missing from last page ", bodytext.contains(new_email.toLowerCase()));
     }
 }

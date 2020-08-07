@@ -13,10 +13,12 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
+import java.io.IOException;
 
 public class PB_A2_DCF {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
+    static String FUNDRAISING_TEST;
     public static WebDriver driver;
     static PageFields fields;
 
@@ -40,11 +42,12 @@ public class PB_A2_DCF {
 
     @Parameters({"dataCapture"})
     @Test(groups = { "standalone" })
-    public static void dataCapture(String testId) throws InterruptedException {
+    public static void dataCapture(String testId) throws InterruptedException, IOException {
+        page.ensAuthTest();
         driver.get("https://politicalnetworks.com/page/10621/data/1");
 
-        fields.setFirstname("Unit");
-        fields.setLastname("Tester");
+        fields.setFirstname("Data");
+        fields.setLastname("Capture");
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
         fields.setAppealCode("testAppealCode");
@@ -61,8 +64,8 @@ public class PB_A2_DCF {
         Assert.assertTrue("Urls are not the same", myurlfinalUrl.equals("https://politicalnetworks.com/page/10621/data/3"));
         //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("First name missing from last page ", bodytext.contains("Unit"));
-        Assert.assertTrue("Last name missing from last page", bodytext.contains("Tester"));
+        Assert.assertTrue("First name missing from last page ", bodytext.contains("Data"));
+        Assert.assertTrue("Last name missing from last page", bodytext.contains("Capture"));
         Assert.assertTrue("Email address missing from last page ", bodytext.contains(new_email.toLowerCase()));
         Assert.assertTrue("Address 1 is incorrect/ not present ", bodytext.contains("2001 S Street NW"));
         Assert.assertTrue("City is incorrect/ not present", bodytext.contains("Washington DC"));
@@ -70,5 +73,8 @@ public class PB_A2_DCF {
         Assert.assertTrue("Region is incorrect/ not present", bodytext.contains("DC"));
         Assert.assertTrue("Country is incorrect/ not present", bodytext.contains("US"));
         Assert.assertTrue("Appeal code is incorrect/ not present", bodytext.contains("testAppealCode"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST="dataCapture", fields);
+        page.getSupporterById(FUNDRAISING_TEST="dataCapture", fields);
     }
 }
