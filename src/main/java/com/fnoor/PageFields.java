@@ -11,9 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class PageFields {
 
@@ -119,12 +117,21 @@ public class PageFields {
     @FindBy(css = ".gadget__transactionHistory__transaction__field.gadget__transactionHistory__transaction__field__name") List<WebElement> field_TransactionDetails;
     @FindBy(css = "gadget__singleDonations__transaction__row") List<WebElement> field_SupporterDetailsList;
     @FindBy(className = "gadget__transactionHistory__transactionDetail__row__field") List<WebElement> txn_details;
-    @FindBy(css = ".gadget__transactionHistory__transactionDetail") WebElement field_AllTransactionDetails;
+    @FindBy(css = ".gadget__transactionHistory__transactionDetail") WebElement field_TransactionHistoryDetails;
     @FindBy(linkText = "Data & Reports") WebElement field_DataReports;
     @FindBy(css = ".gadget__transactionHistory__transaction__field.gadget__transactionHistory__transaction__field__name") List<WebElement> txn_history_list;
     @FindBy(css =".gadget__transactionHistory__transaction__field.gadget__transactionHistory__transaction__field__type")
     public List<WebElement> txn_hist_type_list;
-    @FindBy(css = ".gadget__transactionHistory__transaction--open") WebElement full_txn_details;
+    @FindBy(className = "gadget__singleDonations__donation__type") WebElement field_txn_type;
+    @FindBy(className = "gadget__singleDonations__donation__header") WebElement field_singleTxn_details;
+    @FindBy(className = "gadget__singleDonations__transaction__actions") WebElement field_Receipts;
+    @FindBy(css = ".button.optimalRefund.refund") WebElement field_RefundTxn;
+    @FindBy(id = "refund__amount") WebElement field_RefundAmount;
+    @FindBy(className = "gadget__receipt__field__input__receipt") WebElement field_SetRefundReceipt;
+    @FindBy(className = "gadget__receipt__field__input__template") WebElement field_SetRefundTemplate;
+    @FindBy(css = ".gadget__receipt__buttons__send") WebElement field_refundButton;
+    @FindBy(css = ".message__actions__confirm") WebElement field_confirmButton;
+    @FindBy(css = ".gadget__singleDonations__transaction__container") WebElement field_TransactionSingleDetails;
 
     //   SUPPORTER TRANSACTION DETAILS
     @FindBy(name = "supporter.firstName") WebElement field_SupFirstName;
@@ -725,6 +732,81 @@ public class PageFields {
         }
     }
 
+    public void expendSingleTransaction(String text){
+        if(field_txn_type.getText().
+                equals(text)){
+            field_txn_type.click();
+        }
+
+    }
+
+    public void validateOriginalReceipt(String text){
+        System.out.println("Rec " + field_Receipts.getText());
+            Assert.assertTrue("Original receipt not present", field_Receipts.getText().
+                    contains(text));
+    }
+
+    public void validateReplacementReceipt(String text){
+        Assert.assertTrue("Replacement receipt not present", field_Receipts.getText().
+                contains(text));
+    }
+
+    public void validateChangeTaxStatus(String text){
+        Assert.assertTrue("Change tax status button not present", field_Receipts.getText().
+                contains(text));
+    }
+
+    public void refundTransaction(String text){
+        Assert.assertTrue("Didn't redirect to transactions page", field_Receipts.getText().
+                contains(text));
+        field_RefundTxn.click();
+    }
+
+    public void refundTransactionAmount(String text){
+        field_RefundAmount.sendKeys(text);
+    }
+
+    public void setRefundReceipt(String text){
+        Select refundReceipt = new Select(field_SetRefundReceipt);
+        refundReceipt.selectByVisibleText(text);
+    }
+
+    public void setRefundTemplate(String text){
+        Select refundTemplate = new Select(field_SetRefundTemplate);
+        refundTemplate.selectByVisibleText(text);
+    }
+
+    public void submitRefund(){
+        field_refundButton.click();
+    }
+
+    public void confirmRefund(String text){
+        String winHandle = driver.getWindowHandle(); //Get current window handle.
+        for(String windowsHandle : driver.getWindowHandles()) {
+            driver.switchTo().window(windowsHandle); //Iterate to the new window handle.
+        }
+
+        WebElement confirmRefund = (new WebDriverWait(driver, 200))
+                .until(ExpectedConditions.presenceOfElementLocated
+                        (By.className("message__confirmation")));
+        System.out.println("Mes " +  confirmRefund.getText());
+        Assert.assertTrue(confirmRefund.getText().contains(text));
+        WebElement message = driver.findElement(By.linkText("Ok"));
+        message.click();
+        driver.switchTo().window(winHandle);
+
+    }
+
+    public void validateRefund(String text) {
+        List<WebElement> txns = driver.findElements(By.className("gadget__singleDonations__donation__type"));
+        for (WebElement orderId : txns) {
+            if (orderId.getText().equals(text)) {
+                orderId.click();
+            }
+        }
+    }
+
+
     public String getTransactionDetails() throws InterruptedException {
         /// click on the latest txn, get the txn details and return them
         String full_txn_text = null;
@@ -733,11 +815,20 @@ public class PageFields {
 //            WebElement txn = field_TransactionDetails.get(i);
 //            txn.click();
 //            Thread.sleep(2000);
-            full_txn_text = field_AllTransactionDetails.getText();
+            full_txn_text = field_TransactionHistoryDetails.getText();
 
       //  }
         return full_txn_text;
     }
+
+    public String getSingleTransactionDetails() throws InterruptedException {
+
+        String full_txn_text = null;
+        full_txn_text = field_TransactionSingleDetails.getText();
+        System.out.println("tet " + full_txn_text);
+        return full_txn_text;
+    }
+
 
     public String getSupporterTaxID() {
 

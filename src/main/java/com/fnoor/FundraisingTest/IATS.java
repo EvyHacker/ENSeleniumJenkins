@@ -296,7 +296,6 @@ public class IATS {
         fields.waitForPageLoad();
         Thread.sleep(2000);
         LocalDate date = LocalDate.now();
-        //String strDate = format(date);
 
         //Validate IATSsingle transaction
         fields.searchSupporter("pb_iatssingle_" + date.toString() + "@tellamazingstories.com");
