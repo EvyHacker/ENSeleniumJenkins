@@ -2,13 +2,13 @@ package com.fnoor.FundraisingTest;
 
 import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
-import com.sun.prism.shader.Solid_TextureYV12_AlphaTest_Loader;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -18,7 +18,6 @@ import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Currency;
-import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
@@ -42,12 +41,12 @@ public class STRIPE {
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
-//    @AfterClass(alwaysRun = true)
-//    public void tearDown() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
     @Parameters({"stripeSingle"})
     @Test(groups = { "stripe" })
@@ -684,7 +683,7 @@ public class STRIPE {
         fields.waitForPageLoad();
         Thread.sleep(2000);
         LocalDate date = LocalDate.now();
-        fields.searchSupporter("stripeIDEALsingleASN_" + date.toString() + "@tellamazingstories.com");
+        fields.searchSupporter("pb_stripeidealsingleasn_" + date.toString() + "@tellamazingstories.com");
         Thread.sleep(2000);
 
         // Validate supporter Details
@@ -712,11 +711,12 @@ public class STRIPE {
         fields.confirmRefund("Are you sure you wish to refund this donation?");
 
         fields.waitForPageLoad();
+        Thread.sleep(6000);
         fields.validateRefund("RFD");
 
         // Validate refund transaction
         fields.waitForPageLoad();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         Assert.assertTrue("Transaction error, amount is incorrect or missing ",
                 fields.getSingleTransactionDetails().contains("Amount -10 EUR"));
         Assert.assertTrue("Transaction error, status is incorrect or not present",

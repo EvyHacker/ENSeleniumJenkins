@@ -789,7 +789,6 @@ public class PageFields {
         WebElement confirmRefund = (new WebDriverWait(driver, 200))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.className("message__confirmation")));
-        System.out.println("Mes " +  confirmRefund.getText());
         Assert.assertTrue(confirmRefund.getText().contains(text));
         WebElement message = driver.findElement(By.linkText("Ok"));
         message.click();
