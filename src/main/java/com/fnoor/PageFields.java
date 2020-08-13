@@ -824,7 +824,6 @@ public class PageFields {
 
         String full_txn_text = null;
         full_txn_text = field_TransactionSingleDetails.getText();
-        System.out.println("tet " + full_txn_text);
         return full_txn_text;
     }
 

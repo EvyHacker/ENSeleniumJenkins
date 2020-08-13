@@ -162,7 +162,7 @@ public class IATS {
     @Test(groups = { "iats" })
     public static void IATSACHRecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
-        driver.get("https://politicalnetworks.com/page/5724/donate/1?mode=DEMO");
+        driver.get("https://politicalnetworks.com/page/5724/donate/1?ea.tracking.id=Google&mode=DEMO");
 
         fields.selectTitle("Ms");
         fields.setFirstname("IATS");

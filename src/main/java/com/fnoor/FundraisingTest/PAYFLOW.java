@@ -165,7 +165,7 @@ public class PAYFLOW {
     @Test(groups = { "payflow" })
     public static void payflowProPayViaPaypal(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
-        driver.get("https://politicalnetworks.com/page/10887/donate/1?mode=DEMO");
+        driver.get("https://politicalnetworks.com/page/10887/donate/1?ea.tracking.id=Twitter&mode=DEMO");
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");

@@ -41,12 +41,12 @@ public class STRIPE {
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    @AfterClass(alwaysRun = true)
+//    public void tearDown() {
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 
     @Parameters({"stripeSingle"})
     @Test(groups = { "stripe" })
@@ -329,7 +329,7 @@ public class STRIPE {
     @Test(groups = { "stripe" })
     public static void stripeRecurring3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
-        driver.get("https://politicalnetworks.com/page/12777/donate/1?mode=DEMO");
+        driver.get("https://politicalnetworks.com/page/12777/donate/1?ea.tracking.id=Google&mode=DEMO");
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
@@ -402,7 +402,7 @@ public class STRIPE {
     @Test(groups = { "stripe" })
     public static void stripeSEPAsingle(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
-        driver.get("https://politicalnetworks.com/page/13322/donate/1?mode=DEMO");
+        driver.get("https://politicalnetworks.com/page/13323/donate/1?ea.tracking.id=Google");
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
@@ -452,7 +452,7 @@ public class STRIPE {
     @Test(groups = { "stripe" })
     public static void stripeSEPArecurring(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
-        driver.get("https://politicalnetworks.com/page/13328/donate/1?mode=DEMO");
+        driver.get("https://politicalnetworks.com/page/13328/donate/1?ea.tracking.id=Facebook");
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
