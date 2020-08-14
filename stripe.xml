@@ -23,16 +23,16 @@
         <classes>
             <class name="com.fnoor.FundraisingTest.STRIPE" >
                 <methods>
-<!--                    <include name="stripeSingle" />-->
-<!--                    <include name="stripeRecurring" />-->
-<!--                    <include name="stripeBancontactSingle" />-->
-<!--                    <include name="stripeSingle3D" />-->
-<!--                    <include name="stripeRecurring3D" />-->
-<!--                    <include name="stripeSEPAsingle" />-->
-<!--                    <include name="stripeSEPArecurring" />-->
+                    <include name="stripeSingle" />
+                    <include name="stripeRecurring" />
+                    <include name="stripeBancontactSingle" />
+                    <include name="stripeSingle3D" />
+                    <include name="stripeRecurring3D" />
+                    <include name="stripeSEPAsingle" />
+                    <include name="stripeSEPArecurring" />
                     <include name="stripeIDEALsingleABN" />
-<!--                    <include name="stripeIDEALsingleASN" />-->
-<!--                    <include name="stripeIDEALsingleASNRefund" />-->
+                    <include name="stripeIDEALsingleASN" />
+                    <include name="stripeIDEALsingleASNRefund" />
                 </methods>
             </class>
         </classes>

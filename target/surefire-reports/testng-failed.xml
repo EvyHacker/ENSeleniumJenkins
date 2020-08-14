@@ -25,6 +25,7 @@
       <class name="com.fnoor.FundraisingTest.PAYPAL">
         <methods>
           <include name="paypalCardinalComSingle3D" invocation-numbers="0"/>
+          <include name="paypalViaPayPalCardinalComSingle3D" invocation-numbers="0"/>
           <include name="paypalCardinalComRecurring3D" invocation-numbers="0"/>
           <include name="setUp"/>
           <include name="tearDown"/>
