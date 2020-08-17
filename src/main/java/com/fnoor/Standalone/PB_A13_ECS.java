@@ -41,7 +41,7 @@ public class PB_A13_ECS {
     @Parameters({"event"})
     @Test(groups = { "standalone" })
     public static void event(String testId) throws InterruptedException {
-        driver.get("https://politicalnetworks.com/page/11073/event/1");
+        driver.get("https://politicalnetworks.com/page/11073/event/1?ea.tracking.id=event_track&utm_content=A13%20-%20Standalone%20Event&utm_campaign=utm_event&utm_medium=email&utm_source=engagingnetworks");
 
         fields.selectTitle("Miss");
         fields.setFirstname("Standalone");

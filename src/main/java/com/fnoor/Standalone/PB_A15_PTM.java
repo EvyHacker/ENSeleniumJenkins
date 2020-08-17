@@ -41,7 +41,7 @@ public class PB_A15_PTM {
     @Parameters({"premiumDonationSingle"})
     @Test(groups = { "standalone" })
     public static void premiumDonationSingle(String testId) throws InterruptedException {
-        driver.get("https://politicalnetworks.com/page/12115/shop/1");
+        driver.get("https://politicalnetworks.com/page/12115/donate/1?ea.tracking.id=premium_donation&utm_content=A15%20-%20Standalone%20Premium%20Donation&utm_campaign=utm_premium&utm_medium=email&utm_source=engagingnetworks");
 
         fields.selectDonationAmt("5");
         String premGift = fields.getPremGiftName();
@@ -65,7 +65,7 @@ public class PB_A15_PTM {
 
         fields.waitForPageLoad();
         //		Assert that the payment was successful and the third page was reached
-        Assert.assertTrue(driver.getCurrentUrl().contains("https://politicalnetworks.com/page/12115/shop/2"));
+        Assert.assertTrue(driver.getCurrentUrl().contains("https://politicalnetworks.com/page/12115/donate/2"));
 
         fields.setAddress1("1 Hilltop");
         fields.setCity("Baltimore");
@@ -83,7 +83,7 @@ public class PB_A15_PTM {
         fields.waitForPageLoad();
 
         String myurlfinal = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurlfinal.equals("https://politicalnetworks.com/page/12115/shop/3"));
+        Assert.assertTrue("Urls are not the same", myurlfinal.equals("https://politicalnetworks.com/page/12115/donate/3"));
         //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
         Assert.assertTrue("First name missing from last page ", bodytext.contains("Premium"));

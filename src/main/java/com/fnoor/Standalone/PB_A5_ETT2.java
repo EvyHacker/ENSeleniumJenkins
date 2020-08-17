@@ -44,7 +44,7 @@ public class PB_A5_ETT2 {
     public static void singleDBETT(String testId) throws InterruptedException {
         driver.get("https://politicalnetworks.com/page/11069/action/1?mode=DEMO");
 
-        fields.selectTitle("Miss");
+        fields.selectTitle("Mr.");
         fields.setFirstname("SingleDB");
         fields.setLastname("ETT");
         String new_email = fields.createEmail(testId);
@@ -63,8 +63,8 @@ public class PB_A5_ETT2 {
         Assert.assertTrue("Target block not present", fields.verifyTargetblockIsPresent());
 
         String customMessage = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Contact info not found ", customMessage.contains("Mr Steve Pound"));
-        Assert.assertTrue("Supporter details not found in Target message", customMessage.contains("SingleDB ETT"));
+        Assert.assertTrue("Contact info not found ", customMessage.contains("Steve Pound"));
+        Assert.assertTrue("Supporter details not found in Target message", customMessage.contains("Ealing North"));
 
         fields.submit();
 

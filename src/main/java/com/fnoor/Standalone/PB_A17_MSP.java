@@ -44,7 +44,7 @@ public class PB_A17_MSP {
     @Test(groups = {"standalone"})
     public static void membershipDogsJoin(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
-        driver.get("https://politicalnetworks.com/page/12120/membership/1");
+        driver.get("https://politicalnetworks.com/page/12120/membership/1?ea.tracking.id=mkx35hfo&utm_content=A17%20-%20Standalone%20Membership&utm_campaign=utm_member&utm_medium=email&utm_source=engagingnetworks\n");
 
         fields.field_MSP_Join.click();
         Assert.assertTrue(driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12120/membership/2?membershipTypeId=71"));

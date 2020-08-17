@@ -3,19 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="e9ec9c8a-8c77-45cd-a867-fdcaf19d3872" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/STRIPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/STRIPE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stripe.xml" beforeDir="false" afterPath="$PROJECT_DIR$/stripe.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A13_ECS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A13_ECS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A15_PTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A15_PTM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A16_ETM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A16_ETM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A17_MSP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A17_MSP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A2_DCF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A2_DCF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A5_ETT2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A5_ETT2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYPAL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYPAL.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/Regression PAYPAL/Donations PAYPAL.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/Regression PAYPAL/testng-failed.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.FundraisingTest.PAYPAL.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Regression PAYPAL/Donations PAYPAL.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

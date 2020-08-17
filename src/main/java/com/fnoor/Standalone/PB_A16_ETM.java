@@ -41,7 +41,7 @@ public class PB_A16_ETM {
     @Parameters({"ecommerceSymbolicGift"})
     @Test(groups = { "standalone" })
     public static void ecommerceSymbolicGift(String testId) throws InterruptedException {
-        driver.get("https://politicalnetworks.com/page/12116/shop/1");
+        driver.get("https://politicalnetworks.com/page/12116/shop/1?ea.tracking.id=Google&utm_content=A16%20-%20Standalone%20Symbolic%20Gift&utm_campaign=utm_gift&utm_medium=paid%20social&utm_source=google");
 
         fields.buyFeaturedItem();
         String myurl = driver.getCurrentUrl();
