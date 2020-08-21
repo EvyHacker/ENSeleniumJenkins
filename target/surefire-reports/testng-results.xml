@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="14" passed="13">
+<testng-results skipped="0" failed="1" ignored="0" total="10" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression STANDALONE" duration-ms="172207" started-at="2020-08-17T13:59:48 EDT" finished-at="2020-08-17T14:02:40 EDT">
+  <suite name="Regression STRIPE" duration-ms="132550" started-at="2020-08-21T11:00:05 EDT" finished-at="2020-08-21T11:02:18 EDT">
     <groups>
-      <group name="standalone">
-        <method signature="PB_A10_TWT1.tweetCustomTarget(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A10_TWT1@4cf4d528]" name="tweetCustomTarget" class="com.fnoor.Standalone.PB_A10_TWT1"/>
-        <method signature="PB_A11_TWT2.singleDB(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A11_TWT2@77846d2c]" name="singleDB" class="com.fnoor.Standalone.PB_A11_TWT2"/>
-        <method signature="PB_A12_TWT3.multiDB(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A12_TWT3@548ad73b]" name="multiDB" class="com.fnoor.Standalone.PB_A12_TWT3"/>
-        <method signature="PB_A13_ECS.event(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A13_ECS@4c762604]" name="event" class="com.fnoor.Standalone.PB_A13_ECS"/>
-        <method signature="PB_A15_PTM.premiumDonationSingle(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A15_PTM@2641e737]" name="premiumDonationSingle" class="com.fnoor.Standalone.PB_A15_PTM"/>
-        <method signature="PB_A16_ETM.ecommerceSymbolicGift(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A16_ETM@727803de]" name="ecommerceSymbolicGift" class="com.fnoor.Standalone.PB_A16_ETM"/>
-        <method signature="PB_A17_MSP.membershipDogsJoin(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A17_MSP@704921a5]" name="membershipDogsJoin" class="com.fnoor.Standalone.PB_A17_MSP"/>
-        <method signature="PB_A1_PET.petition(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A1_PET@149494d8]" name="petition" class="com.fnoor.Standalone.PB_A1_PET"/>
-        <method signature="PB_A2_DCF.dataCapture(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A2_DCF@710726a3]" name="dataCapture" class="com.fnoor.Standalone.PB_A2_DCF"/>
-        <method signature="PB_A3_DCF2.dataCapture2(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A3_DCF2@646007f4]" name="dataCapture2" class="com.fnoor.Standalone.PB_A3_DCF2"/>
-        <method signature="PB_A4_ETT1.customTarget(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A4_ETT1@481a15ff]" name="customTarget" class="com.fnoor.Standalone.PB_A4_ETT1"/>
-        <method signature="PB_A5_ETT2.singleDBETT(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A5_ETT2@78186a70]" name="singleDBETT" class="com.fnoor.Standalone.PB_A5_ETT2"/>
-        <method signature="PB_A8_EMS.signUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A8_EMS@306279ee]" name="signUp" class="com.fnoor.Standalone.PB_A8_EMS"/>
-        <method signature="PB_A9_ECF.ecardValidation(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A9_ECF@545997b1]" name="ecardValidation" class="com.fnoor.Standalone.PB_A9_ECF"/>
-      </group> <!-- standalone -->
+      <group name="stripe">
+        <method signature="STRIPE.stripeBancontactSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeBancontactSingle" class="com.fnoor.FundraisingTest.STRIPE"/>
+        <method signature="STRIPE.stripeIDEALsingleABN(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeIDEALsingleABN" class="com.fnoor.FundraisingTest.STRIPE"/>
+        <method signature="STRIPE.stripeIDEALsingleASN(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeIDEALsingleASN" class="com.fnoor.FundraisingTest.STRIPE"/>
+        <method signature="STRIPE.stripeIDEALsingleASNRefund()[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeIDEALsingleASNRefund" class="com.fnoor.FundraisingTest.STRIPE"/>
+        <method signature="STRIPE.stripeRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeRecurring" class="com.fnoor.FundraisingTest.STRIPE"/>
+        <method signature="STRIPE.stripeRecurring3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeRecurring3D" class="com.fnoor.FundraisingTest.STRIPE"/>
+        <method signature="STRIPE.stripeSEPArecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSEPArecurring" class="com.fnoor.FundraisingTest.STRIPE"/>
+        <method signature="STRIPE.stripeSEPAsingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSEPAsingle" class="com.fnoor.FundraisingTest.STRIPE"/>
+        <method signature="STRIPE.stripeSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSingle" class="com.fnoor.FundraisingTest.STRIPE"/>
+        <method signature="STRIPE.stripeSingle3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSingle3D" class="com.fnoor.FundraisingTest.STRIPE"/>
+      </group> <!-- stripe -->
     </groups>
-    <test name="Donations STANDALONE" duration-ms="172207" started-at="2020-08-17T13:59:48 EDT" finished-at="2020-08-17T14:02:40 EDT">
-      <class name="com.fnoor.Standalone.PB_A10_TWT1">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A10_TWT1@4cf4d528]" name="setUp" is-config="true" duration-ms="2682" started-at="2020-08-17T14:01:42 EDT" finished-at="2020-08-17T14:01:45 EDT">
+    <test name="Donations STRIPE" duration-ms="132550" started-at="2020-08-21T11:00:05 EDT" finished-at="2020-08-21T11:02:18 EDT">
+      <class name="com.fnoor.FundraisingTest.STRIPE">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="setUp" is-config="true" duration-ms="2289" started-at="2020-08-21T11:00:05 EDT" finished-at="2020-08-21T11:00:07 EDT">
           <params>
             <param index="0">
               <value>
@@ -34,360 +30,116 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tweetCustomTarget(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A10_TWT1@4cf4d528]" name="tweetCustomTarget" duration-ms="4972" started-at="2020-08-17T14:01:45 EDT" finished-at="2020-08-17T14:01:50 EDT">
+        <test-method status="PASS" signature="stripeSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSingle" duration-ms="10641" started-at="2020-08-21T11:00:07 EDT" finished-at="2020-08-21T11:00:18 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[tweetCustomTarget]]>
+                <![CDATA[stripeSingle]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tweetCustomTarget -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A10_TWT1@4cf4d528]" name="tearDown" is-config="true" duration-ms="147" started-at="2020-08-17T14:01:50 EDT" finished-at="2020-08-17T14:01:50 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A10_TWT1 -->
-      <class name="com.fnoor.Standalone.PB_A9_ECF">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A9_ECF@545997b1]" name="setUp" is-config="true" duration-ms="1332" started-at="2020-08-17T14:01:36 EDT" finished-at="2020-08-17T14:01:38 EDT">
+        </test-method> <!-- stripeSingle -->
+        <test-method status="PASS" signature="stripeRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeRecurring" duration-ms="10466" started-at="2020-08-21T11:00:18 EDT" finished-at="2020-08-21T11:00:29 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[stripeRecurring]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="ecardValidation(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A9_ECF@545997b1]" name="ecardValidation" duration-ms="4144" started-at="2020-08-17T14:01:38 EDT" finished-at="2020-08-17T14:01:42 EDT">
+        </test-method> <!-- stripeRecurring -->
+        <test-method status="PASS" signature="stripeBancontactSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeBancontactSingle" duration-ms="16491" started-at="2020-08-21T11:00:29 EDT" finished-at="2020-08-21T11:00:45 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ecardValidation]]>
+                <![CDATA[stripeBancontactSingle]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ecardValidation -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A9_ECF@545997b1]" name="tearDown" is-config="true" duration-ms="161" started-at="2020-08-17T14:01:42 EDT" finished-at="2020-08-17T14:01:42 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A9_ECF -->
-      <class name="com.fnoor.Standalone.PB_A1_PET">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A1_PET@149494d8]" name="setUp" is-config="true" duration-ms="2894" started-at="2020-08-17T13:59:48 EDT" finished-at="2020-08-17T13:59:51 EDT">
+        </test-method> <!-- stripeBancontactSingle -->
+        <test-method status="PASS" signature="stripeSingle3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSingle3D" duration-ms="17574" started-at="2020-08-21T11:00:45 EDT" finished-at="2020-08-21T11:01:03 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[stripeSingle3D]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="petition(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A1_PET@149494d8]" name="petition" duration-ms="4346" started-at="2020-08-17T13:59:51 EDT" finished-at="2020-08-17T13:59:55 EDT">
+        </test-method> <!-- stripeSingle3D -->
+        <test-method status="PASS" signature="stripeRecurring3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeRecurring3D" duration-ms="11900" started-at="2020-08-21T11:01:03 EDT" finished-at="2020-08-21T11:01:15 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[petition]]>
+                <![CDATA[stripeRecurring3D]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- petition -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A1_PET@149494d8]" name="tearDown" is-config="true" duration-ms="85" started-at="2020-08-17T13:59:55 EDT" finished-at="2020-08-17T13:59:55 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A1_PET -->
-      <class name="com.fnoor.Standalone.PB_A3_DCF2">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A3_DCF2@646007f4]" name="setUp" is-config="true" duration-ms="1302" started-at="2020-08-17T14:01:09 EDT" finished-at="2020-08-17T14:01:10 EDT">
+        </test-method> <!-- stripeRecurring3D -->
+        <test-method status="PASS" signature="stripeSEPAsingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSEPAsingle" duration-ms="7701" started-at="2020-08-21T11:01:15 EDT" finished-at="2020-08-21T11:01:22 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[stripeSEPAsingle]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="dataCapture2(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A3_DCF2@646007f4]" name="dataCapture2" duration-ms="6008" started-at="2020-08-17T14:01:10 EDT" finished-at="2020-08-17T14:01:16 EDT">
+        </test-method> <!-- stripeSEPAsingle -->
+        <test-method status="PASS" signature="stripeSEPArecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSEPArecurring" duration-ms="7748" started-at="2020-08-21T11:01:22 EDT" finished-at="2020-08-21T11:01:30 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[dataCapture2]]>
+                <![CDATA[stripeSEPArecurring]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- dataCapture2 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A3_DCF2@646007f4]" name="tearDown" is-config="true" duration-ms="79" started-at="2020-08-17T14:01:16 EDT" finished-at="2020-08-17T14:01:16 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A3_DCF2 -->
-      <class name="com.fnoor.Standalone.PB_A5_ETT2">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A5_ETT2@78186a70]" name="setUp" is-config="true" duration-ms="1665" started-at="2020-08-17T14:01:23 EDT" finished-at="2020-08-17T14:01:25 EDT">
+        </test-method> <!-- stripeSEPArecurring -->
+        <test-method status="PASS" signature="stripeIDEALsingleABN(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeIDEALsingleABN" duration-ms="18502" started-at="2020-08-21T11:01:30 EDT" finished-at="2020-08-21T11:01:49 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[stripeIDEALsingleABN]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="singleDBETT(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A5_ETT2@78186a70]" name="singleDBETT" duration-ms="6135" started-at="2020-08-17T14:01:25 EDT" finished-at="2020-08-17T14:01:31 EDT">
+        </test-method> <!-- stripeIDEALsingleABN -->
+        <test-method status="PASS" signature="stripeIDEALsingleASN(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeIDEALsingleASN" duration-ms="17872" started-at="2020-08-21T11:01:49 EDT" finished-at="2020-08-21T11:02:06 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[singleDBETT]]>
+                <![CDATA[stripeIDEALsingleASN]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- singleDBETT -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A5_ETT2@78186a70]" name="tearDown" is-config="true" duration-ms="91" started-at="2020-08-17T14:01:31 EDT" finished-at="2020-08-17T14:01:31 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A5_ETT2 -->
-      <class name="com.fnoor.Standalone.PB_A12_TWT3">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A12_TWT3@548ad73b]" name="setUp" is-config="true" duration-ms="2757" started-at="2020-08-17T14:01:58 EDT" finished-at="2020-08-17T14:02:01 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="multiDB(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A12_TWT3@548ad73b]" name="multiDB" duration-ms="6195" started-at="2020-08-17T14:02:01 EDT" finished-at="2020-08-17T14:02:07 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[multiDB]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- multiDB -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A12_TWT3@548ad73b]" name="tearDown" is-config="true" duration-ms="242" started-at="2020-08-17T14:02:07 EDT" finished-at="2020-08-17T14:02:07 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A12_TWT3 -->
-      <class name="com.fnoor.Standalone.PB_A17_MSP">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A17_MSP@704921a5]" name="setUp" is-config="true" duration-ms="1168" started-at="2020-08-17T14:02:31 EDT" finished-at="2020-08-17T14:02:32 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="membershipDogsJoin(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A17_MSP@704921a5]" name="membershipDogsJoin" duration-ms="7945" started-at="2020-08-17T14:02:32 EDT" finished-at="2020-08-17T14:02:40 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[membershipDogsJoin]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- membershipDogsJoin -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A17_MSP@704921a5]" name="tearDown" is-config="true" duration-ms="108" started-at="2020-08-17T14:02:40 EDT" finished-at="2020-08-17T14:02:40 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A17_MSP -->
-      <class name="com.fnoor.Standalone.PB_A15_PTM">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A15_PTM@2641e737]" name="setUp" is-config="true" duration-ms="1055" started-at="2020-08-17T14:02:14 EDT" finished-at="2020-08-17T14:02:15 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="premiumDonationSingle(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A15_PTM@2641e737]" name="premiumDonationSingle" duration-ms="7074" started-at="2020-08-17T14:02:15 EDT" finished-at="2020-08-17T14:02:22 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[premiumDonationSingle]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- premiumDonationSingle -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A15_PTM@2641e737]" name="tearDown" is-config="true" duration-ms="87" started-at="2020-08-17T14:02:22 EDT" finished-at="2020-08-17T14:02:22 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A15_PTM -->
-      <class name="com.fnoor.Standalone.PB_A8_EMS">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A8_EMS@306279ee]" name="setUp" is-config="true" duration-ms="1242" started-at="2020-08-17T14:01:31 EDT" finished-at="2020-08-17T14:01:32 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="signUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A8_EMS@306279ee]" name="signUp" duration-ms="3831" started-at="2020-08-17T14:01:32 EDT" finished-at="2020-08-17T14:01:36 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[signUp]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signUp -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A8_EMS@306279ee]" name="tearDown" is-config="true" duration-ms="88" started-at="2020-08-17T14:01:36 EDT" finished-at="2020-08-17T14:01:36 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A8_EMS -->
-      <class name="com.fnoor.Standalone.PB_A16_ETM">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A16_ETM@727803de]" name="setUp" is-config="true" duration-ms="1168" started-at="2020-08-17T14:02:22 EDT" finished-at="2020-08-17T14:02:23 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="ecommerceSymbolicGift(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A16_ETM@727803de]" name="ecommerceSymbolicGift" duration-ms="7874" started-at="2020-08-17T14:02:23 EDT" finished-at="2020-08-17T14:02:31 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ecommerceSymbolicGift]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ecommerceSymbolicGift -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A16_ETM@727803de]" name="tearDown" is-config="true" duration-ms="90" started-at="2020-08-17T14:02:31 EDT" finished-at="2020-08-17T14:02:31 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A16_ETM -->
-      <class name="com.fnoor.Standalone.PB_A4_ETT1">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A4_ETT1@481a15ff]" name="setUp" is-config="true" duration-ms="1065" started-at="2020-08-17T14:01:16 EDT" finished-at="2020-08-17T14:01:17 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="customTarget(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A4_ETT1@481a15ff]" name="customTarget" duration-ms="5731" started-at="2020-08-17T14:01:17 EDT" finished-at="2020-08-17T14:01:23 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[customTarget]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- customTarget -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A4_ETT1@481a15ff]" name="tearDown" is-config="true" duration-ms="81" started-at="2020-08-17T14:01:23 EDT" finished-at="2020-08-17T14:01:23 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A4_ETT1 -->
-      <class name="com.fnoor.Standalone.PB_A2_DCF">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A2_DCF@710726a3]" name="setUp" is-config="true" duration-ms="7131" started-at="2020-08-17T13:59:55 EDT" finished-at="2020-08-17T14:00:02 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="dataCapture(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A2_DCF@710726a3]" name="dataCapture" duration-ms="66365" started-at="2020-08-17T14:00:02 EDT" finished-at="2020-08-17T14:01:09 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[dataCapture]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- stripeIDEALsingleASN -->
+        <test-method status="FAIL" signature="stripeIDEALsingleASNRefund()[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeIDEALsingleASNRefund" duration-ms="11143" started-at="2020-08-21T11:02:06 EDT" finished-at="2020-08-21T11:02:18 EDT">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='txnID']"}
-  (Session info: chrome=84.0.4147.125)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'Ievgeniias-MBP.fios-router.home', ip: 'fe80:0:0:0:107b:90e6:e0b5:8010%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416}), userDataDir=/var/folders/wf/01j5zpjj45dgk1n5rbf0njrm0000gn/T/.com.google.Chrome.3UuPcS}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:49393}, acceptInsecureCerts=false, browserVersion=84.0.4147.125, browserName=chrome, javascriptEnabled=true, platformName=mac os x, setWindowRect=true, webauthn:virtualAuthenticators=true}]
-Session ID: 46fdb17eb183e67ca7707719537acfeb
-*** Element info: {Using=xpath, value=//div[@class='txnID']}]]>
+              <![CDATA[Original receipt not present]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='txnID']"}
-  (Session info: chrome=84.0.4147.125)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'Ievgeniias-MBP.fios-router.home', ip: 'fe80:0:0:0:107b:90e6:e0b5:8010%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416}), userDataDir=/var/folders/wf/01j5zpjj45dgk1n5rbf0njrm0000gn/T/.com.google.Chrome.3UuPcS}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:49393}, acceptInsecureCerts=false, browserVersion=84.0.4147.125, browserName=chrome, javascriptEnabled=true, platformName=mac os x, setWindowRect=true, webauthn:virtualAuthenticators=true}]
-Session ID: 46fdb17eb183e67ca7707719537acfeb
-*** Element info: {Using=xpath, value=//div[@class='txnID']}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-at com.fnoor.PageFields.getSupporterTaxID(PageFields.java:833)
-at com.fnoor.Standalone.PB_A2_DCF.dataCapture(PB_A2_DCF.java:66)
+              <![CDATA[java.lang.AssertionError: Original receipt not present
+at org.junit.Assert.fail(Assert.java:88)
+at org.junit.Assert.assertTrue(Assert.java:41)
+at com.fnoor.PageFields.validateOriginalReceipt(PageFields.java:745)
+at com.fnoor.FundraisingTest.STRIPE.stripeIDEALsingleASNRefund(STRIPE.java:703)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -422,71 +174,15 @@ at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- dataCapture -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A2_DCF@710726a3]" name="tearDown" is-config="true" duration-ms="111" started-at="2020-08-17T14:01:09 EDT" finished-at="2020-08-17T14:01:09 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A2_DCF -->
-      <class name="com.fnoor.Standalone.PB_A13_ECS">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A13_ECS@4c762604]" name="setUp" is-config="true" duration-ms="1165" started-at="2020-08-17T14:02:07 EDT" finished-at="2020-08-17T14:02:08 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="event(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A13_ECS@4c762604]" name="event" duration-ms="5410" started-at="2020-08-17T14:02:08 EDT" finished-at="2020-08-17T14:02:14 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[event]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- event -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A13_ECS@4c762604]" name="tearDown" is-config="true" duration-ms="84" started-at="2020-08-17T14:02:14 EDT" finished-at="2020-08-17T14:02:14 EDT">
+        </test-method> <!-- stripeIDEALsingleASNRefund -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="tearDown" is-config="true" duration-ms="177" started-at="2020-08-21T11:02:18 EDT" finished-at="2020-08-21T11:02:18 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A13_ECS -->
-      <class name="com.fnoor.Standalone.PB_A11_TWT2">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A11_TWT2@77846d2c]" name="setUp" is-config="true" duration-ms="1773" started-at="2020-08-17T14:01:50 EDT" finished-at="2020-08-17T14:01:52 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="singleDB(java.lang.String)[pri:0, instance:com.fnoor.Standalone.PB_A11_TWT2@77846d2c]" name="singleDB" duration-ms="5897" started-at="2020-08-17T14:01:52 EDT" finished-at="2020-08-17T14:01:57 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[singleDB]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- singleDB -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.Standalone.PB_A11_TWT2@77846d2c]" name="tearDown" is-config="true" duration-ms="347" started-at="2020-08-17T14:01:57 EDT" finished-at="2020-08-17T14:01:58 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.Standalone.PB_A11_TWT2 -->
-    </test> <!-- Donations STANDALONE -->
-  </suite> <!-- Regression STANDALONE -->
+      </class> <!-- com.fnoor.FundraisingTest.STRIPE -->
+    </test> <!-- Donations STRIPE -->
+  </suite> <!-- Regression STRIPE -->
 </testng-results>

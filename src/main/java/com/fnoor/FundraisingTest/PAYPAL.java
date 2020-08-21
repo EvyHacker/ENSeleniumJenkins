@@ -210,7 +210,7 @@ public class PAYPAL {
         executor.executeScript("arguments[0].click();", paypalContinue);
 
         fields.waitForPageLoad();
-        Thread.sleep(4000);
+        Thread.sleep(6000);
         //		Assert that the payment was successful and the third page was reached
 
         Assert.assertTrue("Urls are not the same",
@@ -603,7 +603,7 @@ public class PAYPAL {
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();", paypalContinue);
         fields.waitForPageLoad();
-        Thread.sleep(4000);
+        Thread.sleep(6000);
 
 
 

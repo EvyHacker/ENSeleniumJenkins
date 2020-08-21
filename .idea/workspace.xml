@@ -3,19 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="e9ec9c8a-8c77-45cd-a867-fdcaf19d3872" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A13_ECS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A13_ECS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A15_PTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A15_PTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A16_ETM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A16_ETM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A17_MSP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A17_MSP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A2_DCF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A2_DCF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A5_ETT2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Standalone/PB_A5_ETT2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYPAL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYPAL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Regression PAYPAL/Donations PAYPAL.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Regression PAYPAL/testng-failed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A2_DCF.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/Standalone/PB_A2_DCF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Regression STANDALONE/Donations STANDALONE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Regression STANDALONE/testng-failed.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.FundraisingTest.PAYPAL.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Regression PAYPAL/Donations PAYPAL.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A10_TWT1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A11_TWT2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A12_TWT3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A13_ECS.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A15_PTM.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A16_ETM.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A17_MSP.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A1_PET.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A2_DCF.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A3_DCF2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A4_ETT1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A5_ETT2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A8_EMS.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.Standalone.PB_A9_ECF.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Regression STANDALONE/Donations STANDALONE.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
