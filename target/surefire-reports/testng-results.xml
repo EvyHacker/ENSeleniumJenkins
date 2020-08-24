@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="10" passed="9">
+<testng-results skipped="0" failed="1" ignored="0" total="8" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression STRIPE" duration-ms="132550" started-at="2020-08-21T11:00:05 EDT" finished-at="2020-08-21T11:02:18 EDT">
+  <suite name="Regression PAYPAL" duration-ms="306554" started-at="2020-08-24T11:17:41 EDT" finished-at="2020-08-24T11:22:48 EDT">
     <groups>
-      <group name="stripe">
-        <method signature="STRIPE.stripeBancontactSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeBancontactSingle" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeIDEALsingleABN(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeIDEALsingleABN" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeIDEALsingleASN(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeIDEALsingleASN" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeIDEALsingleASNRefund()[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeIDEALsingleASNRefund" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeRecurring" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeRecurring3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeRecurring3D" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeSEPArecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSEPArecurring" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeSEPAsingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSEPAsingle" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSingle" class="com.fnoor.FundraisingTest.STRIPE"/>
-        <method signature="STRIPE.stripeSingle3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSingle3D" class="com.fnoor.FundraisingTest.STRIPE"/>
-      </group> <!-- stripe -->
+      <group name="paypal">
+        <method signature="PAYPAL.payPalPaymentsProRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="payPalPaymentsProRecurring" class="com.fnoor.FundraisingTest.PAYPAL"/>
+        <method signature="PAYPAL.payViaPayPalRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="payViaPayPalRecurring" class="com.fnoor.FundraisingTest.PAYPAL"/>
+        <method signature="PAYPAL.payViaPayPalSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="payViaPayPalSingle" class="com.fnoor.FundraisingTest.PAYPAL"/>
+        <method signature="PAYPAL.paypalCardinalComRecurring3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="paypalCardinalComRecurring3D" class="com.fnoor.FundraisingTest.PAYPAL"/>
+        <method signature="PAYPAL.paypalCardinalComSingle3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="paypalCardinalComSingle3D" class="com.fnoor.FundraisingTest.PAYPAL"/>
+        <method signature="PAYPAL.paypalPaymentsProSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="paypalPaymentsProSingle" class="com.fnoor.FundraisingTest.PAYPAL"/>
+        <method signature="PAYPAL.paypalViaPayPalCardinalComSingle3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="paypalViaPayPalCardinalComSingle3D" class="com.fnoor.FundraisingTest.PAYPAL"/>
+        <method signature="PAYPAL.stripeViaPaypalSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="stripeViaPaypalSingle" class="com.fnoor.FundraisingTest.PAYPAL"/>
+      </group> <!-- paypal -->
     </groups>
-    <test name="Donations STRIPE" duration-ms="132550" started-at="2020-08-21T11:00:05 EDT" finished-at="2020-08-21T11:02:18 EDT">
-      <class name="com.fnoor.FundraisingTest.STRIPE">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="setUp" is-config="true" duration-ms="2289" started-at="2020-08-21T11:00:05 EDT" finished-at="2020-08-21T11:00:07 EDT">
+    <test name="Donations PAYPAL" duration-ms="306554" started-at="2020-08-24T11:17:41 EDT" finished-at="2020-08-24T11:22:48 EDT">
+      <class name="com.fnoor.FundraisingTest.PAYPAL">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="setUp" is-config="true" duration-ms="1878" started-at="2020-08-24T11:17:41 EDT" finished-at="2020-08-24T11:17:43 EDT">
           <params>
             <param index="0">
               <value>
@@ -30,116 +28,49 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="stripeSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSingle" duration-ms="10641" started-at="2020-08-21T11:00:07 EDT" finished-at="2020-08-21T11:00:18 EDT">
+        <test-method status="PASS" signature="payPalPaymentsProRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="payPalPaymentsProRecurring" duration-ms="12305" started-at="2020-08-24T11:17:43 EDT" finished-at="2020-08-24T11:17:56 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[stripeSingle]]>
+                <![CDATA[payPalPaymentsProRecurring]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- stripeSingle -->
-        <test-method status="PASS" signature="stripeRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeRecurring" duration-ms="10466" started-at="2020-08-21T11:00:18 EDT" finished-at="2020-08-21T11:00:29 EDT">
+        </test-method> <!-- payPalPaymentsProRecurring -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="tearDown" is-config="true" duration-ms="100" started-at="2020-08-24T11:17:56 EDT" finished-at="2020-08-24T11:17:56 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="setUp" is-config="true" duration-ms="1275" started-at="2020-08-24T11:17:56 EDT" finished-at="2020-08-24T11:17:57 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[stripeRecurring]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- stripeRecurring -->
-        <test-method status="PASS" signature="stripeBancontactSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeBancontactSingle" duration-ms="16491" started-at="2020-08-21T11:00:29 EDT" finished-at="2020-08-21T11:00:45 EDT">
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="payViaPayPalSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="payViaPayPalSingle" duration-ms="35679" started-at="2020-08-24T11:17:57 EDT" finished-at="2020-08-24T11:18:33 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[stripeBancontactSingle]]>
+                <![CDATA[payViaPayPalSingle]]>
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stripeBancontactSingle -->
-        <test-method status="PASS" signature="stripeSingle3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSingle3D" duration-ms="17574" started-at="2020-08-21T11:00:45 EDT" finished-at="2020-08-21T11:01:03 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[stripeSingle3D]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stripeSingle3D -->
-        <test-method status="PASS" signature="stripeRecurring3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeRecurring3D" duration-ms="11900" started-at="2020-08-21T11:01:03 EDT" finished-at="2020-08-21T11:01:15 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[stripeRecurring3D]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stripeRecurring3D -->
-        <test-method status="PASS" signature="stripeSEPAsingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSEPAsingle" duration-ms="7701" started-at="2020-08-21T11:01:15 EDT" finished-at="2020-08-21T11:01:22 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[stripeSEPAsingle]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stripeSEPAsingle -->
-        <test-method status="PASS" signature="stripeSEPArecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeSEPArecurring" duration-ms="7748" started-at="2020-08-21T11:01:22 EDT" finished-at="2020-08-21T11:01:30 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[stripeSEPArecurring]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stripeSEPArecurring -->
-        <test-method status="PASS" signature="stripeIDEALsingleABN(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeIDEALsingleABN" duration-ms="18502" started-at="2020-08-21T11:01:30 EDT" finished-at="2020-08-21T11:01:49 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[stripeIDEALsingleABN]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stripeIDEALsingleABN -->
-        <test-method status="PASS" signature="stripeIDEALsingleASN(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeIDEALsingleASN" duration-ms="17872" started-at="2020-08-21T11:01:49 EDT" finished-at="2020-08-21T11:02:06 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[stripeIDEALsingleASN]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stripeIDEALsingleASN -->
-        <test-method status="FAIL" signature="stripeIDEALsingleASNRefund()[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="stripeIDEALsingleASNRefund" duration-ms="11143" started-at="2020-08-21T11:02:06 EDT" finished-at="2020-08-21T11:02:18 EDT">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Original receipt not present]]>
+              <![CDATA[Urls are not the same]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Original receipt not present
+              <![CDATA[java.lang.AssertionError: Urls are not the same
 at org.junit.Assert.fail(Assert.java:88)
 at org.junit.Assert.assertTrue(Assert.java:41)
-at com.fnoor.PageFields.validateOriginalReceipt(PageFields.java:745)
-at com.fnoor.FundraisingTest.STRIPE.stripeIDEALsingleASNRefund(STRIPE.java:703)
+at com.fnoor.FundraisingTest.PAYPAL.payViaPayPalSingle(PAYPAL.java:216)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -177,12 +108,168 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- stripeIDEALsingleASNRefund -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.STRIPE@1786f9d5]" name="tearDown" is-config="true" duration-ms="177" started-at="2020-08-21T11:02:18 EDT" finished-at="2020-08-21T11:02:18 EDT">
+        </test-method> <!-- payViaPayPalSingle -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="tearDown" is-config="true" duration-ms="123" started-at="2020-08-24T11:18:33 EDT" finished-at="2020-08-24T11:18:33 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.fnoor.FundraisingTest.STRIPE -->
-    </test> <!-- Donations STRIPE -->
-  </suite> <!-- Regression STRIPE -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="setUp" is-config="true" duration-ms="1186" started-at="2020-08-24T11:18:33 EDT" finished-at="2020-08-24T11:18:34 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="payViaPayPalRecurring(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="payViaPayPalRecurring" duration-ms="28602" started-at="2020-08-24T11:18:34 EDT" finished-at="2020-08-24T11:19:03 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[payViaPayPalRecurring]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- payViaPayPalRecurring -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="tearDown" is-config="true" duration-ms="99" started-at="2020-08-24T11:19:03 EDT" finished-at="2020-08-24T11:19:03 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="setUp" is-config="true" duration-ms="1154" started-at="2020-08-24T11:19:03 EDT" finished-at="2020-08-24T11:19:04 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="paypalPaymentsProSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="paypalPaymentsProSingle" duration-ms="11459" started-at="2020-08-24T11:19:04 EDT" finished-at="2020-08-24T11:19:15 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[paypalPaymentsProSingle]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- paypalPaymentsProSingle -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="tearDown" is-config="true" duration-ms="94" started-at="2020-08-24T11:19:15 EDT" finished-at="2020-08-24T11:19:15 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="setUp" is-config="true" duration-ms="997" started-at="2020-08-24T11:19:15 EDT" finished-at="2020-08-24T11:19:16 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="paypalCardinalComSingle3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="paypalCardinalComSingle3D" duration-ms="74910" started-at="2020-08-24T11:19:16 EDT" finished-at="2020-08-24T11:20:31 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[paypalCardinalComSingle3D]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- paypalCardinalComSingle3D -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="tearDown" is-config="true" duration-ms="95" started-at="2020-08-24T11:20:31 EDT" finished-at="2020-08-24T11:20:31 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="setUp" is-config="true" duration-ms="1215" started-at="2020-08-24T11:20:31 EDT" finished-at="2020-08-24T11:20:33 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="paypalViaPayPalCardinalComSingle3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="paypalViaPayPalCardinalComSingle3D" duration-ms="29886" started-at="2020-08-24T11:20:33 EDT" finished-at="2020-08-24T11:21:03 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[paypalViaPayPalCardinalComSingle3D]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- paypalViaPayPalCardinalComSingle3D -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="tearDown" is-config="true" duration-ms="102" started-at="2020-08-24T11:21:03 EDT" finished-at="2020-08-24T11:21:03 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="setUp" is-config="true" duration-ms="1141" started-at="2020-08-24T11:21:03 EDT" finished-at="2020-08-24T11:21:04 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="paypalCardinalComRecurring3D(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="paypalCardinalComRecurring3D" duration-ms="75285" started-at="2020-08-24T11:21:04 EDT" finished-at="2020-08-24T11:22:19 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[paypalCardinalComRecurring3D]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- paypalCardinalComRecurring3D -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="tearDown" is-config="true" duration-ms="140" started-at="2020-08-24T11:22:19 EDT" finished-at="2020-08-24T11:22:19 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="setUp" is-config="true" duration-ms="1112" started-at="2020-08-24T11:22:19 EDT" finished-at="2020-08-24T11:22:20 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="stripeViaPaypalSingle(java.lang.String)[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="stripeViaPaypalSingle" duration-ms="27526" started-at="2020-08-24T11:22:20 EDT" finished-at="2020-08-24T11:22:48 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[stripeViaPaypalSingle]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stripeViaPaypalSingle -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.fnoor.FundraisingTest.PAYPAL@eb21112]" name="tearDown" is-config="true" duration-ms="140" started-at="2020-08-24T11:22:48 EDT" finished-at="2020-08-24T11:22:48 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.fnoor.FundraisingTest.PAYPAL -->
+    </test> <!-- Donations PAYPAL -->
+  </suite> <!-- Regression PAYPAL -->
 </testng-results>
