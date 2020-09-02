@@ -1,8 +1,0 @@
-#surefire_0
-#Wed Sep 02 10:16:11 EDT 2020
-browser=chrome
-user.dir=/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins
-suiteXmlFile=stripe.xml
-surefire=true
-localRepository=/Users/ievgeniiagaidarenko/.m2/repository
-basedir=/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins

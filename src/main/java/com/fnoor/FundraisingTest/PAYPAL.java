@@ -322,7 +322,7 @@ public class PAYPAL {
     @Test(groups = { "paypal" })
     public static void paypalCardinalComSingle3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
-        driver.get("https://politicalnetworks.com/page/12374/donate/1?mode=DEMO");
+        driver.get("https://politicalnetworks.com/page/13376/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
@@ -376,13 +376,13 @@ public class PAYPAL {
         fields.waitForPageLoad();
 
         String myurl = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12374/donate/3"));
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13376/donate/3"));
 
         fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Campaign ID not present", bodytext.contains("8066"));
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("9227"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
         Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
@@ -397,7 +397,7 @@ public class PAYPAL {
     @Test(groups = { "paypal" })
     public static void paypalViaPayPalCardinalComSingle3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
-        driver.navigate().to("https://politicalnetworks.com/page/12374/donate/1?mode=DEMO");
+        driver.navigate().to("https://politicalnetworks.com/page/13376/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
@@ -456,14 +456,14 @@ public class PAYPAL {
         fields.waitForPageLoadPayPal();
 
         //		Assert that the payment was successful and the third page was reached
-        Thread.sleep(4000);
-        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().equals("https://politicalnetworks.com/page/12374/donate/3"));
+        Thread.sleep(8000);
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().equals("https://politicalnetworks.com/page/13376/donate/3"));
 
         fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Campaign ID not present", bodytext.contains("8066"));
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("9227"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
         Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
@@ -478,7 +478,7 @@ public class PAYPAL {
     @Test(groups = { "paypal" })
     public static void paypalCardinalComRecurring3D(String testId) throws InterruptedException, IOException {
         page.ensAuthTest();
-        driver.get("https://politicalnetworks.com/page/12374/donate/1?mode=DEMO");
+        driver.get("https://politicalnetworks.com/page/13376/donate/1?mode=DEMO");
 
         fields.selectDonationAmt("15");
         fields.selectTitle("Ms");
@@ -533,13 +533,13 @@ public class PAYPAL {
         fields.waitForPageLoad();
 
         String myurl = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12374/donate/3"));
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13376/donate/3"));
 
         fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Campaign ID not present", bodytext.contains("8066"));
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("9227"));
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
         Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));

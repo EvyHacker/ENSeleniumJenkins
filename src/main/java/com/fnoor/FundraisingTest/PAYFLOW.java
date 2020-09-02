@@ -200,7 +200,7 @@ public class PAYFLOW {
         Assert.assertTrue("You didnt submit the payment",
                 driver.getCurrentUrl().contains("https://www.sandbox.paypal.com/"));
 
-            WebElement paypalContinue = (new WebDriverWait(driver, 600))
+            WebElement paypalContinue = (new WebDriverWait(driver, 1200))
                     .until(ExpectedConditions.presenceOfElementLocated
                             (By.id("payment-submit-btn")));
 
@@ -209,10 +209,9 @@ public class PAYFLOW {
             Thread.sleep(6000);
             fields.waitForPageLoadPayPal();
 
-
-
             //		Assert that the payment was successful and the third page was reached
 
+            fields.waitForURLToChange("https://politicalnetworks.com/page/10887/donate/3");
             Assert.assertTrue("Urls are not the same",
                     driver.getCurrentUrl().equals("https://politicalnetworks.com/page/10887/donate/3"));
 
