@@ -268,7 +268,7 @@ public class STRIPE {
 
         // Verify failed transaction
         fields.waitForPageLoad();
-        WebDriverWait wait = new WebDriverWait(driver, 15);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
                         (By.id("challengeFrame")));
@@ -291,6 +291,7 @@ public class STRIPE {
 
         // Verify success transaction
         fields.waitForPageLoad();
+        wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
                 (By.id("challengeFrame")));
@@ -364,7 +365,7 @@ public class STRIPE {
 
         // Verify success transaction
         fields.waitForPageLoad();
-        WebDriverWait wait = new WebDriverWait(driver, 15);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
                 (By.id("challengeFrame")));
@@ -429,6 +430,7 @@ public class STRIPE {
         driver.switchTo().defaultContent();
 
         fields.submit();
+        fields.waitForPageLoad();
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13322/donate/3"));
         fields.getSupporterTaxID();
@@ -485,6 +487,7 @@ public class STRIPE {
         fields.setRecurFreq("MONTHLY");
 
         fields.submit();
+        fields.waitForPageLoad();
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13328/donate/3"));
         fields.getSupporterTaxID();
@@ -539,6 +542,8 @@ public class STRIPE {
         driver.switchTo().defaultContent();
         fields.submit();
         fields.waitForPageLoad();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        fields.waitForURLToChange("https://stripe.com/sources/test_source?amount=1500&currency=eur");
 
         // Validate fail test payment
         Assert.assertTrue("Urls are not the same, payment didn't go through",
@@ -622,6 +627,7 @@ public class STRIPE {
         driver.switchTo().defaultContent();
         fields.submit();
         fields.waitForPageLoad();
+        fields.waitForURLToChange("https://stripe.com/sources/test_source?amount=1500&currency=eur");
 
         // Validate fail test payment
         Assert.assertTrue("Urls are not the same, payment didn't go through",
