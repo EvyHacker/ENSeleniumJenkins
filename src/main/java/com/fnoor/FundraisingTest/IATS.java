@@ -316,7 +316,7 @@ public class IATS {
        fields.expendTransaction();
        Thread.sleep(2000);
         Assert.assertTrue("Transaction error, amount is incorrect or missing ",
-                fields.getTransactionDetails().contains("Amount 15USD"));
+                fields.getTransactionDetails().contains("Amount 15 USD"));
         Assert.assertTrue("Transaction error, status is incorrect or not present",
                 fields.getTransactionDetails().contains("success"));
         Assert.assertTrue("Transaction error, gateway is incorrect or not present",
@@ -347,7 +347,7 @@ public class IATS {
         fields.expendTransaction();
         Thread.sleep(2000);
         Assert.assertTrue("Transaction error, amount is incorrect or missing ",
-                fields.getTransactionDetails().contains("Amount 15USD"));
+                fields.getTransactionDetails().contains("Amount 15 USD"));
         Assert.assertTrue("Transaction error, status is incorrect or not present",
                 fields.getTransactionDetails().contains("success"));
         Assert.assertTrue("Transaction error, gateway is incorrect or not present",
