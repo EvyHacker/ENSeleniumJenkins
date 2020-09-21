@@ -710,6 +710,7 @@ public class STRIPE {
         fields.validateReplacementReceipt("Replacement receipt");
         fields.validateChangeTaxStatus("Change tax status");
         fields.refundTransaction("Refund donation");
+        fields.sendRefundEmail();
         fields.refundTransactionAmount("10.00");
         fields.setRefundReceipt("Refund receipt");
         fields.setRefundTemplate("Default for Donation Refund (single and recurring)");

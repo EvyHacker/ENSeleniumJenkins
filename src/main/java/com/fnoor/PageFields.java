@@ -123,10 +123,11 @@ public class PageFields {
     @FindBy(css =".gadget__transactionHistory__transaction__field.gadget__transactionHistory__transaction__field__type")
     public List<WebElement> txn_hist_type_list;
     @FindBy(className = "gadget__singleDonations__donation__type") WebElement field_txn_type;
-    @FindBy(className = "gadget__singleDonations__donation__header") WebElement field_singleTxn_details;
+    @FindBy(css = ".gadget__receipt input[type='checkbox']") WebElement field_suppEmail;
     @FindBy(className = "gadget__singleDonations__transaction__actions") WebElement field_Receipts;
     @FindBy(css = ".button.optimalRefund.refund") WebElement field_RefundTxn;
     @FindBy(id = "refund__amount") WebElement field_RefundAmount;
+
     @FindBy(className = "gadget__receipt__field__input__receipt") WebElement field_SetRefundReceipt;
     @FindBy(className = "gadget__receipt__field__input__template") WebElement field_SetRefundTemplate;
     @FindBy(css = ".gadget__receipt__buttons__send") WebElement field_refundButton;
@@ -764,6 +765,10 @@ public class PageFields {
 
     public void refundTransactionAmount(String text){
         field_RefundAmount.sendKeys(text);
+    }
+
+    public void sendRefundEmail(){
+        field_suppEmail.click();
     }
 
     public void setRefundReceipt(String text){
