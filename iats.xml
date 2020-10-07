@@ -8,6 +8,12 @@
     <parameter name="IATSRecurring" value="IATSRecurring"/>
     <parameter name="IATSACHRecurring" value="IATSACHRecurring"/>
     <parameter name="IATSACHRecurPaymenttypelogic" value="IATSACHRecurPaymenttypelogic"/>
+    <parameter name="iatsSingleOtherAUD" value="iatsSingleOtherAUD"/>
+    <parameter name="iatsSingleOtherCAD" value="iatsSingleOtherCAD"/>
+    <parameter name="iatsSingleOtherUSD" value="iatsSingleOtherUSD"/>
+    <parameter name="iatsSingleCurrencyBasedUSD" value="iatsSingleCurrencyBasedUSD"/>
+    <parameter name="iatsSingleCurrencyBadGatewayCAD" value="iatsSingleCurrencyBadGatewayCAD"/>
+    <parameter name="IATSvalidateTransaction" value="IATSvalidateTransaction"/>
     <test name="Donations IATS"  preserve-order="true">
         <groups>
             <run>
@@ -21,6 +27,11 @@
                 <include name="IATSRecurring" />
                 <include name="IATSACHRecurring" />
                 <include name="IATSACHRecurPaymenttypelogic" />
+                <include name="iatsSingleOtherAUD" />
+                <include name="iatsSingleOtherCAD" />
+                <include name="iatsSingleOtherUSD" />
+                <include name="iatsSingleCurrencyBasedUSD" />
+                <include name="iatsSingleCurrencyBadGatewayCAD" />
                 <include name="IATSvalidateTransaction" />
             </methods>
             </class>

@@ -1352,6 +1352,11 @@ public class PageFields {
         field_OtherAmt1.sendKeys(text);
     }
 
+    public void selectOther1(String text) {
+        Select other1 = new Select(field_OtherAmt1);
+        other1.selectByValue(text);
+    }
+
     public void setOtherAmt2(String text) {
         field_OtherAmt2.sendKeys(text);
     }

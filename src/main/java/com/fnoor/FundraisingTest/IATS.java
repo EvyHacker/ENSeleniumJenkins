@@ -288,6 +288,254 @@ public class IATS {
 
     }
 
+    @Parameters({"iatsSingleOtherAUD"})
+    @Test(groups = { "iats" })
+    public static void iatsSingleOtherAUD(String testId) throws InterruptedException, IOException {
+
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/13534/donate/1");
+        fields.waitForPageLoad();
+        Thread.sleep(2000);
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("IATS");
+        fields.setLastname("SingleOtherAUD");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+        fields.selectCountry("US");
+
+        fields.selectOther1("EastCoast");
+        fields.setCCName("Unit Tester");
+        fields.setCCNUmber("4222222222222220");
+        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
+        fields.setCCV("123");
+
+        fields.submit();
+
+//		Assert that the payment was successful and the third page was reached
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13534/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("9398"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("AUD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST = "iatsSingleOtherAUD", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "iatsSingleOtherAUD", fields);
+
+    }
+
+    @Parameters({"iatsSingleOtherCAD"})
+    @Test(groups = { "iats" })
+    public static void iatsSingleOtherCAD(String testId) throws InterruptedException, IOException {
+
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/13534/donate/1");
+        fields.waitForPageLoad();
+        Thread.sleep(2000);
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("IATS");
+        fields.setLastname("SingleOtherCAD");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+        fields.selectCountry("US");
+
+        fields.selectOther1("WestCoast");
+        fields.setCCName("Unit Tester");
+        fields.setCCNUmber("4222222222222220");
+        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
+        fields.setCCV("123");
+
+        fields.submit();
+
+//		Assert that the payment was successful and the third page was reached
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13534/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("9398"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("CAD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST = "iatsSingleOtherCAD", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "iatsSingleOtherCAD", fields);
+
+    }
+
+    @Parameters({"iatsSingleOtherUSD"})
+    @Test(groups = { "iats" })
+    public static void iatsSingleOtherUSD(String testId) throws InterruptedException, IOException {
+
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/13534/donate/1");
+        fields.waitForPageLoad();
+        Thread.sleep(2000);
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("IATS");
+        fields.setLastname("SingleOtherUSD");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+        fields.selectCountry("US");
+
+        fields.selectOther1("");
+        fields.setCCName("Unit Tester");
+        fields.setCCNUmber("4222222222222220");
+        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
+        fields.setCCV("123");
+
+        fields.submit();
+
+//		Assert that the payment was successful and the third page was reached
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13534/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("9398"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("VISA"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST = "iatsSingleOtherUSD", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "iatsSingleOtherUSD", fields);
+
+    }
+
+    @Parameters({"iatsSingleCurrencyBasedUSD"})
+    @Test(groups = { "iats" })
+    public static void iatsSingleCurrencyBasedUSD(String testId) throws InterruptedException, IOException {
+
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/13535/donate/1");
+        fields.waitForPageLoad();
+        Thread.sleep(2000);
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("IATS");
+        fields.setLastname("SingleCurrencyBasedUSD");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+        fields.selectCountry("US");
+        fields.setCCName("Unit Tester");
+        fields.setCCNUmber("4222222222222220");
+        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
+        fields.setCCV("123");
+
+        fields.submit();
+
+//		Assert that the payment was successful and the third page was reached
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13535/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("9399"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("VISA"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST = "iatsSingleCurrencyBasedUSD", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "iatsSingleCurrencyBasedUSD", fields);
+
+    }
+
+
+    @Parameters({"iatsSingleCurrencyBadGatewayCAD"})
+    @Test(groups = { "iats" })
+    public static void iatsSingleCurrencyBadGatewayCAD(String testId) throws InterruptedException, IOException {
+
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/13535/donate/1");
+        fields.waitForPageLoad();
+        Thread.sleep(2000);
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("IATS");
+        fields.setLastname("iatsSingleCurrencyBadGatewayCAD");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+        fields.selectCountry("US");
+        fields.selectPayCurrency("CAD");
+        fields.setCCName("Unit Tester");
+        fields.setCCNUmber("4222222222222220");
+        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
+        fields.setCCV("123");
+
+        fields.submit();
+
+//		Assert that the payment was successful and the third page was reached
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13535/donate/2?val"));
+
+        String alert = driver.findElement(By.xpath("//li[@class='en__error']")).getText();
+        Assert.assertTrue("There is no alerts on the page",
+                alert.contains("This transaction has failed as there has been an error in processing your payment."));
+
+    }
+
     @Test(groups = { "iats" })
     public static void IATSvalidateTransaction() throws InterruptedException{
 
