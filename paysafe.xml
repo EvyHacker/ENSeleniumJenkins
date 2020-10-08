@@ -11,8 +11,10 @@
     <parameter name="paysafeRecurring" value="paysafeRecurring"/>
     <parameter name="paysafe3DSingle" value="paysafe3DSingle"/>
     <parameter name="paysafe3DRecurring" value="paysafe3DRecurring"/>
-    <parameter name="paysafePrimaryPaypalCurrencyCAD" value="paysafePrimaryPaypalCurrencyCAD"/>
     <parameter name="paysafe3DRecurring" value="paysafe3DRecurring"/>
+    <parameter name="paysafePrimaryPaypalCurrencyCAD" value="paysafePrimaryPaypalCurrencyCAD"/>
+    <parameter name="paysafePrimaryPaypalCurrencyUSD" value="paysafePrimaryPaypalCurrencyUSD"/>
+    <parameter name="paysafePrimaryPaypalPaymentCurrencyUSD" value="paysafePrimaryPaypalPaymentCurrencyUSD"/>
     <test name="Donations PAYSAFE"  preserve-order="true">
         <groups>
             <run>
@@ -22,12 +24,14 @@
         <classes>
             <class name="com.fnoor.FundraisingTest.PAYSAFE" >
                 <methods>
-<!--                    <include name="paysafeSingle" />-->
-<!--                    <include name="paysafeRecurring" />-->
-<!--                    <include name="paysafe3DSingle" />-->
-<!--                    <include name="paysafe3DRecurring" />-->
+                    <include name="paysafeSingle" />
+                    <include name="paysafeRecurring" />
+                    <include name="paysafe3DSingle" />
+                    <include name="paysafe3DRecurring" />
                     <include name="paysafePrimaryPaypalCurrencyCAD" />
-<!--                    <include name="paysafe3DRecurring" />-->
+                    <include name="paysafePrimaryPaypalCurrencyUSD" />
+                    <include name="paysafePrimaryPaypalPaymentCurrencyUSD" />
+                    <include name="paysafe3DRecurring" />
                 </methods>
             </class>
         </classes>

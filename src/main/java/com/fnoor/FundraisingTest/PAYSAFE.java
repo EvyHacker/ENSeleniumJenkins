@@ -373,4 +373,128 @@ public class PAYSAFE {
         page.getSupporterById(FUNDRAISING_TEST="paysafePrimaryPaypalCurrencyCAD", fields);
     }
 
+    @Parameters({"paysafePrimaryPaypalCurrencyUSD"})
+    @Test(groups = { "paysafe" })
+    public static void paysafePrimaryPaypalCurrencyUSD(String testId) throws InterruptedException, IOException {
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/13536/donate/1?mode=DEMO");
+
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("Paysafe");
+        fields.setLastname("PaypalCurrencyUSD");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+        fields.selectCountry("US");
+
+        fields.selectPaymentType("Visa");
+        fields.selectPayCurrency("USD");
+        fields.setCCName("Unit Tester");
+        fields.setCCNUmber("4530910000012345");
+        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCV("123");
+
+        fields.submit();
+
+        //		Assert that the payment was successful and the third page was reached
+        String myurl = driver.getCurrentUrl();
+        fields.waitForPageLoad();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13536/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("9400"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Optimal Payments Gateway"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VI"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST="paysafePrimaryPaypalCurrencyUSD", fields);
+        page.getSupporterById(FUNDRAISING_TEST="paysafePrimaryPaypalCurrencyUSD", fields);
+    }
+
+    @Parameters({"paysafePrimaryPaypalPaymentCurrencyUSD"})
+    @Test(groups = { "paysafe" })
+    public static void paysafePrimaryPaypalPaymentCurrencyUSD(String testId) throws InterruptedException, IOException {
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/13536/donate/1?mode=DEMO");
+
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("Paysafe");
+        fields.setLastname("PaypalPaymentCurrencyUSD");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+        fields.selectCountry("US");
+
+        fields.selectPaymentType("Paypal");
+        fields.selectPayCurrency("USD");
+
+        fields.submit();
+
+        fields.waitForPageLoadPayPal();
+        fields.waitForURLToChange("https://www.sandbox.paypal.com/");
+        //		Assert that the payment is redirected to Paypal page
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Didn't redirect to Paypal", myurl.contains("https://www.sandbox.paypal.com/"));
+//        fields.waitForPageLoad();
+//        fields.logPaypal();
+        fields.waitForPageLoad();
+        fields.setPaypalEmail();
+        fields.nextPayapl();
+        fields.waitForPageLoad();
+        fields.setPaypalPassword();
+        fields.submitPaypal();
+        fields.waitForPageLoadPayPal();
+        Thread.sleep(4000);
+
+        WebElement paypalContinue = (new WebDriverWait(driver, 400))
+                .until(ExpectedConditions.presenceOfElementLocated
+                        (By.id("payment-submit-btn")));
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", paypalContinue);
+
+        fields.waitForPageLoad();
+        Thread.sleep(8000);
+
+        //		Assert that the payment was successful and the third page was reached
+
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().equals("https://politicalnetworks.com/page/13536/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("9400"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Paypal"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST="paysafePrimaryPaypalPaymentCurrencyUSD", fields);
+        page.getSupporterById(FUNDRAISING_TEST="paysafePrimaryPaypalPaymentCurrencyUSD", fields);
+    }
+
 }
