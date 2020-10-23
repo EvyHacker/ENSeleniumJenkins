@@ -36,9 +36,11 @@
                                     <groups>Donations STRIPE</groups>
                                     <groups>Donations PAYSAFE</groups>
                                     <groups>Donations PAYPAL</groups>
+                                    <groups>Donations GOOGLE</groups>
                                     <groups>Donations REDIRECT</groups>
                                     <groups>Donations STANDALONE</groups>
                                     <groups>ETT</groups>
+                                    <groups>EVENTS</groups>
                                 </configuration>
             </plugin>
             <plugin>

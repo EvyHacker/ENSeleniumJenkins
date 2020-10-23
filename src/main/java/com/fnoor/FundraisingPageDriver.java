@@ -11,6 +11,7 @@ import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
@@ -32,7 +33,7 @@ public class FundraisingPageDriver {
         try {
 
             // Test Account 09
-            String body = "dae1e490-ddce-4be9-9225-8910b090d674";
+            String body = "6c9a345f-f836-4981-b6c0-08ffed29d491";
 
             InputStream is = new ByteArrayInputStream(body.getBytes());
             InputStreamEntity inputStreamEntity;
@@ -66,6 +67,39 @@ public class FundraisingPageDriver {
         try {
 
             String body = "0490bc76-8649-4494-babf-e3f285880a7e";
+            InputStream is = new ByteArrayInputStream(body.getBytes());
+            InputStreamEntity inputStreamEntity;
+            inputStreamEntity = new InputStreamEntity(is, body.getBytes().length);
+            post.setEntity(inputStreamEntity);
+
+            HttpResponse response = HttpClientBuilder.create().build().execute(post);
+            int status = response.getStatusLine().getStatusCode();
+            if (status != HTTP_STATUS_OK) {
+                throw new IOException("Unable to authenticate. Received invalid http status=" + status);
+            }
+
+            String jsonResponse = IOUtils.toString(response.getEntity().getContent(), "UTF-8");
+            System.out.println("RESPONSE as String: " + jsonResponse);
+
+            // use jackson library to pull the string into json objects
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode node = mapper.readTree(jsonResponse);
+            ens_auth_token = node.get("ens-auth-token").asText();
+            System.out.println("ens-auth-token: " + ens_auth_token);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    //Test_acc10
+    @BeforeClass(alwaysRun = true)
+    public static void ensAuthTestEvent() {
+        HttpPost post = new HttpPost(SERVICE_URL + "/authenticate");
+        post.setHeader("Content-Type", "application/json");
+        try {
+
+            String body = "53c64d56-aacf-4661-9fe1-5c774c343579";
             InputStream is = new ByteArrayInputStream(body.getBytes());
             InputStreamEntity inputStreamEntity;
             inputStreamEntity = new InputStreamEntity(is, body.getBytes().length);
@@ -195,7 +229,7 @@ public class FundraisingPageDriver {
     @Parameters({"browser"})
     @BeforeClass
     public static WebDriver createInstance(String browser) {
-        // WebDriver driver = null;
+         WebDriver driver = null;
 
         if (browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "webdrivers/linux/chromedriver");

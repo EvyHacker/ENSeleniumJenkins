@@ -1,4 +1,5 @@
 com/fnoor/FundraisingTest/STRIPE.class
+com/fnoor/Events/EV_04.class
 com/fnoor/Standalone/PB_A16_ETM.class
 com/fnoor/FundraisingTest/RSM.class
 com/fnoor/TestNGCustomReportListener$TestMethodSorter.class
@@ -15,6 +16,7 @@ com/fnoor/PageFields$1.class
 com/fnoor/ValidationTests/StripeVal.class
 com/fnoor/FundraisingTest/Testing.class
 com/fnoor/Redirects/PB_B6_DON2TWEET.class
+com/fnoor/Events/EV_03.class
 com/fnoor/Standalone/PB_A13_ECS.class
 com/fnoor/Standalone/PB_A1_PET.class
 com/fnoor/LocalDriverManager.class
@@ -36,9 +38,11 @@ com/fnoor/Standalone/PB_A12_TWT3.class
 com/fnoor/FundraisingTest/ACI.class
 com/fnoor/FundraisingTest/WORLDPAY.class
 com/fnoor/ETT/MultiDatabase.class
+com/fnoor/FundraisingTest/GooglePay.class
 com/fnoor/WebDriverListener.class
 com/fnoor/Standalone/PB_A4_ETT1.class
 com/fnoor/FundraisingTest/PAYFLOW.class
+com/fnoor/Events/EV_02.class
 com/fnoor/FundraisingTest/ACIMultiUsers.class
 com/fnoor/FundraisingTest/TestNGIats.class
 com/fnoor/Redirects/PB_B5_DON2PET.class
@@ -52,4 +56,5 @@ com/fnoor/Standalone/PB_A3_DCF2.class
 com/fnoor/ValidationTests/MonerisVal.class
 com/fnoor/FundraisingTest/IATS.class
 com/fnoor/FundraisingTest/MONERIS.class
+com/fnoor/Events/EV_01.class
 com/fnoor/Standalone/PB_A17_MSP.class

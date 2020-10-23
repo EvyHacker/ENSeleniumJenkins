@@ -31,7 +31,6 @@
                     <include name="paysafePrimaryPaypalCurrencyCAD" />
                     <include name="paysafePrimaryPaypalCurrencyUSD" />
                     <include name="paysafePrimaryPaypalPaymentCurrencyUSD" />
-                    <include name="paysafe3DRecurring" />
                 </methods>
             </class>
         </classes>

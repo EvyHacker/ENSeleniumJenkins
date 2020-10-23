@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class PageFields {
 
@@ -40,6 +41,7 @@ public class PageFields {
     public static final String MONERISDASHBOARD = "https://esqa.moneris.com/mpg/index.php";
     public static final String MONERISTRANSACTIONS = "https://esqa.moneris.com/mpg/reports/transaction/index.php";
     public static final String PAYSAFEDASHBOARD = "https://login.test.netbanx.com/office/public/preLogin.htm";
+    public static final String GOOGLE = "https://accounts.google.com";
 
     public static final String USERNAME = "test_account_09@engagingnetworks.net";
     public static final String PASSWORD = "test_account_09";
@@ -59,6 +61,9 @@ public class PageFields {
 
     public static final String PAYSAFEUSERNAME = "engagingnetrep";
     public static final String PAYSAFEPASSWORD = "Engage18!";
+
+    public static final String GOOGLEUSERNAME = "enjenkinstest@gmail.com";
+    public static final String GOOGLEPASSWORD = "PasswordJenkins123";
 
     //  Personal Details Fields //
     @FindBy(id = "en__field_supporter_firstName") WebElement field_Firstname;
@@ -159,6 +164,11 @@ public class PageFields {
 
     // 	EVENT GADGET FIELDS
     @FindBy(css = ".gadget__events__list .gadget__events__name") List<WebElement> event_gadget_list;
+    @FindBy(css = ".en__ticket__plus") WebElement event_add_ticket;
+    @FindBy(name = "event.additionalAmount") WebElement event_aditional_donation;
+    @FindBy(css = ".en__ticketSummary__checkout") WebElement event_checkout;
+    @FindBy(css = ".en__orderSummary") WebElement event_order_summary;
+    @FindBy(name = "event.discount") WebElement event_discount_code;
 
     //	ECOMMERCE GADGET FIELDS
     @FindBy(css = ".enList__column.enList__column--name") List<WebElement> ecommerce_gadget_list;
@@ -177,6 +187,12 @@ public class PageFields {
     @FindBy(id = "enLoginUsername") WebElement field_Username;
     @FindBy(id = "enLoginPassword") WebElement field_Password;
     @FindBy(xpath = "//button[@class='button button--login']") WebElement field_Submit1;
+
+    // Google Login Fields //
+    @FindBy(xpath = "//*[@id=\"identifierId\"]") WebElement field_googleUsername;
+    @FindBy(xpath = "//input[@type='password']") WebElement field_googlePassword;
+    @FindBy(id = "identifierNext") WebElement field_googleNext;
+    @FindBy(id = "passwordNext") WebElement field_googleSubmit;
 
     //3D login
     @FindBy(id = "test-source-authorize-3ds") WebElement stripe3D_Complete;
@@ -353,6 +369,27 @@ public class PageFields {
     @FindBy(name = "mem.member.0.firstName") WebElement field_MemberFN;
     @FindBy(name = "mem.member.0.lastName") WebElement field_MemberLN;
 
+    /////////////////////////    EVENT FORMS AND FIELDS     /////////////////////////////////
+
+    public void addSingleTicket(){
+        event_add_ticket.click();
+    }
+
+    public void addAdditionalDonation(String text){
+        event_aditional_donation.sendKeys(text);
+    }
+
+    public void eventCheckout(){
+        event_checkout.click();
+    }
+
+    public void verifyEventSummary(String text){
+        Assert.assertTrue("Title is incorrect/not present", event_order_summary.getText().contains(text));
+    }
+
+    public  void addDiscountCode(String text){
+        event_discount_code.sendKeys(text);
+    }
     /////////////////////////    ETT FORMS AND FIELDS     /////////////////////////////////
 
 
@@ -685,6 +722,21 @@ public class PageFields {
         }
         return transactionID;
     }
+
+    /////////////////////////   GOOGLE LOGGINS     /////////////////////////////////
+
+
+    public void googleLogin() throws InterruptedException {
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        field_googleUsername.sendKeys(GOOGLEUSERNAME);
+        field_googleNext.click();
+        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        field_googlePassword.sendKeys(GOOGLEPASSWORD);
+        field_googleSubmit.click();
+    }
+
 
     /////////////////////////    SUPPORTER DETAILS     /////////////////////////////////
 
@@ -1627,10 +1679,6 @@ public class PageFields {
 //		return (Integer.parseInt(totalamt) Integer.parseInt(tktamt)+Integer.parseInt(adddonation));
         System.out.println(Integer.valueOf(totalamt));
         return (Integer.valueOf(totalamt).equals(Integer.valueOf(tktamt)+Integer.valueOf(adddonation)));
-    }
-
-    public void eventCheckout() {
-        field_event_checkout.click();
     }
 
     ///////////////////	     ETT  &  TWT  METHODS      //////////////////////

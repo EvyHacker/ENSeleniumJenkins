@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression IATS">
+    <parameter name="browser" value="${browser}" />
+    <parameter name="environment" value="${environment}"/>
+    <parameter name="googlePay" value="googlePay"/>
+
+    <test name="Donations GOOGLE"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="google"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fnoor.FundraisingTest.GooglePay" >
+                <methods>
+                    <include name="googlePay" />
+<!--                    <include name="IATSRecurring" />-->
+<!--                    <include name="IATSACHRecurring" />-->
+<!--                    <include name="IATSACHRecurPaymenttypelogic" />-->
+<!--                    <include name="iatsSingleOtherAUD" />-->
+<!--                    <include name="iatsSingleOtherCAD" />-->
+<!--                    <include name="iatsSingleOtherUSD" />-->
+<!--                    <include name="iatsSingleCurrencyBasedUSD" />-->
+<!--                    <include name="iatsSingleCurrencyBadGatewayCAD" />-->
+<!--                    <include name="IATSvalidateTransaction" />-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

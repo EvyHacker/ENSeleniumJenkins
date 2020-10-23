@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression EVENTS">
+    <parameter name="browser" value="${browser}" />
+    <parameter name="environment" value="${environment}"/>
+<!--    <parameter name="singleTicketAddDonationIATS" value="singleTicketAddDonationIATS"/>-->
+<!--    <parameter name="singleFreeTicket" value="singleFreeTicket"/>-->
+<!--    <parameter name="singleTicketOnSale" value="singleTicketOnSale"/>-->
+    <parameter name="singleTicketWithDiscount" value="singleTicketWithDiscount"/>
+<!--    <parameter name="paypalCardinalComSingle3D" value="paypalCardinalComSingle3D"/>-->
+<!--    <parameter name="paypalViaPayPalCardinalComSingle3D" value="paypalViaPayPalCardinalComSingle3D"/>-->
+<!--    <parameter name="paypalCardinalComRecurring3D" value="paypalCardinalComRecurring3D"/>-->
+<!--    <parameter name="stripeViaPaypalSingle" value="stripeViaPaypalSingle"/>-->
+    <test name="EVENTS"  preserve-order="true">
+        <groups>
+            <run>
+                <include name="events"/>
+            </run>
+        </groups>
+        <classes>
+<!--            <class name="com.fnoor.Events.EV_01" >-->
+<!--                <methods>-->
+<!--                    <include name="singleTicketAddDonationIATS" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="com.fnoor.Events.EV_02" >-->
+<!--                <methods>-->
+<!--                    <include name="singleFreeTicket" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="com.fnoor.Events.EV_03" >-->
+<!--                <methods>-->
+<!--                    <include name="singleTicketOnSale" />-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="com.fnoor.Events.EV_04" >
+                <methods>
+                    <include name="singleTicketWithDiscount" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

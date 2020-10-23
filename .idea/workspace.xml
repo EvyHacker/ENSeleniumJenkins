@@ -5,13 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9ec9c8a-8c77-45cd-a867-fdcaf19d3872" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Events/EV_01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Events/EV_02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Events/EV_03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Events/EV_04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/Events/EV_05.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/GooglePay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paysafe.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paysafe.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYSAFE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingTest/PAYSAFE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/FundraisingPageDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fnoor/PageFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fnoor/PageFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingPageDriver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYSAFE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/FundraisingTest/PAYSAFE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Regression PAYSAFE/Donations PAYSAFE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Regression PAYSAFE/Donations PAYSAFE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fnoor/PageFields.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Regression PAYSAFE/Donations PAYSAFE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.FundraisingTest.PAYSAFE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.FundraisingTest.PAYSAFE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.fnoor.FundraisingTest.PAYSAFE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Regression PAYSAFE/Donations PAYSAFE.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -243,6 +260,10 @@
       <screen x="0" y="23" width="1680" height="977" />
     </state>
     <state x="349" y="150" key="SettingsEditor/0.23.1680.977/1680.23.2560.1057/-1228.23.1228.898@0.23.1680.977" timestamp="1595272566823" />
+    <state x="459" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602681054346">
+      <screen x="0" y="23" width="1680" height="977" />
+    </state>
+    <state x="459" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1680.977/1680.23.2560.1057/-3148.68.1228.898/-1920.68.1920.1057@0.23.1680.977" timestamp="1602681054346" />
     <state x="547" y="125" key="refactoring.ChangeSignatureDialog" timestamp="1596581164739">
       <screen x="0" y="23" width="1680" height="977" />
     </state>
