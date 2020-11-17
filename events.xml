@@ -4,11 +4,11 @@
 <suite name="Regression EVENTS">
     <parameter name="browser" value="${browser}" />
     <parameter name="environment" value="${environment}"/>
-<!--    <parameter name="singleTicketAddDonationIATS" value="singleTicketAddDonationIATS"/>-->
-<!--    <parameter name="singleFreeTicket" value="singleFreeTicket"/>-->
-<!--    <parameter name="singleTicketOnSale" value="singleTicketOnSale"/>-->
+    <parameter name="singleTicketAddDonationIATS" value="singleTicketAddDonationIATS"/>
+    <parameter name="singleFreeTicket" value="singleFreeTicket"/>
+    <parameter name="singleTicketOnSale" value="singleTicketOnSale"/>
     <parameter name="singleTicketWithDiscount" value="singleTicketWithDiscount"/>
-<!--    <parameter name="paypalCardinalComSingle3D" value="paypalCardinalComSingle3D"/>-->
+    <parameter name="MultiTicketAddDonationIATS" value="MultiTicketAddDonationIATS"/>
 <!--    <parameter name="paypalViaPayPalCardinalComSingle3D" value="paypalViaPayPalCardinalComSingle3D"/>-->
 <!--    <parameter name="paypalCardinalComRecurring3D" value="paypalCardinalComRecurring3D"/>-->
 <!--    <parameter name="stripeViaPaypalSingle" value="stripeViaPaypalSingle"/>-->
@@ -19,24 +19,29 @@
             </run>
         </groups>
         <classes>
-<!--            <class name="com.fnoor.Events.EV_01" >-->
-<!--                <methods>-->
-<!--                    <include name="singleTicketAddDonationIATS" />-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="com.fnoor.Events.EV_02" >-->
-<!--                <methods>-->
-<!--                    <include name="singleFreeTicket" />-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="com.fnoor.Events.EV_03" >-->
-<!--                <methods>-->
-<!--                    <include name="singleTicketOnSale" />-->
-<!--                </methods>-->
-<!--            </class>-->
+            <class name="com.fnoor.Events.EV_01" >
+                <methods>
+                    <include name="singleTicketAddDonationIATS" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Events.EV_02" >
+                <methods>
+                    <include name="singleFreeTicket" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Events.EV_03" >
+                <methods>
+                    <include name="singleTicketOnSale" />
+                </methods>
+            </class>
             <class name="com.fnoor.Events.EV_04" >
                 <methods>
                     <include name="singleTicketWithDiscount" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Events.EV_05" >
+                <methods>
+                    <include name="MultiTicketAddDonationIATS" />
                 </methods>
             </class>
         </classes>

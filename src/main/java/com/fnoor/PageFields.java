@@ -375,6 +375,14 @@ public class PageFields {
         event_add_ticket.click();
     }
 
+    public void addMultipleTickets() {
+        List<WebElement> tickets = driver.findElements(By.cssSelector(".en__ticket__plus"));
+        for (int i = 0; i < 1; i++) {
+            WebElement multiClicks = tickets.get(i);
+            multiClicks.click();
+        }
+    }
+
     public void addAdditionalDonation(String text){
         event_aditional_donation.sendKeys(text);
     }

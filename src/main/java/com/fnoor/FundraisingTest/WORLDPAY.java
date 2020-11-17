@@ -186,7 +186,7 @@ public class WORLDPAY {
         fields.selectPayCurrency("USD");
         fields.setCCName("3D");
         fields.setCCNUmber("5454545454545454");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2021"});
         fields.setCCV("123");
 
         fields.submit();
@@ -248,7 +248,7 @@ public class WORLDPAY {
 
         fields.setCCName("3D");
         fields.setCCNUmber("4222222222222220");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2021"});
         fields.setCCV("123");
 
         fields.submit();

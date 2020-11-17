@@ -65,7 +65,7 @@ public class VANTIV {
         fields.selectPayCurrency("USD");
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4470330769941000");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2022"});
         fields.setCCV("123");
 
         fields.submit();
@@ -116,7 +116,7 @@ public class VANTIV {
         fields.setRecurStartDate(dtf.format(startDate).toString());
         LocalDate endDate = LocalDate.now().plusYears(1);
         fields.setRecurEndDate(dtf.format(endDate).toString());
-        fields.setRecurFreq("MONTHLY");
+        fields.setRecurFreq("DAILY");
         fields.setRecurCount("5");
         fields.setRecurPeriod("6");
 
@@ -124,7 +124,7 @@ public class VANTIV {
         fields.selectPayCurrency("USD");
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4470330769941000");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2022"});
         fields.setCCV("123");
 
         fields.submit();

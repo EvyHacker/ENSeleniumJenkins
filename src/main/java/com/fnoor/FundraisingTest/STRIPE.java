@@ -18,6 +18,7 @@ import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Currency;
+import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
@@ -35,8 +36,7 @@ public class STRIPE {
     public void setUp(String browser) throws MalformedURLException {
         driver = page.createInstance(browser);
         fields = PageFactory.initElements(driver, PageFields.class);
-        driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
+        //driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
@@ -81,7 +81,7 @@ public class STRIPE {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4242424242424242");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2021"});
         fields.setCCV("123");
 
         fields.submit();
@@ -138,7 +138,7 @@ public class STRIPE {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4242424242424242");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2021"});
         fields.setCCV("123");
         fields.submit();
 
@@ -196,7 +196,7 @@ public class STRIPE {
         fields.selectPaymentType("bancontact");
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4242424242424242");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2021"});
         fields.setCCV("123");
 
         fields.submit();
@@ -261,7 +261,7 @@ public class STRIPE {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4000002500003155");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2021"});
         fields.setCCV("111");
 
         fields.submit();
@@ -270,10 +270,19 @@ public class STRIPE {
         fields.waitForPageLoad();
         WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
-                        (By.id("challengeFrame")));
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
-                (By.name("acsFrame")));
+        driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
+        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
+        for (WebElement iframeT : iframes) {
+            System.out.println("Frame " + iframeT);
+            System.out.println("Frame1 " + iframeT.getAttribute("id"));
+            System.out.println("Frame2 " + iframeT.getAttribute("outerHTML"));
+            System.out.println("Frame3 " + iframeT.getAttribute("name"));
+        }
+        driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
+//        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.name("__stripeJSChallengeFrame")));
+        //driver.switchTo().frame(driver.findElement(By.name("__stripeJSChallengeFrame")));
+       // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.name("acsFrame")));
+//        driver.switchTo().frame(driver.findElement(By.name("acsFrame")));
 
         WebElement myFailTransaction = (new WebDriverWait(driver, 30))
                 .until(ExpectedConditions.presenceOfElementLocated
@@ -293,10 +302,10 @@ public class STRIPE {
         fields.waitForPageLoad();
         wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
-                (By.id("challengeFrame")));
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
-                (By.name("acsFrame")));
+        driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
+        driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
+//        driver.switchTo().frame(driver.findElement(By.id("challengeFrame")));
+//        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.name("acsFrame")));
 
         WebElement myCompleteTransaction = (new WebDriverWait(driver, 30))
                 .until(ExpectedConditions.presenceOfElementLocated
@@ -354,11 +363,11 @@ public class STRIPE {
         LocalDate endDate = LocalDate.now().plusYears(1);
         fields.setRecurStartDate(dtf.format(startDate).toString());
         fields.setRecurEndDate(dtf.format(endDate).toString());
-        fields.setRecurFreq("MONTHLY");
+        fields.setRecurFreq("DAILY");
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4000002500003155");
-        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
+        fields.setCCExpiry(new CharSequence[]{"12", "2021"});
         fields.setCCV("123");
 
         fields.submit();
@@ -367,10 +376,11 @@ public class STRIPE {
         fields.waitForPageLoad();
         WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
-                (By.id("challengeFrame")));
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt
-                (By.name("acsFrame")));
+        driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
+        //driver.switchTo().frame(driver.findElement(By.name("__stripeJSChallengeFrame")));
+        driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
+       // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.name("acsFrame")));
+        //driver.switchTo().frame(driver.findElement(By.name("acsFrame")));
 
         WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated

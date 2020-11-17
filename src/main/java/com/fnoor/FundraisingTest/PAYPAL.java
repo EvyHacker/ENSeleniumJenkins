@@ -125,7 +125,7 @@ public class PAYPAL {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4032034810451941");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2021"});
         fields.setCCV("123");
 
         fields.submit();
@@ -351,7 +351,7 @@ public class PAYPAL {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4000000000000002");
-        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
+        fields.setCCExpiry(new CharSequence[]{"12", "2021"});
         fields.setCCV("123");
         fields.clickRecurringSinglePaymentchkbox();
 
@@ -507,7 +507,7 @@ public class PAYPAL {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4000000000000002");
-        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
+        fields.setCCExpiry(new CharSequence[]{"12", "2021"});
         fields.setCCV("123");
 
         fields.setRecurFreq("MONTHLY");

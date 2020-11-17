@@ -24,7 +24,6 @@
                     <include name="worldpayCCRecurring" />
                     <include name="worldpay3DSecureTest" />
                     <include name="worldpay3DRecurring" />
-                    <include name="IATSvalidateTransaction" />
                 </methods>
             </class>
         </classes>
