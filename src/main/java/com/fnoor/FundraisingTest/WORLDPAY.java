@@ -126,7 +126,7 @@ public class WORLDPAY {
         fields.selectPayCurrency("USD");
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4444333322221111");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2022"});
         fields.setCCV("123");
 
         fields.setOtherAmt1("other amount test1");
