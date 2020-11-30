@@ -158,6 +158,58 @@ public class IATS {
         page.getSupporterById(FUNDRAISING_TEST = "IATSRecurring", fields);
     }
 
+    @Parameters({"IATSACHSingle"})
+    @Test(groups = { "iats" })
+    public static void IATSACHSingle(String testId) throws InterruptedException, IOException {
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/13706/donate/1");
+
+        fields.selectTitle("Ms");
+        fields.setFirstname("IATS");
+        fields.setLastname("ACH_Recurring");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.setRegion("MD");
+        fields.setPostCode("20001");
+        fields.setCountry("US");
+
+        fields.submit();
+
+        fields.selectDonationAmt("15");
+        fields.selectPaymentType("ACHEFT");
+        fields.selectPayCurrency("GBP");
+        fields.setCCName("Unit Tester");
+        fields.selectBankAccType("CHECKING");
+        fields.setBankAccNumber("1234567");
+        fields.setBankRoutingNumber("000000000");
+        fields.submit();
+
+
+        //		Assert that the payment was successful and the third page was reached
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13706/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("9580"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("BANK_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("ACHEFT"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST = "IATSACHSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "IATSACHSingle", fields);
+
+    }
+
+
     @Parameters({"IATSACHRecurring"})
     @Test(groups = { "iats" })
     public static void IATSACHRecurring(String testId) throws InterruptedException, IOException {
@@ -191,7 +243,7 @@ public class IATS {
         fields.selectPaymentType("ACHEFT");
         fields.selectPayCurrency("GBP");
         fields.setCCName("Unit Tester");
-        fields.selectBankAccType("Checking");
+        fields.selectBankAccType("SAVING");
         fields.setBankAccNumber("1234567");
         fields.setBankRoutingNumber("000000000");
 
@@ -255,7 +307,7 @@ public class IATS {
         fields.selectPaymentType("ACHEFT");
         fields.selectPayCurrency("USD");
         fields.setCCName("Unit Tester");
-        fields.selectBankAccType("Checking");
+        fields.selectBankAccType("CHECKING");
         fields.setBankAccNumber("1234567");
         fields.setBankRoutingNumber("000000000");
 

@@ -44,6 +44,7 @@ com/fnoor/Standalone/PB_A4_ETT1.class
 com/fnoor/FundraisingTest/PAYFLOW.class
 com/fnoor/Events/EV_02.class
 com/fnoor/FundraisingTest/ACIMultiUsers.class
+com/fnoor/Events/EV_05.class
 com/fnoor/FundraisingTest/TestNGIats.class
 com/fnoor/Redirects/PB_B5_DON2PET.class
 com/fnoor/TestNGCustomReportListener$TestSorter.class
