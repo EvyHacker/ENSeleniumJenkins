@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
-public class EV_05 {
+public class EV_08 {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
     static String FUNDRAISING_TEST;
@@ -43,16 +43,16 @@ public class EV_05 {
         }
     }
 
-    @Parameters({"multiTicketAddDonationPayPal"})
+    @Parameters({"groupTicketsPayPal"})
     @Test(groups = { "events" })
-    public static void multiTicketAddDonationPayPal(String testId) throws InterruptedException, IOException {
+    public static void groupTicketsPayPal(String testId) throws InterruptedException, IOException {
 
         page.ensAuthTestEvent();
-        driver.get("https://politicalnetworks.com/page/12624/event/1");
+        driver.get("https://politicalnetworks.com/page/12628/event/1");
 
         fields.selectTitle("Ms.");
         fields.setFirstname("Event");
-        fields.setLastname("Multi PayPal");
+        fields.setLastname("Group PayPal");
         //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -62,19 +62,13 @@ public class EV_05 {
         fields.setPostCode("20001");
         fields.selectCountry("US");
         fields.addMultipleTickets();
-        fields.addAdditionalDonation("109.99");
+        fields.addAdditionalDonation("101.99");
         fields.eventCheckout();
 
-        fields.waitForURLToChange("https://politicalnetworks.com/page/12624/event/2");
-        fields.verifyEventSummary("169.99 USD");
+        fields.waitForURLToChange("https://politicalnetworks.com/page/12628/event/2");
+        fields.verifyEventSummary("100.00 USD");
+        fields.verifyEventSummary("101.99 USD");
         fields.selectPaymentType("Paypal");
-        fields.addAttendee1FN("Attendee 1 FN");
-        fields.addAttendee1LN("Attendee 1 LN");
-        String attendee_email = fields.createAttendeeEmail(testId);
-        fields.addAttendee1Email(attendee_email);
-        fields.addAttendee2FN("Attendee 2 FN");
-        fields.addAttendee2LN("Attendee 2 LN");
-        fields.addAttendee2Email(attendee_email);
         fields.submit();
 
         fields.waitForPageLoadPayPal();
@@ -104,22 +98,22 @@ public class EV_05 {
 
 //		Assert that the payment was successful and the third page was reached
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
-                .equals("https://politicalnetworks.com/page/12624/donate/3"));
+                .equals("https://politicalnetworks.com/page/12628/donate/3"));
 
         fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Campaign ID not present", bodytext.contains("8319"));
-        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
-        Assert.assertTrue("Tickets Amount is incorrect/not present", bodytext.contains("$169.99"));
-        Assert.assertTrue("Additional Donation Amount is incorrect/not present", bodytext.contains("109.99"));
-        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("8325"));
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("PayPal Gateway"));
+        Assert.assertTrue("Tickets Amount is incorrect/not present", bodytext.contains("$201.99"));
+        Assert.assertTrue("Additional Donation Amount is incorrect/not present", bodytext.contains("101.99"));
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Paypal"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST = "multiTicketAddDonationPayPal", fields);
-        page.getSupporterById(FUNDRAISING_TEST = "multiTicketAddDonationPayPal", fields);
+        page.getSupporterByEmail(FUNDRAISING_TEST = "groupTicketsPayPal", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "groupTicketsPayPal", fields);
 
     }
 }

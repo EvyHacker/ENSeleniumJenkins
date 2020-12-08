@@ -169,6 +169,13 @@ public class PageFields {
     @FindBy(css = ".en__ticketSummary__checkout") WebElement event_checkout;
     @FindBy(css = ".en__orderSummary") WebElement event_order_summary;
     @FindBy(name = "event.discount") WebElement event_discount_code;
+    @FindBy(css = "input[id$='0_firstName']") WebElement event_attendee1_FN;
+    @FindBy(css = "input[id$='0_lastName']") WebElement event_attendee1_LN;
+    @FindBy(css = "input[id$='0_emailAddress']") WebElement event_attendee1_email;
+    @FindBy(css = "input[id*='ticketType_1_tickets_0_registrants_0_firstName']") WebElement event_attendee2_FN;
+    @FindBy(css = "input[id*='ticketType_1_tickets_0_registrants_0_lastName']") WebElement event_attendee2_LN;
+    @FindBy(css = "input[id*='ticketType_1_tickets_0_registrants_0_emailAddress']") WebElement event_attendee2_email;
+
 
     //	ECOMMERCE GADGET FIELDS
     @FindBy(css = ".enList__column.enList__column--name") List<WebElement> ecommerce_gadget_list;
@@ -377,11 +384,116 @@ public class PageFields {
 
     public void addMultipleTickets() {
         List<WebElement> tickets = driver.findElements(By.cssSelector(".en__ticket__plus"));
-        for (int i = 0; i < 1; i++) {
-            WebElement multiClicks = tickets.get(i);
+        java.util.Iterator<WebElement> i = tickets.iterator();
+        while(i.hasNext()) {
+            WebElement multiClicks = i.next();
             multiClicks.click();
         }
     }
+
+    public void ticketLimit() {
+        List<WebElement> tickets = driver.findElements(By.cssSelector(".en__ticket__plus"));
+        WebElement ticketCount = driver.findElement(By.name("event.ticketType.0.quantity"));
+        WebElement ticketCounts = driver.findElement(By.name("event.ticketType.1.quantity"));
+        ticketCount.getAttribute("data-max");
+        ticketCounts.getAttribute("data-max");
+
+
+        java.util.Iterator<WebElement> i = tickets.iterator();
+        for (WebElement item : tickets) {
+
+
+            int t = 0;
+            //item.click();
+
+             tickets.get(t).click();
+            while (t > 10 && i.hasNext()) ;
+
+            tickets.get(t).click();
+
+            if (ticketCount.getAttribute("data-max").equals("3"))
+                do {
+                    t++;
+                    WebElement multiClicks = i.next();
+                    multiClicks.click();
+                    tickets.get(t).click();
+
+                } while (i.hasNext());
+            item.click();
+        }
+    }
+
+//        int length= tickets.size();
+//
+//        for (int i = 0; i<length; i++)
+//        {
+//            tickets.get(i).click();
+//
+//
+//        }
+
+
+
+//        for (WebElement item : tickets) {
+//        int i = 0;
+//        do {
+//            i++;
+//        } while (i < 4);
+//
+//            item.click();
+//        for (int t = 0; t < 2; t++) {
+//            WebElement generalTicket = tickets.get(t);
+//            generalTicket.click();
+//        }
+//    }
+//            } while (i < 4);
+////
+//            item.click();
+//            Assert.assertTrue("Subject#1 incorrect/not present", ticketCount
+//                    .equals("3"));
+//            Assert.assertTrue("Subject#1 incorrect/not present", ticketCounts
+//                    .equals("4"));
+//        }
+
+//        int ticketMax = 0;
+//        while (ticketMax<)
+//
+//        for (WebElement ticket : tickets){
+//        if (ticketCount.getAttribute("data-max").equals("4")) {
+//            //((JavascriptExecutor)driver).executeScript("location.reload()");
+//            Assert.assertTrue("Subject#1 incorrect/not present", field_ETT_MessageData.getAttribute("value")
+//                    .contains("Subject  (Message No.1): ETT_1  Custom target (single page) - 2 targets - plain text"));
+//            field_ETT_MessageData.sendKeys("(Test Message#1)");
+//        } else {
+//            Assert.assertTrue("Subject#2 incorrect/not present", field_ETT_MessageData.getAttribute("value")
+//                    .contains("Subject (Message No.2): ETT_1  Custom target (single page) - 2 targets - plain text"));
+//            field_ETT_MessageData.sendKeys("(Test Message#2)");
+//        }
+//
+//
+//        for (WebElement item : tickets) {
+//        int i = 0;
+//        do {
+//            i++;
+//        } while (i < 4);
+//
+//            item.click();
+//        for (int t = 0; t < 2; t++) {
+//            WebElement generalTicket = tickets.get(t);
+//            generalTicket.click();
+//        }
+
+//        java.util.Iterator<WebElement> i = tickets.iterator();
+//        for (int t=0; t < 2; t ++) {
+//            WebElement generalTicket = tickets.get(t);
+//            generalTicket.click();
+//            while(i.hasNext()) {
+//                WebElement multiClicks = i.next();
+//                multiClicks.click();
+//            }
+//
+//        }
+
 
     public void addAdditionalDonation(String text){
         event_aditional_donation.sendKeys(text);
@@ -398,6 +510,33 @@ public class PageFields {
     public  void addDiscountCode(String text){
         event_discount_code.sendKeys(text);
     }
+
+    public  void addAttendee1FN(String text){
+        event_attendee1_FN.sendKeys(text);
+    }
+
+    public  void addAttendee1LN(String text){
+        event_attendee1_LN.sendKeys(text);
+    }
+
+    public  void addAttendee1Email(String text){
+        event_attendee1_email.sendKeys(text);
+    }
+
+    public  void addAttendee2FN(String text){
+        event_attendee2_FN.sendKeys(text);
+    }
+
+    public  void addAttendee2LN(String text){
+        event_attendee2_LN.sendKeys(text);
+    }
+
+    public  void addAttendee2Email(String text){
+        event_attendee2_email.sendKeys(text);
+    }
+
+
+
     /////////////////////////    ETT FORMS AND FIELDS     /////////////////////////////////
 
 
@@ -1154,6 +1293,11 @@ public class PageFields {
         return email;
     }
 
+    public String createAttendeeEmail(String testID) {
+        LocalDate date = LocalDate.now();
+        String email = "Attendee" + testID + "_" + date.toString() + "@tellamazingstories.com";
+        return email;
+    }
 
     public void setSupFirstName(String text) {
         field_SupFirstName.clear();

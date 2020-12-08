@@ -27,6 +27,7 @@
                                     <suiteXmlFiles>
                                         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                                     </suiteXmlFiles>
+                                    <groups>Donations</groups>
                                     <groups>Donations IATS</groups>
                                     <groups>Donations VANTIV</groups>
                                     <groups>Donations WORLDPAY</groups>

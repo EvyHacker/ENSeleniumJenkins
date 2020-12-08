@@ -205,6 +205,7 @@ public class IATS {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("ACHEFT"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST = "IATSACHSingle", fields);
+        page.getSupporterByEmailIATSChecking(FUNDRAISING_TEST = "IATSACHSingle", fields);
         page.getSupporterById(FUNDRAISING_TEST = "IATSACHSingle", fields);
 
     }
@@ -267,6 +268,7 @@ public class IATS {
 
         page.getSupporterByEmail(FUNDRAISING_TEST = "IATSACHRecurring", fields);
         page.getSupporterById(FUNDRAISING_TEST = "IATSACHRecurring", fields);
+        page.getSupporterByEmailIATSSaving(FUNDRAISING_TEST = "IATSACHRecurring", fields);
 
     }
 
@@ -336,6 +338,7 @@ public class IATS {
         Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("ACHEFT"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST = "IATSACHRecurPaymenttypelogic", fields);
+        page.getSupporterByEmailIATSChecking(FUNDRAISING_TEST = "IATSACHRecurPaymenttypelogic", fields);
         page.getSupporterById(FUNDRAISING_TEST = "IATSACHRecurPaymenttypelogic", fields);
 
     }

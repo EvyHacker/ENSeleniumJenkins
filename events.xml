@@ -8,10 +8,12 @@
     <parameter name="singleFreeTicket" value="singleFreeTicket"/>
     <parameter name="singleTicketOnSale" value="singleTicketOnSale"/>
     <parameter name="singleTicketWithDiscount" value="singleTicketWithDiscount"/>
-    <parameter name="MultiTicketAddDonationIATS" value="MultiTicketAddDonationIATS"/>
-<!--    <parameter name="paypalViaPayPalCardinalComSingle3D" value="paypalViaPayPalCardinalComSingle3D"/>-->
-<!--    <parameter name="paypalCardinalComRecurring3D" value="paypalCardinalComRecurring3D"/>-->
-<!--    <parameter name="stripeViaPaypalSingle" value="stripeViaPaypalSingle"/>-->
+    <parameter name="multiTicketAddDonationPayPal" value="multiTicketAddDonationPayPal"/>
+    <parameter name="multiFreeTicketsIATS" value="multiFreeTicketsIATS"/>
+    <parameter name="multiComboTicketsStripe" value="multiComboTicketsStripe"/>
+    <parameter name="groupTicketsPayPal" value="groupTicketsPayPal"/>
+    <parameter name="ticketLimitPayPal" value="ticketLimitPayPal"/>
+    <!--    <parameter name="stripeViaPaypalSingle" value="stripeViaPaypalSingle"/>-->
     <test name="EVENTS"  preserve-order="true">
         <groups>
             <run>
@@ -19,29 +21,49 @@
             </run>
         </groups>
         <classes>
-            <class name="com.fnoor.Events.EV_01" >
+<!--            <class name="com.fnoor.Events.EV_01" >-->
+<!--                <methods>-->
+<!--                    <include name="singleTicketAddDonationIATS" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="com.fnoor.Events.EV_02" >-->
+<!--                <methods>-->
+<!--                    <include name="singleFreeTicket" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="com.fnoor.Events.EV_03" >-->
+<!--                <methods>-->
+<!--                    <include name="singleTicketOnSale" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="com.fnoor.Events.EV_04" >-->
+<!--                <methods>-->
+<!--                    <include name="singleTicketWithDiscount" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="com.fnoor.Events.EV_05" >-->
+<!--                <methods>-->
+<!--                    <include name="multiTicketAddDonationPayPal" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="com.fnoor.Events.EV_06" >-->
+<!--                <methods>-->
+<!--                    <include name="multiFreeTicketsIATS" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="com.fnoor.Events.EV_07" >-->
+<!--                <methods>-->
+<!--                    <include name="multiComboTicketsStripe" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="com.fnoor.Events.EV_08" >-->
+<!--                <methods>-->
+<!--                    <include name="groupTicketsPayPal" />-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="com.fnoor.Events.EV_10" >
                 <methods>
-                    <include name="singleTicketAddDonationIATS" />
-                </methods>
-            </class>
-            <class name="com.fnoor.Events.EV_02" >
-                <methods>
-                    <include name="singleFreeTicket" />
-                </methods>
-            </class>
-            <class name="com.fnoor.Events.EV_03" >
-                <methods>
-                    <include name="singleTicketOnSale" />
-                </methods>
-            </class>
-            <class name="com.fnoor.Events.EV_04" >
-                <methods>
-                    <include name="singleTicketWithDiscount" />
-                </methods>
-            </class>
-            <class name="com.fnoor.Events.EV_05" >
-                <methods>
-                    <include name="MultiTicketAddDonationIATS" />
+                    <include name="ticketLimitPayPal" />
                 </methods>
             </class>
         </classes>

@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
-public class EV_01 {
+public class EV_07 {
 
     static FundraisingPageDriver page = new FundraisingPageDriver();
     static String FUNDRAISING_TEST;
@@ -39,16 +39,16 @@ public class EV_01 {
         }
     }
 
-    @Parameters({"singleTicketAddDonationIATS"})
+    @Parameters({"multiComboTicketsStripe"})
     @Test(groups = { "events" })
-    public static void singleTicketAddDonationIATS(String testId) throws InterruptedException, IOException {
+    public static void multiComboTicketsStripe(String testId) throws InterruptedException, IOException {
 
         page.ensAuthTestEvent();
-        driver.get("https://politicalnetworks.com/page/12619/event/1");
+        driver.get("https://politicalnetworks.com/page/12627/event/1");
 
         fields.selectTitle("Ms.");
         fields.setFirstname("Event");
-        fields.setLastname("SingleIATS");
+        fields.setLastname("Combo Stripe");
         //		Call the createEmail function
         String new_email = fields.createEmail(testId);
         fields.setEmailAddress(new_email);
@@ -57,36 +57,39 @@ public class EV_01 {
         fields.selectRegion("MD");
         fields.setPostCode("20001");
         fields.selectCountry("US");
-        fields.addSingleTicket();
-        fields.addAdditionalDonation("19.99");
+        fields.addMultipleTickets();
+        fields.addAdditionalDonation("101.99");
         fields.eventCheckout();
-//
-        fields.waitForURLToChange("https://politicalnetworks.com/page/12619/event/2");
-        fields.verifyEventSummary("29.99 USD");
+
+        fields.waitForURLToChange("https://politicalnetworks.com/page/12627/event/2");
+        fields.verifyEventSummary("10.00 USD");
+        fields.verifyEventSummary("101.99 USD");
         fields.selectPaymentType("Visa");
         fields.setCCName("Unit Tester");
-        fields.setCCNUmber("4222222222222220");
+        fields.setCCNUmber("4242424242424242");
         fields.setCCV("123");
         fields.setCCExpiry(new CharSequence[]{"12", "2022"});
         fields.submit();
 
 //		Assert that the payment was successful and the third page was reached
-        String myurl = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12619/event/3"));
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
+                .equals("https://politicalnetworks.com/page/12627/event/3"));
 
         fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
         String bodytext = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue("Campaign ID not present", bodytext.contains("8314"));
-        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
-        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$29.99"));
-        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("8324"));
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
-        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Stripe Gateway"));
+        Assert.assertTrue("Tickets Amount is incorrect/not present", bodytext.contains("$111.99"));
+        Assert.assertTrue("Additional Donation Amount is incorrect/not present", bodytext.contains("101.99"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
 
-        page.getSupporterByEmail(FUNDRAISING_TEST = "singleTicketAddDonationIATS", fields);
-        page.getSupporterById(FUNDRAISING_TEST = "singleTicketAddDonationIATS", fields);
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: Visa"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST = "multiComboTicketsStripe", fields);
+        page.getSupporterById(FUNDRAISING_TEST = "multiComboTicketsStripe", fields);
 
     }
 }

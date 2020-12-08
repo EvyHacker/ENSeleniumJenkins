@@ -9,9 +9,9 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
@@ -143,6 +143,66 @@ public class FundraisingPageDriver {
         String jsonResponse = IOUtils.toString(response.getEntity().getContent(), "UTF-8");
         System.out.println("RESPONSE as String(getSupporterByEmail): " + jsonResponse);
 
+        // use jackson library to pull the string into json objects
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode node = mapper.readTree(jsonResponse);
+        supporterId = node.get("supporterId").asText();
+        supporterEmail = node.get("Email Address").asText();
+        System.out.println("supporterId: " + supporterId);
+
+        System.out.println("Status getSupporterByEmail: " + status);
+        System.out.println("SupporterEmail: " + supporterEmail);
+    }
+
+    @AfterTest(alwaysRun = true)
+    public static void getSupporterByEmailIATSChecking(String testId, PageFields fields) throws IOException, InterruptedException {
+        System.out.println("In after class getSupporterByEmail:");
+        HttpClient client = HttpClientBuilder.create().build();
+        supporterEmail = fields.createEmail(testId);
+
+        HttpGet get = new HttpGet(SERVICE_URL + "/supporter?email=" + supporterEmail);
+        get.setHeader("Content-Type", "application/json");
+        get.setHeader("ens-auth-token", ens_auth_token);
+
+        HttpResponse response = client.execute(get);
+        int status = response.getStatusLine().getStatusCode();
+        if (status != HTTP_STATUS_OK) {
+            throw new IOException("Unable to authenticate. Received invalid http status=" + status);
+        }
+        String jsonResponse = IOUtils.toString(response.getEntity().getContent(), "UTF-8");
+        System.out.println("RESPONSE as String(getSupporterByEmail): " + jsonResponse);
+
+        Assert.assertTrue("Bank Type is incorrect, not present", jsonResponse.contains("CHECKING"));
+        // use jackson library to pull the string into json objects
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode node = mapper.readTree(jsonResponse);
+        supporterId = node.get("supporterId").asText();
+        supporterEmail = node.get("Email Address").asText();
+        System.out.println("supporterId: " + supporterId);
+
+        System.out.println("Status getSupporterByEmail: " + status);
+        System.out.println("SupporterEmail: " + supporterEmail);
+    }
+
+    @AfterTest(alwaysRun = true)
+    public static void getSupporterByEmailIATSSaving(String testId, PageFields fields) throws IOException, InterruptedException {
+        System.out.println("In after class getSupporterByEmail:");
+        HttpClient client = HttpClientBuilder.create().build();
+        supporterEmail = fields.createEmail(testId);
+
+        HttpGet get = new HttpGet(SERVICE_URL + "/supporter?email=" + supporterEmail);
+        get.setHeader("Content-Type", "application/json");
+        get.setHeader("ens-auth-token", ens_auth_token);
+
+        HttpResponse response = client.execute(get);
+        int status = response.getStatusLine().getStatusCode();
+        if (status != HTTP_STATUS_OK) {
+            throw new IOException("Unable to authenticate. Received invalid http status=" + status);
+        }
+        String jsonResponse = IOUtils.toString(response.getEntity().getContent(), "UTF-8");
+        System.out.println("RESPONSE as String(getSupporterByEmail): " + jsonResponse);
+
+        Assert.assertTrue("Bank Type is incorrect, not present", jsonResponse.contains("SAVING"));
         // use jackson library to pull the string into json objects
         ObjectMapper mapper = new ObjectMapper();
         JsonNode node = mapper.readTree(jsonResponse);

@@ -587,8 +587,6 @@ public class PAYPAL {
         fields.submit();
 
         fields.waitForPageLoad();
-//        fields.logPaypal();
-//        fields.waitForPageLoad();
         fields.setPaypalEmail();
         fields.nextPayapl();
         fields.waitForPageLoad();
@@ -597,7 +595,7 @@ public class PAYPAL {
         fields.waitForPageLoadPayPal();
         Thread.sleep(4000);
 
-        WebElement paypalContinue = (new WebDriverWait(driver, 200))
+        WebElement paypalContinue = (new WebDriverWait(driver, 2000))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.id("payment-submit-btn")));
         JavascriptExecutor js = (JavascriptExecutor)driver;
