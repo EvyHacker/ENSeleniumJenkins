@@ -2,6 +2,7 @@
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/LocalDriverManager.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/ETT/MultiDatabase.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/FundraisingTest/RSM.java
+/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Events/EV_06.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Redirects/PB_B4_ETTETT2.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/FundraisingTest/PAYSAFE.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Standalone/PB_A16_ETM.java
@@ -17,9 +18,11 @@
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/ETT/CustomTarget.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/FundraisingTest/WORLDPAY.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/FundraisingTest/PAYPAL.java
+/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Events/EV_10.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Redirects/PB_B6_DON2TWEET.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/FundraisingTest/IATS.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Events/EV_05.java
+/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Events/EV_08.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/ETT/HouseCommittees.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Events/EV_02.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/FundraisingTest/TestNGIats.java
@@ -38,6 +41,7 @@
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/FundraisingTest/CBTtest.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/ValidationTests/StripeVal.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Standalone/PB_A17_MSP.java
+/Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Events/EV_07.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Events/EV_04.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Events/EV_01.java
 /Users/ievgeniiagaidarenko/EngagingNetworks/Automation/ENSeleniumJenkins/src/main/java/com/fnoor/Standalone/PB_A12_TWT3.java

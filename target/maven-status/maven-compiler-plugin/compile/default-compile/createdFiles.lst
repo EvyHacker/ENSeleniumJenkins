@@ -4,8 +4,10 @@ com/fnoor/Standalone/PB_A16_ETM.class
 com/fnoor/FundraisingTest/RSM.class
 com/fnoor/TestNGCustomReportListener$TestMethodSorter.class
 com/fnoor/Standalone/PB_A2_DCF.class
+com/fnoor/Events/EV_07.class
 com/fnoor/Standalone/PB_A8_EMS.class
 com/fnoor/Redirects/PB_B2_PETDON_P2.class
+com/fnoor/Events/EV_10.class
 com/fnoor/TestNGCustomReportListener$1.class
 com/fnoor/ETT/HouseCommittees.class
 com/fnoor/PageFields.class
@@ -26,6 +28,7 @@ com/fnoor/ETT/CustomTarget.class
 com/fnoor/FundraisingTest/CBTtest.class
 com/fnoor/TestNGCustomReportListener.class
 com/fnoor/Standalone/PB_A9_ECF.class
+com/fnoor/Events/EV_06.class
 com/fnoor/Standalone/PB_A10_TWT1.class
 com/fnoor/PageFields$2.class
 com/fnoor/Standalone/PB_A5_ETT2.class
@@ -53,6 +56,7 @@ com/fnoor/FundraisingPageDriver.class
 com/fnoor/Redirects/PB_B1_PETDON_P1.class
 com/fnoor/ETT/SenateCommittees.class
 com/fnoor/ValidationTests/PaySafeVal.class
+com/fnoor/Events/EV_08.class
 com/fnoor/Standalone/PB_A3_DCF2.class
 com/fnoor/ValidationTests/MonerisVal.class
 com/fnoor/FundraisingTest/IATS.class
