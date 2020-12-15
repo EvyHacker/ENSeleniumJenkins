@@ -175,7 +175,8 @@ public class PageFields {
     @FindBy(css = "input[id*='ticketType_1_tickets_0_registrants_0_firstName']") WebElement event_attendee2_FN;
     @FindBy(css = "input[id*='ticketType_1_tickets_0_registrants_0_lastName']") WebElement event_attendee2_LN;
     @FindBy(css = "input[id*='ticketType_1_tickets_0_registrants_0_emailAddress']") WebElement event_attendee2_email;
-
+    @FindBy(name = "event.ticketType.0.quantity") WebElement event_ticketCount;
+    @FindBy(name = "event.ticketType.1.quantity") WebElement event_ticketCounts;
 
     //	ECOMMERCE GADGET FIELDS
     @FindBy(css = ".enList__column.enList__column--name") List<WebElement> ecommerce_gadget_list;
@@ -393,107 +394,24 @@ public class PageFields {
 
     public void ticketLimit() {
         List<WebElement> tickets = driver.findElements(By.cssSelector(".en__ticket__plus"));
-        WebElement ticketCount = driver.findElement(By.name("event.ticketType.0.quantity"));
-        WebElement ticketCounts = driver.findElement(By.name("event.ticketType.1.quantity"));
-        ticketCount.getAttribute("data-max");
-        ticketCounts.getAttribute("data-max");
-
-
         java.util.Iterator<WebElement> i = tickets.iterator();
         for (WebElement item : tickets) {
-
-
-            int t = 0;
-            //item.click();
-
-             tickets.get(t).click();
-            while (t > 10 && i.hasNext()) ;
-
-            tickets.get(t).click();
-
-            if (ticketCount.getAttribute("data-max").equals("3"))
-                do {
-                    t++;
-                    WebElement multiClicks = i.next();
-                    multiClicks.click();
-                    tickets.get(t).click();
-
-                } while (i.hasNext());
             item.click();
+            int t = 0;
+            tickets.get(t).click();
+            while (t > 12) ;
+            t++;
+            tickets.get(t).click();
+            item.click();
+
         }
+        Assert.assertTrue("General tickets limits hasnt been reached/nit present"
+                , event_ticketCount.getAttribute("data-max")
+                .equals("3"));
+        Assert.assertTrue("VIP tickets limits hasnt been reached/nit present",
+                event_ticketCounts.getAttribute("data-max")
+                .equals("4"));
     }
-
-//        int length= tickets.size();
-//
-//        for (int i = 0; i<length; i++)
-//        {
-//            tickets.get(i).click();
-//
-//
-//        }
-
-
-
-//        for (WebElement item : tickets) {
-//        int i = 0;
-//        do {
-//            i++;
-//        } while (i < 4);
-//
-//            item.click();
-//        for (int t = 0; t < 2; t++) {
-//            WebElement generalTicket = tickets.get(t);
-//            generalTicket.click();
-//        }
-//    }
-//            } while (i < 4);
-////
-//            item.click();
-//            Assert.assertTrue("Subject#1 incorrect/not present", ticketCount
-//                    .equals("3"));
-//            Assert.assertTrue("Subject#1 incorrect/not present", ticketCounts
-//                    .equals("4"));
-//        }
-
-//        int ticketMax = 0;
-//        while (ticketMax<)
-//
-//        for (WebElement ticket : tickets){
-//        if (ticketCount.getAttribute("data-max").equals("4")) {
-//            //((JavascriptExecutor)driver).executeScript("location.reload()");
-//            Assert.assertTrue("Subject#1 incorrect/not present", field_ETT_MessageData.getAttribute("value")
-//                    .contains("Subject  (Message No.1): ETT_1  Custom target (single page) - 2 targets - plain text"));
-//            field_ETT_MessageData.sendKeys("(Test Message#1)");
-//        } else {
-//            Assert.assertTrue("Subject#2 incorrect/not present", field_ETT_MessageData.getAttribute("value")
-//                    .contains("Subject (Message No.2): ETT_1  Custom target (single page) - 2 targets - plain text"));
-//            field_ETT_MessageData.sendKeys("(Test Message#2)");
-//        }
-//
-//
-//        for (WebElement item : tickets) {
-//        int i = 0;
-//        do {
-//            i++;
-//        } while (i < 4);
-//
-//            item.click();
-//        for (int t = 0; t < 2; t++) {
-//            WebElement generalTicket = tickets.get(t);
-//            generalTicket.click();
-//        }
-
-//        java.util.Iterator<WebElement> i = tickets.iterator();
-//        for (int t=0; t < 2; t ++) {
-//            WebElement generalTicket = tickets.get(t);
-//            generalTicket.click();
-//            while(i.hasNext()) {
-//                WebElement multiClicks = i.next();
-//                multiClicks.click();
-//            }
-//
-//        }
-
 
     public void addAdditionalDonation(String text){
         event_aditional_donation.sendKeys(text);

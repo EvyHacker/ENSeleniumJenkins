@@ -268,8 +268,6 @@ public class PAYPAL {
 
         fields.submit();
         fields.waitForPageLoadPayPal();
-//        fields.noLogPaypal();
-//        fields.waitForPageLoad();
         fields.setPaypalEmail();
         fields.nextPayapl();
         fields.waitForPageLoad();

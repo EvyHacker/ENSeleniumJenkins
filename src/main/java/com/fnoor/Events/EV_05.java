@@ -3,10 +3,7 @@ package com.fnoor.Events;
 import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -91,16 +88,23 @@ public class EV_05 {
         fields.setPaypalPassword();
         fields.submitPaypal();
         fields.waitForPageLoadPayPal();
-        Thread.sleep(4000);
+        Thread.sleep(6000);
 
-        WebElement paypalContinue = (new WebDriverWait(driver, 400))
-                .until(ExpectedConditions.presenceOfElementLocated
-                        (By.id("payment-submit-btn")));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", paypalContinue);
+        try {
+            Assert.assertTrue("Didn't redirect to submit payment page, Paypal", driver.getCurrentUrl()
+                    .contains("https://www.sandbox.paypal.com/"));
+            WebElement paypalContinue = (new WebDriverWait(driver, 100))
+                    .until(ExpectedConditions.visibilityOfElementLocated
+                            (By.xpath("//button[contains(text(), 'Continue')]")));
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", paypalContinue);
 
-        fields.waitForPageLoad();
+        } catch (StaleElementReferenceException e) {
+            System.err.println(e.getMessage());
+        }
         Thread.sleep(8000);
+        fields.waitForPageLoad();
+
 
 //		Assert that the payment was successful and the third page was reached
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()

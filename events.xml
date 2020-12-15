@@ -13,7 +13,9 @@
     <parameter name="multiComboTicketsStripe" value="multiComboTicketsStripe"/>
     <parameter name="groupTicketsPayPal" value="groupTicketsPayPal"/>
     <parameter name="ticketLimitPayPal" value="ticketLimitPayPal"/>
-    <!--    <parameter name="stripeViaPaypalSingle" value="stripeViaPaypalSingle"/>-->
+    <parameter name="ticketsNotAvailable" value="ticketsNotAvailable"/>
+    <parameter name="multiGatewaysIATS" value="multiGatewaysIATS"/>
+    <parameter name="multiGatewaysPayPal" value="multiGatewaysPayPal"/>
     <test name="EVENTS"  preserve-order="true">
         <groups>
             <run>
@@ -21,49 +23,60 @@
             </run>
         </groups>
         <classes>
-<!--            <class name="com.fnoor.Events.EV_01" >-->
-<!--                <methods>-->
-<!--                    <include name="singleTicketAddDonationIATS" />-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="com.fnoor.Events.EV_02" >-->
-<!--                <methods>-->
-<!--                    <include name="singleFreeTicket" />-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="com.fnoor.Events.EV_03" >-->
-<!--                <methods>-->
-<!--                    <include name="singleTicketOnSale" />-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="com.fnoor.Events.EV_04" >-->
-<!--                <methods>-->
-<!--                    <include name="singleTicketWithDiscount" />-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="com.fnoor.Events.EV_05" >-->
-<!--                <methods>-->
-<!--                    <include name="multiTicketAddDonationPayPal" />-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="com.fnoor.Events.EV_06" >-->
-<!--                <methods>-->
-<!--                    <include name="multiFreeTicketsIATS" />-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="com.fnoor.Events.EV_07" >-->
-<!--                <methods>-->
-<!--                    <include name="multiComboTicketsStripe" />-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="com.fnoor.Events.EV_08" >-->
-<!--                <methods>-->
-<!--                    <include name="groupTicketsPayPal" />-->
-<!--                </methods>-->
-<!--            </class>-->
+            <class name="com.fnoor.Events.EV_01" >
+                <methods>
+                    <include name="singleTicketAddDonationIATS" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Events.EV_02" >
+                <methods>
+                    <include name="singleFreeTicket" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Events.EV_03" >
+                <methods>
+                    <include name="singleTicketOnSale" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Events.EV_04" >
+                <methods>
+                    <include name="singleTicketWithDiscount" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Events.EV_05" >
+                <methods>
+                    <include name="multiTicketAddDonationPayPal" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Events.EV_06" >
+                <methods>
+                    <include name="multiFreeTicketsIATS" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Events.EV_07" >
+                <methods>
+                    <include name="multiComboTicketsStripe" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Events.EV_08" >
+                <methods>
+                    <include name="groupTicketsPayPal" />
+                </methods>
+            </class>
             <class name="com.fnoor.Events.EV_10" >
                 <methods>
                     <include name="ticketLimitPayPal" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Events.EV_11" >
+                <methods>
+                    <include name="ticketsNotAvailable" />
+                </methods>
+            </class>
+            <class name="com.fnoor.Events.EV_12" >
+                <methods>
+                    <include name="multiGatewaysIATS" />
+                    <include name="multiGatewaysPayPal" />
                 </methods>
             </class>
         </classes>

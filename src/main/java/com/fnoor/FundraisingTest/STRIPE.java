@@ -369,18 +369,18 @@ public class STRIPE {
 
         // Verify success transaction
         fields.waitForPageLoad();
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.name("stripe-challenge-frame")));
 
-        WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 20))
+        WebElement myCompleteDynamicElement = (new WebDriverWait(driver, 60))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.id("test-source-authorize-3ds")));
         JavascriptExecutor executor1 = (JavascriptExecutor)driver;
         executor1.executeScript("arguments[0].click();", myCompleteDynamicElement);
         fields.waitForPageLoad();
 
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         driver.switchTo().defaultContent();
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/12777/donate/3"));
