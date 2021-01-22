@@ -584,7 +584,8 @@ public class STRIPE {
         fields.waitForPageLoad();
 
         // Validate bank payment
-        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().contains("https://stripe.com/sources/test_source?amount=1500&currency=eur"));
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
+                .contains("https://stripe.com/sources/test_source?amount=1500&currency=eur"));
         WebElement authorize = driver.findElement(By.xpath("//*[contains(text(), 'Authorize Test Payment')]"));
         authorize.click();
         fields.waitForPageLoad();

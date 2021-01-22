@@ -71,7 +71,7 @@ public class MONERIS {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4242424242424242");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2024"});
         fields.setCCV("123");
 
         fields.submit();
@@ -119,7 +119,7 @@ public class MONERIS {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4242424242424242");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2024"});
         fields.setCCV("123");
 
         fields.setRecurDay("23");
@@ -190,7 +190,7 @@ public class MONERIS {
         fields.selectPayCurrency("USD");
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4242424242424242");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2024"});
         fields.setCCV("123");
 
         fields.submit();
@@ -237,7 +237,7 @@ public class MONERIS {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4242424242424242");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2024"});
 
         fields.submit();
 
@@ -282,7 +282,7 @@ public class MONERIS {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4242424242424242");
-        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
+        fields.setCCExpiry(new CharSequence[]{"12", "2024"});
 
         fields.setRecurDay("23");
         fields.setRecurFreq("month");
@@ -333,7 +333,7 @@ public class MONERIS {
 
         fields.setCCName("Unit Testerô");
         fields.setCCNUmber("4012001037141112");
-        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
+        fields.setCCExpiry(new CharSequence[]{"12", "2024"});
         fields.setCCV("123");
 
         fields.submit();
@@ -395,7 +395,7 @@ public class MONERIS {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4012001037141112");
-        fields.setCCExpiry(new CharSequence[]{"12", "2020"});
+        fields.setCCExpiry(new CharSequence[]{"12", "2024"});
         fields.setCCV("123");
 
         fields.setRecurDay("23");

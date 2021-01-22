@@ -79,7 +79,7 @@ public class PAYFLOW {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4222222222222");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2024"});
         fields.setCCV("123");
 
         fields.submit();
@@ -137,7 +137,7 @@ public class PAYFLOW {
 
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4222222222222");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2024"});
         fields.setCCV("123");
 
         fields.submit();
