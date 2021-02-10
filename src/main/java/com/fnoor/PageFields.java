@@ -1196,7 +1196,7 @@ public class PageFields {
     }
     public String createEmail(String testID) {
         LocalDate date = LocalDate.now();
-        String email = "PB_"+ testID + "_" + date.toString() + "@tellamazingstories.com";
+        String email = "PB_"+ testID + "_" + date.toString() + "@engagingnetworks.online";
         return email;
     }
 
@@ -1213,7 +1213,7 @@ public class PageFields {
 
     public String createAttendeeEmail(String testID) {
         LocalDate date = LocalDate.now();
-        String email = "Attendee" + testID + "_" + date.toString() + "@tellamazingstories.com";
+        String email = "Attendee" + testID + "_" + date.toString() + "@engagingnetworks.online";
         return email;
     }
 

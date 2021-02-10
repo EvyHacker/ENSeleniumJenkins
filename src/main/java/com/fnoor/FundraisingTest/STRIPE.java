@@ -498,9 +498,7 @@ public class STRIPE {
         fields.setRecurFreq("MONTHLY");
 
         fields.submit();
-        fields.waitForPageLoad();
-        String myurl = driver.getCurrentUrl();
-        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13328/donate/3"));
+        fields.waitForURLToChange("https://politicalnetworks.com/page/13328/donate/3");
         fields.getSupporterTaxID();
 
 //		Get the details from the third page and Verify the fields
