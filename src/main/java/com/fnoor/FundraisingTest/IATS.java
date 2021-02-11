@@ -601,7 +601,7 @@ public class IATS {
         LocalDate date = LocalDate.now();
 
         //Validate IATSsingle transaction
-        fields.searchSupporter("pb_iatssingle_" + date.toString() + "@tellamazingstories.com");
+        fields.searchSupporter("pb_iatssingle_" + date.toString() + "@engagingnetworks.online");
         Thread.sleep(2000);
 
         // Validate supporter Details

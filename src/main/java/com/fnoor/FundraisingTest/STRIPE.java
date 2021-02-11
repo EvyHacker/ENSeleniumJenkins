@@ -703,7 +703,7 @@ public class STRIPE {
         fields.waitForPageLoad();
         Thread.sleep(2000);
         LocalDate date = LocalDate.now();
-        fields.searchSupporter("pb_stripeidealsingleasn_" + date.toString() + "@tellamazingstories.com");
+        fields.searchSupporter("pb_stripeidealsingleasn_" + date.toString() + "@engagingnetworks.online");
         Thread.sleep(2000);
 
         // Validate supporter Details
