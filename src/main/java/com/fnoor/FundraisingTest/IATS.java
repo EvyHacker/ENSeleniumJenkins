@@ -632,7 +632,7 @@ public class IATS {
                 fields.getTransactionDetails().contains("3509"));
 
         //Validate IATS NA Recurring transaction
-        fields.nextSupporter("pb_iatsrecurring_" + date.toString() + "@tellamazingstories.com");
+        fields.nextSupporter("pb_iatsrecurring_" + date.toString() + "@engagingnetworks.online");
         Thread.sleep(2000);
 
         // Validate supporter Details

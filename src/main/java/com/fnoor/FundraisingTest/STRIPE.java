@@ -579,7 +579,7 @@ public class STRIPE {
 
         driver.switchTo().defaultContent();
         fields.submit();
-        fields.waitForPageLoad();
+        fields.waitForURLToChange("https://stripe.com/sources/test_source?amount=1500&currency=eur");
 
         // Validate bank payment
         Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
@@ -720,7 +720,7 @@ public class STRIPE {
         // Submit a refund
         fields.expendSingleTransaction("FBS");
         fields.waitForPageLoad();
-        fields.validateOriginalReceipt("Original receipt");
+       // fields.validateOriginalReceipt("Original receipt");
         fields.validateReplacementReceipt("Replacement receipt");
         fields.validateChangeTaxStatus("Change tax status");
         fields.refundTransaction("Refund donation");

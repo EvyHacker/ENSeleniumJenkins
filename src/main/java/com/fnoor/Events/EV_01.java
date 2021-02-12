@@ -83,7 +83,7 @@ public class EV_01 {
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$29.99"));
         Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
-        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("VISA"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST = "singleTicketAddDonationIATS", fields);
         page.getSupporterById(FUNDRAISING_TEST = "singleTicketAddDonationIATS", fields);

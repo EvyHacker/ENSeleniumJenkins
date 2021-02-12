@@ -87,7 +87,7 @@ public class EV_12 {
         Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("IATS North America"));
         Assert.assertTrue("Tickets Amount is incorrect/not present", bodytext.contains("$111.99"));
         Assert.assertTrue("Additional Donation Amount is incorrect/not present", bodytext.contains("101.99"));
-        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("VISA"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST = "multiGatewaysIATS", fields);
         page.getSupporterById(FUNDRAISING_TEST = "multiGatewaysIATS", fields);
