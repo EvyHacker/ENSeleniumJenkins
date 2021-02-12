@@ -77,7 +77,7 @@ public class PB_A13_ECS {
         fields.attendeeTicketEmail("testid_atendee1@tellamazingstories.com");
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4222222222222220");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2024"});
         fields.setCCV("123");
 
         fields.submit();

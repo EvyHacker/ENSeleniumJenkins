@@ -79,7 +79,7 @@ public class PB_A16_ETM {
         fields.senPesonalMessage("Enjoy your gift!");
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4222222222222220");
-        fields.setCCExpiry(new CharSequence[] {"12", "2020"});
+        fields.setCCExpiry(new CharSequence[] {"12", "2024"});
         fields.setCCV("123");
 
         fields.submit();
