@@ -721,7 +721,7 @@ public class STRIPE {
         fields.expendSingleTransaction("FBS");
         fields.waitForPageLoad();
        // fields.validateOriginalReceipt("Original receipt");
-        fields.validateReplacementReceipt("Replacement receipt");
+       // fields.validateReplacementReceipt("Replacement receipt");
         fields.validateChangeTaxStatus("Change tax status");
         fields.refundTransaction("Refund donation");
         fields.sendRefundEmail();
