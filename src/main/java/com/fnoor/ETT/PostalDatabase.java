@@ -31,7 +31,6 @@ PostalDatabase {
         driver = page.createInstance(browser);
         fields = PageFactory.initElements(driver, PageFields.class);
         driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(800, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(800, TimeUnit.SECONDS);
     }

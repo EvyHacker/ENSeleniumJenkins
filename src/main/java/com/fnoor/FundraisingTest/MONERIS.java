@@ -34,7 +34,6 @@ public class MONERIS {
         driver = page.createInstance(browser);
         fields = PageFactory.initElements(driver, PageFields.class);
         driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
@@ -153,6 +152,57 @@ public class MONERIS {
         page.getSupporterById(FUNDRAISING_TEST="moneriseSelectRecurring", fields);
     }
 
+    @Parameters({"monerisVaultSingle"})
+    @Test(groups = { "moneris" })
+    public static void monerisVaultSingle(String testId) throws InterruptedException, IOException {
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/868/donate/1?mode=DEMO");
+
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("Moneris");
+        fields.setLastname("VaultRecurring€");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 H₣illtop");
+        fields.setCity("ÀàÂâÆæÇçÈèÉèÉéÊêËëÎîÏïÔôŒœÙùÛûÜü « »  €₣");
+        //fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+        fields.selectCountry("US");
+
+        fields.selectPaymentType("AMEX");
+        fields.selectPayCurrency("USD");
+        fields.setCCName("Unit Tester");
+        fields.setCCNUmber("375987000000062");
+        fields.setCCExpiry(new CharSequence[] {"12", "2024"});
+        fields.setCCV("123");
+
+        fields.submit();
+        fields.waitForPageLoad();
+        //		Assert that the payment was successful and the third page was reached
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/868/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("3521"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("CAD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: AX"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST="monerisVaultSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="monerisVaultSingle", fields);
+    }
+
     @Parameters({"monerisVaultRecurring"})
     @Test(groups = { "moneris" })
     public static void monerisVaultRecurring(String testId) throws InterruptedException, IOException {
@@ -186,10 +236,10 @@ public class MONERIS {
         fields.setRecurCount("5");
         fields.setRecurPeriod("6");
 
-        fields.selectPaymentType("Visa");
+        fields.selectPaymentType("AMEX");
         fields.selectPayCurrency("USD");
         fields.setCCName("Unit Tester");
-        fields.setCCNUmber("4242424242424242");
+        fields.setCCNUmber("375987000000062");
         fields.setCCExpiry(new CharSequence[] {"12", "2024"});
         fields.setCCV("123");
 
@@ -208,7 +258,7 @@ public class MONERIS {
         Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
         Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("CAD"));
         Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
-        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: AX"));
 
         page.getSupporterByEmail(FUNDRAISING_TEST="monerisVaultRecurring", fields);
         page.getSupporterById(FUNDRAISING_TEST="monerisVaultRecurring", fields);
@@ -307,6 +357,101 @@ public class MONERIS {
 
         page.getSupporterByEmail(FUNDRAISING_TEST="monerisRecurringNoCvv", fields);
         page.getSupporterById(FUNDRAISING_TEST="monerisRecurringNoCvv", fields);
+    }
+
+    @Parameters({"monerisVaultSingleNoCvv"})
+    @Test(groups = { "moneris" })
+    public static void monerisVaultSingleNoCvv(String testId) throws InterruptedException, IOException {
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/10994/donate/1?mode=DEMO");
+
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("Moneris");
+        fields.setLastname("VaultSingleNoCVV");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+
+        fields.setCCName("Unit Tester");
+        fields.setCCNUmber("4242424242424242");
+        fields.setCCExpiry(new CharSequence[] {"12", "2024"});
+
+        fields.submit();
+
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/10994/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("6443"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("CAD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST="monerisVaultSingleNoCvv", fields);
+        page.getSupporterById(FUNDRAISING_TEST="monerisVaultSingleNoCvv", fields);
+    }
+
+    @Parameters({"monerisVaultRecurringNoCvv"})
+    @Test(groups = { "moneris" })
+    public static void monerisVaultRecurringNoCvv(String testId) throws InterruptedException, IOException {
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/10995/donate/1?mode=DEMO");
+
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("Moneris");
+        fields.setLastname("RecurringNoCVV");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+
+        fields.setCCName("Unit Tester");
+        fields.setCCNUmber("4242424242424242");
+        fields.setCCExpiry(new CharSequence[]{"12", "2024"});
+
+        fields.setRecurDay("23");
+       // fields.setRecurFreq("month");
+        fields.setRecurCount("12");
+        fields.setRecurPeriod("12");
+
+        fields.submit();
+
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/10995/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("6444"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Moneris eSelect Vault Canada"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("CAD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_RECURRING"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: V"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST="monerisVaultRecurringNoCvv", fields);
+        page.getSupporterById(FUNDRAISING_TEST="monerisVaultRecurringNoCvv", fields);
     }
 
     @Parameters({"monerisVault3DSingle"})

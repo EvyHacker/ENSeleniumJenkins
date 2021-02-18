@@ -4,9 +4,12 @@ import com.fnoor.FundraisingPageDriver;
 import com.fnoor.PageFields;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -31,7 +34,6 @@ public class WORLDPAY {
         driver = page.createInstance(browser);
         fields = PageFactory.initElements(driver, PageFields.class);
         driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(600, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(600, TimeUnit.SECONDS);
     }
@@ -279,5 +281,122 @@ public class WORLDPAY {
 
         page.getSupporterByEmail(FUNDRAISING_TEST="worldpay3DRecurring", fields);
         page.getSupporterById(FUNDRAISING_TEST="worldpay3DRecurring", fields);
+    }
+
+    @Parameters({"worldpayPaypalCCSingle"})
+    @Test(groups = { "worldpay" })
+    public static void worldpayPaypalCCSingle(String testId) throws InterruptedException, IOException {
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/10893/donate/1?mode=DEMO");
+
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("Worldpay");
+        fields.setLastname("Single");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setCCName("Unit Tester");
+        fields.setCCNUmber("4444333322221111");
+        fields.setCCExpiry(new CharSequence[] {"12", "2024"});
+        fields.setCCV("123");
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.setRegion("MD");
+        fields.setPostCode("20001");
+        fields.setCountry("US");
+
+        fields.submit();
+
+
+        //		Assert that the payment was successful and the third page was reached
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same", myurl.equals
+                ("https://politicalnetworks.com/page/10893/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("6323"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("RBS Gateway"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("USD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: VISA-SSL"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST="worldpayPaypalCCSingle", fields);
+        page.getSupporterById(FUNDRAISING_TEST="worldpayPaypalCCSingle", fields);
+
+        //Worldpay pay via PayPal
+        driver.get("https://politicalnetworks.com/page/10893/donate/1?mode=DEMO");
+
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("Worldpay");
+        fields.setLastname("SinglePaypal");
+//		Call the createEmail function
+        String new_email_paypal = fields.createEmail(testId);
+        fields.setEmailAddress(new_email_paypal);
+
+        fields.submit();
+
+        fields.selectPaymentType("Paypal");
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.setRegion("MD");
+        fields.setPostCode("20001");
+        fields.setCountry("US");
+
+        fields.submit();
+
+        fields.waitForPageLoadPayPal();
+        fields.waitForURLToChange("https://www.sandbox.paypal.com/");
+        //		Assert that the payment is redirected to Paypal page
+
+        Assert.assertTrue("Didn't redirect to Paypal", driver.getCurrentUrl().contains
+                ("https://www.sandbox.paypal.com/"));
+//        fields.waitForPageLoad();
+//        fields.logPaypal();
+        fields.waitForPageLoad();
+        fields.setPaypalEmail();
+        fields.nextPayapl();
+        fields.waitForPageLoad();
+        fields.setPaypalPassword();
+        fields.submitPaypal();
+        fields.waitForPageLoadPayPal();
+        Thread.sleep(4000);
+
+        WebElement paypalContinue = (new WebDriverWait(driver, 400))
+                .until(ExpectedConditions.presenceOfElementLocated
+                        (By.id("payment-submit-btn")));
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", paypalContinue);
+
+        fields.waitForPageLoad();
+        Thread.sleep(8000);
+
+
+        //		Assert that the payment was successful and the third page was reached
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl().equals
+                ("https://politicalnetworks.com/page/10893/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytextPaypal = driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue("Campaign ID not present", bodytextPaypal.contains("6323"));
+        Assert.assertTrue("Gateway details are incorrect/not present",
+                bodytextPaypal.contains("PayPal Gateway"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytextPaypal.contains("$15.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytextPaypal.contains("USD"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytextPaypal.contains("CREDIT_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytextPaypal.contains("TEST: Paypal"));
+
     }
 }

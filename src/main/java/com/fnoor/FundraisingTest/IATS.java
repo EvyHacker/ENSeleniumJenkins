@@ -29,7 +29,6 @@ public class IATS {
         driver = page.createInstance(browser);
         fields = PageFactory.initElements(driver, PageFields.class);
         driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }

@@ -11,6 +11,7 @@
     <parameter name="worldpayCCRecurring" value="worldpayCCRecurring"/>
     <parameter name="worldpay3DSecureTest" value="worldpay3DSecureTest"/>
     <parameter name="worldpay3DRecurring" value="worldpay3DRecurring"/>
+    <parameter name="worldpayPaypalCCSingle" value="worldpayPaypalCCSingle"/>
     <test name="Donations WORLDPAY"  preserve-order="true">
         <groups>
             <run>
@@ -24,6 +25,7 @@
                     <include name="worldpayCCRecurring" />
                     <include name="worldpay3DSecureTest" />
                     <include name="worldpay3DRecurring" />
+                    <include name="worldpayPaypalCCSingle" />
                 </methods>
             </class>
         </classes>
