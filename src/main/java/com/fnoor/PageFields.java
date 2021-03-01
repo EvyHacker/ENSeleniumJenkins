@@ -130,6 +130,7 @@ public class PageFields {
     @FindBy(className = "gadget__singleDonations__donation__type") WebElement field_txn_type;
     @FindBy(css = ".gadget__receipt input[type='checkbox']") WebElement field_suppEmail;
     @FindBy(className = "gadget__singleDonations__transaction__actions") WebElement field_Receipts;
+    @FindBy(xpath = "//button[contains(text(),'Original receipt')]") WebElement field_OriginReceipt;
     @FindBy(css = ".button.optimalRefund.refund") WebElement field_RefundTxn;
     @FindBy(id = "refund__amount") WebElement field_RefundAmount;
 
@@ -859,8 +860,7 @@ public class PageFields {
     }
 
     public void validateOriginalReceipt(String text){
-        System.out.println("Rec " + field_Receipts.getText());
-            Assert.assertTrue("Original receipt not present", field_Receipts.getText().
+            Assert.assertTrue("Original receipt not present", field_OriginReceipt.getText().
                     contains(text));
     }
 
@@ -1207,7 +1207,7 @@ public class PageFields {
     }
 
     public String createRSMemail(String testID){
-        String email = testID + "@engagingnetworks.net";
+        String email = testID + "@engagingnetworks.online";
         return email;
     }
 

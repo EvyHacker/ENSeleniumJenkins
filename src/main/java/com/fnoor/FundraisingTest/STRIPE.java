@@ -41,12 +41,12 @@ public class STRIPE {
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    @AfterClass(alwaysRun = true)
+//    public void tearDown() {
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 
     @Parameters({"stripeSingle"})
     @Test(groups = { "stripe" })
@@ -720,8 +720,8 @@ public class STRIPE {
         // Submit a refund
         fields.expendSingleTransaction("FBS");
         fields.waitForPageLoad();
-       // fields.validateOriginalReceipt("Original receipt");
-       // fields.validateReplacementReceipt("Replacement receipt");
+        fields.validateOriginalReceipt("Original receipt");
+        fields.validateReplacementReceipt("Replacement receipt");
         fields.validateChangeTaxStatus("Change tax status");
         fields.refundTransaction("Refund donation");
         fields.sendRefundEmail();
