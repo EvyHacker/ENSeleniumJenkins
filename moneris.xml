@@ -27,17 +27,17 @@
         <classes>
             <class name="com.fnoor.FundraisingTest.MONERIS" >
                 <methods>
-<!--                    <include name="moneriseSelectSingle" />-->
-<!--                    <include name="moneriseSelectRecurring" />-->
-<!--                    <include name="monerisVaultSingle" />-->
-<!--                    <include name="monerisVaultRecurring" />-->
-<!--                    <include name="monerisSingleNoCvv" />-->
-<!--                    <include name="monerisRecurringNoCvv" />-->
-<!--                    <include name="monerisVaultSingleNoCvv" />-->
+                    <include name="moneriseSelectSingle" />
+                    <include name="moneriseSelectRecurring" />
+                    <include name="monerisVaultSingle" />
+                    <include name="monerisVaultRecurring" />
+                    <include name="monerisSingleNoCvv" />
+                    <include name="monerisRecurringNoCvv" />
+                    <include name="monerisVaultSingleNoCvv" />
                     <include name="monerisVaultRecurringNoCvv" />
-<!--                    <include name="monerisVault3DSingle" />-->
-<!--                    <include name="monerisVault3DRecurring" />-->
-<!--                    <include name="moneriseSelectSingleUP" />-->
+                    <include name="monerisVault3DSingle" />
+                    <include name="monerisVault3DRecurring" />
+                    <include name="moneriseSelectSingleUP" />
                 </methods>
             </class>
         </classes>
