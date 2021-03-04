@@ -355,8 +355,10 @@ public class PAYPAL {
         fields.submit();
 
         //Assert donation amount and submit payment
-        fields.waitForPageLoad();
-        driver.switchTo().frame("Cardinal-CCA-IFrame");
+        //fields.waitForPageLoad();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Cardinal-CCA-IFrame"));
+       // driver.switchTo().frame("Cardinal-CCA-IFrame");
         String labeltext = driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[2]/td[2]/b/font"))
                 .getText();
         Assert.assertTrue("Donation Amount displayed is incorrect", labeltext.contains("$15.00"));
@@ -512,8 +514,8 @@ public class PAYPAL {
         fields.submit();
 
         //Assert donation amount and submit payment
-        fields.waitForPageLoad();
-        driver.switchTo().frame("Cardinal-CCA-IFrame");
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Cardinal-CCA-IFrame"));
         String labeltext = driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[2]/td[2]/b/font"))
                 .getText();
         Assert.assertTrue("Donation Amount displayed is incorrect", labeltext.contains("$15.00"));

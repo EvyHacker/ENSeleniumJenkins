@@ -41,12 +41,12 @@ public class STRIPE {
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
-//    @AfterClass(alwaysRun = true)
-//    public void tearDown() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
     @Parameters({"stripeSingle"})
     @Test(groups = { "stripe" })
@@ -434,7 +434,9 @@ public class STRIPE {
         WebElement sepaIBAN = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.cssSelector(".Input--empty")));
+        Thread.sleep(2000);
         sepaIBAN.sendKeys("GB82WEST12345698765432");
+        Thread.sleep(2000);
         driver.switchTo().defaultContent();
 
         fields.submit();
@@ -488,6 +490,7 @@ public class STRIPE {
         WebElement sepaIBAN = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated
                         (By.cssSelector(".Input--empty")));
+        Thread.sleep(2000);
         sepaIBAN.sendKeys("IT40S0542811101000000123456");
         driver.switchTo().defaultContent();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -548,7 +551,7 @@ public class STRIPE {
         actions.click(idealSelect).perform();
         WebElement ABN = driver.findElement(By.id("bank-list-item-0"));
         actions.moveToElement(idealSelect).moveToElement(ABN).sendKeys(Keys.ENTER).perform();
-
+        Thread.sleep(2000);
         driver.switchTo().defaultContent();
         fields.submit();
         fields.waitForPageLoad();
@@ -573,6 +576,7 @@ public class STRIPE {
                         (By.cssSelector(".SelectField-control")));
             actions.moveToElement(idealSelect1).click().perform();
             actions.sendKeys(Keys.ENTER).perform();
+            Thread.sleep(2000);
          } catch (StaleElementReferenceException e) {
         System.err.println(e.getMessage());
     }
@@ -586,6 +590,7 @@ public class STRIPE {
                 .contains("https://stripe.com/sources/test_source?amount=1500&currency=eur"));
         WebElement authorize = driver.findElement(By.xpath("//*[contains(text(), 'Authorize Test Payment')]"));
         authorize.click();
+
         fields.waitForPageLoad();
         String myurl = driver.getCurrentUrl();
         Assert.assertTrue("Urls are not the same", myurl.equals("https://politicalnetworks.com/page/13323/donate/3"));
@@ -637,6 +642,7 @@ public class STRIPE {
         Actions actions = new Actions(driver);
         actions.click(idealSelect).perform();
         actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+        Thread.sleep(2000);
         driver.switchTo().defaultContent();
         fields.submit();
         fields.waitForPageLoad();
@@ -660,6 +666,7 @@ public class STRIPE {
                             (By.cssSelector(".SelectField-control")));
             actions.moveToElement(idealSelect1).click().perform();
             actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+            Thread.sleep(2000);
         } catch (StaleElementReferenceException e) {
             System.err.println(e.getMessage());
         }
@@ -719,7 +726,7 @@ public class STRIPE {
 
         // Submit a refund
         fields.expendSingleTransaction("FBS");
-        fields.waitForPageLoad();
+        Thread.sleep(2000);
         fields.validateOriginalReceipt("Original receipt");
         fields.validateReplacementReceipt("Replacement receipt");
         fields.validateChangeTaxStatus("Change tax status");

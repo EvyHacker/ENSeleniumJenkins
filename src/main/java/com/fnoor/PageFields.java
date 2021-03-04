@@ -860,7 +860,7 @@ public class PageFields {
     }
 
     public void validateOriginalReceipt(String text){
-            Assert.assertTrue("Original receipt not present", field_OriginReceipt.getText().
+            Assert.assertTrue("Original receipt not present", field_Receipts.getText().
                     contains(text));
     }
 
