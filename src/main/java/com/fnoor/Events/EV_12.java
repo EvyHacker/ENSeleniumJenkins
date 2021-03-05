@@ -65,7 +65,7 @@ public class EV_12 {
         fields.waitForURLToChange("https://politicalnetworks.com/page/12632/event/2");
         fields.verifyEventSummary("10.00 USD");
         fields.verifyEventSummary("101.99 USD");
-        fields.verifyEventSummary("111.99 USD");
+        fields.verifyEventSummaryTotal("$111.99");
         fields.selectPaymentType("Visa");
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4222222222222220");
@@ -119,7 +119,7 @@ public class EV_12 {
         fields.waitForURLToChange("https://politicalnetworks.com/page/12632/event/2");
         fields.verifyEventSummary("10.00 USD");
         fields.verifyEventSummary("101.99 USD");
-        fields.verifyEventSummary("111.99 USD");
+        fields.verifyEventSummaryTotal("$111.99");
         fields.selectPaymentType("Paypal");
         fields.submit();
 

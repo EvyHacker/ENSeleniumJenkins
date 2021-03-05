@@ -62,7 +62,7 @@ public class EV_03 {
         fields.eventCheckout();
 //
         fields.waitForURLToChange("https://politicalnetworks.com/page/12621/event/2");
-        fields.verifyEventSummary("127.99 USD");
+        fields.verifyEventSummary("$127.99");
         fields.selectPaymentType("Visa");
         fields.setCCName("Unit Tester");
         fields.setCCNUmber("4222222222222220");

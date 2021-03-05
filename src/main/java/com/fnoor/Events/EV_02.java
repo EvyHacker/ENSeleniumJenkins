@@ -61,7 +61,7 @@ public class EV_02 {
         fields.eventCheckout();
 //
         fields.waitForURLToChange("https://politicalnetworks.com/page/12620/event/2");
-        fields.verifyEventSummary("0.00 USD");
+        fields.verifyEventSummary("$0.00");
         fields.submit();
 
 //		Assert that the payment was successful and the third page was reached

@@ -68,7 +68,7 @@ public class EV_10 {
         fields.verifyEventSummary("30.00 USD");
         fields.verifyEventSummary("200.00 USD");
         fields.verifyEventSummary("101.99 USD");
-        fields.verifyEventSummary("331.99 USD");
+        fields.verifyEventSummary("$331.99");
         fields.selectPaymentType("Paypal");
         fields.submit();
 

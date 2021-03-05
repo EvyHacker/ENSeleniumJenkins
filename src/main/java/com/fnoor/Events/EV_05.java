@@ -63,7 +63,7 @@ public class EV_05 {
         fields.eventCheckout();
 
         fields.waitForURLToChange("https://politicalnetworks.com/page/12624/event/2");
-        fields.verifyEventSummary("169.99 USD");
+        fields.verifyEventSummary("$169.99");
         fields.selectPaymentType("Paypal");
         fields.addAttendee1FN("Attendee 1 FN");
         fields.addAttendee1LN("Attendee 1 LN");

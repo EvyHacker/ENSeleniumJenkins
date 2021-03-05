@@ -61,7 +61,7 @@ public class EV_06 {
         fields.eventCheckout();
 
         fields.waitForURLToChange("https://politicalnetworks.com/page/12626/event/2");
-        fields.verifyEventSummary("0.00 USD");
+        fields.verifyEventSummary("$0.00");
         fields.addAttendee1FN("Attendee 1 FN");
         fields.addAttendee1LN("Attendee 1 LN");
         String attendee_email = fields.createAttendeeEmail(testId);

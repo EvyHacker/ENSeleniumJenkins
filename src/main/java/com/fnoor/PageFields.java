@@ -169,6 +169,7 @@ public class PageFields {
     @FindBy(name = "event.additionalAmount") WebElement event_aditional_donation;
     @FindBy(css = ".en__ticketSummary__checkout") WebElement event_checkout;
     @FindBy(css = ".en__orderSummary") WebElement event_order_summary;
+    @FindBy(css = ".en__orderSummary__data--totalAmount") WebElement event_order_summary_total;
     @FindBy(name = "event.discount") WebElement event_discount_code;
     @FindBy(css = "input[id$='0_firstName']") WebElement event_attendee1_FN;
     @FindBy(css = "input[id$='0_lastName']") WebElement event_attendee1_LN;
@@ -423,7 +424,12 @@ public class PageFields {
     }
 
     public void verifyEventSummary(String text){
-        Assert.assertTrue("Title is incorrect/not present", event_order_summary.getText().contains(text));
+        Assert.assertTrue("Amount is incorrect/not present", event_order_summary.getText().contains(text));
+    }
+
+    public void verifyEventSummaryTotal(String text){
+        Assert.assertTrue("Total amount is incorrect/not present",
+                event_order_summary_total.getText().contains(text));
     }
 
     public  void addDiscountCode(String text){
