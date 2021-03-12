@@ -252,8 +252,8 @@ public class PageFields {
     @FindBy(css = ".en__button.en__component--eccheckout__continue") WebElement field_ecom_continueShopping;
     @FindBy(css = ".en__ecnav__cartCount>span") WebElement field_ecom_cartCount;
     @FindBy(css = ".en__component--eccheckout__submit.en__button") WebElement field_ecom_checkout;
-    @FindBy(css = "#en__field__method00") WebElement field_ecom_deliverymethod;
-    @FindBy(css = "#en__field__message00") WebElement fields_econ_personal_message;
+    @FindBy(name = "ec.product.1.delivery.0.method") WebElement field_ecom_deliverymethod;
+    @FindBy(name = "ec.product.1.delivery.0.message") WebElement fields_econ_personal_message;
     @FindBy(id = "en__field_transaction_inmem") WebElement field_InMemoriam;
     @FindBy(id = "en__field_transaction_honname") WebElement field_honoreeName;
     @FindBy(id = "en__field_transaction_infemail") WebElement field_informEmail;
@@ -1800,7 +1800,7 @@ public class PageFields {
                     }
                 };
         try {
-            WebDriverWait wait = new WebDriverWait(driver, 60);
+            WebDriverWait wait = new WebDriverWait(driver, 80);
             wait.until(expectation);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
