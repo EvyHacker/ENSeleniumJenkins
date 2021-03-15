@@ -756,4 +756,100 @@ public class STRIPE {
 
     }
 
+    @Parameters({"stripeIDEALsingleDtD"})
+    @Test(groups = { "stripe" })
+    public static void stripeIDEALsingleDtD(String testId) throws InterruptedException, IOException {
+        page.ensAuthTest();
+        driver.get("https://politicalnetworks.com/page/13865/donate/1");
+
+        fields.selectDonationAmt("15");
+        fields.selectTitle("Ms");
+        fields.setFirstname("Stripe");
+        fields.setLastname("iDEALABN");
+//		Call the createEmail function
+        String new_email = fields.createEmail(testId);
+        fields.setEmailAddress(new_email);
+
+        fields.submit();
+
+        fields.setAddress1("1 Hilltop");
+        fields.setCity("Baltimore");
+        fields.selectRegion("MD");
+        fields.setPostCode("20001");
+        fields.selectCountry("US");
+
+        fields.selectPaymentType("iDEAL");
+        Thread.sleep(2000);
+        driver.switchTo().frame(0);
+        WebElement idealSelect = (new WebDriverWait(driver, 20))
+                .until(ExpectedConditions.presenceOfElementLocated
+                        (By.id("bank-list-value")));
+        Actions actions = new Actions(driver);
+        actions.click(idealSelect).perform();
+        WebElement ABN = driver.findElement(By.id("bank-list-item-0"));
+        actions.moveToElement(idealSelect).moveToElement(ABN).sendKeys(Keys.ENTER).perform();
+        Thread.sleep(2000);
+        driver.switchTo().defaultContent();
+        fields.clickDtDchkbox();
+        fields.submit();
+        fields.waitForPageLoad();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        fields.waitForURLToChange("https://stripe.com/sources/test_source?amount=2500&currency=eur");
+
+        // Validate fail test payment
+        Assert.assertTrue("Urls are not the same, payment didn't go through",
+                driver.getCurrentUrl().contains("https://stripe.com/sources/test_source?amount=2500&currency=eur"));
+        WebElement fail = driver.findElement(By.xpath("//*[contains(text(), 'Fail Test Payment')]"));
+        fail.click();
+        fields.waitForURLToChange("https://politicalnetworks.com/page/13865/donate/2?val" );
+//        String error = driver.findElement(By.className("en__error")).getText();
+//        Assert.assertTrue("Urls are not the same",
+//                error.equals("This transaction has failed as there has been an error in processing your payment."));
+        fields.selectPaymentType("iDEAL");
+        Thread.sleep(2000);
+        driver.switchTo().frame(0);
+        try{
+            WebElement idealSelect1 = (new WebDriverWait(driver, 20))
+                    .until(ExpectedConditions.presenceOfElementLocated
+                            (By.cssSelector(".SelectField-control")));
+            actions.moveToElement(idealSelect1).click().perform();
+            actions.sendKeys(Keys.ENTER).perform();
+            Thread.sleep(2000);
+        } catch (StaleElementReferenceException e) {
+            System.err.println(e.getMessage());
+        }
+
+        driver.switchTo().defaultContent();
+        fields.submit();
+        fields.waitForURLToChange("https://stripe.com/sources/test_source?amount=2500&currency=eur");
+
+        // Validate bank payment
+        Assert.assertTrue("Urls are not the same", driver.getCurrentUrl()
+                .contains("https://stripe.com/sources/test_source?amount=2500&currency=eur"));
+        WebElement authorize = driver.findElement(By.xpath("//*[contains(text(), 'Authorize Test Payment')]"));
+        authorize.click();
+
+        fields.waitForPageLoad();
+        String myurl = driver.getCurrentUrl();
+        Assert.assertTrue("Urls are not the same",
+                myurl.equals("https://politicalnetworks.com/page/13865/donate/3"));
+
+        fields.getSupporterTaxID();
+
+//		Get the details from the third page and Verify the fields
+        String bodytext = driver.findElement(By.tagName("body")).getText();
+
+        Assert.assertTrue("Campaign ID not present", bodytext.contains("9748"));
+        Assert.assertTrue("Gateway details are incorrect/not present", bodytext.contains("Stripe Gateway"));
+        Assert.assertTrue("Donation Amount is incorrect/not present", bodytext.contains("€25.00"));
+        Assert.assertTrue("Fee Amount is incorrect/not present", bodytext.contains("€10.00"));
+        Assert.assertTrue("Total Amount is incorrect/not present", bodytext.contains("€25.00"));
+        Assert.assertTrue("Currency is incorrect/not present", bodytext.contains("EUR"));
+        Assert.assertTrue("Donation type is incorrect/not present", bodytext.contains("BANK_SINGLE"));
+        Assert.assertTrue("CC type is incorrect/ not present", bodytext.contains("TEST: ideal"));
+
+        page.getSupporterByEmail(FUNDRAISING_TEST="stripeIDEALsingleDtD", fields);
+        page.getSupporterById(FUNDRAISING_TEST="stripeIDEALsingleDtD", fields);
+    }
+
 }

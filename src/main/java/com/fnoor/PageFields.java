@@ -111,7 +111,9 @@ public class PageFields {
     @FindBy(id = "en__field_transaction_recurrcnt") WebElement field_RecurCount;
     @FindBy(id = "en__field_transaction_recurprd") WebElement field_RecurPeriod;
     @FindBy(css = ".en__submit button") WebElement field_Submit;
-    @FindBy(className = "en__field__input en__field__input--text en__field__idealselect") WebElement field_PaymentIdeal;
+    @FindBy(className = "en__field__input en__field__input--text en__field__idealselect")
+    WebElement field_PaymentIdeal;
+    @FindBy(id = "en__field_transaction_feeCover") WebElement field_DtD;
 
     //   SUPPORTER TRANSACTION DETAILS
     @FindBy(id = "searchForm-q") WebElement field_SearchSupporter;
@@ -1453,6 +1455,10 @@ public class PageFields {
             field_RecurFreq.sendKeys(text);
         }
 
+    }
+
+    public void clickDtDchkbox(){
+        field_DtD.click();
     }
 
     public void clickRecurringPaymentchkbox(){
